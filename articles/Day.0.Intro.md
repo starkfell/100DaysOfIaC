@@ -49,7 +49,7 @@ As [Frederick Douglass](https://en.wikipedia.org/wiki/Frederick_Douglass) said, 
 
 So tomorrow we'll "begin at the beginning" in this journey of a 100 days of IaC in Azure.
 
-![](/images/intro/fistbaby.jpg)
+![](/images/day0/fistbaby.jpg)
 
 See you tomorrow!
 
