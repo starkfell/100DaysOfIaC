@@ -1,4 +1,6 @@
-# Getting Organized
+# Day 1 - Getting Organized (Linux)
+
+*An article on Getting Organized (Windows) will be coming in the next couple of days.*
 
 One of the first things that often gets neglected when implementing Infrastructure as Code (IaC) is not having a way to reinstall all of your tools on your workstation in an automated fashion. At first this may not sound like something to even bother with; however, if the tools you are using are updated frequently or you are using a specific version of your tool due functionality issues, then having an automated way to redeploy all your tools becomes very important.
 
