@@ -8,7 +8,7 @@ Below are a list of tools that will be used throughout this series.
 
 * Azure CLI
 * PowerShell Core (Linux)
-* Visual Studio Code
+* Visual Studio Code (Linux)
 * Docker
 * vim
 * jq
@@ -79,7 +79,7 @@ sudo apt-get install -y vim jq curl wget
 
 <br />
 
-## Visual Studio Code
+## Visual Studio Code (Linux)
 
 If you want to install Visual Studio Code manually and using a GUI, visit the [Visual Studio Code download page](https://code.visualstudio.com/Download).
 
