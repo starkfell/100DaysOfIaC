@@ -96,13 +96,13 @@ cloudshell20190226        Microsoft.Storage/storageAccounts  eastus
 
 ### Query Breakdown
 
-The query used above is shown below.
+The JMESPath query used above is shown below.
 
 ```bash
 --query "[?contains(type, 'storageAccounts')].{Name: name, Type: type, Location: location}"
 ```
 
-This can be read outloud as: Return all results containing **('?contains')** the identifer **'type'** and matching the string **'storageAccounts'**. For all of the data that is found, sort the data in JSON **'.{Name: name, Type: type, Location: location}'** by Name, Type, and Location.
+This can be read outloud as: Return all results containing **('?contains')** the *identifer* **'type'** and matching the string **'storageAccounts'**. For all of the data that is found, sort the data in JSON **'.{Name: name, Type: type, Location: location}'** by Name, Type, and Location.
 
 When the query is returned without table formatting, it looks like what is shown below. This is why the **--output table** is used from the **az resource list** command.
 
@@ -140,7 +140,9 @@ When the query is returned without table formatting, it looks like what is shown
 
 ## More Examples
 
-You can copy and paste the following samples below into the Azure CLI and you should get back your results in a clean and readable table format.
+You can copy and paste the following samples below into the Azure CLI and your results will be returned in a clean and readable table format.
+
+<br />
 
 ### Display all Virtual Networks in your Azure Subscription
 
@@ -155,7 +157,9 @@ az resource list \
 ### Display all Web Sites in your Azure Subscription
 
 ```bash
-az resource list --query "[?contains(type, 'sites')].{Name: name, Type: type, Location: location}" --output table
+az resource list \
+--query "[?contains(type, 'sites')].{Name: name, Type: type, Location: location}" \
+--output table
 ```
 
 <br />
@@ -163,7 +167,9 @@ az resource list --query "[?contains(type, 'sites')].{Name: name, Type: type, Lo
 ### Display all Network Security Groups in your Azure Subscription
 
 ```bash
-az resource list --query "[?contains(type, 'networkSecurityGroups')].{Name: name, Type: type, Location: location}" --output table
+az resource list \
+--query "[?contains(type, 'networkSecurityGroups')].{Name: name, Type: type, Location: location}" \
+--output table
 ```
 
 <br />
@@ -171,5 +177,7 @@ az resource list --query "[?contains(type, 'networkSecurityGroups')].{Name: name
 ### Display all Alert Rules in your Azure Subscription
 
 ```bash
-az resource list --query "[?contains(type, 'alertrules')].{Name: name, Type: type, Location: location}" --output table
+az resource list \
+--query "[?contains(type, 'alertrules')].{Name: name, Type: type, Location: location}" \
+--output table
 ```
