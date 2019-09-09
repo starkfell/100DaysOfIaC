@@ -22,7 +22,7 @@ If you use VS Code, you know extensions are a big part of what makes VS Code gre
 * highly rated (4+ stars) 
 * frequently updated. 
 
-Below are the three *free* extensions for optimizing my markdown authoring efforts in VS Code:
+Below are the three *free* extensions I use for optimizing my markdown authoring efforts in VS Code:
 
 - **Markdown All in One**. This includes keyboard shortcuts for formatting your content, easy list creation, and a great markdown preview feature so you can see how your markdown will render. It also includes a super-handy export to PDF, HTML, and PNG options, so it's perfect for sharing documentation with a colleague outside your dev team. It even makes creating and formatting a table of contents in your documents much less work if you like.
 
