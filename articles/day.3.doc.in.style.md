@@ -27,6 +27,8 @@ If you use VS Code, you know extensions are a big part of what makes VS Code gre
 
 ![VS Code extensions](https://github.com/starkfell/100DaysOfIaC/blob/master/images/day3/ext_loaded.png "VS Code extensions")
 
+**Figure 1.** Verifying VS Code extensions are installed
+
 ## Installing VS Code Extensions
 
 The steps for installing these extensions varies by extension, so you do want to read the instructions. If you have never installed an extension in VS Code, you will want to read this [Extension Marketplace](https://code.visualstudio.com/docs/editor/extension-gallery) article.
