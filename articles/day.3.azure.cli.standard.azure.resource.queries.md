@@ -86,6 +86,8 @@ az resource list \
 --output table
 ```
 
+You should get something back that is similar to what is shown below.
+
 ```bash
 Name                      Type                               Location
 ------------------------  ---------------------------------  -----------
