@@ -1,7 +1,7 @@
 
 # Documenting your work in style with VS Code
 
-Sometime after he created Linux, [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) created Git. Git is the most widely used distributed version control system in the world. If you Git, you should be using [markdown](https://en.wikipedia.org/wiki/Markdown) to document your work. Per Wikipedia, "is a lightweight markup language with plain text formatting syntax". It supports formatting, images, even inline HTML for formatting when markdown does not have a native option.
+Sometime after he created Linux, [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) created Git. Git is the most widely used distributed version control system in the world. If you use Git, you should be using [markdown](https://en.wikipedia.org/wiki/Markdown) to document your work. Per Wikipedia, "is a lightweight markup language with plain text formatting syntax". It supports formatting, images, even inline HTML for formatting when markdown does not have a native option.
 
 Here's a quick table of contents for this article:
 
