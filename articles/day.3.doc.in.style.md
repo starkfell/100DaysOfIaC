@@ -27,7 +27,7 @@ If you use VS Code, you know extensions are a big part of what makes VS Code gre
 
 ![VS Code extensions](https://github.com/starkfell/100DaysOfIaC/blob/master/images/day3/ext_loaded.png "VS Code extensions")
 
-**Figure 1.** Verifying VS Code extensions are installed
+**Figure 1.** Verifying VS Code extensions are installed (bottom right of VS Code)
 
 ## Installing VS Code Extensions
 
