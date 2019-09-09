@@ -91,7 +91,7 @@ Name                      Type                               Location
 ------------------------  ---------------------------------  -----------
 dumpsterfire              Microsoft.Storage/storageAccounts  westeurope
 acc7fd79f68b3459aa95eb29  Microsoft.Storage/storageAccounts  westeurope
-wedidntstartthe           Microsoft.Storage/storageAccounts  westeurope
+bumblingmongoose          Microsoft.Storage/storageAccounts  westeurope
 csb09b2dcf356b62x47utx68  Microsoft.Storage/storageAccounts  westeurope
 cloudshell20190226        Microsoft.Storage/storageAccounts  eastus
 ```
@@ -122,7 +122,7 @@ When the query is returned without table formatting, it looks like what is shown
   },
   {
     "Location": "westeurope",
-    "Name": "wedidntstartthe",
+    "Name": "bumblingmongoose",
     "Type": "Microsoft.Storage/storageAccounts"
   },
   {
