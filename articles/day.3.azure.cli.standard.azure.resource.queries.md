@@ -81,7 +81,9 @@ All of the queries that are provided in this article use the *identifier* **type
 Below is a sample command that will return all of your existing Storage Accounts in your Azure Subscription.
 
 ```bash
-az resource list --query "[?contains(type, 'storageAccounts')].{Name: name, Type: type, Location: location}" --output table
+az resource list \
+--query "[?contains(type, 'storageAccounts')].{Name: name, Type: type, Location: location}" \
+--output table
 ```
 
 ```bash
