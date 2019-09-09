@@ -145,7 +145,9 @@ You can copy and paste the following samples below into the Azure CLI and you sh
 ### Display all Virtual Networks in your Azure Subscription
 
 ```bash
-az resource list --query "[?contains(type, 'virtualNetworks')].{Name: name, Type: type, Location: location}" --output table
+az resource list \
+--query "[?contains(type, 'virtualNetworks')].{Name: name, Type: type, Location: location}" \
+--output table
 ```
 
 <br />
