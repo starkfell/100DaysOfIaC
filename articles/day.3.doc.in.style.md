@@ -25,7 +25,7 @@ If you use VS Code, you know extensions are a big part of what makes VS Code gre
 
 - **Spell Right**. This is a multilingual, offline and lightweight spellchecker. It checks your spelling as you type, and when you run your cursor over a word, it provides alternatives. *Make sure to read the directions for this one, as you have to download the dictionary file for your language from their Git repository.*
 
-![VS Code extensions] (https://raw.githubusercontent.com/pzerger/cheatsheets/master/day3/ext_loaded.png) "VS Code extensions")
+![VS Code extensions] (https://github.com/starkfell/100DaysOfIaC/blob/master/day3/ext_loaded.png) "VS Code extensions")
 
 ## Installing VS Code Extensions
 
