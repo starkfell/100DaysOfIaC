@@ -108,7 +108,7 @@ The JMESPath query used above is shown below.
 
 This can be read outloud as: Return all results containing **('?contains')** the *identifer* **'type'** and matching the string **'storageAccounts'**. For all of the data that is found, sort the data in JSON **'.{Name: name, Type: type, Location: location}'** by Name, Type, and Location.
 
-When the query is returned without table formatting, it looks like what is shown below. This is why the **--output table** is used from the **az resource list** command.
+The query is returned in JSON format by default. This is why the **--output table** is used from the **az resource list** command.
 
 ```bash
 [
