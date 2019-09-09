@@ -31,8 +31,8 @@ The steps for installing these extensions varies by extension, so you do want to
 
 ## The Markdown Cheat Sheet
 
-To ease the process, we created this [Markdown Cheat Sheet](..\resources\Markdown_Cheatsheet.md). It includes both the syntax for a wide variety of markdown commands, as well as an example of how that syntax renders. You can use the hyperlinked table of contents and **'back to top'** links to navigate this document quickly and easily in a browser. If you prefer, here is fully functional PDF version.
+To ease the process, we created this [Markdown Cheat Sheet]([..\resources](https://github.com/starkfell/100DaysOfIaC/blob/master/resources/Markdown_Cheatsheet.md). It includes both the syntax for a wide variety of markdown commands, as well as an example of how that syntax renders. You can use the hyperlinked table of contents and **'back to top'** links to navigate this document quickly and easily in a browser. If you prefer, here is fully functional PDF version.
 
 # Next steps
 
-We hope this removes any excuses that have prevented you from properly documenting your work in Git. Even if you' have never written markdown, this will get you up and running quickly. So, create a link to this markdown cheat sheet, or simply download the [PDF version](..\resources\Markdown_Cheatsheet.pdf). Then, take 10 minutes to get these extensions installed, and start documenting!
+We hope this removes any excuses that have prevented you from properly documenting your work in Git. Even if you' have never written markdown, this will get you up and running quickly. So, create a link to this markdown cheat sheet, or simply download the [PDF version](https://github.com/starkfell/100DaysOfIaC/blob/master/resources/Markdown_Cheatsheet.md). Then, take 10 minutes to get these extensions installed, and start documenting!
