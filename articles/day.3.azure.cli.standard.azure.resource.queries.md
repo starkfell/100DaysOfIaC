@@ -185,3 +185,7 @@ az resource list \
 --query "[?contains(type, 'alertrules')].{Name: name, Type: type, Location: location}" \
 --output table
 ```
+
+<br />
+
+Stay tuned tomorrow as we go over Advanced Resource Queries in Azure using the Azure CLI.
