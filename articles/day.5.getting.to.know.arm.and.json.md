@@ -56,18 +56,18 @@ A collection of objects is an *array*. In JSON, an array is  represented by **sq
 
 ``` JSON
 [
-{
-    "Name" : "Jack",
-    "Age" : "25"
-},
-{
-    "Name" : "Jill",
-    "Age" : "24"
-},
-{
-    "Name" : "Johnny",
-    "Age" : "30"
-}
+  {
+      "Name" : "Jack",
+      "Age" : "25"
+  },
+  {
+      "Name" : "Jill",
+      "Age" : "24"
+  },
+  {
+      "Name" : "Johnny",
+      "Age" : "30"
+  }
 ]
 ```
 
