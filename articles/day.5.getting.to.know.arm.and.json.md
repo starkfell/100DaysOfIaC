@@ -1,4 +1,4 @@
-# Getting to Know ARM & JSON
+# Day 5 - Getting to Know ARM & JSON
 
 In this installment, you're going to get to know core JSON and Azure Resource Manager (ARM) template concepts, which will help you in the rest of your Infrastructure-as-Code journey.
 
