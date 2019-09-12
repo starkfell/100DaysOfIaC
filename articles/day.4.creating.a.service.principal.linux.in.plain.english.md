@@ -18,12 +18,12 @@ Use the Azure CLI to create a new Service Principal in the target Azure Subscrip
 
 ```bash
 AZURE_SP=$(/usr/bin/az ad sp create-for-rbac \
---role="contributor" \
---name="iac-sp" \
+--role "contributor" \
+--name "iac-sp" \
 --years 3)
 ```
 
-*Note: When you don't supply a value for **--scope**, then the Service Principal will be granted **contributor** rights across the entire Subscription. Additionally,the credentials are valid for 1 year by default*
+*Note: When you don't supply a value for **--role**, then the Service Principal will be granted **contributor** rights across the entire Subscription. Additionally,the credentials are valid for 1 year by default*
 
 You should see the following output.
 
