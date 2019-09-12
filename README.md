@@ -3,7 +3,7 @@
 | Subject | Day | Article Link |
 |---------|-----|---------------|
 | Intro to ARM and JSON | Day 5 | [Day 5 - Getting to Know ARM and JSON](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.5.getting.to.know.arm.and.json.md) |
-| Password Based Service Principal | Day 4 | [Day 4 - Creating a Service Principal in Azure in plain English (Linux)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.4.creating.a.service.principal.linux.in.plain.english.md) |
+| Password Based Service Principal (Linux) | Day 4 | [Day 4 - Creating a Service Principal in Azure in plain English (Linux)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.4.creating.a.service.principal.linux.in.plain.english.md) |
 | Writing Documentation in VSCode | Day 3 | [Day 3 - Documenting your work in style with VS Code](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.3.doc.in.style.md) |
 | Initial App(s) Installs on Windows | Day 2 | [Day 2 - Getting Organized (Windows)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.2.getting.organized.windows.md) |
 | Initial App(s) Installs on Linux | Day 1 | [Day 1 - Getting Organized (Linux)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.1.getting.organized.md) |
