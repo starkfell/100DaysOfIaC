@@ -50,7 +50,7 @@ echo $AZURE_SP | jq .password | tr -d '"'
 You can use the following syntax below to store the Password in a variable and then add it to an existing Azure Key Vault.
 
 ```bash
-$IAC_SP_PASSWORD=$(echo $AZURE_SP | jq .password | tr -d '"')
+IAC_SP_PASSWORD=$(echo $AZURE_SP | jq .password | tr -d '"')
 
 /usr/bin/az keyvault secret set \
 --name "iac-sp-password" \
