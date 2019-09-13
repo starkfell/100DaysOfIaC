@@ -6,6 +6,10 @@ And if you have open source developers, working in Java, Bash, Linux, and simila
 
 This is not an argument against using ARM, but a five-minute intro to show you why Azure CLI is much more powerful and easy to use than most give it credit for and deserves a place in your IaC arsenal.
 
+> Note: This article applies to both Linux and Windows.
+
+<br />
+
 In this installment:
 
 [Azure CLI is Idempotent!](#azure-cli-is-idempotent)<br />
