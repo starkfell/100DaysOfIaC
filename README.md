@@ -2,6 +2,7 @@
 
 | Subject |   Day   | Article Link  |
 |---------|---------|---------------|
+| Intro to Azure CLI in IaC | Day 7 | [Day 7 - Using Azure CLI in your everyday IaC Strategy](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.7.using.azure.cli.in.your.everyday.iac.strategy.md) |
 | Password Based Service Principal (Windows) | Day 6 | [Day 6 - Creating a Service Principal in Azure in plain English (Windows Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.6.creating.a.service.principal.windows.in.plain.english.md) |
 | Intro to ARM and JSON | Day 5 | [Day 5 - Getting to Know ARM and JSON](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.5.getting.to.know.arm.and.json.md) |
 | Password Based Service Principal (Linux) | Day 4 | [Day 4 - Creating a Service Principal in Azure in plain English (Linux Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.4.creating.a.service.principal.linux.in.plain.english.md) |
