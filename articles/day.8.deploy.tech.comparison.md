@@ -29,15 +29,15 @@ Terraform does claim an advantage to JSON in terms of human readability, but at 
 
 While Terraform is getting a lot of buzz right now, and may have a place in your IaC toolkit, it's not a solution for every problem. There are some definite disadvantages of Terraform that are worth considering.
 
-**Delay in support for latest Azure features**. Sometimes it takes Terraform a while to support the latest Azure features. If memory serves, last year the delay was support Azure Key Vault secrets, this year the delay is Azure Front Door (see [this request for Azure Front Door support](https://github.com/terraform-providers/terraform-provider-azurerm/issues/3186) opened in April, closed 9 days ago). So, if you need access to the latest and greatest Microsoft features, this is something to consider. 
+**Delay in support for latest Azure features**. Sometimes it takes Terraform a while to support the latest Azure features. If memory serves, last year the delay was support for Azure Key Vault secrets, this year the delay is Azure Front Door (see [this request for Azure Front Door support](https://github.com/terraform-providers/terraform-provider-azurerm/issues/3186) opened in April, closed 9 days ago). So, if you need access to the latest and greatest Microsoft features, this is something to consider. 
 
-While you can next PowerShell, Azure CLI and other languages within Terraform to bridge these gaps, it kind of defeats the purpose.
+While you can use PowerShell, Azure CLI and other languages within Terraform to bridge these gaps, it can become difficult to maintain over time.
 
 **Fewer examples**. Terraform will have fewer examples for any given Azure scenario than you will find with native Microsoft deployment options. If you thrive on examples, this may occasionally prove to be a challenge.
 
-**In-house skills**. Within your organization, it's quite likely you have colleagues who know PowerShell, and if your company uses Azure, you'll likely have Dev or Ops team members with ARM and Azure CLI experience. With Terraform, in our experience, this will almost certainly not be the case, at least initially.
+**In-house skills**. Within your organization, it's quite likely you have colleagues who know PowerShell, and if your company uses Azure, you'll likely have Dev or Ops team members with ARM and Azure CLI experience. With Terraform, in our experience, this will almost certainly not the case, at least initially.
 
-Bottom line, even though Terraform is declarative and idempotent, your team has to learn a new language: [**Hashicorp Configuration Language**](https://www.terraform.io/docs/configuration-0-11/syntax.html). I've heard the comment from multiple DevOps pros that they feel arm was and just as easy (or easier) to learn and manage in their opinion.
+Bottom line, even though Terraform is declarative and idempotent, your team has to learn a new language: [**Hashicorp Configuration Language**](https://www.terraform.io/docs/configuration-0-11/syntax.html). I've heard the comment from multiple DevOps pros that they feel ARM was and just as easy (or easier) to learn and manage in their opinion.
 
 **You will still write code for each cloud**. Each cloud provider has unique services and service characteristics, so Terraform does not give you a 'write once, deploy to any cloud' experience. For example, if you're deploying a managed Kubernetes cluster to Azure (AKS), another in Amazon (EKS), you will still have to write separate deployment scripts.
 
