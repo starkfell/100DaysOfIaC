@@ -13,6 +13,8 @@ We'll start by comparing Terraform to the native Microsoft options of PowerShell
 
 **Figure 1**. Characteristics of common Azure IaC deployment options
 
+As with many technologies, user-friendliness is often a matter of opinion and experience, so we don't want to dwell on this point.
+
 > **NOTE:** While Azure DevOps supports 'any cloud, any language', we're going to focus on these core four options for purposes of this discussion. Other languages, such as Python, are supported, but are not idempotent and declarative, so we'll touch on those in later installments.
 
 If you are unclear on what *declarative* and *idempotent* mean, quickly revisit [Day 7 - Using Azure CLI in Your Everyday IaC Strategy](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.7.using.azure.cli.in.your.everyday.iac.strategy.md)
