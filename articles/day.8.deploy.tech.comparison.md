@@ -37,7 +37,7 @@ While you can next PowerShell, Azure CLI and other languages within Terraform to
 
 Bottom line, even though Terraform is declarative and idempotent, your team has to learn a new language: [**Hashicorp Configuration Language**](https://www.terraform.io/docs/configuration-0-11/syntax.html). I've heard the comment from multiple DevOps pros that they feel arm was and just as easy (or easier) to learn and manage in their opinion.
 
-**You will still write code for each cloud**. Each cloud provider has unique services and service characteristics, so Terraform does not give you a 'write once, deploy to any cloud experience'. For example, if you're deploying a managed Kubernetes cluster to Azure (AKS), another in Amazon (EKS), you will still have to write separate deployment scripts.
+**You will still write code for each cloud**. Each cloud provider has unique services and service characteristics, so Terraform does not give you a 'write once, deploy to any cloud' experience. For example, if you're deploying a managed Kubernetes cluster to Azure (AKS), another in Amazon (EKS), you will still have to write separate deployment scripts.
 
 ## Conclusion
 
