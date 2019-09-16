@@ -9,7 +9,7 @@ Terraform is a great option for Infrastructure-as-Code, and we don't want to dis
 
 We'll start by comparing Terraform to the native Microsoft options of PowerShell, Azure CLI, and ARM on the criteria of **declarative** and **idempotent**. As shown in Figure 1, Terraform, like ARM, is both declarative and idempotent.
 
-![IaC deployment tech comparison](https://github.com/starkfell/100DaysOfIaC/tree/master/images/fig1.deploy.tech.compare.png)
+![IaC deployment tech comparison](https://github.com/starkfell/100DaysOfIaC/blob/master/images/day8/fig1-deploy-tech-compare.png)
 
 **Figure 1**. Characteristics of common Azure IaC deployment options
 
