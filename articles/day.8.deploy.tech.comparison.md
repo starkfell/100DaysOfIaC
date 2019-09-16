@@ -23,7 +23,7 @@ If you are unclear on what *declarative* and *idempotent* mean, quickly revisit 
 
 The #1 advantage of Terraform is that it supports multiple cloud platforms, like Azure, Amazon, and Google Cloud Platform. So, if your org uses multiple cloud platforms, Terraform can be a great choice, because it provides a single declarative, idempotent language for describing your deployments across multiple platforms.
 
-Terraform does claim an advantage to JSON in terms of human readability, but at the cost of a custom (non-native, 3rd party). Because Azure DevOps supports any cloud, any language, you will find native Terraform tasks for Azure Pipelines.
+Terraform does claim an advantage to JSON in terms of human readability, but at the cost of a non-native, 3rd party language. Because Azure DevOps supports any cloud, any language, you will find native Terraform tasks for Azure Pipelines.
 
 ## Disadvantages of Terraform
 
