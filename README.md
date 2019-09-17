@@ -2,6 +2,7 @@
 
 | Subject |   Day   | Article Link  |
 |---------|---------|---------------|
+| Terraform Overview | Day 9 | [Day 9 - Creating an Azure Service Principal that uses Certificate Authentication (Linux Edition)](https://https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.9.creating.a.service.principal.cert.auth.linux.md) |
 | Terraform Overview | Day 8 | [Day 8 - Comparing Native Microsoft Options and Terraform for IaC Deployment](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.8.deploy.tech.comparison.md) |
 | Intro to Azure CLI in IaC | Day 7 | [Day 7 - Using Azure CLI in your Everyday IaC Strategy](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.7.using.azure.cli.in.your.everyday.iac.strategy.md) |
 | Password Based Service Principal (Windows) | Day 6 | [Day 6 - Creating a Service Principal in Azure in plain English (Windows Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.6.creating.a.service.principal.windows.in.plain.english.md) |
