@@ -42,7 +42,7 @@ What is illustrated in Figure 1 below is a scaled down, environment-based code b
 
 - Once testing is complete and ready for production, there is an *approval gate* where someone must approve the deployment to the **PROD** environment.
 
-![Code braches for our IaC scenario](fig1.code.branching.png)
+![Code braches for our IaC scenario](https://github.com/starkfell/100DaysOfIaC/blob/master/images/day10/fig1.code.branching.png)
 
 **Figure 1**. Code branching for IaC (example)
 
@@ -50,7 +50,7 @@ What is illustrated in Figure 1 below is a scaled down, environment-based code b
 
 The process of validating deployment artifacts, like ARM templates, should be completed before code is deployed to the TEST environment, if possible. 
 
-![Build and release pipelines for CICD](fig2.build.release.pipelines.png)
+![Build and release pipelines for CICD](https://github.com/starkfell/100DaysOfIaC/blob/master/images/day10/fig2.build.release.pipelines.png)
 
 **Figure 2**. Build and Release Pipelines for CI/CD
 
