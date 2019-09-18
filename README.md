@@ -2,6 +2,7 @@
 
 | Subject |   Day   | Article Link  |
 |---------|---------|---------------|
+| Building block of IaC in Azure DevOps | Day 10 | [Day 10 - Building Blocks of CICD Strategy for IaC in Azure DevOps](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.9.creating.a.service.principal.cert.auth.linux.md) |
 | Cert Based Service Principal (Linux) | Day 9 | [Day 9 - Creating an Azure Service Principal that uses Certificate Authentication (Linux Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.9.creating.a.service.principal.cert.auth.linux.md) |
 | Terraform Overview | Day 8 | [Day 8 - Comparing Native Microsoft Options and Terraform for IaC Deployment](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.8.deploy.tech.comparison.md) |
 | Intro to Azure CLI in IaC | Day 7 | [Day 7 - Using Azure CLI in your Everyday IaC Strategy](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.7.using.azure.cli.in.your.everyday.iac.strategy.md) |
