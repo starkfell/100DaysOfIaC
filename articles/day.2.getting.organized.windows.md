@@ -73,7 +73,10 @@ choco install docker-desktop -y
 If you need to reinstall everything in one shot in the future, run the command below. It's essentially a simple script with no error checking or idempotence, but it'll work if it's the first time you are setting up a new workstation.
 
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')) ; `
+Set-ExecutionPolicy Bypass `
+-Scope Process `
+-Force; `
+iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')) ; `
 choco install azure-cli powershell-core vscode docker-desktop -y
 ```
 
