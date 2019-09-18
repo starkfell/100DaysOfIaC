@@ -77,7 +77,7 @@ Set-ExecutionPolicy Bypass `
 -Scope Process `
 -Force; `
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')) ; `
-choco install azure-cli powershell-core vscode docker-desktop -y
+choco install azure-cli powershell-core vscode docker-desktop chrome -y
 ```
 
 At the bottom of the PowerShell Prompt after running the command above, you should see the following output.
