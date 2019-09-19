@@ -29,11 +29,11 @@ choco install openssl -y
 >
 > *WARNING: OPENSSL_CONF has been set to C:\Program Files\OpenSSL-Win64\openssl.cfg*<br />
 >
-> the **openssl.cfg** file by default is in *C:\Program Files\OpenSSL-Win64\openssl.cfg* which is why the path in the OPENSSL_CONF variable is updated in the section below.
+> the **openssl.cfg** file by default is in *C:\Program Files\OpenSSL-Win64\openssl.cfg* which is why the path in the **OPENSSL_CONF** variable is updated in the section below.
 
 <br />
 
-Update the **Path** System Variable to include the path to the **openssl** executable.
+Run the following command to update the **Path** System Variable to include the path to the **openssl** executable.
 
 ```powershell
 $CurrentPath = (Get-ItemProperty `
@@ -45,7 +45,7 @@ Set-ItemProperty `
 -Value $NewPath
 ```
 
-Update the **OPENSSL_CONF** System Variable to point to the **openssl.cfg** file.
+Run the following command to update the **OPENSSL_CONF** System Variable to point to the **openssl.cfg** file.
 
 ```powershell
 Set-ItemProperty `
@@ -54,7 +54,7 @@ Set-ItemProperty `
 -Value "C:\Program Files\OpenSSL-Win64\bin\openssl.cfg"
 ```
 
-Close out the elevated PowerShell Prompt before continuing.
+Next, close out of the elevated PowerShell Prompt before continuing.
 
 <br />
 
