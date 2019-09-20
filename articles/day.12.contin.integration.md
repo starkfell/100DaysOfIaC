@@ -17,7 +17,7 @@ We're going to show you an example of a CI build pipeline that performs the foll
 
 **Figure 1**. Elements of our build pipeline in Azure Pipelines
 
-We can leave the Run on agent task, shown in Figure 1, with its default values, as we need a Windows build agent for ARM deployment.
+We can leave the **Run on agent** task, shown in Figure 1, with its default values, as we need a Windows build agent for ARM deployment.
 
 We'll create the build pipeline using the classic editor, rather than YAML, because it is a more complete and user-friendly experience than YAML today. There is a time and place for using the YAML pipeline authoring experience, which we will discuss later in the series.
 
