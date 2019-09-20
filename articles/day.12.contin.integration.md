@@ -13,7 +13,7 @@ We're going to show you an example of a CI build pipeline that performs the foll
 
 \* At this stage, we have an ARM template ready to deploy to a Test environment.
 
-![Build Pipeline in Azure Pipelines](images/day12/figure1.png)
+![Build Pipeline in Azure Pipelines](https://github.com/starkfell/100DaysOfIaC/blob/master/images/day12/figure1.png)
 
 **Figure 1**. Elements of our build pipeline in Azure Pipelines
 
@@ -27,7 +27,7 @@ To launch the classic editor, click on Azure Pipelines, Builds, and at the botto
 
  When we create the Build Pipeline, we will select the "**Continuous Integration**" option. This will trigger build and publish an artifact (our updated ARM template) every time we perform a check-in to our Git repo (in Azure Repos).This enables the 'build on commit' strategy for CI we discussed in Day 10.
 
-![Choose the Git repo that hosts the ARM template](images/day12/figure2.png)
+![Choose the Git repo that hosts the ARM template](https://github.com/starkfell/100DaysOfIaC/blob/master/images/day12/figure2.png)
 
 **Figure 2**. Select the Git repo that will trigger CI process.
 
@@ -37,7 +37,7 @@ This is a native task in Azure DevOps designed to deploy an ARM template to a ne
 
 **A note on ARM template validation**. It's important to note that this simple approach confirms your ARM template is syntactically correct, but does not verify it is actually deployable in your Azure subscription. For example, you might have an Azure policy with specific naming or tagging requirements that blocks deployment. We will cover other custom, more in-depth validation methods in a future installment.
 
-![Resource Group Deployment in Azure Pipelines](/images/day12/figure3.png)
+![Resource Group Deployment in Azure Pipelines](https://github.com/starkfell/100DaysOfIaC/blob/master/images/day12/figure3.png)
 
 **Figure 3**. Azure Resource Group Deployment task settings in Azure Pipelines
 
@@ -45,7 +45,7 @@ This is a native task in Azure DevOps designed to deploy an ARM template to a ne
 
 The template validation step creates an Azure resource group in the validation process that is ultimately empty. "Delete Resource Group" is a custom task developed by a community author (Marco Mansi) and is available for download from the Visual Studio Marketplace [HERE](https://marketplace.visualstudio.com/items?itemName=marcomansi.MarcoMansi-Xpirit-Vsts-DeleteResourceGroupIfEmpty). This task reliably verifies the  resource group is empty before deleting it.
 
-![Delete Resource Group if Empty task in Azure Pipelines](/images/day12/figure4.png)
+![Delete Resource Group if Empty task in Azure Pipelines](https://github.com/starkfell/100DaysOfIaC/blob/master/images/day12/figure4.png)
 
 **Figure 4**. Delete Resource Group if Empty task settings in Azure Pipelines
 
@@ -53,7 +53,7 @@ The template validation step creates an Azure resource group in the validation p
 
 Once the template has been validated, the next step is to produce our build artifact (the ARM template, in this case). We do this with the **Publish Build Artifacts** task, as shown in Figure 5.
 
-![Publish build artifacts task in Azure Pipelines](/images/day12/figure5.png)
+![Publish build artifacts task in Azure Pipelines](https://github.com/starkfell/100DaysOfIaC/blob/master/images/day12/figure5.png)
 
 **Figure 5**. Publish build artifacts task settings in Azure Pipelines
 
