@@ -11,9 +11,9 @@ In this installment, we'll be going over the following.
 [What is Git](#what-is-git)<br />
 [Why Git is important for IaC](#why-git-is-important-for-iac)<br />
 [Installing Git using Chocolatey](#install-git-using-chocolatey)<br />
-[Clone a Public GitHub Repo in VS Code using the Terminal](#clone-a-repo-in-vs-code-using-the-terminal))<br />
+[Clone a Public GitHub Repo in VS Code using the Terminal](#clone-a-repo-in-vs-code-using-the-terminal)<br />
 [Clone a Public GitHub Repo using VS Code in the Control Pallet](#clone-a-repo-using-the-control-pallet)<br />
-[Clone a Private GitHub Repo in VS Code ](#clone-a-private-github-repo-in-vs-code-using-the-control-pallet)<br />
+[Clone a Private GitHub Repo in VS Code](#clone-a-private-github-repo-in-vs-code-using-the-control-pallet)<br />
 [Clone a Private Azure DevOps Repo in VS Code](#clone-a-private-azure-devops-repo-in-vs-code)<br />
 [Conclusion](#conclusion)
 
