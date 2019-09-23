@@ -48,11 +48,11 @@ That last sentence describing how it tracks directory contents extremely fast an
 
 ## Why Git is important for IaC
 
-IT is not uncommon for people in IT to utilize scripts, written in a variety of scripting languages, to automate redundant tasks they perform on a regular basis. Sometimes these scripts are documented as to how they work and what their purpose is, many times they are not. As they collection of scripts grows over time, variations of the same script may be written without any meaningful way of distinguishing them. Lastly, tracking changes made to these scripts is a manual process that is left up to their maintainers.
+In the IT Industry it is common to utilize scripts, written in a variety of scripting languages, to automate redundant tasks that must be performed on a regular basis. Sometimes these scripts are documented as to how they work and what their purpose is, many times they are not. As a collection of scripts grows over time,variations of the same script may be written without any meaningful way of distinguishing them other than by asking the original author. This also means that tracking changes made to these scripts is a manual process that is left up to the whims of their maintainers.
 
 If you were to use this same methodology while adopting Infrastructure as Code you would be setting yourself up for failure. This is why using a version controlling system such as Git is so important.
 
-With Git any changes made to a repository must be first be done to the local copy on your machine, committed as a change that can include comments as to the change, and then pushed to the master version of the repository wherever it is hosted (GitHub, AzureDevOps, Bitbucket, etc). This process ensures that any changes made to the repository are trackable and accountable.
+With Git, any changes made to a repository must be first be done to the local copy on your machine, committed as a change that can include comments as to the change, and then pushed to the master version of the repository wherever it is hosted (GitHub, AzureDevOps, Bitbucket, etc). This process ensures that any changes made to the repository are trackable and that you can determine when and who made them.
 
 <br />
 
