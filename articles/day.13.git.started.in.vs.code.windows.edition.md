@@ -9,7 +9,7 @@ To get started to using Git with either GitHub or Azure DevOps, we are going to 
 In this installment, we'll be going over the following.
 
 [What is Git](#what-is-git)<br />
-[Why is Git important for IaC](#why-git-is-important-for-iac)<br />
+[Why Git is important for IaC](#why-git-is-important-for-iac)<br />
 [Installing Git using Chocolatey](#install-git-using-chocolatey)<br />
 [Clone a Public GitHub Repo in VS Code using the Terminal](#clone-a-repo-in-vs-code-using-the-terminal))<br />
 [Clone a Public GitHub Repo using VS Code in the Control Pallet](#clone-a-repo-using-the-control-pallet)<br />
