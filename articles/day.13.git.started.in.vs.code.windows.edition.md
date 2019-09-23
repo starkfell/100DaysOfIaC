@@ -70,7 +70,7 @@ choco install git -y
 
 Open up Visual Studio Code and click on Terminal and then New Terminal.
 
-![Image-001](images/clone.a.repo.in.vs.code.using.the.terminal.image.001.png)
+![Image-001](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.001.png)
 
 Next, clone the 100DaysofIac Repo using HTTPS, by running the following command in the terminal.
 
@@ -80,11 +80,11 @@ git clone https://github.com/starkfell/100DaysOfIaC.git
 
 You should get back the following response as shown below.
 
-![Image-003](images/clone.a.repo.in.vs.code.using.the.terminal.image.003.png)
+![Image-003](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.003.png)
 
 You'll notice that the 100DaysOfIaC Repository has been downloaded into a directory in your User Directory.
 
-![Image-004](images/clone.a.repo.in.vs.code.using.the.terminal.image.004.png)
+![Image-004](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.004.png)
 
 <br />
 
@@ -94,25 +94,25 @@ In VS Code, press CTRL + Shift + P to open up the control pallet
 
 Type in Git until you see **Git:Clone** and click on it.
 
-![Image-005](images/clone.a.repo.in.vs.code.using.the.terminal.image.005.png)
+![Image-005](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.005.png)
 
 Copy and paste in the 100DaysofIaC URL into the prompt and press Enter.
 
-![Image-006](images/clone.a.repo.in.vs.code.using.the.terminal.image.006.png)
+![Image-006](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.006.png)
 
 You should see the contents of your User Folder appear, click on the **Select Repository Location** button.
 
 > **NOTE:** If you see the 100DaysOfIaC Folder from the previous example, delete it first.
 
-![Image-007](images/clone.a.repo.in.vs.code.using.the.terminal.image.007.png)
+![Image-007](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.007.png)
 
 In the bottom right hand corner of VS Code, you will be prompted to open the cloned directory. **Click Open**.
 
-![Image-008](images/clone.a.repo.in.vs.code.using.the.terminal.image.008.png)
+![Image-008](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.008.png)
 
 In the upper left hand corner of VS Code, you should see the contents of the **100DaysOfIaC** repository in the Explorer window.
 
-![Image-009](images/clone.a.repo.in.vs.code.using.the.terminal.image.009.png)
+![Image-009](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.009.png)
 
 <br />
 
@@ -124,31 +124,31 @@ In VS Code, press **CTRL + Shift + P** to open up the control pallet
 
 Type in Git until you see **Git:Clone** and click on it.
 
-![Image-005](images/clone.a.repo.in.vs.code.using.the.terminal.image.005.png)
+![Image-005](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.005.png)
 
 Copy and paste in the URL of the Private Repo into the prompt and press Enter.
 
-![Image-012](images/clone.a.repo.in.vs.code.using.the.terminal.image.012.png)
+![Image-012](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.012.png)
 
 You should see the contents of your User Folder appear, click on the **Select Repository Location** button.
 
-![Image-015](images/clone.a.repo.in.vs.code.using.the.terminal.image.015.png)
+![Image-015](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.015.png)
 
 Next, you will be prompted to login to GitHub.
 
-![Image-012](images/clone.a.repo.in.vs.code.using.the.terminal.image.011.png)
+![Image-012](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.011.png)
 
 If you are setup with two-factor authentication, you will be prompted again.
 
-![Image-013](images/clone.a.repo.in.vs.code.using.the.terminal.image.013.png)
+![Image-013](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.013.png)
 
 In the bottom right hand corner of VS Code, you will be prompted to open the cloned directory. **Click Open**.
 
-![Image-008](images/clone.a.repo.in.vs.code.using.the.terminal.image.008.png)
+![Image-008](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.008.png)
 
 In the upper left hand corner of VS Code, you should see the contents of the private repository in the Explorer window.
 
-![Image-014](images/clone.a.repo.in.vs.code.using.the.terminal.image.014.png)
+![Image-014](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.014.png)
 
 <br />
 
@@ -160,29 +160,29 @@ In VS Code, press **CTRL + Shift + P** to open up the control pallet
 
 Type in Git until you see **Git:Clone** and click on it.
 
-![Image-005](images/clone.a.repo.in.vs.code.using.the.terminal.image.005.png)
+![Image-005](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.005.png)
 
 Copy and paste in the URL of the Private Repo into the prompt and press Enter.
 
-![Image-016](images/clone.a.repo.in.vs.code.using.the.terminal.image.016.png)
+![Image-016](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.016.png)
 
 You should see the contents of your User Folder appear, click on the **Select Repository Location** button.
 
-![Image-017](images/clone.a.repo.in.vs.code.using.the.terminal.image.017.png)
+![Image-017](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.017.png)
 
 Next, you will be prompted to login using your Microsoft Account.
 
-![Image-018](images/clone.a.repo.in.vs.code.using.the.terminal.image.018.png)
+![Image-018](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.018.png)
 
 > **NOTE:** If you are setup with two-factor authentication, you will be prompted again.
 
 In the bottom right hand corner of VS Code, you will be prompted to open the cloned directory. **Click Open**.
 
-![Image-008](images/clone.a.repo.in.vs.code.using.the.terminal.image.008.png)
+![Image-008](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.008.png)
 
 In the upper left hand corner of VS Code, you should see the contents of the private repository in the Explorer window.
 
-![Image-020](images/clone.a.repo.in.vs.code.using.the.terminal.image.020.png)
+![Image-020](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.020.png)
 
 ## Conclusion
 
