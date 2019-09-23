@@ -1,4 +1,4 @@
-# GIT Started in VS Code (Windows Edition)
+# Day 13 - GIT Started in VS Code (Windows Edition)
 
 To get started to using Git with either GitHub or Azure DevOps, we are going to go over the options available to you to connect and clone repositories in either service using Visual Studio Code. Additional articles about using Git in VS Code will be coming in the near future.
 
