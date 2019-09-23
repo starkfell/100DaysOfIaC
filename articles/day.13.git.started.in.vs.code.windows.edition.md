@@ -70,7 +70,7 @@ choco install git -y
 
 Open up Visual Studio Code and click on Terminal and then New Terminal.
 
-![Image-001](images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.001.png)
+![Image-001](../images/day13/clone.a.repo.in.vs.code.using.the.terminal.image.001.png)
 
 Next, clone the 100DaysofIac Repo using HTTPS, by running the following command in the terminal.
 
