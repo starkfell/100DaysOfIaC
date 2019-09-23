@@ -21,7 +21,7 @@ In this installment, we'll be going over the following.
 
 ## What is Git
 
-Git is a versioning control system that allows you to track changes to anything you are working on (Code, Documentation, files, images, etc...) under a single primary directory called a repository. However, a much more colorful description is given by its creator Linux Torvalds (also the creator of Linux) at the top of the **[README](github.com/git/git/blob/e83c5163316f89bfbde7d9ab23ca2e25604af290/README)** file in the initial revision of Git.
+Git is a versioning control system that allows you to track changes to anything you are working on (Code, Documentation, files, images, etc...) under a single primary directory called a repository. However, a much more colorful description is given by its creator Linus Torvalds (also the creator of Linux) at the top of the **[README](github.com/git/git/blob/e83c5163316f89bfbde7d9ab23ca2e25604af290/README)** file in the initial revision of Git.
 
 ```markdown
      GIT - the stupid content tracker
