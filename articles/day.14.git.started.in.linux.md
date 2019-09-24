@@ -1,4 +1,4 @@
-# Day 15 - GIT Started in Linux
+# Day 14 - GIT Started in Linux
 
 Since we created an article of how to **[GIT Started in VS Code in Windows](day.13.git.started.in.vs.code.windows.edition.md)**, we decided to include an article of how to clone private and public repositories on a Linux host from a bash prompt. Additionally, we will be generated an SSH Key Pair and adding the public key to a GitHub and Azure DevOps account for authentication.
 
@@ -99,7 +99,7 @@ The key's randomart image is:
 cat ~/.ssh/my-github-ssh-key.pub
 ```
 
-You should see a similar result:
+You should get back something similar to what is shown below. Copy and save it for use in the next couple of sections.
 
 ```console
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDWqqwvc91POLWq1qcNhf+Cg5rvEGTRwqtqkoEF8bquwFZAjkF74kVoauXePPCr85rlcTDZlV8Z7scJ+WWjT4g18TgrdpZNG3J9Da69L14qHHT0SKjnajVw1GsBRo/DzuCtj6j0RRg6yPedoYgYhLBUs8Q3gwOZO9EKY6Gal4g3+vXm7dB3MHyaWd+D/6/7bi94qwQZ9PXhxQRLu6DgOZm1iD9julwsMEq57xeB86S3x3iddOBif6jqbFQruxOuY1G8CrT99u/OQyzYj88rSsCOCIId9Byrt7GCkHlar8oaXR1jr40Hl5ByL6dwCTl0evpp9nIkYITOfUmmihLQt3WMzRrS5ohJ3HuWw88m5zRQMH3RJoRQGFhQK1qB16YD7vCUKml09XNdfBEofpINVwy0gXHP8y1HqhO0DHVthxn5J12Ku0FLX4q6mpob/u4dm5cpv2D8BTW84YDxKHzESzD0lf+LTjHidbkdv9EzaeQbXU/OgzvJ1Hpb4ccVPGd0iaL+XPxMA1y9gQevQQ9YQ81H3oz0hysZwhid1vHrQl68ChwlDmFN7y5f71UpDRmutMd0grb07oBxQPe2gtJKYsykyjVCeosPoCL6lAB/DVPrDmOZ5Rem+tsy8hR+Ptn7kqqpP4LYNjodfL2SC4zWx0w7oV4pvgv+AeEGcneGvyKo8w== my-github-ssh-key
@@ -111,19 +111,19 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDWqqwvc91POLWq1qcNhf+Cg5rvEGTRwqtqkoEF8bqu
 
 Open up a web browser and go to your GitHub [Personal Settings](https://github.com/settings/keys) and in **SSH and GPG Keys** click on the **New SSH key** button.
 
-![001](../images/day15/git.started.in.linux.001.png)
+![001](../images/day14/git.started.in.linux.001.png)
 
 Next, type in the Title of the SSH Key and paste in the contents of the SSH Public Key from earlier, then click **Add SSH key**.
 
-![002](../images/day15/git.started.in.linux.002.png)
+![002](../images/day14/git.started.in.linux.002.png)
 
 Next, type in your GitHub Account password if you are prompted.
 
-![003](../images/day15/git.started.in.linux.003.png)
+![003](../images/day14/git.started.in.linux.003.png)
 
 Once the key has been added you should see SSH Public Key listed.
 
-![004](../images/day15/git.started.in.linux.004.png)
+![004](../images/day14/git.started.in.linux.004.png)
 
 <br />
 
@@ -180,23 +180,23 @@ Resolving deltas: 100% (7/7), done.
 
 Open up a web browser and go to your Azure DevOps Project. In the top right hand corner, click on your Profile and then click on **Security** as shown below.
 
-![005](../images/day15/git.started.in.linux.005.png)
+![005](../images/day14/git.started.in.linux.005.png)
 
 Next, click on **SSH public keys** and then click on the **+ New Key** button as shown below.
 
-![006](../images/day15/git.started.in.linux.006.png)
+![006](../images/day14/git.started.in.linux.006.png)
 
 Next, type in the Name of the SSH Key and paste in the contents of the SSH Public Key, then click **Add**.
 
-![007](../images/day15/git.started.in.linux.007.png)
+![007](../images/day14/git.started.in.linux.007.png)
 
 You should now see the SSH Public Key in an *active* state.
 
-![008](../images/day15/git.started.in.linux.008.png)
+![008](../images/day14/git.started.in.linux.008.png)
 
 Next, browse back to the repository you want to clone in your Project and locate the SSH URL to use.
 
-![009](../images/day15/git.started.in.linux.009.png)
+![009](../images/day14/git.started.in.linux.009.png)
 
 Next, use the syntax below to clone a private repository in GitHub using SSH.
 
