@@ -54,13 +54,13 @@ Resolving deltas: 100% (215/215), done.
 
 *You need access to a GitHub Account and an existing Private repository in GitHub to complete the next steps. Setting up a new GitHub account and creating your own private repo takes only a few minutes, you can start **[here](https://github.com/join).***
 
-In this section we will use an SSH Key Pair to authenticate to GitHub and clone a private repository locally.
+In this section we will generate an SSH Key Pair, add the public key to GitHub and use it to clone a private repository locally.
 
 <br />
 
 ### Generate SSH Keys
 
-Run the following command to create an SSH Key Pair.
+From a bash prompt, run the following command to create an SSH Key Pair.
 
 ```bash
 ssh-keygen \
@@ -93,7 +93,7 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-cat out the SSH Public Key
+**cat** out the SSH Public Key.
 
 ```bash
 cat ~/.ssh/my-github-ssh-key.pub
@@ -113,11 +113,11 @@ Open up a web browser and go to your GitHub [Personal Settings](https://github.c
 
 ![001](../images/day15/git.started.in.linux.001.png)
 
-Next, type in the Title of the SSH Key and paste in the contents of the SSH Public Key as shown below, then click **Add SSH key**.
+Next, type in the Title of the SSH Key and paste in the contents of the SSH Public Key from earlier, then click **Add SSH key**.
 
 ![002](../images/day15/git.started.in.linux.002.png)
 
-Next, You may be prompted for your GitHub Account password after pressing add.
+Next, type in your GitHub Account password if you are prompted.
 
 ![003](../images/day15/git.started.in.linux.003.png)
 
@@ -129,13 +129,13 @@ Once the key has been added you should see SSH Public Key listed.
 
 ### Clone the Repo using the SSH Key
 
-Run the following command to add the SSH Private Key to your **ssh-agent** so that Git can use it to authenticate to GitHub.
+From a bash prompt, run the following command to add the SSH Private Key to your **ssh-agent** so Git can use it to authenticate to GitHub.
 
 ```bash
 eval $(ssh-agent -s) ; ssh-add ~/.ssh/my-github-ssh-key
 ```
 
-result
+You should see the **ssh-agent** running as a process with the SSH Private Key added.
 
 ```console
 Agent pid 2777
@@ -176,9 +176,9 @@ Resolving deltas: 100% (7/7), done.
 
 *You need to have access to an existing Microsoft account and a repository already setup before you can complete the steps below. You can sign-up for an account **[here](https://azure.microsoft.com/en-us/services/devops/)**.*
 
-In this section we will be using the SSH Key Pair that was generated earlier.
+> NOTE: We will be using the SSH Key Pair that was generated earlier for GitHub.
 
-Open up a web browser and go to your Azure DevOps Project and in the top right hand corner, click on your Profile and then click on **Security** as shown below.
+Open up a web browser and go to your Azure DevOps Project. In the top right hand corner, click on your Profile and then click on **Security** as shown below.
 
 ![005](../images/day15/git.started.in.linux.005.png)
 
@@ -206,7 +206,7 @@ git clone git@ssh.dev.azure.com:v3/rei-sandbox/aci-sandbox/aci-sandbox
 
 > **NOTE:** The Syntax for the same private repository for HTTPS authentication would be *https://rei-sandbox@dev.azure.com/rei-sandbox/aci-sandbox/_git/aci-sandbox*
 
-Next, you may be prompted about the authenticity of host *ssh.dev.azure.com *, type in **yes**.
+Next, you may be prompted about the authenticity of host *ssh.dev.azure.com*, type in **yes**.
 
 ```console
 The authenticity of host 'ssh.dev.azure.com (40.81.159.67)' can't be established.
@@ -224,3 +224,5 @@ Receiving objects: 100% (36/36), 9.29 KiB | 9.29 MiB/s, done.
 ```
 
 ## Conclusion
+
+In this article we demonstrated how to clone a Public Repository in GitHub and how to clone private repositories in GitHub and Azure DevOps using SSH Key for authentication.
