@@ -1,6 +1,8 @@
 # Day 15 - GIT Started in Linux
 
-Since we created an article of how to use Git in VS Code for Windows, we decided to include an article of how to clone private and public repositories on a Linux host using only the command line.
+Since we created an article of how to use Git in VS Code for Windows, we decided to include an article of how to clone private and public repositories on a Linux host from a bash prompt. Additionally, we will be generated an SSH Key Pair and adding the public key to a GitHub and Azure DevOps account for authentication.
+
+*WARNING!: The SSH Key Pair that is used in this article is used for both the GitHub Account and the Azure DevOps Account and doesn't require a password. If you were doing this in a Production environment, it would be advisable to password protect the Private Key and use separate SSH Key Pairs for authentication in GitHub and Azure DevOps.*
 
 > **NOTE:** This article was tested and written for a Linux Host running Ubuntu 18.04.
 
@@ -8,7 +10,7 @@ Since we created an article of how to use Git in VS Code for Windows, we decided
 
 In this installment, we'll be going over the following.
 
-[Installing Git on Linux](#installing-git-on-linux)<br />
+[Installing Git on Ubuntu](#installing-git-on-ubuntu)<br />
 [Clone a Public GitHub Repo ](#clone-a-public-github-repo)<br />
 [Clone a Private GitHub Repo using SSH Keys](#clone-a-private-github-repo-using-ssh-keys)<br />
 [Clone a Private Azure DevOps Repo using SSH Keys](#clone-a-private-azure-devops-repo)<br />
@@ -16,9 +18,9 @@ In this installment, we'll be going over the following.
 
 <br />
 
-## Installing Git on Linux
+## Installing Git on Ubuntu
 
-Run the following command to install Git in Ubuntu.
+From a bash prompt, run the following command to install Git.
 
 ```bash
 sudo apt-get install git -y
@@ -28,7 +30,7 @@ sudo apt-get install git -y
 
 ## Clone a Public GitHub Repo
 
-Run the following command to clone the **100DaysofIaCRepo** from GitHub.
+Next, run the following command to clone the **100DaysofIaCRepo** from GitHub.
 
 ```bash
 git clone https://github.com/starkfell/100DaysOfIaC.git
