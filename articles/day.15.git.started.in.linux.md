@@ -1,6 +1,6 @@
 # Day 15 - GIT Started in Linux
 
-Since we created an article of how to **[GIT Started in VS Code in Windows](articles/day.13.git.started.in.vs.code.windows.edition.md)**, we decided to include an article of how to clone private and public repositories on a Linux host from a bash prompt. Additionally, we will be generated an SSH Key Pair and adding the public key to a GitHub and Azure DevOps account for authentication.
+Since we created an article of how to **[GIT Started in VS Code in Windows](day.13.git.started.in.vs.code.windows.edition.md)**, we decided to include an article of how to clone private and public repositories on a Linux host from a bash prompt. Additionally, we will be generated an SSH Key Pair and adding the public key to a GitHub and Azure DevOps account for authentication.
 
 *WARNING!: The SSH Key Pair that is used in this article is used for both the GitHub Account and the Azure DevOps Account and doesn't require a password. If you were doing this in a Production environment, it would be advisable to password protect the Private Key and use separate SSH Key Pairs for authentication in GitHub and Azure DevOps.*
 
