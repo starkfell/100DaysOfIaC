@@ -1,0 +1,61 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "APIManagementSku": {
+        "type": "string",
+        "defaultValue": "Developer"
+      },
+      "APIManagementSkuCapacity": {
+        "type": "string",
+        "defaultValue": "1"
+      },
+      "APIManagementInstanceName": {
+        "type": "string",
+        "defaultValue": "ContosoAPIMgmtTest"
+      },
+      "PublisherName": {
+        "type": "string",
+        "defaultValue": "Pete Zerger"
+      },
+      "PublisherEmail": {
+        "type": "string",
+        "defaultValue": "pete@lumagatena.com"
+      }
+    },
+    "variables": {},
+    "resources": [
+      {
+        "type": "Microsoft.ApiManagement/service",
+        "name": "[parameters('APIManagementInstanceName')]",
+        "apiVersion": "2017-03-01",
+        "properties": {
+          "publisherEmail": "[parameters('PublisherEmail')]",
+          "publisherName": "[parameters('PublisherName')]",
+          "notificationSenderEmail": "apimgmt-noreply@mail.windowsazure.com",
+          "hostnameConfigurations": [],
+          "additionalLocations": null,
+          "virtualNetworkConfiguration": null,
+          "customProperties": {
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Tls10": "False",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Tls11": "False",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Protocols.Ssl30": "False",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Ciphers.TripleDes168": "False",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Tls10": "False",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Tls11": "False",
+            "Microsoft.WindowsAzure.ApiManagement.Gateway.Security.Backend.Protocols.Ssl30": "False"
+          },
+          "virtualNetworkType": "None"
+        },
+        "resources": [],
+        "sku": {
+          "name": "[parameters('APIManagementSku')]",
+          "capacity": "[parameters('APIManagementSkuCapacity')]"
+        },
+        "location": "[resourceGroup().location]",
+        "tags": {},
+        "scale": null
+      }
+    ],
+    "outputs": {}
+  }
