@@ -18,7 +18,7 @@ In this article:
 
 ## What are we deploying exactly?
 
-Now, we are going to connect our CI to CD with a **release pipeline** in Azure DevOps (AZDO). We are intentionally working with one of the more complex services to fully integrate into CI/CD, Azure API Management, because it offers *many* opportunities to demonstrate advanced concepts!
+Now, we are going to connect our CI to CD with a **release pipeline** in Azure Pipelines. We are intentionally working with one of the more complex services to fully integrate into CI/CD, Azure API Management, because it offers *many* opportunities to demonstrate advanced concepts!
 
 > **NOTE:** Even if you don't use Azure API Management today, you owe it to yourself to follow this example for the IaC and DevOps learning opportunities it brings.
 
@@ -47,11 +47,11 @@ As you see in Figure 2, the stage in the release pipeline that deploys to TEST h
 
 **Figure 2**. Release Pipeline (concept)
 
-And here is that release pipeline in Azure DevOps.
+And here is that release pipeline in Azure Pipelines.
 
 ![Rel Pipe in AZDO](../images/day15/Fig3.rel.pipe.azdo.PNG)
 
-**Figure 3**. Release Pipeline for APIM Instance in Azure DevOps
+**Figure 3**. Release Pipeline for APIM Instance in Azure Pipelines
 
 The pre-deployment condition (quality gate) that triggers deployment to TEST is shown in Figure 4.
 
@@ -64,6 +64,8 @@ The pre-deployment condition (quality gate) that triggers deployment to TEST is 
 The stage in the release pipeline that deploys to PROD has a **quality gate** (successful completion of previous stage) AND an **approval gate** (manual approval) prior to deployment. Only after a successful deployment to TEST and an approver clicking the **Approve** button (shown in Figure 5), does deployment to PROD proceed.
 
 The bar for clicking approve should be validation in the TEST environment, whether manual or automatic. If you have APIs hosted in the instance, user acceptance testing (UAT) may be involved.
+
+Find step-by-step instructions for configuring approvals and gates in Azure Pipelines [HERE](https://docs.microsoft.com/en-us/azure/devops/pipelines/release/deploy-using-approvals?view=azure-devops)
 
 ![Rel Pipe in AZDO](../images/day15/Fig5.app.gate.png)
 
