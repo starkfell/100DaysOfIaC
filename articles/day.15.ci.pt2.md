@@ -43,7 +43,7 @@ Let's break these down in more detail.
 
 As you see in Figure 2, the stage in the release pipeline that deploys to TEST has a **quality gate**, which is successful build of our deployment artifact (ARM template). Your TEST APIM instance should be deployed to it's own resource group. This will be true for the TEST and PROD instances of just about anything you deploy to Azure, as these environments have different lifecycles and lifecycle management requirements.
 
-![Rel Pipe in AZDO](../images/day15/Fig2.rel.pipe.PNG)
+![Rel Pipe in AZDO](../images/day15/Fig2.rel.pipe.png)
 
 **Figure 2**. Release Pipeline (concept)
 
