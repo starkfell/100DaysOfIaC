@@ -74,7 +74,7 @@ I tend to follow a strategy that aligns with the test-driven development methodo
 
 ## Branching Strategy
 
-In [Day 10](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.10.cicd.iac.bldg.blocks.md), we talked about an environment-based branching strategy that incorporated **Master** and **Develop**. I suggest you start there and expand from there if needed.
+In [Day 10](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.10.cicd.iac.bldg.blocks.md), we talked about an environment-based branching strategy that incorporated **Master** and **Develop**. I suggest you start there and expand if needed.
 
 ## Next Steps?
 
