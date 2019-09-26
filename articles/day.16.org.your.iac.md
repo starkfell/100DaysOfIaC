@@ -1,4 +1,4 @@
-# Day 16 - Infrastructure-as-Code Strategies and Best Practices 
+# Day 16 - Infrastructure-as-Code Strategies and Best Practices
 
 In Infrastructure-as-Code (IaC), we use templates and scripts and other artifacts to describe a desired environment in a manner that is declarative and idempotent and hopefully, fully automated. Best practices are important for managing IaC efficiently, and seldom do we see all the small details addressed. Today is the day we try to cover a few of these small details.
 
@@ -26,7 +26,7 @@ For example:
 
 **I can create a tag:**
 
-`git tag -a v1.4 -m "my version 1.4"`
+`git tag -a v1.0 -m "my APIM instance 1.0`
 
 The -m is a message stored with the tag. When you use annotated tags (specified by the -a) and forget to add a message, Git will prompt you.
 
