@@ -1,4 +1,5 @@
-# Day 16 - How should I organize my Infrastructure-as-Code? 
+# Day 16 - Infrastructure-as-Code Strategies and Best Practices 
+
 In Infrastructure-as-Code (IaC), we use templates and scripts and other artifacts to describe a desired environment in a manner that is declarative and idempotent and hopefully, fully automated. Best practices are important for managing IaC efficiently, and seldom do we see all the small details addressed. Today is the day we try to cover a few of these small details.
 
 [Codify your IaC](#codify-your-iac)<br/>
