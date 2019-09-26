@@ -2,7 +2,7 @@
 
 In [Day 12](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.12.contin.integration.md), we finished our CI pipeline with an artifact (an ARM template) ready to deploy.
 
-You'll find the ARM template used in this installment [HERE](../resources/apim_instance/instance.json). Copy this into your own Git repo for hosting Infrastructure-as-Code related assets. 
+You'll find the ARM template used in this installment [HERE](../resources/apim_instance/). Copy this into your own Git repo for hosting Infrastructure-as-Code related assets. 
 
 > **NOTE:** In case you are wondering "how many Git repos will I have for IaC?", tune in for Day 16, when we will answer that question!
 
