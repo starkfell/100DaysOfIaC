@@ -14,7 +14,7 @@ In today's article we are going to quickly go over and install several ARM Templ
 
 ## Azure Resource Manager Snippets
 
-[Azure Resource Manager Snippets](marketplace.visualstudio.com/items?itemName=samcogan.arm-snippets) allows you to add code snippets for creating over 20 different types of Resources in an ARM Template. Once you start typing **arm** in a JSON file, the resource snippets to choose from will appear and provide you with a basic configuration that you can customize.
+[Azure Resource Manager Snippets](https://marketplace.visualstudio.com/items?itemName=samcogan.arm-snippets) allows you to add code snippets for creating over 20 different types of Resources in an ARM Template. Once you start typing **arm** in a JSON file, the resource snippets to choose from will appear and provide you with a basic configuration that you can customize.
 
 <br />
 
@@ -32,7 +32,7 @@ The primary value of the [Azure ARM Template Helper](https://marketplace.visuals
 
 ## ARM Template Viewer
 
-The name of this extension says it all. The [ARM Template Viewer](https://marketplace.visualstudio.com/items?itemName=ed-elliott.azure-arm-template-helper) provides you with a graphical view of your ARM Templates utilizing Azure icons so you can get a clear view of how your resources fit together in a deployment.
+The name of this extension says it all. The [ARM Template Viewer](https://marketplace.visualstudio.com/items?itemName=bencoleman.armview) provides you with a graphical view of your ARM Templates utilizing Azure icons so you can get a clear view of how your resources fit together in a deployment.
 
 <br />
 
