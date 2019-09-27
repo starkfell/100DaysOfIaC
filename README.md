@@ -2,10 +2,11 @@
 
 | Subject |   Day   | Article Link  |
 |---------|---------|---------------|
-| IaC Best Practices | Day 16| [Day 16 - Infrastructure-as-Code Strategies and Best Practices](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.16.org.your.iac.md) |
-| CI/CD Deployment Concepts | Day 15| [Day 15 - Connecting Continuous Integration and Continuous Deployment](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.15.ci.pt2.md) |
-| GIT on Linux | Day 14| [Day 14 - GIT Started in Linux](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.14.git.started.in.linux.md) |
-| GIT on Windows | Day 13| [Day 13 - GIT Started in VS Code (Windows Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.13.git.started.in.vs.code.windows.edition.md) |
+| VS Code ARM Extensions | Day 17 | [Day 17 - Day 17 - ARMing yourself with extensions in VS Code](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.17.arm.template.extensions.vs.code.md) |
+| IaC Best Practices | Day 16 | [Day 16 - Infrastructure-as-Code Strategies and Best Practices](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.16.org.your.iac.md) |
+| CI/CD Deployment Concepts | Day 15 | [Day 15 - Connecting Continuous Integration and Continuous Deployment](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.15.ci.pt2.md) |
+| GIT on Linux | Day 14 | [Day 14 - GIT Started in Linux](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.14.git.started.in.linux.md) |
+| GIT on Windows | Day 13 | [Day 13 - GIT Started in VS Code (Windows Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.13.git.started.in.vs.code.windows.edition.md) |
 | CI in Azure Pipelines | Day 12| [Day 12 - Intro to Continuous Integration in Azure Pipelines](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.12.contin.integration.md) |
 | Cert Based Service Principal (Windows) | Day 11 | [Day 11 - Creating an Azure Service Principal that uses Certificate Authentication (Windows Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.11.creating.a.service.principal.cert.auth.windows.md) |
 | Building block of IaC in Azure DevOps | Day 10 | [Day 10 - Building Blocks of CICD Strategy for IaC in Azure DevOps](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.10.cicd.iac.bldg.blocks.md) |
