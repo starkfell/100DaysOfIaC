@@ -2,7 +2,7 @@
 
 | Subject |   Day   | Article Link  |
 |---------|---------|---------------|
-| VS Code ARM Extensions | Day 17 | [Day 17 - Day 17 - ARMing yourself with extensions in VS Code](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.17.arm.template.extensions.vs.code.md) |
+| VS Code ARM Extensions | Day 17 | [Day 17 - ARMing yourself with extensions in VS Code](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.17.arm.template.extensions.vs.code.md) |
 | IaC Best Practices | Day 16 | [Day 16 - Infrastructure-as-Code Strategies and Best Practices](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.16.org.your.iac.md) |
 | CI/CD Deployment Concepts | Day 15 | [Day 15 - Connecting Continuous Integration and Continuous Deployment](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.15.ci.pt2.md) |
 | GIT on Linux | Day 14 | [Day 14 - GIT Started in Linux](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.14.git.started.in.linux.md) |
