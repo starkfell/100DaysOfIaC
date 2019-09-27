@@ -1,4 +1,4 @@
-# Day 15: Connecting Continuous Integration and Continuous Deployment
+# Day 15 - Connecting Continuous Integration and Continuous Deployment
 
 In [Day 12](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.12.contin.integration.md), we finished our CI pipeline with an artifact (an ARM template) ready to deploy.
 

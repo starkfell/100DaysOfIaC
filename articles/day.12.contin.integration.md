@@ -1,4 +1,4 @@
-# Day 12: Intro to Continuous Integration in Azure Pipelines
+# Day 12 - Intro to Continuous Integration in Azure Pipelines
 
 In [Day 10](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.10.cicd.iac.bldg.blocks.md#automation-controls), we discussed some CI/CD concepts, and today we're getting into the details, digging deeper into continuous integration (CI).  We'll break down the information introduced in today's installment in the days to come. In time, all questions will be answered.
 
