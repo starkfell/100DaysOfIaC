@@ -42,7 +42,6 @@ Because we like to be efficient (or lazy) we have provided you with a quick way 
 
 > **NOTE:** After installing these extensions, you will need to close and re-open VS Code for the extensions to work properly.
 
-
 <br />
 
 ### VS Code (Windows)
