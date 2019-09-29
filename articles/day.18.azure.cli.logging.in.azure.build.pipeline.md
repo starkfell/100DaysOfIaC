@@ -19,13 +19,17 @@ else
 fi
 ```
 
+When you add it as an inline script into a Build Pipeline in Azure DevOps, it should look similar to what is shown below.
+
+![001](../images/day18/day.18.azure.cli.logging.in.azure.build.pipeline.001.png)
+
 This script is storing the results from the *az group show* command into a variable called **SHOW_GROUP**. This command is also redirecting all STDERR to STDOUT (that's the *2>&1* after the command) to ensure that we can verify the results of the command by looking at the contents of the **SHOW_GROUP** variable. Whether the command is successful or fails, we'll know because the results will be in the **SHOW_GROUP** variable.
 
 After the command is executed, we are checking to see if the *SHOW_GROUP=$(az group show 2>&1)* returned either a **0** or something else. If anything else other than **0** is returned. The *else* section with the *Azure CLI command failed* will be echo'd out along with the contents of the **SHOW_GROUP** variable which will contain the error message.
 
 If you run this script above in an Azure Build Pipeline, you should get back the following below.
 
-![]()
+![002](../images/day18/day.18.azure.cli.logging.in.azure.build.pipeline.002.png)
 
 You'll notice that the Build Pipeline executed without any issues and that the error from the script was returned properly. You may be asking, why didn't the pipeline fail? Since we redirected all STDERR to STDOUT in our command, the build Pipeline was never made aware of the error because we encapsulated the results in the **SHOW_GROUP** variable.
 
