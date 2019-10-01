@@ -63,9 +63,13 @@ Let's add the script as an inline script into a Build Pipeline in Azure DevOps, 
 
 ![001](../images/day19/day.19.azure.cli.logging.in.azure.build.pipelines.variable.evaluation.001.png)
 
+<br />
+
 If you run this script above in an Azure Build Pipeline, you should get back the following result.
 
 ![002](../images/day19/day.19.azure.cli.logging.in.azure.build.pipelines.variable.evaluation.002.png)
+
+<br />
 
 This works very well and returns everything back as intended. However, there are times where you may want to customize your output for errors so that they easier to read for troubleshooting purposes.
 
@@ -87,9 +91,11 @@ If you modify the inline script in your Azure Build Pipeline to match the modifi
 
 ![003](../images/day19/day.19.azure.cli.logging.in.azure.build.pipelines.variable.evaluation.003.png)
 
-As you can see, the error message is very clear and much easier to read than the previious iteration.
+<br />
 
-This is something you can keep in mind when working with variable evaluation in your scripts in an Azure Build Pipeline, you have the ability to not only control how errors are processed, but you also have the ability to control how all output is displayed in Job Runs. This not allows you better readability, but allows you to quickly determine where the error occured and where you need to troubleshoot the issue, either in the task itself or something that may be missing or a syntax issue in your script.
+As you can see, the error message is very clear and much easier to read than the previous iteration.
+
+This is something you can keep in mind when working with variable evaluation in your scripts in an Azure Build Pipeline, you have the ability to not only control how errors are processed, but you also have the ability to control how all output is displayed in Job Runs. This not allows you better readability, but allows you to quickly determine where the error occurred and where you need to troubleshoot the issue, either in the task itself or something that may be missing or a syntax issue in your script.
 
 ## Conclusion
 
