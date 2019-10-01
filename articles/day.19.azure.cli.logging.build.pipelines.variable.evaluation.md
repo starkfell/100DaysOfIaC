@@ -71,9 +71,9 @@ If you run this script above in an Azure Build Pipeline, you should get back the
 
 <br />
 
-This works very well and returns everything back as intended. However, there are times where you may want to customize your output for errors so that they easier to read for troubleshooting purposes.
+This works very well and returns everything back as intended. However, there are times where you may want to customize your output so that everything is uniform in the logs and easier to read.
 
-For instance, we could modify the script to only display the first line of the error message held in the **SHOW_GROUP** variable.
+Let's modify the script to only display the first line of the error message held in the **SHOW_GROUP** variable so it's easier to read in the agent job logs.
 
 ```bash
 #!/bin/bash
