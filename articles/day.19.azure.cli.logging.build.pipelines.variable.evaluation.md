@@ -11,7 +11,7 @@ SHOW_GROUP=$(az group show 2>&1)
 # Variation 2 - Check the contents of the Variable.
 if [[ $SHOW_GROUP =~ "error" ]]; then
     echo "[---fail------] There was problem running the command."
-    echo "[---fail------] echo $SHOW_GROUP"
+    echo "[---fail------] $SHOW_GROUP"
     exit 2
 fi
 ```
@@ -39,12 +39,12 @@ The reason we are getting an error is because we didn't provide the following ar
 --resource-group
 ```
 
-In the second part of the script, we are evaluating the contents of the **SHOW_GROUP** variable to see if the word **error** is found in it. 
+In the second part of the script, we are evaluating the contents of the **SHOW_GROUP** variable to see if the word **error** is found in it.
 
 ```bash
 if [[ $SHOW_GROUP =~ "error" ]]; then
     echo "[---fail------] There was problem running the command."
-    echo "[---fail------] echo $SHOW_GROUP"
+    echo "[---fail------] $SHOW_GROUP"
     exit 2
 fi
 ```
@@ -52,7 +52,7 @@ fi
 If **error** is found, then the following error output is returned.
 
 ```console
-[---fail------] echo ERROR: az group show: error: the following arguments are required: --name/-n/--resource-group/-g
+[---fail------] ERROR: az group show: error: the following arguments are required: --name/-n/--resource-group/-g
 usage: az group show [-h] [--verbose] [--debug]
                      [--output {json,jsonc,table,tsv,yaml,none}]
                      [--query JMESPATH] [--subscription _SUBSCRIPTION] --name
