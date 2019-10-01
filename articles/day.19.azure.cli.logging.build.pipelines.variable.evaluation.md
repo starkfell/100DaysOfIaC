@@ -1,8 +1,8 @@
 # Day 19 - Azure CLI Logging in Azure Build Pipelines, variable evaluation (Linux Edition)
 
-In today's article we are going to go over how you can evaluate variables in bash script to manipulate the behavior of your Azure Build Pipelines in Azure CLI tasks.
+In today's article we are going to go over evaluating variables in bash script(s) to manipulate the output of your Azure Build Pipelines in Azure CLI tasks.
 
-We are going to be focusing on the same script that was used in [Day 18]() with some slight modifications.
+We are going to be focusing on the same script that was used in **[Day 18](../articles/day.18.azure.cli.logging.build.pipelines.redirects.exit.codes.md)** with some slight modifications.
 
 ```bash
 #!/bin/bash
@@ -93,10 +93,12 @@ If you modify the inline script in your Azure Build Pipeline to match the modifi
 
 <br />
 
-As you can see, the error message is very clear and much easier to read than the previous iteration.
+The error message is now on a single line and is easier to find in the rest of the output from the agent job.
 
-This is something you can keep in mind when working with variable evaluation in your scripts in an Azure Build Pipeline, you have the ability to not only control how errors are processed, but you also have the ability to control how all output is displayed in Job Runs. This not allows you better readability, but allows you to quickly determine where the error occurred and where you need to troubleshoot the issue, either in the task itself or something that may be missing or a syntax issue in your script.
+When working with variable evaluation in your scripts in an Azure Build Pipeline, you have the ability to control how errors are processed as well as how output from your scripts is displayed in agent jobs. Controlling the output provides you with better readability which can help you to determine where errors are occurring and where to troubleshoot.
+
+<br />
 
 ## Conclusion
 
-In today's article we covered how redirecting STDERR to STDOUT and using exit codes can affect the behavior of your Azure Build Pipelines when using bash scripts in the Azure CLI tasks.
+In today's article we covered evaluating variables in bash script(s) to manipulate the output of your Azure Build Pipelines in Azure CLI tasks. More articles will be coming soon on how to do the same with PowerShell in Azure Build Pipelines.
