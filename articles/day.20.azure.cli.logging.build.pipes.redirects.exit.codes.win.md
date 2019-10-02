@@ -89,4 +89,4 @@ If you run this script in the Azure Pipeline, you should get back the following 
 
 ## Conclusion
 
-Today we are covering how redirecting STDERR to STDOUT and using exit codes can affect the behavior of your Azure Build Pipelines tasks when using PowerShell scripts. Stay tuned for more.
+As you can see, redirecting STDERR to STDOUT and using exit codes can significantly affect the behavior of your Azure Build Pipelines tasks when using PowerShell scripts. Stay tuned for more.
