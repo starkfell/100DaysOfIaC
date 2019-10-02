@@ -2,6 +2,7 @@
 
 | Subject |   Day   | Article Link  |
 |---------|---------|---------------|
+| Azure CLI Logging in Build Pipes | Day 20 | [Day 20 - Azure CLI Logging in Azure Build Pipelines, Redirections and Exit Codes (Windows Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.20.azure.cli.logging.build.pipes.redirects.exit.codes.win.md) |
 | Azure CLI Logging in Build Pipes | Day 19 | [Day 19 - Azure CLI Logging in Azure Build Pipelines, variable evaluation (Linux Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.19.azure.cli.logging.build.pipelines.variable.evaluation.md) |
 | Azure CLI Logging in Build Pipes | Day 18 | [Day 18 - Azure CLI Logging in Azure Build Pipelines, Redirections and Exit Codes (Linux Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.18.azure.cli.logging.build.pipelines.redirects.exit.codes.md) |
 | VS Code ARM Extensions | Day 17 | [Day 17 - ARMing yourself with extensions in VS Code](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.17.arm.template.extensions.vs.code.md) |
