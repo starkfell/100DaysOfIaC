@@ -8,7 +8,7 @@ The case in point for this example are the shared components of Azure API Manage
 
 **Figure 1**. APIM shared infrastructure
 
-> **NOTE**: The contents of API Management Instance and APIM Shared repo are available in the **resources** folder of 100 Days repository.
+> **NOTE**: The contents of API Management Instance and APIM Shared repo are available in the [**resources**](https://github.com/starkfell/100DaysOfIaC/tree/master/resources) folder of 100 Days repository.
 
 And over the next three installments, we will move from BAD to BETTER to BEST, in terms of usability and security. In this installment, we will cover:
 
