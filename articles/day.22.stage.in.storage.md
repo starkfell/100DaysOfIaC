@@ -19,7 +19,7 @@ And over the next three installments, we will move from BAD to BETTER to BEST, i
 [Why is this better?](#why-is-this-better) <br/>
 [Next Steps](#next-steps) <br/>
 
-Those shared components that fall between the IaC and the app (API) itself may not be managed by my operations engineer, and not likely by the developer, but someone response for release management.
+Those shared components that fall between the IaC and the app (API) itself may not be managed by an operations engineer, and not likely by the developer, but someone response for release management.
 
 To fully deploy this Azure API Management infrastructure, the deployment order would follow the repo structure in Figure 1:
 
@@ -50,7 +50,7 @@ This is ugly. It's tough to edit, because we cannot use an xml editor. It includ
 
 ## Handling APIM policies (a better approach)
 
-A better way to do this is to store the XML file is as a stand-alone xml file in a location accessible at deploy (release) time, and just point to it when we need it. As you can see in **Figure 3**, we simply reference the APIM policy with a URL pointer.
+A better way to do this is to store the XML file as a stand-alone xml file in a location accessible at deploy (release) time, and just point to it when we need it. As you can see in **Figure 3**, we simply reference the APIM policy with a URL pointer in our ARM template.
 
 ``` JSON
 "parameters": {
@@ -83,7 +83,7 @@ To facilitate this approach, I need blob storage where I can store artifacts. In
 
 ## Designing the Build Pipeline
 
-The build pipeline for my shared elements is shown in Figure 5. Notice the Azure blob storage referenced by the **Azure file copy** task at the end of the build pipeline.
+The build pipeline for my shared elements is shown in **Figure 5**. Notice the Azure blob storage referenced by the **Azure file copy** task at the end of the build pipeline.
 
 > **IMPORTANT**: And also notice there is a SAS key there, which is a secret we must store securely. More on that in the next installment.
 
@@ -106,4 +106,4 @@ In a word, usability. With the XML policy embedded in the ARM template, as you s
 
 ## Next Steps
 
-Now, I am ready for release. In the next two installments, we'll take the next step and make this approach even better. More dynamic, and even more secure.
+Now, I am ready for release. In the next two installments, we'll take the next step and make this approach even better, both more dynamic, and more secure.
