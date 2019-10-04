@@ -1,4 +1,4 @@
-# Azure Storage and Secrets in Infrastructure-as-Code (Part 1)
+# Day 22 - Azure Storage and Secrets in Infrastructure-as-Code (Part 1)
 
 ARM templates are the ideal in Azure; idempotent, declarative, parameterized, and reusable. However, sometimes we have deployment artifacts that cannot easily be contained within an ARM template, and are better left to stand on their own.
 
