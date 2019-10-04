@@ -2,7 +2,7 @@
 
 ARM templates are the ideal in Azure; idempotent, declarative, parameterized, and reusable. However, sometimes we have deployment artifacts that cannot easily be contained within an ARM template, and are better left to stand on their own.
 
-The case in point for this example are the shared components of Azure API Management (APIM), specifically the APIM policies that define products, and the users and groups (the customers) that have access. In [Day 15](#https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.15.ci.pt2.md), we deployed an API Management Instance. Now, we are going to look at the shared components of APIM that straddle the line between infastructure (IaC) and the app (the REST APIs we are publishing), as shown in Figure 1.
+The case in point for this example are the shared components of Azure API Management (APIM), specifically the APIM policies that define products, and the users and groups (the customers) that have access. In [Day 15](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.15.ci.pt2.md), we deployed an API Management Instance. Now, we are going to look at the shared components of APIM that straddle the line between infastructure (IaC) and the app (the REST APIs we are publishing), as shown in Figure 1.
 
 ![APIM IaC Strategy](../images/day22/fig1.apim.iac.strategy.PNG)
 
@@ -93,7 +93,7 @@ The build pipeline for my shared elements is shown in **Figure 5**. Notice the A
 
 The build pipeline completes the following steps:
 
-- Validates the ARM templates, using the method shown in [Day 12](#https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.12.contin.integration.md)
+- Validates the ARM templates, using the method shown in [Day 12](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.12.contin.integration.md)
 - Deletes the resource group, if empty
 - Publishes our deployment template
 - Copies another artifact (APIM XML policy) to Azure blob storage
