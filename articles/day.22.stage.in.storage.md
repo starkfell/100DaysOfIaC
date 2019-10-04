@@ -19,7 +19,7 @@ And over the next three installments, we will move from BAD to BETTER to BEST, i
 [Why is this better?](#why-is-this-better) <br/>
 [Next Steps](#next-steps) <br/>
 
-Those shared components that fall between the IaC and the app (API) itself may not be managed by my Ops engineer, and not likely by the developer, but someone response for release management.
+Those shared components that fall between the IaC and the app (API) itself may not be managed by my operations engineer, and not likely by the developer, but someone response for release management.
 
 To fully deploy this Azure API Management infrastructure, the deployment order would follow the repo structure in Figure 1:
 
@@ -71,7 +71,7 @@ A better way to do this is to store the XML file is as a stand-alone xml file in
 
 **Figure 3**. Referencing XML from an ARM template
 
-That's an XML file I can edit in any XML editor. Ideally, my APIM policies and the ARM template that deploys those policies would look like what you see in my repo, shown in **Figure 4**.
+That's an XML file I can edit in any XML editor. Ideally, my APIM policies and the ARM template that deploys those policies would look like what you see in my repo, shown in **Figure 4**. I have an ARM template, my APIM policy XML file, and a readme to explain it to others on my team.
 
 ![APIM Shared Components](../images/day22/fig4.apim.shared.comps.PNG)
 
