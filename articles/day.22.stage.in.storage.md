@@ -31,8 +31,7 @@ Again, it's that item in the middle that is our focus in today's discussion.
 
 ## Handling APIM policies (embedded XML)
 
-**API Management policies** define users and groups being granted access, and the products (the APIs) they are allowed to access, and are defined in an **XML file**. We can embed xml inside an ARM template, but it looks like this:
-
+**API Management policies** define users and groups being granted access, and the products (the APIs) they are allowed to access, and are defined in an **XML file**. We can embed XML inside an ARM template, but it looks like this:
 
 ``` JSON
 {
@@ -75,6 +74,7 @@ A better way to do this is to store the XML file is as a stand-alone xml file in
 That's an XML file I can edit in any XML editor. Ideally, my APIM policies and the ARM template that deploys those policies would look like what you see in my repo, shown in **Figure 4**.
 
 ![APIM Shared Components](../images/day22/fig4.apim.shared.comps.PNG)
+
 **Figure 4**. APIM policy XML and related ARM template
 
 ## Building the better approach (Azure Blob Storage)
@@ -85,7 +85,7 @@ To facilitate this approach, I need blob storage where I can store artifacts. In
 
 The build pipeline for my shared elements is shown in Figure 5. Notice the Azure blob storage referenced by the **Azure file copy** task at the end of the build pipeline.
 
-**IMPORTANT**: And also notice there is a SAS key there, which is a secret we must store securely. More on that in the next installment.
+> **IMPORTANT**: And also notice there is a SAS key there, which is a secret we must store securely. More on that in the next installment.
 
 ![APIM IaC Strategy](../images/day22/fig5.file.copy.to.blob.PNG)
 
@@ -97,6 +97,8 @@ The build pipeline completes the following steps:
 - Deletes the resource group, if empty
 - Publishes our deployment template
 - Copies another artifact (APIM XML policy) to Azure blob storage
+
+At this point, once user acceptance testing is complete, we are ready to deploy.
 
 ## Why is this better?
 
