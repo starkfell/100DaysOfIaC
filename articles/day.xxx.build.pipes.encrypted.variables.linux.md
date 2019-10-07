@@ -1,6 +1,6 @@
-# Day XXX - Build Pipelines, using Static Encrypted Variables (Linux Edition)
+# Day XXX - Build Pipelines, using Variables (Linux Edition)
 
-In today's article we are going to cover how to use Encrypted Variables in Azure CLI Tasks in an Azure DevOps Build Pipeline.
+In today's article we are going to cover how to use and store an Storage Account Key in an Azure DevOps Build Pipeline. The methods demonstrated in this article can also be used for several other IaaS and PaaS Offerings available in Azure.
 
 > **NOTE:** This article was tested and written for an Azure Build Pipeline using a Microsoft-hosted Agent running Ubuntu 18.04.
 
@@ -91,7 +91,7 @@ ozFzgtEiAID45KqBYHevYaVYGfdZPd/soz+Y7/AZ9wO3ykbhc59ldM9IF/dM+EWJ7WLW4P8+qhsjsgMR
 
 <br />
 
-## Using the Storage Account Key in a Build Pipeline
+## Using the Storage Account Key in a Build Pipeline Variable
 
 Next, copy the Storage Account Key into a a new variable called **primaryStorageAccountKey** in a Build Pipeline.
 
@@ -132,3 +132,11 @@ When the Build finishes, you should see the Storage Account Key displayed in all
 ![005](../images/_daydraft1/day.xxx.build.pipes.encrypted.variables.linux.005.png)
 
 Although the job displays the Storage Account Key in asterisks, the value can still be used in your script where required.
+
+## Using the Storage Account Key as an Environment Variable
+
+<br />
+
+## Conclusion
+
+In today's article we covered how to use and store a Storage Account Key as a variable in an Azure DevOps Build Pipeline. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
