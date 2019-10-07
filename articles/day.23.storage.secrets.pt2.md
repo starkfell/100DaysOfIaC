@@ -30,7 +30,7 @@ This can come in handy for scenarios where we may want to deploy multiple instan
 
 This can be equally useful with PaaS services, but in all cases, you'll want to be aware of any unique requirements in component or services names. Dynamic naming in scenarios where names must be unique within a subscription or even globally unique is a great topic for a future installment.
 
-## Storing secrets
+## Storing secrets as variables
 
 For secrets, like the SAS key, we should go a step further and encrypt that value if we are storing it as a variable. We do this by clicking the padlock, shown in Figure 3. If the padlock is locked, the variable with be encrypted and it's value masked with asterisks.
 
