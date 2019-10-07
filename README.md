@@ -2,6 +2,7 @@
 
 | Subject |   Day   | Article Link  |
 |---------|---------|---------------|
+| Storage and Secrets in IaC | Day 23 | [Day 23 - Azure Storage and Secrets in Infrastructure-as-Code (Part 2)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.22.stage.in.storage.pt2.md) |
 | Storage and Secrets in IaC | Day 22 | [Day 22 - Azure Storage and Secrets in Infrastructure-as-Code (Part 1)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.22.stage.in.storage.md) |
 | Azure CLI Logging in Build Pipes | Day 21 | [Day 21 - Azure CLI Logging in Azure Build Pipelines, variable evaluation (Windows Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.21.azure.cli.logging.build.pipes.variable.evaluation.win.md) |
 | Azure CLI Logging in Build Pipes | Day 20 | [Day 20 - Azure CLI Logging in Azure Build Pipelines, Redirections and Exit Codes (Windows Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.20.azure.cli.logging.build.pipes.redirects.exit.codes.win.md) |
