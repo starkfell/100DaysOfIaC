@@ -1,0 +1,110 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "APIManagementInstanceName": {
+            "type": "string",
+            "defaultValue": "MyAPIManagementInstance"
+        },
+        "productPolicy": {
+            "type": "string",
+            "defaultValue": "https://contosoapimartifacts.blob.core.windows.net/artifacts/policies.xml",
+            "metadata": {
+                "description": "Product policy XML."
+              }
+        }
+    },
+    "variables": {},
+    "resources": [{
+            "type": "Microsoft.ApiManagement/service/users",
+            "name": "[concat(parameters('APIManagementInstanceName'), '/john-smith-contoso-com')]",
+            "apiVersion": "2017-03-01",
+            "scale": null,
+            "properties": {
+                "firstName": "John",
+                "lastName": "Smith",
+                "email": "john.smith@contoso.com",
+                "state": "active",
+                "note": "Developer working for Contoso, one of the consumers of our APIs",
+                "confirmation": "invite"
+            },
+            "dependsOn": []
+        },
+        {
+            "type": "Microsoft.ApiManagement/service/groups",
+            "name": "[concat(parameters('APIManagementInstanceName'), '/contosogroup')]",
+            "apiVersion": "2017-03-01",
+            "scale": null,
+            "properties": {
+                "displayName": "ContosoGroup",
+                "description": "Group containing all developers and services from Contoso corp who will be consuming our APIs",
+                "type": "custom",
+                "externalId": null
+            },
+            "dependsOn": []
+        },
+        {
+            "type": "Microsoft.ApiManagement/service/groups/users",
+            "name": "[concat(parameters('APIManagementInstanceName'), '/contosogroup/john-smith-contoso-com')]",
+            "apiVersion": "2017-03-01",
+            "scale": null,
+            "properties": {},
+            "dependsOn": [
+                "[resourceId('Microsoft.ApiManagement/service/groups', parameters('APIManagementInstanceName'), 'contosogroup')]"
+            ]
+        },
+        {
+            "type": "Microsoft.ApiManagement/service/products",
+            "name": "[concat(parameters('APIManagementInstanceName'), '/contosoproduct')]",
+            "apiVersion": "2017-03-01",
+            "scale": null,
+            "properties": {
+                "displayName": "ContosoProduct",
+                "description": "Product which will apply the high-over policies for developers and services of Contoso.",
+                "subscriptionRequired": true,
+                "approvalRequired": true,
+                "state": "published"
+            },
+            "dependsOn": []
+        },
+        {
+            "type": "Microsoft.ApiManagement/service/products/groups",
+            "name": "[concat(parameters('APIManagementInstanceName'), '/contosoproduct/contosogroup')]",
+            "apiVersion": "2017-03-01",
+            "scale": null,
+            "properties": {},
+            "dependsOn": [
+                "[resourceId('Microsoft.ApiManagement/service/products', parameters('APIManagementInstanceName'), 'contosoproduct')]",
+                "[resourceId('Microsoft.ApiManagement/service/groups', parameters('APIManagementInstanceName'), 'contosogroup')]"
+            ]
+        },
+        {
+            "type": "Microsoft.ApiManagement/service/subscriptions",
+            "name": "[concat(parameters('APIManagementInstanceName'), '/5ae6ed2358c2795ab5aaba68')]",
+            "apiVersion": "2017-03-01",
+            "scale": null,
+            "properties": {
+                "userId": "[resourceId('Microsoft.ApiManagement/service/users', parameters('APIManagementInstanceName'), 'john-smith-contoso-com')]",
+                "productId": "[resourceId('Microsoft.ApiManagement/service/products', parameters('APIManagementInstanceName'), 'contosoproduct')]",
+                "displayName": "ContosoProduct subscription",
+                "state": "active"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.ApiManagement/service/users', parameters('APIManagementInstanceName'), 'john-smith-contoso-com')]",
+                "[resourceId('Microsoft.ApiManagement/service/products', parameters('APIManagementInstanceName'), 'contosoproduct')]"
+            ]
+        },
+        {
+            "apiVersion": "2017-03-01",
+            "type": "Microsoft.ApiManagement/service/products/policies",
+            "name": "[concat(parameters('APIManagementInstanceName'), '/contosoproduct/policy')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ApiManagement/service/products', parameters('APIManagementInstanceName'), 'contosoproduct')]"
+            ],
+            "properties": {
+              "policyContent": "[parameters('productPolicy')]",
+              "contentFormat": "rawxml-link"
+            }
+          }
+    ]
+}
