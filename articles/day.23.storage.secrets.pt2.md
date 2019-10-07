@@ -28,7 +28,7 @@ If we have a value we may want to change at deploy time, I can store this value 
 
 This can come in handy for scenarios where we may want to deploy multiple instances from a pipeline. For example, if I created a release pipeline with an ARM template for a VM or VM scale set, I could store the Azure resource group name as a variable that I could set at deploy time to make this an easy tasks.
 
-This can be equally useful with PaaS services, but in all cases, you'll want to be aware of any unique requirements in component or services names. Dynamic naming is a great topic for a future installment.
+This can be equally useful with PaaS services, but in all cases, you'll want to be aware of any unique requirements in component or services names. Dynamic naming in scenarios where names must be unique within a subscription or even globally unique is a great topic for a future installment.
 
 ## Storing secrets
 
