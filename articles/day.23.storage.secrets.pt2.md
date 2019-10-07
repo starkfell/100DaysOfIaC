@@ -2,7 +2,7 @@
 
 Variables give you a convenient way to get key bits of data into various parts of the pipeline. As the name suggests, the value of a variable may change from run to run or job to job of your pipeline. Almost any place where a pipeline requires a text string or a number, you can use a variable instead of hard coding a value.
 
-In the case of our API Management (APIM) scenario we last discussed in [Day 22](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.22.stage.in.storage.md), we have a couple of values that should not be hard-coded, like the SAS key and name for the blob storage we used to host a deployment artifact (the XML policy file of APIM, in this case).
+In the case of our API Management (APIM) scenario we last discussed in [Day 22](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.22.storage.secrets.md), we have a couple of values that should not be hard-coded, like the SAS key and name for the blob storage we used to host a deployment artifact (the XML policy file of APIM, in this case).
 
 ![APIM scenario](../images/day23/fig1.apim.iac.strategy.png)
 
