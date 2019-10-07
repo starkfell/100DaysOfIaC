@@ -60,4 +60,4 @@ We can go a step further with secure storage of secrets (SAS keys, passwords, ce
 
 ## Next Steps
 
-Variables and encrypted variables are a great way to make our build and release pipelines more dynamic and secure. Tomorrow, we will go a step further with our APIM blob storage scenario, and show how we can create a more dynamic and secure pipeline with some clever work directly in our ARM template. Later in the week, we will discuss storing secrets in Azure Key Vault.
+Variables and encrypted variables are a great way to make our build and release pipelines more dynamic and secure. Tomorrow, we will go a step further with our APIM blob storage scenario, and show how we can create a more dynamic and secure pipeline with some clever work directly in our ARM template. Later in the week, we will discuss using secrets from Azure Key Vault.
