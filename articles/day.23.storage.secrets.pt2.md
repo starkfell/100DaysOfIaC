@@ -4,7 +4,7 @@ Variables give you a convenient way to get key bits of data into various parts o
 
 In the case of our API Management (APIM) scenario we last discussed in [Day 22](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.22.stage.in.storage.md), we have a couple of values that should not be hard-coded, like the SAS key and name for the blob storage we used to host a deployment artifact (the XML policy file of APIM, in this case).
 
-![APIM scenario](../day23/fig1.apim.iac.strategy.png)
+![APIM scenario](../images/day23/fig1.apim.iac.strategy.png)
 
 **Figure 1**. API Management Scenario (from Day 22)
 
@@ -22,7 +22,7 @@ There are pre-defined [release variables](https://docs.microsoft.com/en-us/azure
 
 If we have a value we may want to change at deploy time, I can store this value as a variable, and mark this variable as one that can be overridden at runtime. We do this by checking the "Settable at release time" checkbox, as shown in Figure 2.
 
-![Var settable at release](../day23/fig2.set.var.at.reltime.png)
+![Var settable at release](../images/day23/fig2.set.var.at.reltime.png)
 
 **Figure 2**. Variable as "settable at release time"
 
@@ -34,7 +34,7 @@ This can be equally useful with SaaS services, but in all cases, you'll want to 
 
 For secrets, like the SAS key for  we should go a step further and encrypt that value, if we are storing it as a variable. We do this by clicking the padlock, shown in Figure 3. If the padlock is locked, the variable with be encrypted and it's value masked with asterisks.
 
-![Encrypted variable](../day23/fig3.encrpt.variable.png)
+![Encrypted variable](../images/day23/fig3.encrpt.variable.png)
 
 **Figure 3**. Storing SAS key in an encrypted variable 
 
@@ -42,19 +42,19 @@ For secrets, like the SAS key for  we should go a step further and encrypt that 
 
 Variable groups are useful, in that we can store values that we want to make available across multiple pipelines. Variable groups are defined and managed in the **Library** page under Pipelines, as shown in Figure 4.
 
-![Variable Group](../day23/fig4.variable.group.png)
+![Variable Group](../images/day23/fig4.variable.group.png)
 
 **Figure 4**. Variable groups in Azure Pipelines
 
 In order to leverage a variable group in our pipeline, we need to link that variable group to our pipeline. We'll do this in the properties of our build or release pipeline, as shown in Figure 5.
 
-![Link Variable Group](../day23/fig5.link.var.group.png)
+![Link Variable Group](../images/day23/fig5.link.var.group.png)
 
 **Figure 5**. Linking variable groups to a pipeline
 
 We can go a step further with secure storage of secrets (SAS keys, passwords, certificates, etc.) by using Azure Key Vault (AKV), and then linking that AKV instance to our variables. We'll dig into AKV later this week.
 
-![Link AKV secrets](../day23/fig6.link.akv.secrets.png)
+![Link AKV secrets](../images/day23/fig6.link.akv.secrets.png)
 
 **Figure 6**. Linking AKV to pipeline variables
 
