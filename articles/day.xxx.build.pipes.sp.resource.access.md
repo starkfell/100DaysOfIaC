@@ -1,8 +1,10 @@
 # Day XXX - Build Pipelines, using a Service Principal to access Resources in a Task (Linux Edition)
 
-In today's article we are going to cover how to access resources in an Azure CLI Task in a Build Pipeline. The methods demonstrated in this article can also be used for several other IaaS and PaaS Offerings available in Azure.
+In today's article we are going to cover how to access Azure resources using a Service Principal in an Azure CLI Task in a Build Pipeline. The methods demonstrated in this article can also be used for several other IaaS and PaaS Offerings available in Azure.
 
 > **NOTE:** This article was tested and written for an Azure Build Pipeline using a Microsoft-hosted Agent running Ubuntu 18.04 and a separate Linux Host running Ubuntu 18.04 with Azure CLI installed.
+
+*Please note that the content below is based off of [Day XXX]() and it is highly recommended that you review or complete that material before continuing.*
 
 ## Create a Service Principal
 
@@ -26,15 +28,46 @@ Creating a role assignment under the scope of "/subscriptions/00000000-0000-0000
 
 <br />
 
+Next retrieve your Azure Subscription ID.
+
+```bash
+AZURE_SUB_ID=$(az account show --query id --output tsv)
+```
+
+If the above command doesn't work, manually add your Azure Subscription ID to the variable.
+
+```bash
+AZURE_SUB_ID="00000000-0000-0000-0000-000000000000"
+```
+
+<br />
+
 Assign the contributor role to the new Service Principal for the Storage Account.
 
 ```bash
-# Assigning the Kubernetes Cluster Service Principal as a Contributor to the Monitoring Resource Group.
-ASSIGN_ROLE=$(az role assignment create \
+az role assignment create \
 --role "Contributor" \
---assignee "http://$K8S_CLUSTER_SP_USERNAME" \
---resource-group "$K8S_MONITORING_RESOURCE_GROUP_NAME" 2>&1)
+--assignee "http://sp-for-iam-access" \
+--scope /subscriptions/$AZURE_SUB_ID/resourceGroups/encrypted-variables-and-key-vault/providers/Microsoft.Storage/storageAccounts/encryptvardemow1gc
 ```
+
+You should get something back similar to what is shown below.
+
+```console
+{
+  "canDelegate": null,
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/encrypted-variables-and-key-vault/providers/Microsoft.Storage/storageAccounts/encryptvardemow1gc/providers/Microsoft.Authorization/roleAssignments/0ce209b8-a107-45a5-81d2-cd5d886a047a",
+  "name": "0ce209b8-a107-45a5-81d2-cd5d886a047a",
+  "principalId": "cbb34d1b-e937-4c47-96ac-c886114adda2",
+  "principalType": "ServicePrincipal",
+  "resourceGroup": "encrypted-variables-and-key-vault",
+  "roleDefinitionId": "/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
+  "scope": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/encrypted-variables-and-key-vault/providers/Microsoft.Storage/storageAccounts/encryptvardemow1gc",
+  "type": "Microsoft.Authorization/roleAssignments"
+}
+```
+
+<br />
 
 Retrieve the **appId** from the Azure Service Principal.
 
@@ -104,16 +137,26 @@ Next, copy and paste in the code below into the inline Script section and then c
 
 ```bash
 # Displaying the Storage Account Primary Key Value using IAM Access by adding the Service Principal to the Storage Account.
-az storage account keys list \
+PRIMARY_KEY=$(az storage account keys list \
 --account-name encryptvardemow1gc \
 --query [0].value \
---output tsv
+--output tsv)
+
+echo "Primary Storage Account Key: $PRIMARY_KEY"
 ```
 
 > **NOTE** Replace the value under the *--account-name* parameter with the name of your storage account!
 
 ![007](../images/_daydraft2/day.xxx.build.pipes.sp.resource.access.007.png)
 
+<br />
+
+When the job has completed, you should see the Storage Account Primary Key in the Job Logs.
+
+![008](../images/_daydraft2/day.xxx.build.pipes.sp.resource.access.008.png)
+
+<br />
+
 ## Conclusion
 
-Blah blah Blah
+In today's article we covered how to access Azure resources using a Service Principal that was granted IAM access and how that would behave in an Azure CLI Task in a Build Pipeline. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
