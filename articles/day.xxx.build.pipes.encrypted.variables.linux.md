@@ -1,6 +1,6 @@
 # Day XXX - Build Pipelines, using Variables (Linux Edition)
 
-In today's article we are going to cover how to use and store an Storage Account Key in an Azure DevOps Build Pipeline. The methods demonstrated in this article can also be used for several other IaaS and PaaS Offerings available in Azure.
+In today's article we are going to cover how to use a Storage Account Key in an Azure DevOps Build Pipeline in an Azure CLI Task. The methods demonstrated in this article can also be used for several other IaaS and PaaS Offerings available in Azure.
 
 > **NOTE:** This article was tested and written for an Azure Build Pipeline using a Microsoft-hosted Agent running Ubuntu 18.04.
 
