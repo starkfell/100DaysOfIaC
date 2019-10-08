@@ -1,14 +1,14 @@
 # Day XXX - Build Pipelines, using Variables (Linux Edition)
 
-In today's article we are going to cover how to use a Storage Account Key in an Azure DevOps Build Pipeline in an Azure CLI Task. The methods demonstrated in this article can also be used for several other IaaS and PaaS Offerings available in Azure.
+In today's article we are going to cover how to use a Storage Account Key in an Azure CLI Task in a Build Pipeline. The methods demonstrated in this article can also be used for several other IaaS and PaaS Offerings available in Azure.
 
-> **NOTE:** This article was tested and written for an Azure Build Pipeline using a Microsoft-hosted Agent running Ubuntu 18.04.
+> **NOTE:** This article was tested and written for an Azure Build Pipeline using a Microsoft-hosted Agent running Ubuntu 18.04 and a separate Linux Host running Ubuntu 18.04 with Azure CLI installed.
 
 ## Create a Resource Group and Storage Account
 
 <br />
 
-Run the following command to create a new Resource Group.
+On your Linux Host (with Azure CLI installed), open up a bash prompt and run the following command to create a new Resource Group.
 
 ```bash
 az group create \
@@ -56,6 +56,7 @@ You should get back the following output:
 
 ```console
 The default kind for created storage account will change to 'StorageV2' from 'Storage' in future
+ - Running ..
 ```
 
 <br />
@@ -169,4 +170,4 @@ When the Build finishes, you should see the Storage Account Key displayed in all
 
 ## Conclusion
 
-In today's article we covered how to use and store a Storage Account Key as a variable in an Azure DevOps Build Pipeline. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article we covered how to use and store a Storage Account Key as a variable in an Azure CLI Task in a Build Pipeline. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
