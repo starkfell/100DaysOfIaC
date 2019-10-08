@@ -74,7 +74,7 @@ Using the Outputs feature in ARM, I am outputting four values to show how all of
 
 If we look at these outputs in the Azure portal, they appear as shown in Figure 3.
 
-![ARM Outputs in Azure Portal](../images/Day24/fig3.arm.outputs.png)
+![ARM Outputs in Azure Portal](../images/day24/fig3.arm.outputs.png)
 
 **Figure 3**. ARM Template Outputs in the Azure Portal
 
@@ -82,7 +82,7 @@ If we look at these outputs in the Azure portal, they appear as shown in Figure 
 
 You can store the output values from your ARM template in the **Azure Resource Manager Deployment** task in the **Deployments Output** section, as shown in Figure 4. Outputs created by Azure Resource Manager template deployment. It can be used in the subsequent tasks (like PowerShell and Azure CLI) for further processing. You can parse the deployment output using the `ConvertFrom-Json` PowerShell cmdlet in PowerShell or Azure PowerShell task and then that object can be used in same task or subsequent tasks.
 
-![Parse ARM Outputs with PowerShell](../images/Day24/fig4.parse.outputs.png)
+![Parse ARM Outputs with PowerShell](../images/day24/fig4.parse.outputs.png)
 
 **Figure 4**. Parse ARM Outputs with PowerShell
 
