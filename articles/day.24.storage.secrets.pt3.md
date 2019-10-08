@@ -4,6 +4,14 @@ In Days 10, 12, and 15, we worked with the same ARM deployment scenario, focused
 
 Our ARM template 1) Creates blob storage 2) A SAS key with the access we define and 3) Outputs container and SAS key details we can use later in the pipeline. For readability, I am not going to embed the entire ARM template in the article, but give you a link to the full template in the repo [HERE](https://github.com/starkfell/100DaysOfIaC/blob/master/resources/storage_sas_out.json). Just open it on your second screen so you can reference as you follow along.
 
+In this article"
+
+[Setting Permissions](#setting-permissions) </br>
+[Generate Connection String with SAS token](#generate-connection-string-with-sas-token) </br>
+[ARM Outputs](#arm-outputs) </br>
+[Deployment Outputs](#deployment-outputs) </br>
+[Next Steps](#next-steps) </br>
+
 ## Setting Permissions
 
 If you look at the **"accountSasProperties"** section of the template in Figure 1, we are describing the SAS key we will create dynamically to access this which are explained immediately below the figure.
@@ -39,10 +47,10 @@ There are several *optional* values we can provide as well:
 
 As per the above full ARM Template, we can see the connection string is generated with full access and another is generated with SAS token. In order to generate a connection string with SAS token, I have used the **listAccountSas** ARM function.
  
-Find more details about this function here.
+Find more details about this function [HERE](https://docs.microsoft.com/en-us/rest/api/storagerp/storageaccounts/listaccountsas).
 
 
-## ARM Outputs 
+## ARM Outputs
 
 Using the Outputs feature in ARM, I am outputting four values to show how all of them are constructed, shown in Figure 2.
 
