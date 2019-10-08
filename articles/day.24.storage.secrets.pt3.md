@@ -74,7 +74,7 @@ Using the Outputs feature in ARM, I am outputting four values to show how all of
 
 If we look at these outputs in the Azure portal, they appear as shown in Figure 3.
 
-![ARM Ouputs in Azure Portal](../images/Day24/fig3.arm.outputs.png)
+![ARM Outputs in Azure Portal](../images/Day24/fig3.arm.outputs.png)
 
 **Figure 3**. ARM Template Outputs in the Azure Portal
 
