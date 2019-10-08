@@ -1,0 +1,94 @@
+{  
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",  
+    "contentVersion": "1.0.0.0",  
+    "parameters": {  
+        "location": {  
+            "type": "string",  
+            "defaultValue": "eastus"  
+        },  
+        "storageAccountName": {  
+            "type": "string",  
+            "defaultValue": "contosoartifacts"  
+        },  
+        "accountType": {  
+            "type": "string",  
+            "defaultValue": "Standard_LRS"  
+        },  
+        "accessTier": {  
+            "type": "string",  
+            "defaultValue": "Hot"  
+        },  
+        "supportsHttpsTrafficOnly": {  
+            "type": "bool",  
+            "defaultValue": true  
+        },  
+        "sasTokenExpiry": {  
+            "type": "string",  
+            "defaultValue":  "2019-10-08T23:59Z"  
+        },  
+        "containerName": {  
+            "type": "string",  
+            "defaultValue": "test"  
+        },  
+        "accountSasProperties": {  
+            "type": "object",  
+            "defaultValue": {  
+                "signedServices": "b",  
+                "signedPermission": "rwcau",  
+                "signedResourceTypes": "sco",  
+                "keyToSign": "key2",  
+                "signedExpiry": "[parameters('sasTokenExpiry')]"  
+            }  
+        }  
+    }, 
+    "variables": {  
+        "storageAccountApiVersion": "2018-07-01",  
+        "storageAcctShortName": "[toLower(trim(parameters('storageAccountName')))]",   
+        "blobEndPoint":"[concat('https://',variables('storageAcctShortName'),'.blob.core.windows.net/')]"  
+    }, 
+    "resources": [  
+        {  
+            "name": "[parameters('storageAccountName')]",  
+            "type": "Microsoft.Storage/storageAccounts",  
+            "apiVersion": "[variables('storageAccountApiVersion')]",  
+            "location": "[parameters('location')]",  
+            "properties": {  
+                "accessTier": "[parameters('accessTier')]",  
+                "supportsHttpsTrafficOnly": "[parameters('supportsHttpsTrafficOnly')]"  
+            },  
+            "dependsOn": [],  
+            "sku": {  
+                "name": "[parameters('accountType')]"  
+            },  
+            "kind": "BlobStorage",  
+            "resources": [  
+                {  
+                    "name": "[concat('default/', parameters('containerName'))]",  
+                    "type": "blobServices/containers",  
+                    "apiVersion": "[variables('storageAccountApiVersion')]",  
+                    "dependsOn": [  
+                        "[parameters('storageAccountName')]"  
+                    ]  
+                }  
+            ]  
+        }  
+    ],  
+    "outputs": {  
+        "blobEndPoint": {
+        "type": "string",  
+        "value": "[concat('https://',variables('storageAcctShortName'),'.blob.core.windows.net/')]"
+        },
+        "SASKey": {
+        "type": "string",  
+        "value": "[listAccountSas(parameters('StorageAccountName'), '2018-07-01', parameters('accountSasProperties')).accountSasToken]"
+        },
+        "storageAccountConnectionString": {  
+            "type": "string",  
+            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAcctShortName'), ';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAcctShortName')), variables('storageAccountApiVersion')).keys[0].value)]"  
+        },  
+        "storageAccountConnectionStringWithSAS": {  
+            "type": "string",  
+            "value": "[concat('BlobEndpoint=',variables('blobEndPoint'),';SharedAccessSignature=', listAccountSas(variables('storageAcctShortName'), variables('storageAccountApiVersion'), parameters('accountSasProperties')).accountSasToken)]"  
+        }  
+    }  
+}  
