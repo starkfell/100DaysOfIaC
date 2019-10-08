@@ -4,7 +4,7 @@ In Days 10, 12, and 15, we worked with the same ARM deployment scenario, focused
 
 Our ARM template 1) Creates blob storage 2) A SAS key with the access we define and 3) Outputs container and SAS key details we can use later in the pipeline. For readability, I am not going to embed the entire ARM template in the article, but give you a link to the full template in the repo [HERE](https://github.com/starkfell/100DaysOfIaC/blob/master/resources/storage_sas_out.json). Just open it on your second screen so you can reference as you follow along.
 
-In this article"
+**In this article:**
 
 [Setting Permissions](#setting-permissions) </br>
 [Generate Connection String with SAS token](#generate-connection-string-with-sas-token) </br>
