@@ -133,7 +133,37 @@ When the Build finishes, you should see the Storage Account Key displayed in all
 
 Although the job displays the Storage Account Key in asterisks, the value can still be used in your script where required.
 
+<br />
+
 ## Using the Storage Account Key as an Environment Variable
+
+Next, go back to your Azure CLI Task from earlier, scroll down to **Environment Variables** and click the **Add** button.
+
+![006](../images/_daydraft1/day.xxx.build.pipes.encrypted.variables.linux.006.png)
+
+<br />
+
+Create a new Environment Variable called **PRIMARY_STORAGE_ACCOUNT_KEY** and copy the Storage Account Key into it.
+
+![007](../images/_daydraft1/day.xxx.build.pipes.encrypted.variables.linux.007.png)
+
+<br />
+
+Next, paste in the following script into the Inline script section of the task and then click on on **Save & queue** to run the Build.
+
+```bash
+# Retrieving and using a Storage Account Key from Build Pipeline Variables.
+
+echo "Primary Storage Account Key from Environment Variable: $PRIMARY_STORAGE_ACCOUNT_KEY"
+```
+
+![008](../images/_daydraft1/day.xxx.build.pipes.encrypted.variables.linux.008.png)
+
+<br />
+
+When the Build finishes, you should see the Storage Account Key displayed in all asterisks.
+
+![009](../images/_daydraft1/day.xxx.build.pipes.encrypted.variables.linux.009.png)
 
 <br />
 
