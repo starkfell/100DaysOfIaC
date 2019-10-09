@@ -98,4 +98,4 @@ This is a pretty cool feature, and is already really well documented in ["Parsin
 
 ## Next Steps
 
-Over the rest of this week, we're going to dig into what are perhaps the most compelling options for secure handling of secrets in IaC, leveraging Azure Key Vault! 
+Over the rest of this week, we're going to dig into what are perhaps the most compelling options for secure handling of secrets in IaC, leveraging Azure Key Vault!
