@@ -1,4 +1,4 @@
-# Day XXX - Build Pipelines, Key Vault Integration (Linux Edition)
+# Day 25 - Build Pipelines, Key Vault Integration (Linux Edition)
 
 In today's article we are going to cover how we can use Key Vault in an Azure Build Pipeline.
 
@@ -193,43 +193,43 @@ westeurope  iacvault5qn1  encrypted-variables-and-key-vault
 
 Next, open up your Azure Build Pipeline and create a new Azure Key Vault task called **retrieve-key-vault-secrets-using-sp** and then click on **Manage** in the *Azure Subscription* section.
 
-![001](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.001.png)
+![001](../images/day25/day.25.build.pipes.key.vault.linux.001.png)
 
 <br />
 
 In the Service Connections blade, click on **New Service Connection** and then on **Azure Resource Manager**.
 
-![002](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.002.png)
+![002](../images/day25/day.25.build.pipes.key.vault.linux.002.png)
 
 <br />
 
 Next, in the **Add an Azure Resource Manager service connection** window, click on the link **use the full version of the service connection dialog**.
 
-![003](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.003.png)
+![003](../images/day25/day.25.build.pipes.key.vault.linux.003.png)
 
 <br />
 
 Next, in the **Add an Azure Resource Manager service connection** window, set the *Connection name* field to **retrieve-key-vault-secrets-using-sp**. Paste in the **appId** value from earlier in the *Service principal client ID* field and the **password** value in the *Service principal key* field. Afterwards, click on the **Verify connection** button. Once the connection is verified, click on the **OK** button.
 
-![004](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.004.png)
+![004](../images/day25/day.25.build.pipes.key.vault.linux.004.png)
 
 <br />
 
 Back in your Azure CLI task window, click on the **Refresh Azure subscription** button.
 
-![005](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.005.png)
+![005](../images/day25/day.25.build.pipes.key.vault.linux.005.png)
 
 <br />
 
 In the **Azure subscription** field, click on the drop-down arrow and select **retrieve-key-vault-secrets-using-sp** under *Available Azure service connections*.
 
-![006](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.006.png)
+![006](../images/day25/day.25.build.pipes.key.vault.linux.006.png)
 
 <br />
 
 In the **Key vault** field, click on the drop-down arrow and select the Key Vault that we created earlier.
 
-![007](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.007.png)
+![007](../images/day25/day.25.build.pipes.key.vault.linux.007.png)
 
 <br />
 
@@ -241,17 +241,17 @@ Next, create a new Azure CLI Task called **use-key-vault-secret** and paste in t
 echo "Secret Value: $(iac-secret-demo)"
 ```
 
-![008](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.008.png)
+![008](../images/day25/day.25.build.pipes.key.vault.linux.008.png)
 
 <br />
 
 When the Job is finished running, review the contents of the Azure Key Vault Task **retrieve-key-vault-secrets-using-sp** and you'll see that the *iac-secret-demo* secret was retrieved successfully.
 
-![009](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.009.png)
+![009](../images/day25/day.25.build.pipes.key.vault.linux.009.png)
 
 Next, review the contents of the Azure CLI Task **use-key-vault-secret**, to see that the *iac-secret=-demo* is displayed in all asterisks.
 
-![010](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.010.png)
+![010](../images/day25/day.25.build.pipes.key.vault.linux.010.png)
 
 <br />
 
