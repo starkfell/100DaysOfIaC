@@ -270,7 +270,7 @@ Next, review the contents of the Azure CLI Task **use-key-vault-secret**, to see
 
 <br />
 
-## Things to consider
+## Things to Consider
 
 We created a Service Principal manually instead of automatically so that you can easily locate the Service Principal in the Azure Portal. Service Principals that are created automatically in the **Add an Azure Resource Manager service connection** are given a name that is non-descriptive following by a GUID. Trying to manage these types Service Principals can be very cumbersome and time consuming.
 
