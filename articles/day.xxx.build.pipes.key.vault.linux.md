@@ -148,7 +148,7 @@ echo $AZURE_SP | jq .appId | tr -d '"'
 You should get back the **appId** which should look similar to what is shown below, make a note of it.
 
 ```console
-3decfe16-a3a1-4e4a-80f6-f834297a7d42
+e1ff9486-f4a9-4744-a672-28fa98c0d5e1
 ```
 
 <br />
@@ -162,68 +162,96 @@ echo $AZURE_SP | jq .password | tr -d '"'
 You should get back the **password** which should look similar to what is shown below, make a note of it.
 
 ```console
-02ab477d-b64d-4ef8-9a16-5bcbe8652036
+574366ad-1890-4b14-80ac-d716731bbb8b
 ```
 
 <br />
 
-Next, open up your Azure Build Pipeline and create a new Azure CLI task called **retrieve-storage-account-key-using-iam** and then click on **Manage** in the *Azure Subscription* section.
+## Grant the Service Principal Access to the Key Vault Secrets
 
-![001](../images/_daydraft2/day.xxx.build.pipes.sp.resource.access.001.png)
+Next, run the following command to grant the Service Principal to retrieve Secrets in the Key Vault.
+
+```bash
+az keyvault set-policy \
+--name "iacvault${RANDOM_ALPHA}" \
+--spn "http://sp-for-keyvault-access" \
+--secret-permissions get list \
+--output table
+```
+
+You should get back the following response.
+
+```console
+Location    Name          ResourceGroup
+----------  ------------  ---------------------------------
+westeurope  iacvault5qn1  encrypted-variables-and-key-vault
+```
+
+<br />
+
+## Configure the Build Pipeline
+
+Next, open up your Azure Build Pipeline and create a new Azure Key Vault task called **retrieve-key-vault-secrets-using-sp** and then click on **Manage** in the *Azure Subscription* section.
+
+![001](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.001.png)
 
 <br />
 
 In the Service Connections blade, click on **New Service Connection** and then on **Azure Resource Manager**.
 
-![002](../images/_daydraft2/day.xxx.build.pipes.sp.resource.access.002.png)
+![002](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.002.png)
 
 <br />
 
 Next, in the **Add an Azure Resource Manager service connection** window, click on the link **use the full version of the service connection dialog**.
 
-![003](../images/_daydraft2/day.xxx.build.pipes.sp.resource.access.003.png)
+![003](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.003.png)
 
 <br />
 
-Next, in the **Add an Azure Resource Manager service connection** window, set the *Connection name* field to **retrieve-storage-account-key-using-iam**. Paste in the **appId** value from earlier in the *Service principal client ID* field and the **password** value in the *Service principal key* field. Afterwards, click on the **Verify connection** button. Once the connection is verified, click on the **OK** button.
+Next, in the **Add an Azure Resource Manager service connection** window, set the *Connection name* field to **retrieve-key-vault-secrets-using-sp**. Paste in the **appId** value from earlier in the *Service principal client ID* field and the **password** value in the *Service principal key* field. Afterwards, click on the **Verify connection** button. Once the connection is verified, click on the **OK** button.
 
-![004](../images/_daydraft2/day.xxx.build.pipes.sp.resource.access.004.png)
+![004](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.004.png)
 
 <br />
 
 Back in your Azure CLI task window, click on the **Refresh Azure subscription** button.
 
-![005](../images/_daydraft2/day.xxx.build.pipes.sp.resource.access.005.png)
+![005](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.005.png)
 
 <br />
 
-In the **Azure subscription** field, click on the drop-down arrow and select **retrieve-storage-account-key-using-iam** under *Available Azure service connections*.
+In the **Azure subscription** field, click on the drop-down arrow and select **retrieve-key-vault-secrets-using-sp** under *Available Azure service connections*.
 
-![006](../images/_daydraft2/day.xxx.build.pipes.sp.resource.access.006.png)
+![006](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.006.png)
 
 <br />
 
-Next, copy and paste in the code below into the inline Script section and then click on **Save & queue**.
+In the **Key vault** field, click on the drop-down arrow and select the Key Vault that we created earlier.
+
+![007](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.007.png)
+
+<br />
+
+Next, create a new Azure CLI Task called **use-key-vault-secret** and paste in the the code below into the inline Script section. Afterwards click on **Save & queue**.
 
 ```bash
-# Displaying the Storage Account Primary Key Value using IAM Access by adding the Service Principal to the Storage Account.
-PRIMARY_KEY=$(az storage account keys list \
---account-name encryptvardemow1gc \
---query [0].value \
---output tsv)
+# Retrieve Key Vault Secret using task variable
 
-echo "Primary Storage Account Key: $PRIMARY_KEY"
+echo "Secret Value: $(iac-secret-demo)"
 ```
 
-> **NOTE** Replace the value under the *--account-name* parameter with the name of your storage account!
-
-![007](../images/_daydraft2/day.xxx.build.pipes.sp.resource.access.007.png)
+![008](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.008.png)
 
 <br />
 
-When the job has completed, you should see the Storage Account Primary Key in the Job Logs.
+When the Job is finished running, review the contents of the Azure Key Vault Task **retrieve-key-vault-secrets-using-sp** and you'll see that the *iac-secret-demo* secret was retrieved successfully.
 
-![008](../images/_daydraft2/day.xxx.build.pipes.sp.resource.access.008.png)
+![009](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.009.png)
+
+Next, review the contents of the Azure CLI Task **use-key-vault-secret**, to see that the *iac-secret=-demo* is displayed in all asterisks.
+
+![010](../images/_daydraft3/day.xxx.build.pipes.key.vault.linux.010.png)
 
 <br />
 
