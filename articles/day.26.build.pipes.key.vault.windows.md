@@ -1,8 +1,8 @@
-# Day 25 - Build Pipelines, Key Vault Integration (Linux Edition)
+# Day 65 - Build Pipelines, Key Vault Integration (Windows Edition)
 
 In today's article we are going to cover how we can use the Key Vault task in an Azure Build Pipeline.
 
-> **NOTE:** This article was tested and written for an Azure Build Pipeline using a Microsoft-hosted Agent running Ubuntu 18.04 and a separate Linux Host running Ubuntu 18.04 with Azure CLI installed.
+> **NOTE:** This article was tested and written for an Azure Build Pipeline using a Microsoft-hosted Agent running vs2017-win2016 and a separate Windows Host running Windows 10 with Azure CLI installed.
 
 **In this article:**
 
@@ -17,11 +17,11 @@ In today's article we are going to cover how we can use the Key Vault task in an
 
 ## Create a new Resource Group and an Azure Key Vault
 
-On your Linux Host (with Azure CLI installed), open up a bash prompt and run the following command to create a new Resource Group.
+On your Windows Host (with Azure CLI installed), open up an elevated PowerShell Prompt and run the following command to create a new Resource Group.
 
-```bash
-az group create \
---name encrypted-variables-and-key-vault \
+```powershell
+az group create `
+--name encrypted-variables-and-key-vault `
 --location westeurope
 ```
 
@@ -43,8 +43,8 @@ You should get back the following output.
 
 Next, run the following command randomly generate 4 alphanumeric characters.
 
-```bash
-RANDOM_ALPHA=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
+```powershell
+$RandomAlpha = (New-Guid).ToString().Substring("0","4")
 ```
 
 > **NOTE:** We are appending this to the name of our Key Vault to ensure its name is unique.
@@ -52,10 +52,10 @@ RANDOM_ALPHA=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
 Next, run the following command to create an Azure Key Vault in the new Resource Group.
 
 ```bash
-az keyvault create \
---name "iacvault${RANDOM_ALPHA}" \
---resource-group encrypted-variables-and-key-vault \
---location westeurope \
+az keyvault create `
+--name "iacvault$RandomAlpha" `
+--resource-group encrypted-variables-and-key-vault `
+--location westeurope `
 --output table
 ```
 
