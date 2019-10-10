@@ -51,7 +51,7 @@ $RandomAlpha = (New-Guid).ToString().Substring("0","4")
 
 Next, run the following command to create an Azure Key Vault in the new Resource Group.
 
-```bash
+```powershell
 az keyvault create `
 --name "iacvault$RandomAlpha" `
 --resource-group encrypted-variables-and-key-vault `
@@ -64,15 +64,15 @@ You should get back the following output when the task is finished.
 ```console
 Location    Name          ResourceGroup
 ----------  ------------  ---------------------------------
-westeurope  iacvault5qn1  encrypted-variables-and-key-vault
+westeurope  iacvault1ed8  encrypted-variables-and-key-vault
 ```
 
 Next, add the following secret to the Key Vault.
 
-```bash
-az keyvault secret set --name iac-secret-demo \
---vault-name "iacvault${RANDOM_ALPHA}" \
---value "100Days0fIaC1!" \
+```powershell
+az keyvault secret set --name iac-secret-demo `
+--vault-name "iacvault$RandomAlpha" `
+--value "100Days0fIaC1!" `
 --output table
 ```
 
@@ -90,11 +90,11 @@ Value
 
 Next, run the following command to create a new Service Principal called **sp-for-keyvault-access**.
 
-```bash
-AZURE_SP=$(/usr/bin/az ad sp create-for-rbac \
---role "contributor" \
---name "sp-for-keyvault-access" \
---years 3)
+```powershell
+$AzureSP = az ad sp create-for-rbac `
+--role "contributor" `
+--name "sp-for-keyvault-access" `
+--years 3
 ```
 
 You should get back a result similar to what is shown below.
@@ -110,25 +110,25 @@ Creating a role assignment under the scope of "/subscriptions/00000000-0000-0000
 
 Next retrieve your Azure Subscription ID and store it in a variable.
 
-```bash
-AZURE_SUB_ID=$(az account show --query id --output tsv)
+```powershell
+$AzureSubID = az account show --query id --output tsv
 ```
 
 If the above command doesn't work, manually add your Azure Subscription ID to the variable.
 
-```bash
-AZURE_SUB_ID="00000000-0000-0000-0000-000000000000"
+```powershell
+$AzureSubID = "00000000-0000-0000-0000-000000000000"
 ```
 
 <br />
 
 Run the following command to assign the contributor role to the new Service Principal for the Key Vault.
 
-```bash
-az role assignment create \
---role "Contributor" \
---assignee "http://sp-for-keyvault-access" \
---scope "/subscriptions/${AZURE_SUB_ID}/resourceGroups/encrypted-variables-and-key-vault/providers/Microsoft.KeyVault/vaults/iacvault${RANDOM_ALPHA}"
+```powershell
+az role assignment create `
+--role "Contributor" `
+--assignee "http://sp-for-keyvault-access" `
+--scope "/subscriptions/$AzureSubID/resourceGroups/encrypted-variables-and-key-vault/providers/Microsoft.KeyVault/vaults/iacvault$RandomAlpha"
 
 ```
 
@@ -137,15 +137,15 @@ You should get something back similar to what is shown below.
 ```json
 {
   "canDelegate": null,
-  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/encrypted-variables-and-key-vault/providers/Microsoft.KeyVault/vaults/iacvault5qn1/providers/Microsoft.Authorization/roleAssignments/3b940077-949e-4f8b-9013-154ba457b96f",
-  "name": "3b940077-949e-4f8b-9013-154ba457b96f",
-  "principalId": "0910c088-489e-44a2-9fbd-af486bb6fe6f",
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/encrypted-variables-and-key-vault/providers/Microsoft.KeyVault/vaults/iacvault1ed8/providers/Microsoft.Authorization/roleAssignments/ac01112a-db7b-432a-89f0-3de7726c55b9",
+  "name": "ac01112a-db7b-432a-89f0-3de7726c55b9",
+  "principalId": "bbb490c4-5cc8-4128-b14a-e5faec7505cc",
   "principalName": "http://sp-for-keyvault-access",
   "principalType": "ServicePrincipal",
   "resourceGroup": "encrypted-variables-and-key-vault",
   "roleDefinitionId": "/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
   "roleDefinitionName": "Contributor",
-  "scope": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/encrypted-variables-and-key-vault/providers/Microsoft.KeyVault/vaults/iacvault5qn1",
+  "scope": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/encrypted-variables-and-key-vault/providers/Microsoft.KeyVault/vaults/iacvault1ed8",
   "type": "Microsoft.Authorization/roleAssignments"
 }
 ```
@@ -154,28 +154,28 @@ You should get something back similar to what is shown below.
 
 Next, run the following command to retrieve the **appId** of the Azure Service Principal.
 
-```bash
-echo $AZURE_SP | jq .appId | tr -d '"'
+```powershell
+($AzureSP | ConvertFrom-Json).appId
 ```
 
 Make a note of the result as we will be using it again soon.
 
 ```console
-e1ff9486-f4a9-4744-a672-28fa98c0d5e1
+51afb8df-4972-4bf5-aecf-c0fbbf804eac
 ```
 
 <br />
 
 Next, run the following command to retrieve the **password** of the Azure Service Principal.
 
-```bash
-echo $AZURE_SP | jq .password | tr -d '"'
+```powershell
+($AzureSP | ConvertFrom-Json).password
 ```
 
 Make a note of the result as we will be using it again soon.
 
 ```console
-574366ad-1890-4b14-80ac-d716731bbb8b
+6759e1c1-9e82-4cba-a54a-03a84303b5c7
 ```
 
 <br />
@@ -184,11 +184,11 @@ Make a note of the result as we will be using it again soon.
 
 Next, run the following command to grant the Service Principal **sp-for-keyvault-access** access to *get* and *list* Secrets in the Key Vault.
 
-```bash
-az keyvault set-policy \
---name "iacvault${RANDOM_ALPHA}" \
---spn "http://sp-for-keyvault-access" \
---secret-permissions get list \
+```powershell
+az keyvault set-policy `
+--name "iacvault$RandomAlpha" `
+--spn "http://sp-for-keyvault-access" `
+--secret-permissions get list `
 --output table
 ```
 
@@ -197,7 +197,7 @@ You should get back a similar response.
 ```console
 Location    Name          ResourceGroup
 ----------  ------------  ---------------------------------
-westeurope  iacvault5qn1  encrypted-variables-and-key-vault
+westeurope  iacvault1ed8  encrypted-variables-and-key-vault
 ```
 
 <br />
@@ -206,43 +206,43 @@ westeurope  iacvault5qn1  encrypted-variables-and-key-vault
 
 Next, open up your Azure Build Pipeline and create a new Azure Key Vault task called **retrieve-key-vault-secrets-using-sp** and then click on **Manage** in the *Azure Subscription* section.
 
-![001](../images/day25/day.25.build.pipes.key.vault.linux.001.png)
+![001](../images/day26/day.26.build.pipes.key.vault.windows.001.png)
 
 <br />
 
 In the Service Connections blade, click on **New Service Connection** and then on **Azure Resource Manager**.
 
-![002](../images/day25/day.25.build.pipes.key.vault.linux.002.png)
+![002](../images/day26/day.26.build.pipes.key.vault.windows.002.png)
 
 <br />
 
 Next, in the **Add an Azure Resource Manager service connection** window, click on the link **use the full version of the service connection dialog**.
 
-![003](../images/day25/day.25.build.pipes.key.vault.linux.003.png)
+![003](../images/day26/day.26.build.pipes.key.vault.windows.003.png)
 
 <br />
 
 Next, in the **Add an Azure Resource Manager service connection** window, set the *Connection name* field to **retrieve-key-vault-secrets-using-sp**. Paste in the **appId** value from earlier in the *Service principal client ID* field and the **password** value in the *Service principal key* field. Afterwards, click on the **Verify connection** button. Once the connection is verified, click on the **OK** button.
 
-![004](../images/day25/day.25.build.pipes.key.vault.linux.004.png)
+![004](../images/day26/day.26.build.pipes.key.vault.windows.004.png)
 
 <br />
 
 Back in your Azure CLI task window, click on the **Refresh Azure subscription** button.
 
-![005](../images/day25/day.25.build.pipes.key.vault.linux.005.png)
+![005](../images/day26/day.26.build.pipes.key.vault.windows.005.png)
 
 <br />
 
 In the **Azure subscription** field, click on the drop-down arrow and select **retrieve-key-vault-secrets-using-sp** under *Available Azure service connections*.
 
-![006](../images/day25/day.25.build.pipes.key.vault.linux.006.png)
+![006](../images/day26/day.26.build.pipes.key.vault.windows.006.png)
 
 <br />
 
 In the **Key vault** field, click on the drop-down arrow and select the Key Vault that we created earlier.
 
-![007](../images/day25/day.25.build.pipes.key.vault.linux.007.png)
+![007](../images/day26/day.26.build.pipes.key.vault.windows.007.png)
 
 <br />
 
@@ -254,7 +254,7 @@ Next, create a new Azure CLI Task called **use-key-vault-secret**. In the **Azur
 echo "Secret Value: $(iac-secret-demo)"
 ```
 
-![008](../images/day25/day.25.build.pipes.key.vault.linux.008.png)
+![008](../images/day26/day.26.build.pipes.key.vault.windows.008.png)
 
 <br />
 
@@ -262,11 +262,11 @@ Finally, click on **Save & queue**.
 
 When the Job is finished running, review the contents of the Azure Key Vault Task **retrieve-key-vault-secrets-using-sp** and you'll see that the *iac-secret-demo* secret was retrieved successfully.
 
-![009](../images/day25/day.25.build.pipes.key.vault.linux.009.png)
+![009](../images/day26/day.26.build.pipes.key.vault.windows.009.png)
 
 Next, review the contents of the Azure CLI Task **use-key-vault-secret**, to see that the *iac-secret-demo* is displayed in all asterisks.
 
-![010](../images/day25/day.25.build.pipes.key.vault.linux.010.png)
+![010](../images/day26/day.26.build.pipes.key.vault.windows.010.png)
 
 <br />
 
