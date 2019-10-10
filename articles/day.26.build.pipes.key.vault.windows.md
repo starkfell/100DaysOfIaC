@@ -246,13 +246,15 @@ In the **Key vault** field, click on the drop-down arrow and select the Key Vaul
 
 <br />
 
-Next, create a new Azure CLI Task called **use-key-vault-secret**. In the **Azure Subscription** field, choose either your default Azure Resource Manager service connection or choose the **retrieve-key-vault-secrets-using-sp** connection that you created earlier. Next, paste in the the code below into the inline Script section.
+Next, create a new Azure PowerShell Task called **use-key-vault-secret**. In the **Azure Subscription** field, choose either your default Azure Resource Manager service connection or choose the **retrieve-key-vault-secrets-using-sp** connection that you created earlier. Next, paste in the the code below into the inline Script section.
 
 ```bash
 # Retrieve Key Vault Secret using task variable
 
-echo "Secret Value: $(iac-secret-demo)"
+Write-Output "Secret Value: $(iac-secret-demo)"
 ```
+
+> NOTE: If the Azure PowerShell Task is asking you for an *Azure PowerShell Version* to use, just choose the **Latest installed version** option.
 
 ![008](../images/day26/day.26.build.pipes.key.vault.windows.008.png)
 
