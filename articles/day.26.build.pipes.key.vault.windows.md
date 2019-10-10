@@ -1,4 +1,4 @@
-# Day 65 - Build Pipelines, Key Vault Integration (Windows Edition)
+# Day 26 - Build Pipelines, Key Vault Integration (Windows Edition)
 
 In today's article we are going to cover how we can use the Key Vault task in an Azure Build Pipeline.
 
