@@ -129,7 +129,7 @@ Next, run the following command to retrieve the **appId** of the Azure Service P
 Make a note of the result as we will be using it again soon.
 
 ```console
-9c41f3c1-4caa-46e1-b49b-4a392e8f4e3a
+df7ed5d4-059b-493b-b1a8-7019f6c77436
 ```
 
 <br />
@@ -143,7 +143,7 @@ Next, run the following command to retrieve the **password** of the Azure Servic
 Make a note of the result as we will be using it again soon.
 
 ```console
-4e506369-5f82-40ca-9e8c-c0e21e2e57d4
+6703ead8-8f4b-4e23-99c2-7794aab58496
 ```
 
 <br />
@@ -165,7 +165,7 @@ You should get back a similar response.
 ```console
 Location    Name            ResourceGroup
 ----------  --------------  --------------------------
-westeurope  iacftvault206c  fine-tune-access-key-vault
+westeurope  iacftvaulte974  fine-tune-access-key-vault
 ```
 
 <br />
