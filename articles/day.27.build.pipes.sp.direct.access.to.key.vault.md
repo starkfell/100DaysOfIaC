@@ -12,7 +12,6 @@ In the previous two articles, we demonstrated how to use the Azure Key Vault tas
 [Create a Service Principal](#create-a-service-principal) </br>
 [Grant the Service Principal Access to the Key Vault Secrets](#grant-the-service-principal-access-to-the-key-vault-secrets) </br>
 [Configure the Build Pipeline](#configure-the-build-pipeline) </br>
-[Things to Consider](#things-to-consider) </br>
 [Conclusion](#conclusion) </br>
 
 <br />
