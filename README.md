@@ -2,6 +2,7 @@
 
 | Subject |   Day   | Article Link  |
 |---------|---------|---------------|
+| Key Vault Integration | Day 26 | [Day 27 - Build Pipelines, Fine Tuning access to a Key Vault (Windows Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.27.build.pipes.sp.direct.access.to.key.vault.windows.md) |
 | Key Vault Integration | Day 26 | [Day 26 - Build Pipelines, Key Vault Integration (Windows Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.26.build.pipes.key.vault.windows.md) |
 | Key Vault Integration | Day 25 | [Day 25 - Build Pipelines, Key Vault Integration (Linux Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.25.build.pipes.key.vault.linux.md) |
 | Storage and Secrets in IaC | Day 24 | [Day 24 - Azure Storage and Secrets in Infrastructure-as-Code (Part 3)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.24.storage.secrets.pt3.md) |
