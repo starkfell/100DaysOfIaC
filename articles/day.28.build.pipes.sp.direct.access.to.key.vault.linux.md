@@ -221,11 +221,15 @@ KEY_VAULT_SECRET=$(az keyvault secret show \
 echo "Key Vault Secret Value: $KEY_VAULT_SECRET"
 ```
 
+![007](../images/day28/day.28.build.pipes.sp.direct.access.to.key.vault.linux.007.png)
+
+<br />
+
 Finally, click on **Save & queue**.
 
 When the Job is finished running, review the contents of the Azure CLI Task **retrieve-key-vault-secret-using-sp** and you'll see that the *iac-secret-demo* secret was retrieved successfully.
 
-![007](../images/day28/day.28.build.pipes.sp.direct.access.to.key.vault.linux.007.png)
+![008](../images/day28/day.28.build.pipes.sp.direct.access.to.key.vault.linux.008.png)
 
 <br />
 
