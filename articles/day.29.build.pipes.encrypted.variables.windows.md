@@ -100,7 +100,7 @@ Next, copy the Storage Account Key into a a new variable called **primaryStorage
 
 <br />
 
-Next, change the Storage Account Key value by pressing the Lock Icon on the far right side of the **primaryStorageAccountKey** variable.
+Next, change the Storage Account Key value by pressing the **Lock Icon** on the far right side of the **primaryStorageAccountKey** variable.
 
 ![002](../images/day29/day.29.build.pipes.encrypted.variables.windows.002.png)
 
@@ -108,17 +108,17 @@ Next, change the Storage Account Key value by pressing the Lock Icon on the far 
 
 The Storage Account Key should now be secured and displayed only as a set of asterisks.
 
-![003](../images/day29/day.29.build.pipes.encrypted.variables.windows.003.png)
-
 <br />
 
-Next, create an Azure CLI Task in the Build Pipeline and paste in the following code below as an Inline script.
+Next, create an Azure PowerShell Task called **retrieve-encrypted-variables** in the Build Pipeline called and paste in the following code below as an Inline script.
 
-```bash
+```powershell
 # Retrieving and using a Storage Account Key from Build Pipeline Variables.
 
-echo "Primary Storage Account Key: $(primaryStorageAccountKey)"
+Write-Output "Primary Storage Account Key: $(primaryStorageAccountKey)"
 ```
+
+![003](../images/day29/day.29.build.pipes.encrypted.variables.windows.003.png)
 
 <br />
 
