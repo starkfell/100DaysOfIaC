@@ -213,7 +213,7 @@ Next, create a new Azure CLI Task called **retrieve-key-vault-secret-using-sp**.
 ```bash
 # Retrieving the Azure Key Vault Secret.
 KEY_VAULT_SECRET=$(az keyvault secret show \
---vault-name "iacftvaultce53" \
+--vault-name "iacftvault31mr" \
 --name iac-secret-demo \
 --query value \
 --output tsv)
@@ -223,9 +223,9 @@ echo "Key Vault Secret Value: $KEY_VAULT_SECRET"
 
 Finally, click on **Save & queue**.
 
-When the Job is finished running, review the contents of the PowerShell Task **retrieve-key-vault-secret-using-sp** and you'll see that the *iac-secret-demo* secret was retrieved successfully.
+When the Job is finished running, review the contents of the Azure CLI Task **retrieve-key-vault-secret-using-sp** and you'll see that the *iac-secret-demo* secret was retrieved successfully.
 
-![008](../images/day28/day.28.build.pipes.sp.direct.access.to.key.vault.linux.008.png)
+![007](../images/day28/day.28.build.pipes.sp.direct.access.to.key.vault.linux.007.png)
 
 <br />
 
