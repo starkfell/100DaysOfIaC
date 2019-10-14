@@ -1,6 +1,6 @@
 # Day 28 - Build Pipelines, Fine Tuning access to a Key Vault (Linux Edition)
 
-In today's article we are going to cover how to fine-tune access to an Azure Key Vault in a Build Pipeline using a Service Principal. This article is the same identical topic from [Day 27](../articles/day.27.build.pipes.sp.direct.access.to.key.vault.windows.md), but specifically for Linux.
+In today's article we are going to cover how to fine-tune access to an Azure Key Vault in a Build Pipeline using a Service Principal. This article covers the same topic from [Day 27](../articles/day.27.build.pipes.sp.direct.access.to.key.vault.windows.md), but specifically for Linux.
 
 > **NOTE:** This article was tested and written for an Azure Build Pipeline using a Microsoft-hosted Agent running ubuntu-18.04 and a separate Linux Host running Ubuntu 18.04 with Azure CLI installed.
 

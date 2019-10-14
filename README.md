@@ -2,6 +2,7 @@
 
 | Subject |   Day   | Article Link  |
 |---------|---------|---------------|
+| Key Vault Integration | Day 28 | [Day 28 - Build Pipelines, Fine Tuning access to a Key Vault (Linux Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.28.build.pipes.sp.direct.access.to.key.vault.linux.md) |
 | Key Vault Integration | Day 27 | [Day 27 - Build Pipelines, Fine Tuning access to a Key Vault (Windows Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.27.build.pipes.sp.direct.access.to.key.vault.windows.md) |
 | Key Vault Integration | Day 26 | [Day 26 - Build Pipelines, Key Vault Integration (Windows Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.26.build.pipes.key.vault.windows.md) |
 | Key Vault Integration | Day 25 | [Day 25 - Build Pipelines, Key Vault Integration (Linux Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.25.build.pipes.key.vault.linux.md) |
