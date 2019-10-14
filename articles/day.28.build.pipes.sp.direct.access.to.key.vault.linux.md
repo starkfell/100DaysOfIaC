@@ -1,10 +1,8 @@
 # Day 28 - Build Pipelines, Fine Tuning access to a Key Vault (Linux Edition)
 
-In today's article we are going to cover how to fine-tune access to an Azure Key Vault in a Build Pipeline using a Service Principal.
+In today's article we are going to cover how to fine-tune access to an Azure Key Vault in a Build Pipeline using a Service Principal. This article is the same identical topic from [Day 27](../articles/day.27.build.pipes.sp.direct.access.to.key.vault.windows.md), but specifically for Linux.
 
 > **NOTE:** This article was tested and written for an Azure Build Pipeline using a Microsoft-hosted Agent running ubuntu-18.04 and a separate Linux Host running Ubuntu 18.04 with Azure CLI installed.
-
-In the previous two articles, we demonstrated how to use the Azure Key Vault task to access Secrets in an Azure Key Vault. One of the limitations of the Azure Key Vault task is that it requires you to provide *get* and *list* access to the Azure Key Vault to the Service Principal you are using. Well, what if you have certain restrictions in your company where you are required to only be able to access a specific secret but not have access to anything else in the Key Vault? Below we are providing you a method of accomplishing this.
 
 **In this article:**
 
