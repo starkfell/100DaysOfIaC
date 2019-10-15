@@ -4,6 +4,14 @@ In today's article we are going to cover how to use a Storage Account Key in an 
 
 > **NOTE:** This article was tested and written for an Azure Build Pipeline using a Microsoft-hosted Agent running vs2017-win2016 and a separate Windows Host running Windows 10 with Azure CLI installed.
 
+**In this article:**
+
+[Create a new Resource Group and Storage Account](#create-a-resource-group-and-storage-account)<br />
+[Using the Storage Account Key in a Build Pipeline Variable](#using-the-storage-account-key-in-a-build-pipeline-variable)<br />
+[Conclusion](#conclusion)
+
+<br />
+
 ## Create a Resource Group and Storage Account
 
 <br />
@@ -61,7 +69,7 @@ The default kind for created storage account will change to 'StorageV2' from 'St
 
 <br />
 
-You can run the following command to verify that the Storage Account was provisioned successfully.
+Run the following command to verify that the Storage Account was provisioned successfully.
 
 ```powershell
 ($NewStorageAccount | ConvertFrom-Json).provisioningState
@@ -94,7 +102,7 @@ lB7TsIMia9dCqFBI1ICC0u5JHQeZO87fBpy5adfy9x/kb80k9vJ0wSObbGLfxBXnVpmJZDZ3T8S62o7y
 
 ## Using the Storage Account Key in a Build Pipeline Variable
 
-Next, in an Azure DevOps Pipeline, copy the Storage Account Key into a a new variable called **primaryStorageAccountKey** in a Build Pipeline.
+Next, in an Azure DevOps Pipeline, click on the Variables tab and copy the Storage Account Key into a a new variable called **primaryStorageAccountKey**.
 
 ![001](../images/day29/day.29.build.pipes.encrypted.variables.windows.001.png)
 
@@ -110,7 +118,7 @@ The Storage Account Key should now be secured and displayed only as a set of ast
 
 <br />
 
-Next, in the Tasks section of the Pipeline, create an Azure PowerShell Task called **retrieve-encrypted-variables** and paste in the following code below as an Inline script. After your task looks like what is shown below, click on **Save & queue** to run the Build.
+Next, on the Tasks section in the Build Pipeline, create an Azure PowerShell Task called **retrieve-encrypted-variables** and paste in the following code below as an Inline script. After your task looks like what is shown below, click on **Save & queue** to run the Build.
 
 ```powershell
 # Retrieving and using a Storage Account Key from Build Pipeline Variables.
