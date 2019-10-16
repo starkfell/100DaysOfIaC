@@ -119,7 +119,7 @@ The Storage Account Key should now be secured and displayed only as a set of ast
 
 <br />
 
-Next, on the Tasks tab in the Build Pipeline, create an Azure CLI Task and paste in the following code below as an Inline script. After your task looks like what is shown below, click on **Save & queue** to run the Build.
+Next, on the Tasks tab in the Build Pipeline, create an Azure CLI Task called **retrieve-encrypted-variables** and paste in the following code below as an Inline script. After your task looks like what is shown below, click on **Save & queue** to run the Build.
 
 ```bash
 # Retrieving and using a Storage Account Key from Build Pipeline Variables.
