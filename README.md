@@ -2,6 +2,7 @@
 
 | Subject |   Day   | Article Link  |
 |---------|---------|---------------|
+| Manage SQL in a Build Pipeline | Day 31 | [Day 31 - Build Pipelines, using a Service Principal to manage SQL Resources (Linux Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.31.build.pipes.sp.managed.sql.linux.md) |
 | Build Pipeline Variables | Day 30 | [Day 30 - Build Pipelines, using Variables (Linux Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.30.build.pipes.encrypted.variables.linux.md) |
 | Build Pipeline Variables | Day 29 | [Day 29 - Build Pipelines, using Variables (Windows Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.29.build.pipes.encrypted.variables.windows.md) |
 | Key Vault Integration | Day 28 | [Day 28 - Build Pipelines, Fine Tuning access to a Key Vault (Linux Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.28.build.pipes.sp.direct.access.to.key.vault.linux.md) |
