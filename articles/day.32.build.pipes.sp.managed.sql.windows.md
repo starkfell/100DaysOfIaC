@@ -1,4 +1,4 @@
-# Day 31 - Build Pipelines, using a Service Principal to manage SQL Resources (Linux Edition)
+# Day 32 - Build Pipelines, using a Service Principal to manage SQL Resources (Windows Edition)
 
 In today's article we are going to cover how to create and restrict a Service Principal to manage SQL Resources in a Build Pipeline. In Azure DevOps, you have several options natively available and in the Marketplace for deploying and managing SQL in Azure. We hope that the walkthrough below provides you with another method to add to your existing arsenal when you are determining what options are available for in a Build Pipeline.
 
