@@ -38,7 +38,7 @@ Although YAML pipelines gives you ability to better manage the lifecycle of your
 
 Based on my experience, I have discovered the following differences between YAML pipelines and classic pipelines:
 
-1. YAML piplines also don't seperate CI (Build) and CD (Release) piplines. You will create one pipeline for both CI and CD pipelines.
+1. YAML pipelines also don't separate CI (Build) and CD (Release) pipelines. You will create one pipeline for both CI and CD pipelines.
 2. When setting release approvals in a [multi-stage YAML pipeline](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/stages?view=azure-devops&tabs=yaml&WT.mc_id=DOP-MVP-5000997), you must utilize [environments](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops&WT.mc_id=DOP-MVP-5000997) - since approvals are configured per environment.
 3. Unlike classic pipelines, you cannot create recurring schedules for certain stages in release pipelines. Schedules will apply to the entire pipeline instead of a given stage.
 
