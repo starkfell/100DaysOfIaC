@@ -27,7 +27,7 @@ YAML pipelines give you better control of your overall IaC solution. If you have
 ## When To Use YAML Pipelines
 In Azure DevOps, YAML pipelines has become the default experience when setting up a pipeline from the portal. To create a classic pipeline using GUI, you must select the not-so-obvious "***Use the classic editor***" link at the bottom (as shown below).
 
-![001](../images/day33/day.33.yaml.pipelines.in.azure.devops.when.and.why.001.png)
+![001](../images/day33/day.33.yaml.pipelines.in.azdo.devops.when.and.why.png)
 
 </br>
 
