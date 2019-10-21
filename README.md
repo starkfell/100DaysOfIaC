@@ -2,7 +2,7 @@
 
 | Subject |   Day   | Article Link  |
 |---------|---------|---------------|
-| YAML Pipelines | Day 33 | [Day 33 - YAML Pipelines in Azure DevOps: When and Why](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.33.yaml.pipelines.in.azdo.devops.when.and.why.md) |
+| YAML Pipelines | Day 33 | [Day 33 - YAML Pipelines in Azure DevOps: When and Why](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.33.yaml.pipelines.in.azdo.when.and.why.md) |
 | Manage SQL in a Build Pipeline | Day 32 | [Day 32 - Build Pipelines, using a Service Principal to manage SQL Resources (Windows Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.32.build.pipes.sp.managed.sql.windows.md) |
 | Manage SQL in a Build Pipeline | Day 31 | [Day 31 - Build Pipelines, using a Service Principal to manage SQL Resources (Linux Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.31.build.pipes.sp.managed.sql.linux.md) |
 | Build Pipeline Variables | Day 30 | [Day 30 - Build Pipelines, using Variables (Linux Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.30.build.pipes.encrypted.variables.linux.md) |
