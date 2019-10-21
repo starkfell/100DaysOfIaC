@@ -26,19 +26,26 @@ YAML pipelines give you better control of your overall IaC solution. If you have
 
 ## When To Use YAML Pipelines
 In Azure DevOps, YAML pipelines has become the default experience when setting up a pipeline from the portal. To create a classic pipeline using GUI, you must select the not-so-obvious "***Use the classic editor***" link at the bottom (as shown below).
-![001](../images/dayxx/day.xx.yaml.pipelines.in.azure.devops.when.and.why.001.png)
-<br/>
+
+![001](../images/day33/day.33.yaml.pipelines.in.azure.devops.when.and.why.001.png)
+
+</br>
+
 Although YAML pipelines gives you ability to better manage the lifecycle of your pipelines, it does come with increased level of complexity:
+
 1. The pipelines are defined in YAML, for those who have not used YAML in the past, this is another markup language you must learn.
 2. You will need to learn the YAML pipeline schema, as well as the syntax and options for each task within the pipeline. This can be time consuming initially.
 
 Based on my experience, I have discovered the following differences between YAML pipelines and classic pipelines:
+
 1. YAML piplines also don't seperate CI (Build) and CD (Release) piplines. You will create one pipeline for both CI and CD pipelines.
 2. When setting release approvals in a [multi-stage YAML pipeline](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/stages?view=azure-devops&tabs=yaml&WT.mc_id=DOP-MVP-5000997), you must utilize [environments](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/environments?view=azure-devops&WT.mc_id=DOP-MVP-5000997) - since approvals are configured per environment.
 3. Unlike classic pipelines, you cannot create recurring schedules for certain stages in release pipelines. Schedules will apply to the entire pipeline instead of a given stage.
 
 Using YAML pipeline is certainly a stretch for someone who is new to Azure DevOps. If you are new to it, I suggest you to start with classic pipelines, get comfortable with creating classic pipelines, service connections, variables, etc. before jumping into YAML pipelines.
-<br/>
+
+</br>
+
 Once you can comfortably create pipelines in the classic editor, you should definitely start using YAML pipelines. Although it could be time consuming initially, you will become faster over time. When you are creating similar patterns, re-using previous pipelines are as easy as copy and paste relevant YAML code.
 
 ## Conclusion
