@@ -21,11 +21,11 @@ I have also enabled the Experimental Themes preview. If the screenshots in this 
 
 To enable preview features, click on your profile avatar on the top right of the portal, and select ***Preview features***. Then select the scope from the drop-down list (either for yourself or for the entire organization), and enable the preview features (as shown below).
 
-![001](../images/day34/day.yy.yaml.pipelines.in.azure.devops.how.001.png)
+![001](../images/day34/day.34.yaml.pipelines.in.azure.devops.how.001.png)
 
 To create a blank pipeline, you can either use the GUI interface via the portal (as shown below), or use the Azure CLI.
 
-![002](../images/day34/day.yy.yaml.pipelines.in.azure.devops.how.002.png)
+![002](../images/day34/day.34.yaml.pipelines.in.azure.devops.how.002.png)
 
 Microsoft provides several quick start guides on creating your first YAML pipeline:
 <br/>
@@ -39,7 +39,7 @@ Alternatively, when you are developing your IaC solution, you can simply create 
 
 In classic pipelines, you can export YAML code for each agent job by clicking the ***View YAML*** link for each job (as shown below). When you are already comfortable creating classic CI/CD pipelines, the best way to start building your first YAML pipeline is probably by copy-and-paste of the YAML export from a similar classic pipeline to the YAML pipeline.
 
-![003](../images/day34/day.yy.yaml.pipelines.in.azure.devops.how.003.png)
+![003](../images/day34/day.34.yaml.pipelines.in.azure.devops.how.003.png)
 
 > **NOTE:** Based on my experience, the syntax of the YAML export from the classic pipeline may not always be correct. If you get errors when running the pipeline, make sure you always check the syntax against the Microsoft documentation. You can find the YAML definition for each task at Microsoft's documentation site: [Build and release tasks](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/?view=azure-devops&WT.mc_id=DOP-MVP-5000997)
 
@@ -47,15 +47,15 @@ Unlike classic pipelines, YAML pipelines do not differentiate build (CI) and rel
 
 When using multi-stage YAML pipelines, You would define a stage for build, and a stage for each of the release stages (i.e. your dev, test and production environments) (as shown below):
 
-![004](../images/day34/day.yy.yaml.pipelines.in.azure.devops.how.004.png)
+![004](../images/day34/day.34.yaml.pipelines.in.azure.devops.how.004.png)
 
 If any of the stages requires approval (for example, when a release manager must approve the release to production environment), you will need to create different environments within the Azure DevOps project (as shown below), assign approvers to the environments, then associate the stage in the environment within your YAML pipeline. You can find more information on approvals at Microsoft's documentation site: [Approvals and other checks](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/approvals?view=azure-devops&WT.mc_id=DOP-MVP-5000997). The sample pipeline in the Appendix has adopted this feature for your reference.
 
-![005](../images/day34/day.yy.yaml.pipelines.in.azure.devops.how.005.png)
+![005](../images/day34/day.34.yaml.pipelines.in.azure.devops.how.005.png)
 
 Once you have committed your code into the Git repo, you will find the pipeline is automatically created (as shown below):
 
-![006](../images/day34/day.yy.yaml.pipelines.in.azure.devops.how.006.png)
+![006](../images/day34/day.34.yaml.pipelines.in.azure.devops.how.006.png)
 
 ## Conclusion
 
