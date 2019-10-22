@@ -30,7 +30,7 @@ To create a blank pipeline, you can either use the GUI interface via the portal 
 Microsoft provides several quick start guides on creating your first YAML pipeline:
 <br/>
 * [Create your first pipeline](https://docs.microsoft.com/en-us/azure/devops/pipelines/create-first-pipeline?view=azure-devops&WT.mc_id=DOP-MVP-5000997)
-* [Create your first pipline from CLI](https://docs.microsoft.com/en-us/azure/devops/pipelines/create-first-pipeline-cli?view=azure-devops&WT.mc_id=DOP-MVP-5000997)
+* [Create your first pipeline from CLI](https://docs.microsoft.com/en-us/azure/devops/pipelines/create-first-pipeline-cli?view=azure-devops&WT.mc_id=DOP-MVP-5000997)
 * [Customize your pipeline](https://docs.microsoft.com/en-us/azure/devops/pipelines/customize-pipeline?view=azure-devops&WT.mc_id=DOP-MVP-5000997)
 
 Alternatively, when you are developing your IaC solution, you can simply create an "***azure-pipelines.yml***" file on the root folder of your git repository, and when you are ready, push it to the remote repo that your Azure DevOps is connecting to (i.e. GitHub or Azure DevOps).
