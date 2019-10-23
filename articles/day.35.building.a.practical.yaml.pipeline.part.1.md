@@ -38,7 +38,7 @@ AZURE_BUILD_PIPE_SP=$(az ad sp create-for-rbac \
 --years 1)
 ```
 
-You should get back a result similar to what is shown below. You'll notice that the **contributor** right assignment is scoped to the Resource Group.
+You should get back a result similar to what is shown below. You'll notice that the **contributor** right assignment is scoped to the Azure Subscription.
 
 ```console
 Changing "sp-az-build-pipeline-creds" to a valid URI of "http://sp-az-build-pipeline-creds", which is the required format used for service principal names
@@ -119,13 +119,13 @@ Next, in the **practical-yaml-build-pipe** Repo, create a new file.
 
 </br>
 
-Name the file **idempotent-pipe.yaml**.
+Name the file **idempotent-pipe.yaml** and click on **Create**.
 
 ![007](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.007.png)
 
 </br>
 
-Next, paste in the contents below and click on **Commit...** to save the file.
+Next, paste in the contents below into **idempotent-pipe.yaml** and click on **Commit...** to save the file.
 
 ```yaml
 # Builds are automatically triggered from the master branch in the 'practical-yaml-build-pipe' Repo.
@@ -193,7 +193,7 @@ steps:
 
 ## Create a new Build Pipeline
 
-Next, in Azure DevOps click on **Pipelines** and create a new **Pipeline**. On the **Where is your code?** dialog page, choose *Azure Repos Git (YAML)*.
+Next, in Azure DevOps click on **Pipelines** and create a new **Pipeline**. On the **Where is your code?** dialog page, choose **Azure Repos Git (YAML)**.
 
 ![009](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.009.png)
 
@@ -201,7 +201,7 @@ Next, in Azure DevOps click on **Pipelines** and create a new **Pipeline**. On t
 
 Next, select the **practical-yaml-build-pipeline** repository.
 
-![010](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.009.png)
+![010](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.010.png)
 
 </br>
 
