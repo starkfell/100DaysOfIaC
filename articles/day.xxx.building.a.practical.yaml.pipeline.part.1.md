@@ -8,7 +8,7 @@ Today, we are going to take you through the process of setting up Practical YAML
 [Create a new Service Connection for the Service Prinicpal](#create-a-new-service-connection-for-the-service-principal)</br>
 [Create a Repo in Azure DevOps for the Build Pipeline](#create-a-repo-in-azure-devops-for-the-build-pipeline)</br>
 [Create a YAML File for the Build Pipeline](#create-a-yaml-file-for-the-build-pipeline)</br>
-[Create a new Build Pipeline]()</br>
+[Create a new Build Pipeline](#create-a-new-build-pipeline)</br>
 [Conclusion]()</br>
 
 ## Create a Service Principal for the Build Pipeline
@@ -148,11 +148,13 @@ steps:
      --location westeurope
 ```
 
+</br>
+
 ![008](../images/day-aaa/day.aaa.building.a.practical.yaml.pipeline.part.1.008.png)
 
 </br>
 
-### Brief Explanation of the YAML File
+### Explanation of the YAML File
 
 Blah blah blah.
 
@@ -160,7 +162,9 @@ Blah blah blah.
 
 Next, 
 
+## Conclusion
 
+Now...
 
 
 
