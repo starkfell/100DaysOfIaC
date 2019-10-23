@@ -223,9 +223,9 @@ Next, look over the content on the **Review your pipeline YAML** page and click 
 
 </br>
 
-Finally, check on the Status of the **Job** to verify that it ran successfully and that the **practical-yaml** Resource Group now exists in your Azure Subscription.
+Finally, wait for the Status of the **Job** to change from *Queued* to *Running* to *Success*. The job should take less than 30 seconds to run. Afterwards you can review the logs of the **Job** manually and/or verify its veracity by seeing if the **practical-yaml** Resource Group exists in your Azure Subscription.
 
-![014](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.013.png)
+![014](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.014.png)
 
 </br>
 
