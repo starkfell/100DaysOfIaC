@@ -11,6 +11,48 @@ Let's build a Container running Grav from Azure DevOps.
   - can show idempotence
   - can show the build and deploy containers scenario
 
+## New Blog Post Series on Azure Containers and Practical YAML Build Pipelines
+
+- create a new Service Principal called **sp-az-build-pipeline-creds**
+- go to Project Settings --> Service Connections
+  - Create a new Service connection called **sp-az-build-pipeline-creds** and add in the Service Principal Creds.
+- create new Repo in your Azure DevOps Project called **az-containers**
+- add in the following file **az-containers.yaml**
+
+```yaml
+trigger:
+- master
+
+pool:
+  # Using a Microsoft Hosted Agent - https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops
+  vmImage: ubuntu-18.04
+
+steps:
+
+# Azure CLI Task - creating the 'containers-in-azure' Resource Group.
+- task: AzureCLI@1
+  displayName: 'check-resource-group'
+  inputs:
+    # Using Service Principal, 'sp-az-build-pipeline-creds', to authenticate to the Subscription.
+    azureSubscription: 'sp-az-build-pipeline-creds'
+    scriptLocation: inlineScript
+    inlineScript: |
+     az group create \
+     --name containers-in-azure \
+     --location westeurope
+```
+
+- Write About each step in this YAML File about what is going on and continue from there and how we will continue to build on it in subsequent blog posts.
+- follow up blog post will be about:
+- adding in the Azure Container Registry
+- adding in Dockerfile for Container
+- customizing the Dockerfile for the Container
+- Container Deployment (Grav CMS)
+- Modifying the Grav CMS Container
+- Modifying the YAML Build File to first delete and redeploy the Container
+
+
+
 ```bash
 az group create \
 --name containers-in-azure \
