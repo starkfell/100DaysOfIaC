@@ -1,4 +1,4 @@
-# 100 Days of IaC
+# 100 Days of IaC in Azure
 
 | Subject |   Day   | Article Link  |
 |---------|---------|---------------|
