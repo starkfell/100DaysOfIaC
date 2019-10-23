@@ -1,15 +1,18 @@
-# Building a Practical YAML Pipeline - Part 1
+# Day 35 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 1
 
-Today, we are going to take you through the process of setting up Practical YAML Build Pipeline in Azure DevOps that is idempotent.
+*This is the first in a series of posts about how to build your Azure DevOps Pipeline using YAML.*
+
+Today, we are going to take you through the process of setting up a Build Pipeline as Code using YAML in Azure DevOps. In future installments, we will continue to build on the content used in this article.
 
 **In this article:**
 
 [Creating a Service Principal for the Build Pipeline](#create-a-service-principal-for-the-build-pipeline)</br>
-[Create a new Service Connection for the Service Prinicpal](#create-a-new-service-connection-for-the-service-principal)</br>
+[Create a new Service Connection for the Service Principal](#create-a-new-service-connection-for-the-service-principal)</br>
 [Create a Repo in Azure DevOps for the Build Pipeline](#create-a-repo-in-azure-devops-for-the-build-pipeline)</br>
 [Create a YAML File for the Build Pipeline](#create-a-yaml-file-for-the-build-pipeline)</br>
+[Explanation of the Build Pipeline YAML File](#explanation-of-the-build-pipeline-yaml-file)</br>
 [Create a new Build Pipeline](#create-a-new-build-pipeline)</br>
-[Conclusion]()</br>
+[Conclusion](#conclusion)</br>
 
 ## Create a Service Principal for the Build Pipeline
 
@@ -78,19 +81,19 @@ You should get back the **password** which should look similar to what is shown 
 
 In your Azure DevOps Project, click on the **Project Settings** blade and then click on **Service Connections**. Next, click on **+ New service connection** and then on **Azure Resource Manager**.
 
-![001](../images/day-aaa/day.aaa.building.a.practical.yaml.pipeline.part.1.001.png)
+![001](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.001.png)
 
 </br>
 
 Next, in the **Add an Azure Resource Manager service connection** window, click on the link **use the full version of the service connection dialog**.
 
-![002](../images/day-aaa/day.aaa.building.a.practical.yaml.pipeline.part.1.002.png)
+![002](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.002.png)
 
 </br>
 
 Next, in the **Add an Azure Resource Manager service connection** window, set the *Connection name* field to **sp-az-build-pipeline**. Paste in the **appId** value from earlier in the *Service principal client ID* field and the **password** value in the *Service principal key* field. Afterwards, click on the **Verify connection** button. Once the connection is verified, click on the **OK** button.
 
-![003](../images/day-aaa/day.aaa.building.a.practical.yaml.pipeline.part.1.003.png)
+![003](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.003.png)
 
 </br>
 
@@ -98,13 +101,13 @@ Next, in the **Add an Azure Resource Manager service connection** window, set th
 
 In your Azure DevOps Project, click on the **Repos** blade and then click on **+ New Repository**.
 
-![004](../images/day-aaa/day.aaa.building.a.practical.yaml.pipeline.part.1.004.png)
+![004](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.004.png)
 
 </br>
 
 Next, create a Git repository called **practical-yaml-build-pipe**, put a checkmark in the *Add a README to describe your repository* box and then click on **Create**.
 
-![005](../images/day-aaa/day.aaa.building.a.practical.yaml.pipeline.part.1.005.png)
+![005](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.005.png)
 
 </br>
 
@@ -112,13 +115,13 @@ Next, create a Git repository called **practical-yaml-build-pipe**, put a checkm
 
 Next, in the **practical-yaml-build-pipe** Repo, create a new file.
 
-![006](../images/day-aaa/day.aaa.building.a.practical.yaml.pipeline.part.1.006.png)
+![006](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.006.png)
 
 </br>
 
 Name the file **idempotent-pipe.yaml**.
 
-![007](../images/day-aaa/day.aaa.building.a.practical.yaml.pipeline.part.1.007.png)
+![007](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.007.png)
 
 </br>
 
@@ -150,88 +153,82 @@ steps:
 
 </br>
 
-![008](../images/day-aaa/day.aaa.building.a.practical.yaml.pipeline.part.1.008.png)
+![008](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.008.png)
 
 </br>
 
-### Explanation of the YAML File
+## Explanation of the Build Pipeline YAML File
 
-Blah blah blah.
-
-## Create a new Build Pipeline
-
-Next, 
-
-## Conclusion
-
-Now...
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-In this installment of our Series, we are going
-
-Let's build a Container running Grav from Azure DevOps.
-
-- preface this by creating a Repository in Azure DevOps.
-- go over how to create the repository in a Project
-- anything else that Is added to this series is added to that repository.
-  - This repository/walkthrough has to be quick to add/modify/change.
-
-- Let's go ahead and have this YAML file based Build Pipeline setup to control everything, so that when the YAML file is updated, a build kicks off
-  - can show idempotence
-  - can show the build and deploy containers scenario
-
-## New Blog Post Series on Azure Containers and Practical YAML Build Pipelines
-
-- create a new Service Principal called **sp-az-build-pipeline-creds**
-- go to Project Settings --> Service Connections
-  - Create a new Service connection called **sp-az-build-pipeline-creds** and add in the Service Principal Creds.
-- create new Repo in your Azure DevOps Project called **az-containers**
-- add in the following file **az-containers.yaml**
+The first section of our YAML file lets the Azure Build Pipeline that we are triggering builds from the **master** branch in the **practical-yaml-build-pipe** repository.
 
 ```yaml
 trigger:
 - master
+```
 
+The next section below describes the Microsoft Hosted Agent we are using in the Build. As you can see below, we are using the latest Ubuntu Agent available at the time of this writing. Additional Agent Builds options are described **[here](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops)**.
+
+```yaml
 pool:
-  # Using a Microsoft Hosted Agent - https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops
   vmImage: ubuntu-18.04
+```
 
+The final section of our YAML file describes the tasks to execute at runtime during the Build. Our first step that we are implementing is an Azure CLI task that creates a Resource Group called **practical-yaml** in our Azure Subscription using an inline bash script. The credentials we are using to authenticate to the Azure Subscription is given in the *azureSubscription* field which tells the build to use the **sp-az-build-pipeline** service connection that we created earlier.
+
+```yaml
 steps:
 
-# Azure CLI Task - creating the 'containers-in-azure' Resource Group.
 - task: AzureCLI@1
-  displayName: 'check-resource-group'
+  displayName: 'Create practical-yaml Resource Group'
   inputs:
-    # Using Service Principal, 'sp-az-build-pipeline-creds', to authenticate to the Subscription.
-    azureSubscription: 'sp-az-build-pipeline-creds'
+    azureSubscription: 'sp-az-build-pipeline'
     scriptLocation: inlineScript
     inlineScript: |
      az group create \
-     --name containers-in-azure \
+     --name practical-yaml \
      --location westeurope
 ```
 
-- Write About each step in this YAML File about what is going on and continue from there and how we will continue to build on it in subsequent blog posts.
-- follow up blog post will be about:
-- adding in the Azure Container Registry
-- adding in Dockerfile for Container
-- customizing the Dockerfile for the Container
-- Container Deployment (Grav CMS)
-- Modifying the Grav CMS Container
-- Modifying the YAML Build File to first delete and redeploy the Container
+</br>
+
+## Create a new Build Pipeline
+
+Next, in Azure DevOps click on **Pipelines** and create a new **Pipeline**. On the **Where is your code?** dialog page, choose *Azure Repos Git (YAML)*.
+
+![009](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.009.png)
+
+</br>
+
+Next, select the **practical-yaml-build-pipeline** repository.
+
+![010](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.009.png)
+
+</br>
+
+Next, choose **Existing Azure Pipelines YAML file**.
+
+![011](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.011.png)
+
+</br>
+
+Next, click on the **Path** drop-down menu and select the **idempotent-pipe.yaml** file. Afterwards, click on **Continue** at the bottom right hand side of the page.
+
+![012](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.012.png)
+
+</br>
+
+Next, look over the content on the **Review your pipeline YAML** page and click on **Run**.
+
+![013](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.013.png)
+
+</br>
+
+Finally, check on the Status of the **Job** to verify that it ran successfully and that the **practical-yaml** Resource Group now exists in your Azure Subscription.
+
+![014](../images/day35/day.35.building.a.practical.yaml.pipeline.part.1.013.png)
+
+</br>
+
+## Conclusion
+
+In today's article, we created a Build Pipeline as Code using YAML in Azure DevOps that created an empty Resource Group that we will deploy resources to in future installments of this series of blog posts. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
