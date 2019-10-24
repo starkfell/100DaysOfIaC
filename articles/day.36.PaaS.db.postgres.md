@@ -106,10 +106,10 @@ while getopts ":i:t:l:r:u:p:d:x:c:v:k:b:y:" opt; do
         k) # Azure DB for Postgres SKU.
              SKU_NAME=${OPTARG}
              ;;
-        b) # Azure File Share Quota. 
+        b) # Data backup retention (from 7-35 days) 
              BACKUP_RET=${OPTARG}
              ;;
-        y) # Azure File Share Quota. 
+        y) # Enables or disable geo-redundancy  
              GEO_BACKUP=${OPTARG}
              ;;
         \?) # Unrecognised option - show help.
