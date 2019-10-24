@@ -20,7 +20,7 @@ In this installment:
 
 ## Installing the PostgreSQL client utilities (psql)
 
-We’ll need the PostgreSQL 10 client utilities, which includes the psql command line utility we’ll use in our script to populate the database with data. The instructions below only install the the PostgreSQL client utilities, not a full database instance!
+We’ll need the PostgreSQL 10 client utilities, which includes the psql command line utility we’ll use in our script to populate the database with data. The instructions below only install the PostgreSQL client utilities, not a full database instance!
 
 **Ubuntu 16.04 or 18.04**
 
