@@ -1,15 +1,15 @@
 
 # Day 36 - Transform Existing Scripts to YAML Pipelines (Part 1)
 
-Now that we have explored the what, when, why, and how of YAML pipelines, we're going to take a look at transforming your existing scripts into proper Infrastructure-as-Code through a PaaS database scenario. This installment will deploy and configure an [Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/services/postgresql/) instance, create a Postgres the AdventureWorks database, and then populate that database with data. 
+Now that we have explored the what, when, why, and how of YAML pipelines, we're going to take a look at transforming your existing scripts into proper Infrastructure-as-Code through a PaaS database scenario. This installment will deploy and configure an [Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/services/postgresql/) instance, create the AdventureWorks database, and then populate that database with data. 
 
-Today, we’ll do all of this using the Azure CLI and native PostgreSQL psql client utilities from a bash (.sh) script. So you can walk through the scenario, we're going to give you the script.
+Today, we’ll do all of this using the Azure CLI and native PostgreSQL psql client utility from a bash (.sh) script. So you can walk through the scenario, we're going to give you the script.
 
 Tomorrow, we’ll convert this scripted deployment into a multi-stage YAML pipeline, demonstrating how you can transform your existing script resources into reliable Infrastructure-as-Code deployments. 
 
-While you can run shell scripts on Windows with some work, I am using an Ubuntu 18.04 VM instance I deployed on Windows 10 using the [Linux Quick Create wizard](https://www.insidethemicrosoftcloud.com/new-linux-vm-experience-via-quick-create-on-windows-10/) in Hyper-V on Windows 10. A shell script, which is how we run Azure CLI, are a bit easier to support on Linux in my opinion.
+While you can run shell scripts on Windows with some work, I am using an Ubuntu 18.04 VM instance I deployed on Windows 10 using the [Linux Quick Create wizard](https://www.insidethemicrosoftcloud.com/new-linux-vm-experience-via-quick-create-on-windows-10/) in Hyper-V on Windows 10. A shell script, which is how we run Azure CLI, is a bit easier to support on Linux in my opinion.
 
-> **NOTE**: You'll need a service principal to drive the deployment in this installment. Instructions for this are in Day 4 (Linux) and Day 6 (Windows).
+> **NOTE**: You'll need a service principal to drive the deployment in this installment. Instructions for this are in Day 4 (Linux) and Day 6 (Windows) of the 100 Days of IaC series.
 
 In this installment:
 
@@ -20,7 +20,7 @@ In this installment:
 
 ## Installing the PostgreSQL client utilities (psql)
 
-We’ll need the PostgreSQL 10 client utilities, which includes the psql command line utility we’ll use in our script to populate the database with data. This only installs the the PostgreSQL client utilities, not a full database instance! 
+We’ll need the PostgreSQL 10 client utilities, which includes the psql command line utility we’ll use in our script to populate the database with data. The instructions below only install the the PostgreSQL client utilities, not a full database instance!
 
 **Ubuntu 16.04 or 18.04**
 
@@ -53,7 +53,7 @@ The sample script performs the following actions:
 
 **EXAMPLE**
 
-Get the example from the syntax help area in the script! 
+Get the example from the syntax help area in the script!
 
 **FULL SCRIPT**
 
@@ -234,7 +234,7 @@ PGPASSWORD=$DB_PASSWORD psql -v sslmode=true -d adventureworks -h ${SVR_NAME}.po
 
 ## Script Resource Downloads
 
-Get **createpostgres.sh** and **install.sql** from the [\artifacts]() folder and store in the same directory in your environment. Better yet, just clone this repo! 
+Get **createpostgres.sh** and **install.sql** from the [\resources](https://github.com/starkfell/100DaysOfIaC/tree/master/resources) folder and store in the same directory in your environment. Better yet, just clone this repo!
 
 ## Connecting to the Azure DB for PostgreSQL instance
 
