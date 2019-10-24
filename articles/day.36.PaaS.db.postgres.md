@@ -13,11 +13,10 @@ While you can run shell scripts on Windows with some work, I am using an Ubuntu 
 
 In this installment:
 
-[Installing the PostgreSQL client utilities (psql)](#) 
-[Azure Database for PostgreSQL Script](#)
-[Script Resource Downloads](#)
-[Connecting to the Azure DB for PostgreSQL instance](#)
-
+[Installing the PostgreSQL client utilities (psql)](#installing-the-postgresql-client-utilities-psql) </br>
+[Azure Database for PostgreSQL Script](#azure-database-for-postgresql-script) </br>
+[Script Resource Downloads](#script-resource-downloads) </br>
+[Connecting to the Azure DB for PostgreSQL instance](#Connecting-to-the-azure-db-for-postgresql-instance) </br>
 
 ## Installing the PostgreSQL client utilities (psql)
 
@@ -25,7 +24,7 @@ We’ll need the PostgreSQL 10 client utilities, which includes the psql command
 
 **Ubuntu 16.04 or 18.04**
 
-On Ubuntu, you'll run this 1-line command: 
+On Ubuntu, you'll run this 1-line command:
 
 ``` Bash
 sudo apt-get -y install postgresql-client-10
