@@ -1,5 +1,5 @@
 
-# Day 35 - Transform Existing Scripts to YAML Pipelines (Part 1)
+# Day 36 - Transform Existing Scripts to YAML Pipelines (Part 1)
 
 Now that we have explored the what, when, why, and how of YAML pipelines, we're going to take a look at transforming your existing scripts into proper Infrastructure-as-Code through a PaaS database scenario. This installment will deploy and configure an [Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/services/postgresql/) instance, create a Postgres the AdventureWorks database, and then populate that database with data. 
 
@@ -243,19 +243,19 @@ To connect to your Azure DB for PostgreSQL server instance, download [pgAdmin 4]
 
 Configure your server connection with the name of your server, username in username@server format, along with the password, as shown in Figure 1.
 
-![pgAdmin config](..\images\day36\day.36.pgAdmin.auth.jpg)
+![pgAdmin config](../images/day36/day.36.pgAdmin.auth.jpg)
 
 **Figure 1**. Server and user settings in pgAdmin
 
 Make sure to enable SSL (Figure 2), as we enabled this in the deployment script.
 
-![pgAdmin ssl settings](day.36.pgadmin.reqssl.jpg)
+![pgAdmin ssl settings](../images/day36/day.36.pgadmin.reqssl.jpg)
 
 **Figure 2**. SSL setting in pgAdmin
 
 Then, save and connect! 
 
-![pgAdmin conn](..\images\day36\day.36.pgAdmin.conn.jpg)
+![pgAdmin conn](../images/day36/day.36.pgAdmin.conn.jpg)
 
 **Figure 3**. Azure DB for PostgreSQL connection in pgAdmin
 
