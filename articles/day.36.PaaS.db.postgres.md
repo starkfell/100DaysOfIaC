@@ -1,11 +1,11 @@
 
 # Day 36 - Transform Existing Scripts to YAML Pipelines (Part 1)
 
-Now that we have explored the what, when, why, and how of YAML pipelines, we're going to take a look at transforming your existing scripts into proper Infrastructure-as-Code through a PaaS database scenario. This installment will deploy and configure an [Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/services/postgresql/) instance, create the AdventureWorks database, and then populate that database with data. 
+Now that we have explored the what, when, why, and how of YAML pipelines, we're going to take a look at transforming your existing scripts into proper Infrastructure-as-Code through a PaaS database scenario. This installment will deploy and configure an [Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/services/postgresql/) instance, create the AdventureWorks database, and then populate that database with data.
 
-Today, we’ll do all of this using the Azure CLI and native PostgreSQL psql client utility from a bash (.sh) script. So you can walk through the scenario, we're going to give you the script.
+Today, we’ll do all of this using the Azure CLI and native PostgreSQL psql client utility from a bash script. So you can walk through the scenario, we're going to give you the script.
 
-Tomorrow, we’ll convert this scripted deployment into a multi-stage YAML pipeline, demonstrating how you can transform your existing script resources into reliable Infrastructure-as-Code deployments. 
+Tomorrow, we’ll convert this scripted deployment into a multi-stage YAML pipeline, demonstrating how you can transform your existing script resources into reliable Infrastructure-as-Code deployments.
 
 While you can run shell scripts on Windows with some work, I am using an Ubuntu 18.04 VM instance I deployed on Windows 10 using the [Linux Quick Create wizard](https://www.insidethemicrosoftcloud.com/new-linux-vm-experience-via-quick-create-on-windows-10/) in Hyper-V on Windows 10. A shell script, which is how we run Azure CLI, is a bit easier to support on Linux in my opinion.
 
@@ -29,6 +29,7 @@ On Ubuntu, you'll run this 1-line command:
 ``` Bash
 sudo apt-get -y install postgresql-client-10
 ```
+
 **Windows 10**
 
 On Windows 10, it takes more work. You will need to download the PostgreSQL Enterprise Install and choose the ‘Command line only’ option in the gui-based installation wizard. You can find a download link for PostgreSQL 10.x [HERE](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
@@ -48,7 +49,20 @@ The sample script performs the following actions:
 **SYNTAX**
 
 ``` Bash
-./createpostgres.sh -i {AZURE_SUBSCRIPTION_ID} -t {AZURE_SUBSCRIPTION_TENANT_ID} -l {AZURE_LOCATION} -r {POSTGRES_RG} -u {MGMT_SP_USERNAME} -p {MGMT_SP_PASSWORD} -d {DB_USERNAME} -x {DB_PASSWORD} -c {ENV_PREFIX} -v {POSTGRES_VERSION} -k {SKU_NAME} -b {BACKUP_RET} -y {GEO_BACKUP}
+./createpostgres.sh \
+-i {AZURE_SUBSCRIPTION_ID} \
+-t {AZURE_SUBSCRIPTION_TENANT_ID} \
+-l {AZURE_LOCATION} \
+-r {POSTGRES_RG} \
+-u {MGMT_SP_USERNAME} \
+-p {MGMT_SP_PASSWORD} \
+-d {DB_USERNAME} \
+-x {DB_PASSWORD} \
+-c {ENV_PREFIX} \
+-v {POSTGRES_VERSION} \
+-k {SKU_NAME} \
+-b {BACKUP_RET} \
+-y {GEO_BACKUP}
 ```
 
 **EXAMPLE**
@@ -138,8 +152,11 @@ done
 shift $((OPTIND-1))
 
 # Logging in to Azure as the Management Service Principal.
-# /usr/bin/az login --service-principal -u "$K8S_MGMT_SP_USERNAME" -p $K8S_MGMT_SP_PASSWORD --tenant $AZURE_SUBSCRIPTION_TENANT_ID 
-/usr/bin/az login --service-principal -u "http://$MGMT_SP_USERNAME" -p $MGMT_SP_PASSWORD --tenant $AZURE_SUBSCRIPTION_TENANT_ID # > /dev/null 2>&0
+/usr/bin/az login \
+--service-principal \
+-u "http://$MGMT_SP_USERNAME" \
+-p $MGMT_SP_PASSWORD \
+--tenant $AZURE_SUBSCRIPTION_TENANT_ID
 
 if [ $? -eq 0 ]; then
     echo "[$(date -u)][---success---] Logged into Azure as the Service Principal [$MGMT_SP_USERNAME]."
@@ -219,16 +236,24 @@ az postgres server firewall-rule create \
 # 4 Create the Adventureworks database
 #############################################
 
-# create the database 
-az postgres db create -s "$SVR_NAME" -g "$POSTGRES_RG" -n adventureworks
+# create the database
+az postgres db create \
+-s "$SVR_NAME" \
+-g "$POSTGRES_RG" \
+-n adventureworks
 
 ############################################################
 # Populate the database(s) [assumes .sql files are present]
 ############################################################
 
 # populate the database (while avoiding the password prompt)
-PGPASSWORD=$DB_PASSWORD psql -v sslmode=true -d adventureworks -h ${SVR_NAME}.postgres.database.azure.com -U postgres@${SVR_NAME} -a -f install.sql
-
+PGPASSWORD=$DB_PASSWORD psql \
+-v sslmode=true \
+-d adventureworks \
+-h ${SVR_NAME}.postgres.database.azure.com \
+-U postgres@${SVR_NAME} \
+-a \
+-f install.sql
 
 ```
 
@@ -252,7 +277,7 @@ Make sure to enable SSL (Figure 2), as we enabled this in the deployment script.
 
 **Figure 2**. SSL setting in pgAdmin
 
-Then, save and connect! 
+Then, save and connect!
 
 ![pgAdmin conn](../images/day36/day.36.pgAdmin.conn.jpg)
 
