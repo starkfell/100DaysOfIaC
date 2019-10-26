@@ -45,4 +45,4 @@ The second stage, shown in Figure 3, creates the database with the name we pass 
 
 ## Conclusion  
 
-Okay, so now we have a classic (visual) pipeline. In the next installment, we're going to convert this to a YAML pipeline so we can start tapping into all the advantages the new world of YAML pipelines has to offer. We're only on Day 37, so if there is something you'd like to see us cover, remember leave a comment on the repo!
+Okay, so now we have a classic (visual) pipeline. In the next installment, we're going to convert this to a YAML pipeline so we can start tapping into all the advantages the new world of YAML pipelines has to offer. We're only on Day 37, so if there is something you'd like to see us cover, remember leave a comment on the repo! 
