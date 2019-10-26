@@ -17,7 +17,7 @@ You can get the full scripts from the "100 Days of IaC" repo [HERE](https://gith
 
 I've configured the parameters of these scripts as [release variables](https://docs.microsoft.com/en-us/azure/devops/pipelines/release/variables?view=azure-devops&tabs=batch).
 
-Then, I created a two stage pipeline. One stage for each script. This gives us some handy default behaviors, such as the second stage only running if the first stage is successful. And we can add approvers on any or all stages if we wish.  
+Then, I created a two stage pipeline, pictured in Figure 1. There's one stage for each script. This gives us some handy default behaviors, such as the second stage only running if the first stage is successful. And we can add approvers on any or all stages if we wish.
 
 ![multi-stage release pipeline](../images/day37/fig1.multi.stage.rel.pipe.jpg)
 
