@@ -2,17 +2,21 @@
 
 *This is the second post on how to build your Azure DevOps Pipeline using YAML. If you haven't read **[Part 1](./day.35.building.a.practical.yaml.pipeline.part.1.md)** already, start there first.*
 
-Today, we are going to take you through the process of setting up a Build Pipeline as Code using YAML in Azure DevOps. In future installments, we will continue to build on the content used in this article.
+Today, we are going to add in tasks to our Build Pipeline to Deploy an Azure Container Registry and then login to it.
 
 **In this article:**
 
-[Grant the Service Principal Ownership of practical-yaml Resource Group](#grant-the-service-principal-ownership-of-practical-yaml-resource-group)</br>
+[Grant Service Principal Ownership of practical-yaml Resource Group](#grant-service-principal-ownership-of-practical-yaml-resource-group)</br>
 [Add in task for Deploying an Azure Container Registry](#add-in-task-for-deploying-an-azure-container-registry)</br>
+[Add in task for Logging in to the Azure Container Registry](#add-in-task-for-logging-in-to-the-azure-container-registry)</br>
+[Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
-## Grant the Service Principal Ownership of practical-yaml Resource Group
+## Grant Service Principal Ownership of practical-yaml Resource Group
 
-Because we are going to use the **** Service Principal to manage *everything* in the **practical-yaml** Resource Group, it is in our best interest to give it full Ownership Rights. Be aware that the Service Principal currently has **Contributor** access across the entire Subscription still.
+Because we are going to use the **sp-az-build-pipeline-creds** Service Principal to manage *everything* in the **practical-yaml** Resource Group, we are going to grand it **Owner** access to the Resource Group.
+
+</br>
 
 On your Linux Host (with Azure CLI installed), open up a bash prompt and run the following command to retrieve your Azure Subscription ID.
 
@@ -133,7 +137,13 @@ In the Job log, you should see the successful deployment of the Azure Container 
 
 </br>
 
-## Login to the Azure Container Registry
+## Add in task for Logging in to the Azure Container Registry
+
+Add in the following code to the bottom of the **idempotent-pipe.yaml** file.
+
+> **NOTE:** Replace all instances of **pracazconreg** with a unique name or append some alphanumeric characters after it; otherwise, you'll be trying to deploy to an Azure Container Registry that already exists...sorry, I used it first!
+
+</br>
 
 ```yaml
 # Azure CLI Task - Login to ACR 'pracazconreg'.
@@ -149,9 +159,46 @@ In the Job log, you should see the successful deployment of the Azure Container 
      --output table
 ```
 
-## Login to the Azure Container Registry
+</br>
+
+The **idempotent-pipe.yaml** file should now match what is shown below.
 
 ```yaml
+# Builds are automatically triggered from the master branch in the 'practical-yaml-build-pipe' Repo.
+trigger:
+- master
+
+pool:
+  # Using a Microsoft Hosted Agent - https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops
+  vmImage: ubuntu-18.04
+
+steps:
+
+# Azure CLI Task - creating the 'practical-yaml' Resource Group.
+- task: AzureCLI@1
+  displayName: 'Create practical-yaml Resource Group'
+  inputs:
+    # Using Service Principal, 'sp-az-build-pipeline', to authenticate to the Azure Subscription.
+    azureSubscription: 'sp-az-build-pipeline'
+    scriptLocation: inlineScript
+    inlineScript: |
+     az group create \
+     --name practical-yaml \
+     --location westeurope
+
+# Azure CLI Task - creating the 'pracazconreg' Azure Container Registry.
+- task: AzureCLI@1
+  displayName: 'Create pracazconreg Azure Container Registry'
+  inputs:
+    # Using Service Principal, 'sp-az-build-pipeline', to authenticate to the Azure Subscription.
+    azureSubscription: 'sp-az-build-pipeline'
+    scriptLocation: inlineScript
+    inlineScript: |
+     az acr create \
+     --name pracazconreg \
+     --resource-group practical-yaml \
+     --sku Basic
+
 # Azure CLI Task - Login to ACR 'pracazconreg'.
 - task: AzureCLI@1
   displayName: 'Login to the Azure Container Registry'
@@ -164,6 +211,20 @@ In the Job log, you should see the successful deployment of the Azure Container 
      --name pracazconreg \
      --output table
 ```
+
+Click on the **Save** button on the top right of the page to commit the change to the **master** branch. The Build Pipeline will immediately kick-off and should complete in about a minute.
+
+In the Job log, you should see the successful deployment of the Azure Container Registry as shown below. Additionally, if you look in the Azure Portal, you should see the Azure Container Registry located in the **practical-yaml** Resource Group.
+
+![003](../images/dayxx/day.xx.building.a.practical.yaml.pipeline.part.2.003.png)
+
+</br>
+
+## Things to Consider
+
+As previously stated, our Service Principal still has **Contributor** access to the entire Azure Subscription. You may want to update the Service Principals access to the entire Azure Subscription to either **Reader** or remove it altogether so that it only has **Owner** access to the **practical-yaml** Resource Group.
+
+</br>
 
 ## Conclusion
 
