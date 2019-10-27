@@ -29,8 +29,8 @@ AZURE_SUB_ID=$(az account show --query id --output tsv)
 
 If the above command doesn't work, manually add your Azure Subscription ID to the variable.
 
-```powershell
-AZURE_SUB_ID=("00000000-0000-0000-0000-000000000000")
+```bash
+AZURE_SUB_ID="00000000-0000-0000-0000-000000000000"
 ```
 
 On your Linux Host (with Azure CLI installed), open up a bash prompt and run the following command to create a new Service Principal.

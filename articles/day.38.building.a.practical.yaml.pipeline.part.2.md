@@ -29,8 +29,8 @@ AZURE_SUB_ID=$(az account show --query id --output tsv)
 
 If the above command doesn't work, manually add your Azure Subscription ID to the variable.
 
-```powershell
-AZURE_SUB_ID=("00000000-0000-0000-0000-000000000000")
+```bash
+AZURE_SUB_ID="00000000-0000-0000-0000-000000000000"
 ```
 
 Next, run the following command to grant the Service Principal **Owner** Access to the **practical-yaml** Resource Group.
