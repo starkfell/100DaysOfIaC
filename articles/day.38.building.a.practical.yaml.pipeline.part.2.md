@@ -80,10 +80,10 @@ Add in the following code to the **idempotent-pipe.yaml** file.
     azureSubscription: 'sp-az-build-pipeline'
     scriptLocation: inlineScript
     inlineScript: |
-    az acr create \
-    --name pracazconreg \
-    --resource-group practical-yaml \
-    --sku Basic
+     az acr create \
+     --name pracazconreg \
+     --resource-group practical-yaml \
+     --sku Basic
 ```
 
 </br>

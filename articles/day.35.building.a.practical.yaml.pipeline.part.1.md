@@ -1,6 +1,8 @@
 # Day 35 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 1
 
-*This is the first in a series of posts about how to build your Azure DevOps Pipeline using YAML.*
+*This is the first in a series of posts about how to build your Azure DevOps Pipeline using YAML. **Part 2** of this series can be found **[here](./day.38.building.a.practical.yaml.pipeline.part.2.md)**.
+
+</br>
 
 Today, we are going to take you through the process of setting up a Build Pipeline as Code using YAML in Azure DevOps. In future installments, we will continue to build on the content used in this article.
 
