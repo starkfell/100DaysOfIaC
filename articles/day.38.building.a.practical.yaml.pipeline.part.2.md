@@ -1,6 +1,6 @@
 # Day 38 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 2
 
-**Part 1** of this series can be found **[here](./day.35.building.a.practical.yaml.pipeline.part.1.md)**.*
+ ***Part 1** of this series can be found **[here](./day.35.building.a.practical.yaml.pipeline.part.1.md)**.*
 
 Today, we are going to add in tasks to our Build Pipeline to Deploy an Azure Container Registry and then login to it.
 
