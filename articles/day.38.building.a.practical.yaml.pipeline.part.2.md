@@ -9,13 +9,13 @@ Today, we are going to add in tasks to our Build Pipeline to Deploy an Azure Con
 
 **In this article:**
 
-[Grant Service Principal Ownership of practical-yaml Resource Group](#grant-service-principal-ownership-of-practical-yaml-resource-group)</br>
+[Grant the Service Principal Ownership of the Resource Group](#grant-the-service-principal-ownership-of-the-resource-group)</br>
 [Add in task for Deploying an Azure Container Registry](#add-in-task-for-deploying-an-azure-container-registry)</br>
 [Add in task for Logging in to the Azure Container Registry](#add-in-task-for-logging-in-to-the-azure-container-registry)</br>
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
-## Grant Service Principal Ownership of practical-yaml Resource Group
+## Grant the Service Principal Ownership of the Resource Group
 
 Because we are going to use the **sp-az-build-pipeline-creds** Service Principal to manage *everything* in the **practical-yaml** Resource Group, we are going to grand it **Owner** access to the Resource Group.
 
