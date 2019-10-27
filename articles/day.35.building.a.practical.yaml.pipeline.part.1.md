@@ -16,7 +16,7 @@ Today, we are going to take you through the process of setting up a Build Pipeli
 
 ## Create a Service Principal for the Build Pipeline
 
-On your Linux Host (with Azure CLI installed), open up a bash prompt and run the following command to create a new Service Principal.
+On your Linux Host (with Azure CLI installed), open up a bash prompt and run the following command to retrieve your Azure Subscription ID.
 
 ```bash
 AZURE_SUB_ID=$(az account show --query id --output tsv)

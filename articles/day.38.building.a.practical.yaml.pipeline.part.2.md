@@ -1,4 +1,4 @@
-# Day XX - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 2
+# Day 38 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 2
 
 *This is the second post on how to build your Azure DevOps Pipeline using YAML. If you haven't read **[Part 1](./day.35.building.a.practical.yaml.pipeline.part.1.md)** already, start there first.*
 
@@ -6,11 +6,54 @@ Today, we are going to take you through the process of setting up a Build Pipeli
 
 **In this article:**
 
-[Deploy an Azure Container Registry]()</br>
-[Grant the Service Principal access to the Azure Container Registry]()</br>
+[Grant the Service Principal Ownership of practical-yaml Resource Group](#grant-the-service-principal-ownership-of-practical-yaml-resource-group)</br>
+[Add in task for Deploying an Azure Container Registry](#add-in-task-for-deploying-an-azure-container-registry)</br>
 [Conclusion](#conclusion)</br>
 
-## Deploy an Azure Container Registry
+## Grant the Service Principal Ownership of practical-yaml Resource Group
+
+Because we are going to use the **** Service Principal to manage *everything* in the **practical-yaml** Resource Group, it is in our best interest to give it full Ownership Rights. Be aware that the Service Principal currently has **Contributor** access across the entire Subscription still.
+
+On your Linux Host (with Azure CLI installed), open up a bash prompt and run the following command to retrieve your Azure Subscription ID.
+
+```bash
+AZURE_SUB_ID=$(az account show --query id --output tsv)
+```
+
+If the above command doesn't work, manually add your Azure Subscription ID to the variable.
+
+```powershell
+AZURE_SUB_ID=("00000000-0000-0000-0000-000000000000")
+```
+
+Next, run the following command to grant the Service Principal **Owner** Access to the **practical-yaml** Resource Group.
+
+```bash
+az role assignment create \
+--assignee http://sp-az-build-pipeline-creds \
+--role Owner \
+--scope "/subscriptions/$AZURE_SUB_ID/resourceGroups/practical-yaml"
+```
+
+You should get back a result similar to what is shown below.
+
+```console
+{
+  "canDelegate": null,
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/practical-yaml/providers/Microsoft.Authorization/roleAssignments/ef6c8286-8428-4c22-98e0-94c2d8b5eb3e",
+  "name": "ef6c8286-8428-4c22-98e0-94c2d8b5eb3e",
+  "principalId": "1ca70046-4c2f-4fdf-bda2-4bbd2606dfe7",
+  "principalType": "ServicePrincipal",
+  "resourceGroup": "practical-yaml",
+  "roleDefinitionId": "/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+  "scope": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/practical-yaml",
+  "type": "Microsoft.Authorization/roleAssignments"
+}
+```
+
+</br>
+
+## Add in task for Deploying an Azure Container Registry
 
 In Azure DevOps, open up the **practical-yaml-build-pipe** Build Pipeline and put it in Edit mode. You'll notice that you have Tasks that are available to you on the right side of the screen that you can use as templates in the **idempotent-pipe.yaml** file.
 
@@ -90,31 +133,36 @@ In the Job log, you should see the successful deployment of the Azure Container 
 
 </br>
 
-## Grant the Service Principal access to the Azure Container Registry
+## Login to the Azure Container Registry
 
 ```yaml
-# Azure CLI Task - Grant Contributor Rights to ACR 'pracazconreg' for Service Principal 'sp-az-build-pipeline-creds'.
+# Azure CLI Task - Login to ACR 'pracazconreg'.
 - task: AzureCLI@1
-  displayName: 'Grant Access to ACR'
+  displayName: 'Login to the Azure Container Registry'
   inputs:
     # Using Service Principal, 'sp-az-build-pipeline', to authenticate to the Azure Subscription.
     azureSubscription: 'sp-az-build-pipeline'
     scriptLocation: inlineScript
     inlineScript: |
-     ACR_REGISTRY_ID=$(az acr show \
+     az acr login \
      --name pracazconreg \
-     --query id \
-     --output tsv)
+     --output table
+```
 
-     SP_APP_ID=$(az ad sp show \
-     --id http://sp-az-build-pipeline-creds \
-     --query appId \
-     --output tsv)
+## Login to the Azure Container Registry
 
-     az role assignment create \
-     --assignee $SP_APP_ID \
-     --scope $ACR_REGISTRY_ID \
-     --role Contributor
+```yaml
+# Azure CLI Task - Login to ACR 'pracazconreg'.
+- task: AzureCLI@1
+  displayName: 'Login to the Azure Container Registry'
+  inputs:
+    # Using Service Principal, 'sp-az-build-pipeline', to authenticate to the Azure Subscription.
+    azureSubscription: 'sp-az-build-pipeline'
+    scriptLocation: inlineScript
+    inlineScript: |
+     az acr login \
+     --name pracazconreg \
+     --output table
 ```
 
 ## Conclusion
