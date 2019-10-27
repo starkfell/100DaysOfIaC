@@ -144,7 +144,7 @@ In the Job log, you should see the successful deployment of the Azure Container 
 
 Add in the following code to the bottom of the **idempotent-pipe.yaml** file.
 
-> **NOTE:** Replace all instances of **pracazconreg** with a unique name or append some alphanumeric characters after it; otherwise, you'll be trying to deploy to an Azure Container Registry that already exists...sorry, I used it first!
+> **NOTE:** Don't forget to replace all instances of **pracazconreg** with a the name you chose in the previous step.
 
 </br>
 
