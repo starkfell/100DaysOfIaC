@@ -2,7 +2,7 @@
 
 | Subject |   Day   | Article Link  |
 |---------|---------|---------------|
-| Repurposing scripts for IaC (PaaS DB scenario Pt 2) | Day 38 | [Day 38 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 2](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.38.building.a.practical.yaml.pipeline.part.2.md) |
+| Repurposing scripts for IaC (PaaS DB scenario Pt 2) | Day 38 | [Day 38 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 2](/articles/day.38.building.a.practical.yaml.pipeline.part.2.md) |
 | Repurposing scripts for IaC (PaaS DB scenario Pt 2) | Day 37 | [Day 37 - Transform Existing Scripts to YAML Pipelines (Part 2)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.37.xform.exist.scripts.pt2.md) |
 | Repurposing scripts for IaC (PaaS DB scenario) | Day 36 | [Day 36 - Transform Existing Scripts to YAML Pipelines (Part 1)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.36.paas.db.postgres.md) |
 | Practical YAML in Build Pipelines | Day 35 | [Day 35 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 1](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.35.building.a.practical.yaml.pipeline.part.1.md) |
