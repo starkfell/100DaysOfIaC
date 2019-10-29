@@ -61,7 +61,7 @@ While the script above will technically work when called in Azure CLI Task, ther
 
 # Author:      Ryan Irujo
 # Name:        base-infra.sh
-# Description: This script deploys Infrastructure into a target Azure Sub from an Azure CLI Task in Azure DevOps.
+# Description: Deploys Infrastructure to a target Azure Sub from an Azure CLI Task in Azure DevOps.
 
 # Deploying the 'practical-yaml' Resource Group.
 az group create \
@@ -91,7 +91,7 @@ Replace the existing content of the **base-infra.sh** script with the code below
 
 # Author:      Ryan Irujo
 # Name:        base-infra.sh
-# Description: This script deploys Infrastructure into a target Azure Subscription from an Azure CLI Task in Azure DevOps.
+# Description: Deploys Infrastructure to a target Azure Sub from an Azure CLI Task in Azure DevOps.
 
 # Deploying the 'practical-yaml' Resource Group.
 az group create \
