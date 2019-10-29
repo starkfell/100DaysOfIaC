@@ -47,8 +47,7 @@ Remember, as we mentioned earlier in in **[Day 8](./article/../day.8.deploy.tech
 * Azure CLI create commands are idempotent, but not declarative
 * ARM templates are idempotent and declarative
 
-For everyday non-production use where 99.99% reliability is not as important, having your team learn the necessary scripting skills is a win if it helps you move forward with IaC, deploying from a pipeline instead of by hand from the command line.
-Idempotence is running a set of operations or tasks and always achieving the same results irrespective of how many times they are executed. By ensuring that anything and everything that you put into your Build Pipeline is idempotent, you should have minimal surprises pop up in your Infrastructure that are related to the changes you made in your Build Pipeline.
+For everyday non-production use where 99.99% reliability is not as important, having your team learn the necessary scripting skills is a win if it helps you move forward with IaC, deploying from a pipeline instead of by hand from the command line. Idempotence is running a set of operations or tasks and always achieving the same results irrespective of how many times they are executed. By ensuring that anything and everything that you put into your Build Pipeline is idempotent, you should have minimal surprises pop up in your Infrastructure that are related to the changes you made in your Build Pipeline.
 
 </br>
 
