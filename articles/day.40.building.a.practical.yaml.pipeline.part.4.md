@@ -11,6 +11,16 @@
 
 Today, we are going to refactor our Azure Build Pipeline into a single Script with more readable output and a Single Azure CLI Task.
 
+## Clone the Azure DevOps Repo in VS Code
+
+Clone the **practical-yaml-build-pipe** repository in VS Code. If you need a refresher of how to do this, please go back and review **[Day 13](./day.13.git.started.in.vs.code.windows.edition.md)**.
+
+> **NOTE**: Fun fact about editing a Bash Script directly in a Repo in Azure DevOps in a Web Browser. It can change the End of Line sequence on the bash script causing all types of misinterpretations of the script at runtime when ran in an Azure CLI task. When you are making changes to the script that we are creating in the next few steps, make sure to change the End of Line sequence for the file from CRLF to LF in VS Code. The option to do this can be found on the bottom right hand of VS Code as shown below and can be set per file.
+
+![001](../images/day40/day.40.building.a.practical.yaml.pipeline.part.4.001.png)
+
+</br>
+
 ## Transform the existing tasks into a Bash Script
 
 Create a new file in your **practical-yaml-build-pipe** repository called **base-infra.sh**.
