@@ -50,7 +50,7 @@ So you're attempted working with thousands of lines of JSON in ARM Templates but
 
 If you can create an idempotent Azure PowerShell or Azure CLI script that's only 100 lines long and it will replace an ARM Template that's 1000+ lines of JSON, then by all means, do so. Conversely, if you have an Azure PowerShell or Azure CLI script that isn't working as intended, but you have an ARM Template that's performing perfectly, then go with the ARM Template.
 
-Take into account what is best for you and your team and make changes that make you more efficient and productive (a.k.a. - lazy)
+Take into account what is best for you and your team and make changes that make you more efficient and productive (a.k.a. - lazy).
 
 </br>
 
