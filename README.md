@@ -2,10 +2,11 @@
 
 | Subject | Article Link  |
 |---------|---------------|
-| Repurposing scripts for IaC (PaaS DB scenario Pt 2) | [Day 38 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 2](/articles/day.38.building.a.practical.yaml.pipeline.part.2.md) |
+| Practical YAML in Build Pipelines - Part 3 | [Day 39 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 3](/articles/day.39.building.a.practical.yaml.pipeline.part.3.md) |
+| Practical YAML in Build Pipelines - Part 2 | [Day 38 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 2](/articles/day.38.building.a.practical.yaml.pipeline.part.2.md) |
 | Repurposing scripts for IaC (PaaS DB scenario Pt 2) | [Day 37 - Transform Existing Scripts to YAML Pipelines (Part 2)](/articles/day.37.xform.exist.scripts.pt2.md) |
 | Repurposing scripts for IaC (PaaS DB scenario) | [Day 36 - Transform Existing Scripts to YAML Pipelines (Part 1)](/articles/day.36.paas.db.postgres.md) |
-| Practical YAML in Build Pipelines | [Day 35 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 1](/articles/day.35.building.a.practical.yaml.pipeline.part.1.md) |
+| Practical YAML in Build Pipelines - Part 1 | [Day 35 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 1](/articles/day.35.building.a.practical.yaml.pipeline.part.1.md) |
 | YAML Pipelines | [Day 34 - YAML Pipelines in Azure DevOps: How](/articles/day.34.yaml.pipelines.in.azdo.how.md) |
 | YAML Pipelines | [Day 33 - YAML Pipelines in Azure DevOps: When and Why](/articles/day.33.yaml.pipelines.in.azdo.when.and.why.md) |
 | Manage SQL in a Build Pipeline | [Day 32 - Build Pipelines, using a Service Principal to manage SQL Resources (Windows Edition)](/articles/day.32.build.pipes.sp.managed.sql.windows.md) |
