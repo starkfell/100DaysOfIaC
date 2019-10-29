@@ -18,6 +18,7 @@ So you've been reading our 100 Days of IaC Series, along with a other Microsoft 
 
 ## Pick Tools that Play to the Strengths of your Team
 
+You should pick tools that play to the strengths of your team, while always keeping in mind your end goal in IaC is idempotent, declarative deployment.
 If 90% of your Team uses GUI based management systems and have just started using PowerShell, it would behoove you to start with using PowerShell related tasks available in Build Pipelines along with the **classic editor**. In the long-term I would recommend moving away from the **classic editor** so you have better tracking and control with your Build Pipelines when they are configured in YAML and tied to a Git repository.
 
 If 90% of your Team has a strong Linux background and is comfortable in with bash and python, then stick with the Azure CLI and bash/python scripting based tasks.
@@ -40,6 +41,13 @@ If you've had to manage any type of application or scripts in the past; there's 
 
 ## Bake in Idempotence
 
+Remember, as we mentioned earlier in in [Day 8](./article/../day.8.deploy.tech.comparison.md):
+
+* PowerShell is neither idempotent or declarative
+* Azure CLI create commands are idempotent, but not declarative
+* ARM templates are idempotent and declarative
+
+For everyday non-production use where 99.99% reliability is not as important, having your team learn the necessary scripting skills is a win if it helps you move forward with IaC, deploying from a pipeline instead of by hand from the command line.
 Idempotence is running a set of operations or tasks and always achieving the same results irrespective of how many times they are executed. By ensuring that anything and everything that you put into your Build Pipeline is idempotent, you should have minimal surprises pop up in your Infrastructure that are related to the changes you made in your Build Pipeline.
 
 </br>
@@ -50,7 +58,7 @@ So you're attempted working with thousands of lines of JSON in ARM Templates but
 
 If you can create an idempotent Azure PowerShell or Azure CLI script that's only 100 lines long and it will replace an ARM Template that's 1000+ lines of JSON, then by all means, do so. Conversely, if you have an Azure PowerShell or Azure CLI script that isn't working as intended, but you have an ARM Template that's performing perfectly, then go with the ARM Template.
 
-Take into account what is best for you and your team and make changes that make you more efficient and productive (a.k.a. - lazy).
+Take into account what is best for you and your team and make changes that make you more efficient and productive.
 
 </br>
 
