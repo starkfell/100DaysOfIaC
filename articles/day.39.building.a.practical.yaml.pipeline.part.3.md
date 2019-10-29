@@ -41,7 +41,7 @@ If you've had to manage any type of application or scripts in the past; there's 
 
 ## Bake in Idempotence
 
-Remember, as we mentioned earlier in in [Day 8](./article/../day.8.deploy.tech.comparison.md):
+Remember, as we mentioned earlier in in **[Day 8](./article/../day.8.deploy.tech.comparison.md)**:
 
 * PowerShell is neither idempotent or declarative
 * Azure CLI create commands are idempotent, but not declarative
