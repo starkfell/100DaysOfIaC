@@ -133,7 +133,7 @@ pool:
 steps:
 
 # Azure CLI Task - Deploying Base Infrastructure.
-- task: AzureCLI@2
+- task: AzureCLI@1
   displayName: 'Deploying Base Infrastructure'
   inputs:
     # Using Service Principal, 'sp-az-build-pipeline', to authenticate to the Azure Subscription.
