@@ -103,7 +103,8 @@ az group create \
 az acr create \
 --name pracazconreg \
 --resource-group practical-yaml \
---sku Basic && echo "[---info---] Azure Container Registry: pracazconreg was created successfully or already exists."
+--sku Basic \
+--output none && echo "[---info---] Azure Container Registry: pracazconreg was created successfully or already exists."
 
 # Logging into the 'pracazconreg' Azure Container Registry.
 az acr login \
