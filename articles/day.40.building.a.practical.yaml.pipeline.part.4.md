@@ -82,7 +82,7 @@ az acr login \
 
 </br>
 
-Now that we can identify the purpose of this script, we should update the output of the commands in the script to be more readable in the logs when the Build Pipeline is ran. If we left the script as is, you'd be able to identify if it ran successfully or not, but not without having to comb the entire log entry of the Azure CLI Task in the job.
+Now that we've documented the purpose of the script, we should customize the output of the script to be more readable in the logs of the Build Pipeline. If we left the script as is, you could still identify if it ran successfully or not, but not without having to read through the entire log entry of the Azure CLI Task in the job.
 
 Replace the existing content of the **base-infra.sh** script with the code below and commit it to the repository.
 
@@ -113,13 +113,13 @@ az acr login \
 
 By modifying each command to use **--output none** and then echoing back a single sentence after running successfully, we should see only three lines of output at the end of our Azure CLI task when this script runs.
 
-> **NOTE:** We are going to see four lines, but more on that in **Things to Consider**.
+> **NOTE:** You should actually see four lines of output, but more on that in **Things to Consider**.
 
 </br>
 
 ## Update the YAML Configuration for the Build Pipeline
 
-Next, replace the existing configuration in the **idempotent-pipe.yaml** in VS Code and commit it to the repository.
+Next, we need to update the YAML Configuration for the Build Pipeline to use our new script. Replace the existing configuration in the **idempotent-pipe.yaml** file with the configuration shown below. When you are finished, save and commit it to the repository.
 
 ```yaml
 # Builds are automatically triggered from the master branch in the 'practical-yaml-build-pipe' Repo.
@@ -145,7 +145,7 @@ steps:
 
 </br>
 
-Review the latest job logs of the **practical-yaml-build-pipe** Build Pipeline and you should see the following output from the **Deploying Base Infrastructure** Azure CLI Task.
+Review the logs of the most current job in the **practical-yaml-build-pipe** Build Pipeline and you should see the following output from the **Deploying Base Infrastructure** Azure CLI Task.
 
 ![002](../images/day40/day.40.building.a.practical.yaml.pipeline.part.4.002.png)
 
