@@ -133,7 +133,7 @@ pool:
 steps:
 
 # Azure CLI Task - Deploying Base Infrastructure.
-- task: AzureCLI@1
+- task: AzureCLI@2
   displayName: 'Deploying Base Infrastructure'
   inputs:
     # Using Service Principal, 'sp-az-build-pipeline', to authenticate to the Azure Subscription.
@@ -156,6 +156,8 @@ Review the latest job logs of the **practical-yaml-build-pipe** Build Pipeline a
 Every time we made a commit to the **practical-yaml-build-pipe** repository, the Build Pipeline was triggered to run. Be aware of this behavior when working with Build Pipelines in Production environments. You have several options of triggering Build Pipelines including by branch or disabling them altogether.
 
 There were actually 4 lines of output instead of three. This is because of the way that the output of the **az acr login** currently behaves and is something we will address in **Part 5** when we look at further refining and parsing commands and returning output in the **base-infra.sh** script.
+
+We updated the YAML file to use Azure CLI Task version 2.0 **(AzureLCI@2)** instead of version 1.0 **(AzureCLI@1)**. You can read about the updates in version 2.0 **[here](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-cli?view=azure-devops)**.
 
 </br>
 
