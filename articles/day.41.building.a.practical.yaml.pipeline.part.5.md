@@ -14,7 +14,13 @@ next
 
 Today, we are going to further refine the **base-infra.sh** bash script and demonstrate the process of adding in your own error handling.
 
-</br>
+**In this article:**
+
+[Figuring out your Error Handling Options](#figuring-out-your-error-handling-options)</br>
+[Update the Bash Script](#update-the-bash-script)</br>
+[Check on the Build Pipeline Job](#check-on-the-build-pipeline-job)</br>
+[Things to Consider](#things-to-consider)</br>
+[Conclusion](#conclusion)</br>
 
 ## Figuring out your Error Handling Options
 
@@ -132,7 +138,7 @@ So we've added the **--output** argument and set it to **tsv** (tab-separated va
 
 </br>
 
-## Update the YAML Configuration for the Build Pipeline
+## Update the Bash Script
 
 Next, in VS Code, open the **base-infra.sh** file. Replace it's current contents with the code below and save and commit it to the repository.
 
@@ -157,6 +163,10 @@ else
     exit 2
 fi
 ```
+
+<br/>
+
+## Check on the Build Pipeline Job
 
 Review the logs of the most current job in the **practical-yaml-build-pipe** Build Pipeline and you should see the following output from the **Deploying Base Infrastructure** Azure CLI Task.
 
