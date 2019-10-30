@@ -54,7 +54,7 @@ az acr login \
 
 </br>
 
-While the script above will technically work when called in Azure CLI Task, there is no context as to where the script is supposed to run from or why it's performing it's specific actions. Update the script with the following comments as shown below.
+While the script above will technically work when called in an Azure CLI Task, there is no context as to the *purpose* of the script. Add the following comments to the script as shown below.
 
 ```bash
 #!/bin/bash
