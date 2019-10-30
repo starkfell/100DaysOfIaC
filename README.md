@@ -2,6 +2,7 @@
 
 | Subject | Article Link  |
 |---------|---------------|
+| Practical YAML in Build Pipelines - Part 4 | [Day 40 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 4](/articles/day.40.building.a.practical.yaml.pipeline.part.4.md) |
 | Practical YAML in Build Pipelines - Part 3 | [Day 39 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 3](/articles/day.39.building.a.practical.yaml.pipeline.part.3.md) |
 | Practical YAML in Build Pipelines - Part 2 | [Day 38 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 2](/articles/day.38.building.a.practical.yaml.pipeline.part.2.md) |
 | Repurposing scripts for IaC (PaaS DB scenario Pt 2) | [Day 37 - Transform Existing Scripts to YAML Pipelines (Part 2)](/articles/day.37.xform.exist.scripts.pt2.md) |

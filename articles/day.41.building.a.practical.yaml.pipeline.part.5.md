@@ -10,6 +10,8 @@
 
 </br>
 
+next
+
 Today, we are going to further refine the output of the **base-infra.sh** bash script.
 
 While Azure CLI commands are idempotent, there's the possibility that you come across a command that doesn't output content the same way as every other command and you need to understand how you can capture the output of these commands and parse them accordingly.
