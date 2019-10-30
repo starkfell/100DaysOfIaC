@@ -10,8 +10,6 @@
 
 </br>
 
-next
-
 Today, we are going to further refine the **base-infra.sh** bash script and demonstrate the process of adding in your own error handling.
 
 **In this article:**
@@ -72,6 +70,8 @@ az group create \
 --location westeurope
 ```
 
+</br>
+
 You should get the following output since the **practical-yaml** Resource Group is already in place.
 
 ```console
@@ -88,6 +88,8 @@ You should get the following output since the **practical-yaml** Resource Group 
 }
 ```
 
+</br>
+
 Since the default output of this command is in JSON and provides us with a **provisioningState** value of the operation, we have multiple options to use for querying it:
 
 * **[jq](https://stedolan.github.io/jq/)**, a lightweight and flexible command-line JSON processor
@@ -95,7 +97,9 @@ Since the default output of this command is in JSON and provides us with a **pro
 
 Since the **--query** argument is already native to the Azure CLI, it's in our best interest to make use of it.
 
-Run the following command below:
+</br>
+
+Run the following command below.
 
 ```bash
 CHECK_RG=$(az group create \
@@ -104,6 +108,8 @@ CHECK_RG=$(az group create \
 --query properties.provisioningState \
 --output tsv)
 ```
+
+</br>
 
 Run the following command to get see the results in the **$CHECK_RG** variable.
 
@@ -116,6 +122,8 @@ You should get back the following response.
 ```console
 Succeeded
 ```
+
+</br>
 
 Now that we know the value of **provisioningState** to look for when the Resource Group has been deployed (or exists), we can build some error handling around this process. Below is the error handling I've added to the **az group create** command.
 
@@ -133,6 +141,8 @@ else
     exit 2
 fi
 ```
+
+</br>
 
 So we've added the **--output** argument and set it to **tsv** (tab-separated value) here to ensure that the result of the **properties.provisioningState** isn't surrounded by quotes making it easier for us to analyze returned value using the bash *string comparison operator*, **==**.
 
@@ -164,7 +174,7 @@ else
 fi
 ```
 
-<br/>
+</br>
 
 ## Check on the Build Pipeline Job
 
