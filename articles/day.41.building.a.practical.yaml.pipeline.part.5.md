@@ -160,7 +160,7 @@ fi
 
 Review the logs of the most current job in the **practical-yaml-build-pipe** Build Pipeline and you should see the following output from the **Deploying Base Infrastructure** Azure CLI Task.
 
-![002](../images/day41/day.41.building.a.practical.yaml.pipeline.part.5.002.png)
+![001](../images/day41/day.41.building.a.practical.yaml.pipeline.part.5.001.png)
 
 </br>
 
