@@ -172,6 +172,8 @@ Review the logs of the most current job in the **practical-yaml-build-pipe** Bui
 
 Irrespective of what tools you are using, be aware of any updates that are being made to the toolset; for example, going from Azure CLI 2.0.69 to Azure CLI 2.0.70. This is where having multiple environments for CI/CD deployment becomes very valuable. If you are using the exact same code for each environment and you have an update to your toolset, you should see any odd behavior or breaking changes in Development way ahead of deployments in Production. If you are thinking that by sticking with Toolsets that are not cloud-based is a better idea, think again. If someone else is updating your infrastructure, they only have to do accidentally make one update to potentially throw everything out of whack for your deployments.
 
+The Resource Group we are dealing with already exists so the error handling we've created will absolultely work, make sure you test your Error Handling when the resources you are trying to deploy don't exist yet or are in a state they aren't supposed to be in. This will ensure that you haven't forgotten anything and covered as much as you can.
+
 You should test your custom Error Handling through several iterations before running in Production!
 
 Talk about where a DO/WHILE Loop could be useful, commands for instance that need to run a long time or don't wait to finish being executed.
@@ -180,7 +182,7 @@ Talk about where a DO/WHILE Loop could be useful, commands for instance that nee
 
 ## Conclusion
 
-In today's article we refactored our Azure Build Pipeline into a single bash script and a single Azure CLI Task. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article we further refined the **base-infra.sh** bash script and demonstrated the process of adding in your own error handling. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
 
 ```text
 option 1 - Build GRAV CMS from original Dockerfile
