@@ -12,11 +12,11 @@
 
 next
 
-Today, we are going to further refine the **base-infra.sh** bash script.
+Today, we are going to further refine the **base-infra.sh** bash script and demonstrate the process of adding in your own error handling.
 
 </br>
 
-## Code Review
+## Figuring out your Error Handling Options
 
 While Azure CLI commands are idempotent, there's the possibility that you come across a command that doesn't behave identically to the others. Because of this, you need to understand how you can capture their output, parse the output, and make decisions based on the parsed results.
 
@@ -130,7 +130,11 @@ fi
 
 So we've added the **--output** argument and set it to **tsv** (tab-separated value) here to ensure that the result of the **properties.provisioningState** isn't surrounded by quotes making it easier for us to analyze returned value using the bash *string comparison operator*, **==**.
 
-Next, in VS Code, open the **base-infra.sh** file. Replace it's current contents with the code below.
+</br>
+
+## Update the YAML Configuration for the Build Pipeline
+
+Next, in VS Code, open the **base-infra.sh** file. Replace it's current contents with the code below and save and commit it to the repository.
 
 ```bash
 #!/bin/bash
@@ -154,11 +158,31 @@ else
 fi
 ```
 
-> **NOTE:** Don't worry, we're going to do the same thing for the Azure Container Registry and it's related Login in the next blog post so you won't be missing any code in the end.
+Review the logs of the most current job in the **practical-yaml-build-pipe** Build Pipeline and you should see the following output from the **Deploying Base Infrastructure** Azure CLI Task.
 
+![002](../images/day41/day.41.building.a.practical.yaml.pipeline.part.5.002.png)
+
+</br>
+
+> **NOTE:** We're going to do the same thing for the Azure Container Registry and it's related Login in the next blog post so you won't be missing any code in the end.
+
+</br>
+
+## Things to Consider
+
+Irrespective of what tools you are using, be aware of any updates that are being made to the toolset; for example, going from Azure CLI 2.0.69 to Azure CLI 2.0.70. This is where having multiple environments for CI/CD deployment becomes very valuable. If you are using the exact same code for each environment and you have an update to your toolset, you should see any odd behavior or breaking changes in Development way ahead of deployments in Production. If you are thinking that by sticking with Toolsets that are not cloud-based is a better idea, think again. If someone else is updating your infrastructure, they only have to do accidentally make one update to potentially throw everything out of whack for your deployments.
+
+You should test your custom Error Handling through several iterations before running in Production!
+
+Talk about where a DO/WHILE Loop could be useful, commands for instance that need to run a long time or don't wait to finish being executed.
+
+</br>
+
+## Conclusion
+
+In today's article we refactored our Azure Build Pipeline into a single bash script and a single Azure CLI Task. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
 
 ```text
 option 1 - Build GRAV CMS from original Dockerfile
-option 2 - cleanup existing scripts for better readability of output in task logs
 option 3 - turn everything into scripts that are files and not inline. (conversion option)
 ```
