@@ -192,11 +192,11 @@ Review the logs of the most current job in the **practical-yaml-build-pipe** Bui
 
 Irrespective of what tools you are using, be aware of any updates that are being made to the toolset; for example, going from Azure CLI 2.0.69 to Azure CLI 2.0.70. This is where having multiple environments for CI/CD deployment becomes very valuable. If you are using the exact same code for each environment and you have an update to your toolset, you should see any odd behavior or breaking changes in Development way ahead of deployments in Production. If you are thinking that by sticking with Toolsets that are not cloud-based is a better idea, think again. If someone else is updating your infrastructure, they only have to do accidentally make one update to potentially throw everything out of whack for your deployments.
 
-The Resource Group we are dealing with already exists so the error handling we've created will absolultely work, make sure you test your Error Handling when the resources you are trying to deploy don't exist yet or are in a state they aren't supposed to be in. This will ensure that you haven't forgotten anything and covered as much as you can.
+The Resource Group we are dealing with already exists so the error handling we've created will absolutely work, make sure you test your error handling when the resources you are trying to deploy don't exist yet or are in a state they aren't supposed to be in. This will ensure that you haven't forgotten anything and covered as much as you can.
 
-You should test your custom Error Handling through several iterations before running in Production!
+Any error handling that you create needs to be thoroughly tested before running it in Production.
 
-Talk about where a DO/WHILE Loop could be useful, commands for instance that need to run a long time or don't wait to finish being executed.
+Considering using do/while loops for commands or processes that run for an indefinite length of time; this would allow you to check for the state you are looking for when it occurs.
 
 </br>
 
