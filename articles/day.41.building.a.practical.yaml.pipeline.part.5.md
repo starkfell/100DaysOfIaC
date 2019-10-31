@@ -184,7 +184,7 @@ Review the logs of the most current job in the **practical-yaml-build-pipe** Bui
 
 </br>
 
-> **NOTE:** We're going to do the same thing for the Azure Container Registry and it's related Login in the next blog post so you won't be missing any code in the end.
+> **NOTE:** We're going to do the same thing for the Azure Container Registry and it's related Login in the next blog post of our *Practical Guide for YAML Build Pipelines* so you won't be missing any code in the end.
 
 </br>
 
