@@ -196,7 +196,7 @@ The Resource Group we are dealing with already exists so the error handling we'v
 
 Any error handling that you create needs to be thoroughly tested before running it in Production.
 
-Considering using do/while loops for commands or processes that run for an indefinite length of time; this would allow you to check for the state you are looking for when it occurs.
+Consider using do/while loops for commands or processes that run for an indefinite length of time; this would allow you to check for the state you are looking for when it occurs.
 
 </br>
 
