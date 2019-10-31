@@ -1,5 +1,10 @@
 # Building and Deploying Containers - Part 1 - Deploy a Container Registry
 
+```text
+option 1 - Build GRAV CMS from original Dockerfile
+option 3 - turn everything into scripts that are files and not inline. (conversion option)
+```
+
 Let's build a Container running Grav from Azure DevOps.
 
 - preface this by creating a Repository in Azure DevOps.

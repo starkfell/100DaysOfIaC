@@ -203,8 +203,3 @@ Talk about where a DO/WHILE Loop could be useful, commands for instance that nee
 ## Conclusion
 
 In today's article we further refined the **base-infra.sh** bash script and demonstrated the process of adding in your own error handling. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
-
-```text
-option 1 - Build GRAV CMS from original Dockerfile
-option 3 - turn everything into scripts that are files and not inline. (conversion option)
-```
