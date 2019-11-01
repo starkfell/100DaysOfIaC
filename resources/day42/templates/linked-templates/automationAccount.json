@@ -1,0 +1,80 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "automationAccountName": {
+            "type": "string",
+            "defaultValue": "",
+            "metadata": {
+                "description": "Assign a name for the Automation account"
+            }
+        },
+        "automationRegion": {
+            "type": "string",
+            "metadata": {
+                "description": "Specify the region for your Automation account"
+            }
+        },
+        "_artifactsLocation": {
+            "type": "string",
+            "metadata": {
+                "description": "The base URI where artifacts required by this template are located"
+            }
+        },
+        "_artifactsLocationSasToken": {
+            "type": "securestring",
+            "metadata": {
+                "description": "The sasToken required to access _artifactsLocation.  When the template is deployed using the accompanying scripts, a sasToken will be automatically generated."
+            }
+        }
+    },
+    "variables": {
+        "runbooks": {
+            "helloWorld": {
+                "name": "hello-world",
+                "version": "1.0.0.0",
+                "description": "Sample Hello World PowerShell runbook",
+                "type": "PowerShell",
+                "Id": ""
+            }
+        },
+        "scriptUri": "[concat(parameters('_artifactsLocation'),'runbooks/hello-world.ps1', parameters('_artifactsLocationSasToken'))]"
+    },
+    "resources": [
+        {
+            "apiVersion": "2015-10-31",
+            "location": "[parameters('automationRegion')]",
+            "name": "[parameters('automationAccountName')]",
+            "type": "Microsoft.Automation/automationAccounts",
+            "comments": "Automation account",
+            "properties": {
+                "sku": {
+                    "name": "Basic"
+                }
+            },
+            "resources": [
+                {
+                    "name": "[variables('runbooks').helloWorld.name]",
+                    "type": "runbooks",
+                    "apiVersion": "2015-10-31",
+                    "location": "[parameters('automationRegion')]",
+                    "dependsOn": [
+                        "[concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]"
+                    ],
+                    "tags": {},
+                    "properties": {
+                        "runbookType": "[variables('runbooks').helloWorld.type]",
+                        "logProgress": false,
+                        "logVerbose": false,
+                        "description": "[variables('runbooks').helloWorld.description]",
+                        "publishContentLink": {
+                            "uri": "[variables('scriptUri')]",
+                            "version": "[variables('runbooks').helloWorld.version]"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "outputs": {}
+}

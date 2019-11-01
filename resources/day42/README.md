@@ -1,0 +1,1 @@
+# Demo Solution - Deploy Linked ARM Templates Using Storage Account in YAML Pipeline

@@ -1,0 +1,174 @@
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    exclude:
+    - README.md
+  
+stages:
+- stage: test_and_build
+  jobs:
+  - job: Pester_Tests
+    variables:
+      - group: Tests - Monitoring
+    displayName: Pester Tests
+    pool:
+      name: Hosted Windows 2019 with VS2019
+      demands: azureps
+    steps:
+    - powershell: |
+        $FeedName = 'PSGallery'
+        Install-PackageProvider Nuget -Scope CurrentUser -Force
+        Install-module PSScriptAnalyzer -force -Scope CurrentUser -Repository $FeedName
+        Install-module PSPesterTest -force -Scope CurrentUser -Repository $FeedName
+      displayName: 'Install required PowerShell modules'
+
+    - task: richardfennellBM.BM-VSTS-PesterRunner-Task.Pester-Task.Pester@8
+      displayName: 'Pester Test Runner - Monitoring Template'
+      inputs:
+        scriptFolder: '@{Path=''$(System.DefaultWorkingDirectory)\tests\ARMTemplate\Test.ARMTemplate.ps1''; Parameters=@{TemplatePath =''$(System.DefaultWorkingDirectory)\templates\\azuredeploy.json''; parameters =$(parameters); variables = $(variables); resources = $(resources)}}'
+        resultsFile: '$(System.DefaultWorkingDirectory)\TEST-Monitoring.xml'
+
+    - task: PublishTestResults@2
+      displayName: 'Publish Test Results **/TEST-*.xml'
+      inputs:
+        testResultsFormat: NUnit
+
+  - job: ARM_Deployment_Validation
+    variables:
+    - group: Variables - Monitoring
+    displayName: ARM Deployment Validation
+    dependsOn: Pester_Tests
+    pool:
+      name: Hosted Windows 2019 with VS2019
+      demands: azureps
+    steps:
+    - task: AzureFileCopy@3
+      displayName: 'Copy Artifacts to Azure Storage Account'
+      inputs:
+        SourcePath: 'templates'
+        azureSubscription: 'The-Big-MVP-Sub-1'
+        Destination: AzureBlob
+        storage: $(storageAccount)
+        containerName: 'monitoring-buildartifacts'
+        outputStorageUri: artifactsLocation
+        outputStorageContainerSasToken: artifactsLocationSasToken
+    - task: AzureResourceGroupDeployment@2
+      displayName: 'Template Validation - Monitoring'
+      inputs:
+        azureSubscription: 'The-Big-MVP-Sub-1'
+        resourceGroupName: '$(resourceGroup)'
+        location: '$(location)'
+        csmFile: templates/azuredeploy.json
+        csmParametersFile: parameters/lab.azuredeploy.parameters.json
+        overrideParameters: '-_artifactsLocation $(artifactsLocation) -_artifactsLocationSasToken $(artifactsLocationSasToken)'
+        deploymentMode: Validation
+    - task: AzureCLI@2
+      displayName: Remove Artifacts from Storage Account
+      condition: always()
+      inputs:
+        azureSubscription: 'The-Big-MVP-Sub-1'
+        scriptType: ps
+        scriptLocation: inlineScript
+        inlineScript: az storage container delete --name monitoring-buildartifacts --account-name $(storageAccount)
+  - job: Publish_Pattern
+    displayName: Publish Pattern
+    dependsOn: 
+    - Pester_Tests
+    - ARM_Deployment_Validation
+    steps:
+    - task: CopyFiles@2
+      displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+      inputs:
+        SourceFolder: '$(Build.SourcesDirectory)'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+        CleanTargetFolder: true
+        OverWrite: true
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: drop'
+
+- stage: lab_deploy
+  jobs:
+    - deployment: lab_deploy
+      variables:
+      - group: Variables - Monitoring
+      displayName: 'Deploy to Lab environment'
+      pool:
+        name: Hosted Windows 2019 with VS2019
+        demands: azureps
+      environment: 'lab'
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - task: AzureFileCopy@3
+              displayName: 'Copy Artifacts to Azure Storage Account'
+              inputs:
+                SourcePath: '$(Agent.BuildDirectory)/drop/templates'
+                azureSubscription: 'The-Big-MVP-Sub-1'
+                Destination: AzureBlob
+                storage: $(storageAccount)
+                containerName: 'monitoring-releaseartifactslab'
+                outputStorageUri: artifactsLocation
+                outputStorageContainerSasToken: artifactsLocationSasToken
+            - task: AzureResourceGroupDeployment@2
+              displayName: 'Deploy Monitoring Solution'
+              inputs:
+                azureSubscription: 'The-Big-MVP-Sub-1'
+                resourceGroupName: '$(resourceGroup)'
+                location: '$(location)'
+                csmFile: '$(Agent.BuildDirectory)/drop/templates/azuredeploy.json'
+                csmParametersFile: '$(Agent.BuildDirectory)/drop/parameters/lab.azuredeploy.parameters.json'
+                overrideParameters: '-_artifactsLocation $(artifactsLocation) -_artifactsLocationSasToken $(artifactsLocationSasToken)'
+            - task: AzureCLI@2
+              displayName: Remove Artifacts from Storage Account
+              condition: always()
+              inputs:
+                azureSubscription: 'The-Big-MVP-Sub-1'
+                scriptType: ps
+                scriptLocation: inlineScript
+                inlineScript: az storage container delete --name monitoring-releaseartifactslab --account-name $(storageAccount)
+- stage: prod_deploy
+  jobs:
+    - deployment: prod_deploy
+      variables:
+      - group: Variables - Monitoring
+      displayName: 'Deploy to Production environment'
+      pool:
+        name: Hosted Windows 2019 with VS2019
+        demands: azureps
+      environment: 'prod'
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - task: AzureFileCopy@3
+              displayName: 'Copy Artifacts to Azure Storage Account'
+              inputs:
+                SourcePath: '$(Agent.BuildDirectory)/drop/templates'
+                azureSubscription: 'The-Big-MVP-Sub-1'
+                Destination: AzureBlob
+                storage: $(storageAccount)
+                containerName: 'monitoring-releaseartifactsprod'
+                outputStorageUri: artifactsLocation
+                outputStorageContainerSasToken: artifactsLocationSasToken
+            - task: AzureResourceGroupDeployment@2
+              displayName: 'Deploy Monitoring Solution'
+              inputs:
+                azureSubscription: 'MVP-MSDN'
+                resourceGroupName: '$(resourceGroup)'
+                location: '$(location)'
+                csmFile: '$(Agent.BuildDirectory)/drop/templates/azuredeploy.json'
+                csmParametersFile: '$(Agent.BuildDirectory)/drop/parameters/prod.azuredeploy.parameters.json'
+                overrideParameters: '-_artifactsLocation $(artifactsLocation) -_artifactsLocationSasToken $(artifactsLocationSasToken)'
+            - task: AzureCLI@2
+              displayName: Remove Artifacts from Storage Account
+              condition: always()
+              inputs:
+                azureSubscription: 'The-Big-MVP-Sub-1'
+                scriptType: ps
+                scriptLocation: inlineScript
+                inlineScript: az storage container delete --name monitoring-releaseartifactsprod --account-name $(storageAccount)
