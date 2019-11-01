@@ -110,4 +110,4 @@ If everything goes well, the pipeline should successfully run (as shown below), 
 
 # Conclusion
 
-In this article, we have demonstrated how to leverage Azure Storage Accounts and Azure DevOps to easily deploy linked templates. The entire demo solution including all the templates, YAML pipeline can be found [HERE](../resources/dayzz/).
+In this article, we have demonstrated how to leverage Azure Storage Accounts and Azure DevOps to easily deploy linked templates. The entire demo solution including all the templates and YAML pipeline can be found [HERE](../resources/dayzz/).
