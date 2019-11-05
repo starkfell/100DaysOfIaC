@@ -17,7 +17,7 @@ There are two hosting options for build agents:
 - **Microsoft-hosted agents**, for which maintenance and upgrades are taken care of for you by Microsoft.
 - **Self-hosted agents**, hosted by you, on premises or in your Azure subscription.
 
-While you get one build agent as part of the base subscription (with 1800 minutes of build time per month), this won't be enough in terms of concurrency. For private projects, you'll get a single parallel job, you'll pay about $30/USD per month for each additional agent you add to your sub.
+While you get one build agent as part of the base subscription (with 1800 minutes of build time per month), this won't be enough in terms of concurrency for a busy team. For private projects, you'll get a single parallel job, you'll pay about $30/USD per month for each additional agent you add to your sub.
 
 The parallelism options are there, but you have to take additional steps to make use of them. You can read about how a parallel job is consumed by a pipeline [HERE](https://docs.microsoft.com/en-us/azure/devops/pipelines/licensing/concurrent-jobs?view=azure-devops#how-a-parallel-job-is-consumed-by-a-pipeline)
 
