@@ -1,6 +1,6 @@
 # Day 43 - Build Agents in Azure Pipelines
 
-In this installment, we're going to begin unpacking build agents, your options, and where you can find advantages, both in terms of functionality and cost.
+In this installment, we're going to begin unpacking Azure DevOps build agents, your options, and where you can find advantages, both in terms of functionality and cost.
 
 In this article:
 
@@ -19,7 +19,7 @@ There are two hosting options for build agents:
 
 While you get one build agent as part of the base subscription (with 1800 minutes of build time per month), this won't be enough in terms of concurrency. For private projects, you'll get a single parallel job, you'll pay about $30/USD per month for each additional agent you add to your sub.
 
-The parallelism options are there, but you have to take additional steps to make use of them.
+The parallelism options are there, but you have to take additional steps to make use of them. You can read about how a parallel job is consumed by a pipeline [HERE](https://docs.microsoft.com/en-us/azure/devops/pipelines/licensing/concurrent-jobs?view=azure-devops#how-a-parallel-job-is-consumed-by-a-pipeline)
 
 ![001](../images/day43/fig1.agt.settings.jpg)
 
@@ -137,4 +137,4 @@ fi
 
 ## Conclusion
 
-As your DevOps practice grows, you will begin to care more about performance, parallelism, and managing costs. We hope this gets you started exploring your build options hands-on.
+As your DevOps practice grows, you will begin to care more about performance, parallelism, and managing costs. We hope this gets you started exploring your build agent configuration and hosting options hands-on.
