@@ -1,6 +1,6 @@
 # Day 43 - Build Agents in Azure Pipelines
 
-In this installment, we're going to begin unpacking Azure DevOps build agents, your options, and where you can find advantages, both in terms of functionality and cost.
+In this installment, we're going to begin unpacking Azure Pipelines build agents, your options, and where you can find advantages, both in terms of functionality and cost.
 
 In this article:
 
@@ -43,9 +43,9 @@ There are a number of options available for running self hosted agents. You can 
 - **macOS**. For jobs that need a macOS agent, like Xcode apps or Xamarin.iOS projects.
 - **Docker**. You can run Linux or Windows-based agents, depending on the kind of builds you need. Linux is the default.
 
-Because Docker give you greater density on your hosts, and the ability to customize your container images, it means you tackle concurrency and configuration flexibility more efficiently than you would with VMs.
+Because Docker gives you greater density on your hosts, and the ability to customize your container images, it means you tackle concurrency and configuration flexibility more efficiently than you would with VMs.
 
-You can find full details on self-hosted agent configuration [HERE](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops).
+You can find full details on self-hosted agent configuration, including Docker options [HERE](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/v2-linux?view=azure-devops).
 
 ## Why build agents on Docker?
 
@@ -53,13 +53,13 @@ You can find full details on self-hosted agent configuration [HERE](https://docs
 - Create new custom build agents without dirtying up the entire VM host
 - Share images with others (via a container registry)
 
-Docker and containers bring many of the same advantages to your build agents they bring to your applications.
+Docker and containers bring many of the same advantages to your build agents (and thus build and release management processes) that they bring to your applications.
 
 ## Custom Self-Hosted Build Agent Script (Linux VM)
 
 Once you deploy your Linux VM with the software you need, you can deploy the Azure DevOps Linux agent. The script snippet below is provided here to show you how to install the agent with Bash. It's thoroughly commented so you know what's happening at each step of the process.
 
-> **NOTE:** You can even incorporate your VM deployment and Azure DevOps agent configuration into a release pipelineso you can make this a hands-free process.
+> **NOTE:** You can even incorporate your VM deployment and Azure Pipelines agent configuration into a release pipelines you can make this a hands-free process.
 
 ``` Bash
 # Downloading AzureDevOps Linux Agent (2.142.1)
