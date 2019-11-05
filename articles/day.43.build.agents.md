@@ -25,6 +25,8 @@ The parallelism options are there, but you have to take additional steps to make
 
 **Figure 1**. Azure DevOps build agent settings
 
+In the Microsoft-hosted scenario, jobs may be run on the host or in a container for both Windows and Linux. Containers provide the advantages of isolation from the host and allow you to pin specific versions of tools and dependencies. On a side note, if you need macOS and Red Hat Enterprise Linux 6 build agents, container jobs are not available.
+
 ## Why self-hosted?
 
 There are two primary reasons:
@@ -85,7 +87,7 @@ else
     echo "[$(date -u)][---info---] Failed to extract the Azure DevOps Linux Agent to [$LINUX_USERNAME_HOME_DIR/myagent]." >> $CONFIG_AGENT_STATUS_LOG
 fi
 
-# Installing the AzureDevOps Linux Agent Dependencies.
+# Installing the Azure DevOps Linux Agent Dependencies.
 sudo $LINUX_USERNAME_HOME_DIR/myagent/bin/installdependencies.sh > $AGENT_INSTALLATION_LOG
 
 if [ $? -eq 0 ]; then
