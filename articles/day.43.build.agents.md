@@ -4,11 +4,11 @@ In this installment, we're going to begin unpacking build agents, your options, 
 
 In this article:
 
-[Hosting options](hosting-options) </br>
-[Why self-hosted?](why-self-hosted) </br>
-[Self-hosted agent flavors](Self-hosted-agent-flavors) </br>
-[Why build agents on Docker?](why-build-agents-on-docker) </br>
-[Custom Self-Hosted Build Agent Script (Linux VM)](custom-self-hosted-build-agent-script-linux-vm) </br>
+[Hosting options](#hosting-options) </br>
+[Why self-hosted?](#why-self-hosted) </br>
+[Self-hosted agent flavors](#Self-hosted-agent-flavors) </br>
+[Why build agents on Docker?](#why-build-agents-on-docker) </br>
+[Custom Self-Hosted Build Agent Script (Linux VM)](#custom-self-hosted-build-agent-script-linux-vm) </br>
 
 ## Hosting options
 
