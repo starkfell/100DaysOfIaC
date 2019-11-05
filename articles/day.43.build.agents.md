@@ -49,9 +49,12 @@ You can find full details on self-hosted agent configuration, including Docker o
 
 ## Why build agents on Docker?
 
+There are a few reasons, and if you have begun running your apps in containers, they will look familiar.
+
 - Deploy, destroy, and redeploy build agents rapidly
 - Create new custom build agents without dirtying up the entire VM host
 - Share images with others (via a container registry)
+- Compute density advantages that comes with running containers
 
 Docker and containers bring many of the same advantages to your build agents (and thus build and release management processes) that they bring to your applications.
 
