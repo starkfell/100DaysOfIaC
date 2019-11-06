@@ -21,7 +21,7 @@ Azure Repos includes native integration with Azure Active Directory (AD), which 
 
 You can protect your code and enforce practices that improve code quality, at both the repo and branch level at a granular level, including:
 
-- which users and groups can contribute and create branches
+- Which users and groups can contribute and create branches
 - Who can edit branch policies
 - Check for comment resolution
 - Who can/must review code
