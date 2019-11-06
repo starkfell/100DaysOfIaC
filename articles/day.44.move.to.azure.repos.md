@@ -40,9 +40,11 @@ Branch policies (Figure 1) give you ability to map your development policies to 
 - You also get flexible approval options, including requiring approval from additional services
 
 ![001](../images/day44/fig1.branch.policies.jpg)
+
 **Figure 1**. Branch policies in Azure Repos
 
 ![002](../images/day44/fig2.limit.merge.types.jpg)
+
 **Figure 2**. Limit merge types
 
 ### Build validation for PR processing
