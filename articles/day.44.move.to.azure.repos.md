@@ -32,7 +32,7 @@ This is one of my favorite features. When viewing a commit, you can use the **si
 
 ## Branch Policies
 
-Branch policies (Figure 1) give you ability to map your development policies to best practice and automate enforcement. There are quite built-in policies, including:
+Branch policies (Figure 1) give you ability to map your development policies to best practice and automate enforcement. There are quite a few built-in policies, including:
 
 - Minimum number of code reviews
 - Requiring successful builds
