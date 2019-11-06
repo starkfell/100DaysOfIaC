@@ -2,6 +2,7 @@
 
 | Subject | Article Link  |
 |---------|---------------|
+| Optimizing Code with Azure Repos | [Day 44 - Why should you move to Azure Repos?](/articles/day.44.move.to.azure.repos.md) |
 | Build Agents in Azure Pipelines | [Day 43 - Build Agents in Azure Pipelines](/articles/day.43.build.agents.md) |
 | Nested ARM templates in YAML | [Day 42 - Deploy Linked ARM Templates Using Storage Account in YAML Pipeline](/articles/day.42.deploy.nested.arm.templates.using.storage.accounts.in.yaml.pipeline.md) |
 | Practical YAML in Build Pipelines - Part 5 | [Day 41 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 5](/articles/day.41.building.a.practical.yaml.pipeline.part.5.md) |
