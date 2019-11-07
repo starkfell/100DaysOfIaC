@@ -13,7 +13,7 @@ To get the extension running, follow these steps:
 
 **Step 1: Install Azure CLI** - Follow the instructions available on Microsoft Docs to set up Azure CLI in your environment. At a minimum, your Azure CLI version must be 2.0.49. Since this is Azure CLI, it works from both Windows and Linux.
 
-Don't know your Azure CLI version? Run `az -version` to check.
+Don't know your Azure CLI version? Run `az --version` to check.
 
 **Step 2: Add the Azure DevOps extension** - `az extension add --name azure-devops` You can use either `az extension list` or `az extension show --name azure-devops` to confirm the installation was successful.
 
