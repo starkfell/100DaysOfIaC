@@ -2,6 +2,7 @@
 
 | Subject | Article Link  |
 |---------|---------------|
+| Accessing Azure DevOps from the command line | [Day 45 - Accessing Azure DevOps from the Command Line](/articles/day.45.azdo.cli.access.md) |
 | Optimizing Code with Azure Repos | [Day 44 - Why should you move to Azure Repos?](/articles/day.44.move.to.azure.repos.md) |
 | Build Agents in Azure Pipelines | [Day 43 - Build Agents in Azure Pipelines](/articles/day.43.build.agents.md) |
 | Nested ARM templates in YAML | [Day 42 - Deploy Linked ARM Templates Using Storage Account in YAML Pipeline](/articles/day.42.deploy.nested.arm.templates.using.storage.accounts.in.yaml.pipeline.md) |
