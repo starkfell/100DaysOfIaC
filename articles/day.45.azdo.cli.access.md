@@ -1,4 +1,4 @@
-# Day 45 - Accessing Azure DevOps from the Command Line 
+# Day 45 - Accessing Azure DevOps from the Command Line
 
 Did you know you can access your Azure DevOps subscription from the command line? There are two extensions for accessing Azure DevOps from the command line you may not have heard about:
 
