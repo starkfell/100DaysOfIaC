@@ -29,7 +29,7 @@ az devops configure --defaults organization=https://dev.azure.com/lumagate proje
 
 For the documentation and for more information on the commands currently supported, take a look at the [Azure DevOps extension documentation](https://docs.microsoft.com/cli/azure/ext/azure-devops/?view=azure-cli-latest). Currently, the extension includes commands to access artifacts, Azure Boards, Azure DevOps org-level settings, Azure Pipelines, and Azure Repos, as shown in Figure 1.
 
-![001](fig1.azdo.cli.cmds.jpg)
+![001](../images/day45/fig1.azdo.cli.cmds.jpg)
 
 **Figure 1**. Commands in the Azure CLI Extension for Azure DevOps
 
@@ -54,7 +54,7 @@ Alternatively, you can just search for cmdlets containing 'AzDo':
 There are around 17 cmdlets, and you'll see overlapping functionality to what you'll find in the Azure CLI extension described above. The current list of AzDOps cmdlets are shown in Figure 2.
 
 
-![001](fig2.azdo.post.cmds.jpg)
+![001](../images/day45/fig2.azdo.post.cmds.jpg)
 
 **Figure 2**. Azure PowerShell Module for Azure DevOps
 
