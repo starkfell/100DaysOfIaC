@@ -7,13 +7,13 @@ Did you know you can access your Azure DevOps subscription from the command line
 
 ## Azure DevOps extension for the Azure CLI
 
-The  Azure DevOps extension for the Azure CLI extension allows you to interact with Azure DevOps from the command line, potentially saving trips to the portal, navigating the UI, and opening up some opportunity for automation. Basically, you can just focus on the tasks.
+The  Azure DevOps extension for the Azure CLI extension allows you to interact with Azure DevOps from the command line, potentially saving trips to the portal, navigating the UI, and opening up some opportunity for automation. Basically, you can just focus on the tasks at hand.
 
 To get the extension running, follow these steps:
 
 **Step 1: Install Azure CLI** - Follow the instructions available on Microsoft Docs to set up Azure CLI in your environment. At a minimum, your Azure CLI version must be 2.0.49. Since this is Azure CLI, it works from both Windows and Linux.
 
-Don't know you Azure CLI version? Run `az -version` to check.
+Don't know your Azure CLI version? Run `az -version` to check.
 
 **Step 2: Add the Azure DevOps extension** - `az extension add --name azure-devops` You can use either `az extension list` or `az extension show --name azure-devops` to confirm the installation was successful.
 
