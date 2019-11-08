@@ -15,7 +15,7 @@ You'll see a a couple of properties that remain hard-coded, as that was fine in 
 
 ## What's missing from this sample?
 
-What's left out is all the Azure Key Vault integration, which I have removed to simplify your consumption. I leverage key vault heavily to store secrets, from the Azure service principal used to deploy to the Mongo API endpoint my apps will use to talk to the DB. We have many Azure Key Vault script samples in this series that will help you add what you need.
+What's left out is all the Azure Key Vault integration, which I have removed to simplify your consumption. I leverage key vault heavily to store secrets, such the Azure service principal used deploy, and the Mongo API endpoint my apps will use to talk to the DB. We have many Azure Key Vault script samples in this series that will help you add what you need.
 
 The other thing missing is the answer to the question "How do I use this in Azure Pipelines?" I run this from a single stage release pipeline, variables stored as release variables, with some variables designated as overridable at deploy time
 
