@@ -24,7 +24,7 @@ while getopts ":i:t:l:r:u:p:d:x:v:k:b:y:" opt; do
         l) # Azure Location.
              AZURE_LOCATION=${OPTARG}
              ;;
-        r) # The Resource Group name for the File Share & related resources.
+        r) # The Resource Group name for the CosmosDB & related resources.
              MONGO_RG=${OPTARG}
              ;;
         u) # Management Service Principal Username. This is used for managing CosmosDB instances 

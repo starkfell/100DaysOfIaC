@@ -1,7 +1,7 @@
 ## Day 46 -  A Pipeline-friendly Script for CosmosDB with Mongo API
 
 With CosmosDB, Microsoft offers a Mongo API that enables apps to communicate to CosmosDB like they would a MongoDB cluster.
-We've talked repeatedly about the flexibility of using Azure CLI (bash) in your day-to-day, non-prod releases. Here's a script, designed to run in a release pipeline in Azure Pipelines, and performs the following configuration of your CosmosDB with Mongo API instance, including:
+We've talked repeatedly about the flexibility of using Azure CLI (bash) in your day-to-day, non-prod releases. Today, we offer a script, designed to run in a release pipeline in Azure Pipelines, and performs the following configuration of your CosmosDB with Mongo API instance, including:
 
 - Logs in as a service principal
 - Switches context to the Azure sub
@@ -15,7 +15,7 @@ You'll see a a couple of properties that remain hard-coded, as that was fine in 
 
 ## What's missing from this sample?
 
-What's left out is all the Azure Key Vault integration. I leverage key vault heavily to store secrets, from the Azure service principal used to deploy to the Mongo API endpoint my apps will use to talk to the DB. 
+What's left out is all the Azure Key Vault integration, which I have removed to simplify your consumption. I leverage key vault heavily to store secrets, from the Azure service principal used to deploy to the Mongo API endpoint my apps will use to talk to the DB. We have many Azure Key Vault script samples in this series that will help you add what you need.
 
 The other thing missing is the answer to the question "How do I use this in Azure Pipelines?" I run this from a single stage release pipeline, variables stored as release variables, with some variables designated as overridable at deploy time
 
@@ -57,7 +57,7 @@ while getopts ":i:t:l:r:u:p:d:x:v:k:b:y:" opt; do
         l) # Azure Location.
              AZURE_LOCATION=${OPTARG}
              ;;
-        r) # The Resource Group name for the File Share & related resources.
+        r) # The Resource Group name for the CosmosDB & related resources.
              MONGO_RG=${OPTARG}
              ;;
         u) # Management Service Principal Username. This is used for managing CosmosDB instances 
