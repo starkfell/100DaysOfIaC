@@ -5,6 +5,10 @@ option 1 - Build GRAV CMS from original Dockerfile
 option 3 - turn everything into scripts that are files and not inline. (conversion option)
 ```
 
+https://github.com/getgrav/docker-grav
+https://hub.docker.com/r/evns/grav/
+https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli
+
 Let's build a Container running Grav from Azure DevOps.
 
 - preface this by creating a Repository in Azure DevOps.
