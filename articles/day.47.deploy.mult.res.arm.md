@@ -49,6 +49,7 @@ Here is a multi-VM ARM template you can examine in VSCode. This template defines
 - Public IP address each VM
 - Network security group with RDP port 3389 allow rule
 
+You'll find a copy below here and in the [day]47](../resources/day47) resources folder
 The template uses the **copyIndex** function to enable predictable creation of the number of VMs you specify. It also leverages the **uniqueString** function to generate a string to provide a unique name for the storage account. This function does not guarantee uniqueness, but does a pretty good job when you use against a value like `resourceGroup.id`.
 
 ``` JSON
@@ -108,23 +109,14 @@ The template uses the **copyIndex** function to enable predictable creation of t
         "Server2019"
       ]
     },
-    "availabilitySetName": {
-      "defaultValue": "MyAvailabilitySet",
-      "type": "string",
-      "metadata": {
-        "description": "Availability Set Name where the VM will be placed"
-      }
-    },
     "dnsPrefixForPublicIP": {
       "type": "string",
-      "minLength": 1,
-      "maxLength": 14,
       "defaultValue": "[parameters('envPrefix')]",
       "metadata": {
         "description": "Globally unique DNS prefix for the Public IPs assigned to the VMs"
       }
     },
-      "FENSGName": {
+      "NSGName": {
       "type": "string",
       "defaultValue": "FE_NSG",
       "metadata": {
@@ -150,6 +142,7 @@ The template uses the **copyIndex** function to enable predictable creation of t
     "myVNETPrefix": "10.0.0.0/16",
     "myVNETSubnet1Name": "Subnet1",
     "myVNETSubnet1Prefix": "10.0.0.0/24",
+    "availabilitySetName": "[concat(parameters('envPrefix'), 'availSet')]",
     "diagnosticStorageAccountName": "[concat('diagst',uniqueString(resourceGroup().id))]",
     "operatingSystemValues": {
       "Server2012R2": {
@@ -171,7 +164,7 @@ The template uses the **copyIndex** function to enable predictable creation of t
        {
       "apiVersion": "2015-05-01-preview",
       "type": "Microsoft.Network/networkSecurityGroups",
-      "name": "[parameters('FENSGName')]",
+      "name": "[parameters('NSGName')]",
       "location": "[parameters('location')]",
       "properties": {
         "securityRules": [
@@ -198,7 +191,7 @@ The template uses the **copyIndex** function to enable predictable creation of t
             "location": "[parameters('location')]",
             "apiVersion": "2018-11-01",
             "dependsOn": [
-                "[concat('Microsoft.Network/networkSecurityGroups/', parameters('FENSGName'))]"
+                "[concat('Microsoft.Network/networkSecurityGroups/', parameters('NSGName'))]"
                 ],
             "tags": {
             "displayName": "[variables('myVNETName')]"
@@ -215,7 +208,7 @@ The template uses the **copyIndex** function to enable predictable creation of t
             "properties": {
               "addressPrefix": "[variables('myVNETSubnet1Prefix')]",
               "networkSecurityGroup": {
-                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('FENSGName'))]"
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('NSGName'))]"
               }
             }
           }
@@ -238,7 +231,7 @@ The template uses the **copyIndex** function to enable predictable creation of t
     },
     {
       "type": "Microsoft.Compute/availabilitySets",
-      "name": "[parameters('availabilitySetName')]",
+      "name": "[variables('availabilitySetName')]",
       "apiVersion": "2017-03-30",
       "location": "[parameters('location')]",
       "properties": {
@@ -295,7 +288,7 @@ The template uses the **copyIndex** function to enable predictable creation of t
           ]
         },
         "availabilitySet": {
-          "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySetName'))]"
+          "id": "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySetName'))]"
         },
         "diagnosticsProfile": {
           "bootDiagnostics": {
@@ -305,7 +298,7 @@ The template uses the **copyIndex** function to enable predictable creation of t
         }
       },
       "dependsOn": [
-        "[concat('Microsoft.Compute/availabilitySets/', parameters('availabilitySetName'))]",
+        "[concat('Microsoft.Compute/availabilitySets/', variables('availabilitySetName'))]",
         "[concat('Microsoft.Storage/storageAccounts/', variables('diagnosticStorageAccountName'))]",
         "[resourceId('Microsoft.Network/networkInterfaces', concat(parameters('envPrefix'), copyIndex(1), '-NIC1'))]"
       ]
@@ -368,5 +361,4 @@ The template uses the **copyIndex** function to enable predictable creation of t
 }
 ```
 
-## Conclusion 
-
+## Conclusion
