@@ -2,6 +2,7 @@
 
 | Subject | Article Link  |
 |---------|---------------|
+| Exploring ARM Template Functions | [Day 47 - Deploying resources in Azure with help from ARM Template Functions](/articles/day.47.deploy.mult.res.arm.md) |
 | Pipeline-friendly CosmosDB deployment | [Day 46 -  A Pipeline-friendly Script for CosmosDB with Mongo API](/articles/day.46.cosmosdb.mongo.api.cli.md) |
 | Accessing Azure DevOps from the command line | [Day 45 - Accessing Azure DevOps from the Command Line](/articles/day.45.azdo.cli.access.md) |
 | Optimizing Code with Azure Repos | [Day 44 - Why should you move to Azure Repos?](/articles/day.44.move.to.azure.repos.md) |
