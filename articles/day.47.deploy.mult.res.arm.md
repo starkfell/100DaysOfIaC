@@ -49,7 +49,7 @@ Here is a multi-VM ARM template you can examine in VSCode. This template defines
 - Public IP address each VM
 - Network security group with RDP port 3389 allow rule
 
-You'll find a copy below here and in the [day]47](../resources/day47) resources folder
+You'll find a copy below here and in the [day47](../resources/day47) resources folder
 The template uses the **copyIndex** function to enable predictable creation of the number of VMs you specify. It also leverages the **uniqueString** function to generate a string to provide a unique name for the storage account. This function does not guarantee uniqueness, but does a pretty good job when you use against a value like `resourceGroup.id`.
 
 ``` JSON
