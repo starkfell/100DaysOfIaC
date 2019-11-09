@@ -15,7 +15,7 @@
         "description": "Password for the local admin account"
       }
     },
-    "virtualMachineNamePrefix": {
+    "envPrefix": {
       "defaultValue": "lab-",
       "type": "string",
       "maxLength": 15,
@@ -54,43 +54,41 @@
         "Server2019"
       ]
     },
-    "availSetName": {
-      "defaultValue": "labAvailabilitySet",
+    "dnsPrefixForPublicIP": {
       "type": "string",
-      "metadata": {
-        "description": "Name of the Availability Set to which VM will be associated"
-      }
-    },
-    "dnsPrefixForPubIP": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 14,
-      "defaultValue": "[uniqueString(resourceGroup().id)]",
+      "defaultValue": "[parameters('envPrefix')]",
       "metadata": {
         "description": "Globally unique DNS prefix for the Public IPs assigned to the VMs"
+      }
+    },
+      "NSGName": {
+      "type": "string",
+      "defaultValue": "FE_NSG",
+      "metadata": {
+        "description": "This is name of the networkSecurityGroup that will be assigned to FrontEnd Subnet"
       }
     },
     "location": {
       "type": "string",
       "defaultValue": "eastus",
-        "allowedValues": [
+      "metadata": {
+        "description": "Location for all resources."
+      },
+      "allowedValues": [
         "eastus",
         "eastus2",
         "southcentralus",
         "westus"
-      ],
-      "metadata": {
-        "description": "Location for all resources, which should match location of resource group"
-      }
+      ]
     }
   },
   "variables": {
-    "labVNETName": "labVNET",
-    "labVNETPrefix": "10.0.0.0/16",
-    "labVNETSubnetName": "default",
-    "labVNETSubnetPrefix": "10.0.0.0/24",
-    "networkSecurityGroupName": "lab-NSG",
-    "diagStorageAcct": "[concat('diagst', uniqueString(resourceGroup().id))]",
+    "myVNETName": "myVNET",
+    "myVNETPrefix": "10.0.0.0/16",
+    "myVNETSubnet1Name": "Subnet1",
+    "myVNETSubnet1Prefix": "10.0.0.0/24",
+    "availabilitySetName": "[concat(parameters('envPrefix'), 'availSet')]",
+    "diagnosticStorageAccountName": "[concat('diagst',uniqueString(resourceGroup().id))]",
     "operatingSystemValues": {
       "Server2012R2": {
         "PublisherValue": "MicrosoftWindowsServer",
@@ -101,53 +99,72 @@
         "PublisherValue": "MicrosoftWindowsServer",
         "OfferValue": "WindowsServer",
         "SkuValue": "2016-Datacenter"
-      },
-      "Server2019": {
-        "PublisherValue": "MicrosoftWindowsServer",
-        "OfferValue": "WindowsServer",
-        "SkuValue": "2019-Datacenter"
       }
     },
     "availabilitySetPlatformFaultDomainCount": "2",
     "availabilitySetPlatformUpdateDomainCount": "5",
-    "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('labVNETName'),  variables('labVNETSubnetName'))]"
+    "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('myVNETName'),  variables('myVNETSubnet1Name'))]"
   },
   "resources": [
-    {
-      "name": "[variables('labVNETName')]",
-      "type": "Microsoft.Network/virtualNetworks",
-      "location": "[parameters('location')]", 
-      "apiVersion": "2018-11-01",
-      "dependsOn": [
-        "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
-      ],
-      "tags": {
-        "displayName": "[variables('labVNETName')]"
-      },
+       {
+      "apiVersion": "2015-05-01-preview",
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "name": "[parameters('NSGName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "securityRules": [
+          {
+            "name": "rdp_rule",
+            "properties": {
+              "description": "Allow RDP",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3389",
+              "sourceAddressPrefix": "Internet",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Inbound"
+                }
+            }
+        ]
+    }
+},
+          {
+            "name": "[variables('myVNETName')]",
+            "type": "Microsoft.Network/virtualNetworks",
+            "location": "[parameters('location')]",
+            "apiVersion": "2018-11-01",
+            "dependsOn": [
+                "[concat('Microsoft.Network/networkSecurityGroups/', parameters('NSGName'))]"
+                ],
+            "tags": {
+            "displayName": "[variables('myVNETName')]"
+            },
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
-            "[variables('labVNETPrefix')]"
+            "[variables('myVNETPrefix')]"
           ]
         },
         "subnets": [
           {
-            "name": "[variables('labVNETSubnetName')]",
+            "name": "[variables('myVNETSubnet1Name')]",
             "properties": {
-            "addressPrefix": "[variables('labVNETSubnetPrefix')]",
+              "addressPrefix": "[variables('myVNETSubnet1Prefix')]",
               "networkSecurityGroup": {
-                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
-              }  
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('NSGName'))]"
+              }
             }
           }
         ]
       }
     },
     {
-      "name": "[variables('diagStorageAcct')]",
+      "name": "[variables('diagnosticStorageAccountName')]",
       "type": "Microsoft.Storage/storageAccounts",
       "location": "[parameters('location')]",
-      "apiVersion": "2018-11-01",
+      "apiVersion": "2016-01-01",
       "sku": {
         "name": "Standard_LRS"
       },
@@ -159,8 +176,8 @@
     },
     {
       "type": "Microsoft.Compute/availabilitySets",
-      "name": "[parameters('availSetName')]",
-      "apiVersion": "2018-10-01",
+      "name": "[variables('availabilitySetName')]",
+      "apiVersion": "2017-03-30",
       "location": "[parameters('location')]",
       "properties": {
         "platformFaultDomainCount": "[variables('availabilitySetPlatformFaultDomainCount')]",
@@ -172,8 +189,8 @@
     },
     {
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "[concat(parameters('virtualMachineNamePrefix'), copyIndex(1))]",
-      "apiVersion": "2018-10-01",
+      "name": "[concat(parameters('envPrefix'), copyIndex(1))]",
+      "apiVersion": "2017-03-30",
       "location": "[parameters('location')]",
       "copy": {
         "name": "VMcopy",
@@ -191,7 +208,7 @@
             "version": "latest"
           },
           "osDisk": {
-            "name": "[concat(parameters('virtualMachineNamePrefix'),copyIndex(1))]",
+            "name": "[concat(parameters('envPrefix'),copyIndex(1))]",
             "createOption": "FromImage",
             "managedDisk": {
               "storageAccountType": "Premium_LRS"
@@ -200,7 +217,7 @@
           }
         },
         "osProfile": {
-          "computerName": "[concat(parameters('virtualMachineNamePrefix'),copyIndex(1))]",
+          "computerName": "[concat(parameters('envPrefix'),copyIndex(1))]",
           "adminUsername": "[parameters('virtualMachineAdminUserName')]",
           "windowsConfiguration": {
             "provisionVMAgent": true
@@ -211,52 +228,30 @@
         "networkProfile": {
           "networkInterfaces": [
             {
-              "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(parameters('virtualMachineNamePrefix'), copyIndex(1), '-NIC1'))]"
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(parameters('envPrefix'), copyIndex(1), '-NIC1'))]"
             }
           ]
         },
         "availabilitySet": {
-          "id": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availSetName'))]"
+          "id": "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySetName'))]"
         },
         "diagnosticsProfile": {
           "bootDiagnostics": {
             "enabled": true,
-            "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('diagStorageAcct')), '2016-01-01').primaryEndpoints.blob]"
+            "storageUri": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('diagnosticStorageAccountName')), '2016-01-01').primaryEndpoints.blob]"
           }
-        },
-      "comments":  "Default Network Security Group for template",
-      "type":  "Microsoft.Network/networkSecurityGroups",
-      "apiVersion":  "2019-08-01",
-      "name":  "[variables('networkSecurityGroupName')]",
-      "location":  "[parameters('location')]",
-      "properties": {
-        "securityRules": [
-          {
-            "name":  "default-allow-3389",
-            "properties": {
-              "priority":  1000,
-              "access":  "Allow",
-              "direction":  "Inbound",
-              "destinationPortRange":  "3389",
-              "protocol":  "Tcp",
-              "sourcePortRange":  "*",
-              "sourceAddressPrefix":  "*",
-              "destinationAddressPrefix":  "*"
-            }
-          }
-        ]
-      }
+        }
       },
       "dependsOn": [
-        "[concat('Microsoft.Compute/availabilitySets/', parameters('availSetName'))]",
-        "[concat('Microsoft.Storage/storageAccounts/', variables('diagStorageAcct'))]",
-        "[resourceId('Microsoft.Network/networkInterfaces', concat(parameters('virtualMachineNamePrefix'), copyIndex(1), '-NIC1'))]",
+        "[concat('Microsoft.Compute/availabilitySets/', variables('availabilitySetName'))]",
+        "[concat('Microsoft.Storage/storageAccounts/', variables('diagnosticStorageAccountName'))]",
+        "[resourceId('Microsoft.Network/networkInterfaces', concat(parameters('envPrefix'), copyIndex(1), '-NIC1'))]"
       ]
     },
     {
       "type": "Microsoft.Network/networkInterfaces",
-      "name": "[concat(parameters('virtualMachineNamePrefix'), copyIndex(1), '-NIC1')]",
-      "apiVersion": "2018-11-01",
+      "name": "[concat(parameters('envPrefix'), copyIndex(1), '-NIC1')]",
+      "apiVersion": "2016-03-30",
       "location": "[parameters('location')]",
       "copy": {
         "name": "NICCopy",
@@ -269,7 +264,7 @@
             "properties": {
               "privateIPAllocationMethod": "Dynamic",
               "publicIPAddress": {
-                "id": "[resourceId('Microsoft.Network/publicIPAddresses', concat(parameters('virtualMachineNamePrefix'), copyIndex(1), '-PIP1'))]"
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses', concat(parameters('envPrefix'), copyIndex(1), '-PIP1'))]"
               },
               "subnet": {
                 "id": "[variables('subnetRef')]"
@@ -283,27 +278,26 @@
         "enableIPForwarding": false
       },
       "dependsOn": [
-        "[resourceId('Microsoft.Network/publicIPAddresses', concat(parameters('virtualMachineNamePrefix'), copyIndex(1), '-PIP1'))]",
-        "[resourceId('Microsoft.Network/virtualNetworks/', variables('labVNETName'))]"
+        "[resourceId('Microsoft.Network/publicIPAddresses', concat(parameters('envPrefix'), copyIndex(1), '-PIP1'))]",
+        "[resourceId('Microsoft.Network/virtualNetworks/', variables('myVNETName'))]"
       ]
     },
     {
-
+      "apiVersion": "2016-03-30",
       "type": "Microsoft.Network/publicIPAddresses",
-      "apiVersion": "2018-11-01",
-      "name": "[concat(parameters('virtualMachineNamePrefix'), copyIndex(1), '-PIP1')]",
+      "name": "[concat(parameters('envPrefix'), copyIndex(1), '-PIP1')]",
       "location": "[parameters('location')]",
       "copy": {
         "name": "PIPCopy",
         "count": "[parameters('virtualMachineCount')]"
       },
       "tags": {
-        "displayName": "[concat(parameters('virtualMachineNamePrefix'), copyIndex(1), '-PIP1')]"
+        "displayName": "[concat(parameters('envPrefix'), copyIndex(1), '-PIP1')]"
       },
       "properties": {
         "publicIPAllocationMethod": "Dynamic",
         "dnsSettings": {
-          "domainNameLabel": "[concat(parameters('dnsPrefixForPubIP'), copyIndex(1))]"
+          "domainNameLabel": "[concat(parameters('dnsPrefixForPublicIP'), copyIndex(1))]"
         }
       }
     }

@@ -187,19 +187,22 @@ The template uses the **copyIndex** function to enable predictable creation of t
               "access": "Allow",
               "priority": 100,
               "direction": "Inbound"
+                }
             }
-          },
+        ]
+    }
+},
           {
-      "name": "[variables('myVNETName')]",
-      "type": "Microsoft.Network/virtualNetworks",
-      "location": "[parameters('location')]",
-      "apiVersion": "2016-03-30",
-      "dependsOn": [
-        "[concat('Microsoft.Network/networkSecurityGroups/', parameters('FENSGName'))]"
-      ],
-      "tags": {
-        "displayName": "[variables('myVNETName')]"
-      },
+            "name": "[variables('myVNETName')]",
+            "type": "Microsoft.Network/virtualNetworks",
+            "location": "[parameters('location')]",
+            "apiVersion": "2018-11-01",
+            "dependsOn": [
+                "[concat('Microsoft.Network/networkSecurityGroups/', parameters('FENSGName'))]"
+                ],
+            "tags": {
+            "displayName": "[variables('myVNETName')]"
+            },
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
