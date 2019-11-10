@@ -13,7 +13,7 @@
 
 Today, we are going to add error handling to the **az acr create** command and then add it back to the **base-infra.sh** bash script.
 
-> **NOTE:** Replace all instances of **pracazconreg** in this article with the name you provided for the Azure Container Registry in **[Part 3](./day.39.building.a.practical.yaml.pipeline.part.3.md)**!
+> **NOTE:** Replace all instances of **pracazconreg** in this article with the name you provided for the Azure Container Registry in **[Part 2](./day.38.building.a.practical.yaml.pipeline.part.2.md)**!
 
 </br>
 
