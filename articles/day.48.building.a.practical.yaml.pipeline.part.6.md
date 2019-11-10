@@ -103,11 +103,11 @@ You should get the following output since the **pracazconreg** Azure Container R
 
 </br>
 
-Notice that the **provisioningState**  for the Azure Container Registry command is under the root structure of the JSON output; this is why it's query needs to be formatted differently than the query created for **az group create** command which returns the **provisioningState** is under the **properties** section. Because commands can return slightly different output formats *when querying Resources in Azure, make sure to test the JSON Output from your queries thoroughly when creating error handling!*
+Notice that the **provisioningState**  for the Azure Container Registry command is under the root structure of the JSON output; this is why it's query needs to be formatted differently than the query created for **az group create** command which returns the **provisioningState** under the **properties** section. Because commands can return slightly different output formats, *when you are querying Resources in Azure, make sure to test the JSON Output from your queries thoroughly when creating error handling!*
 
 </br>
 
-Next, run the following command below to create and query the state of the **pracazconreg** Azure Container Registry.
+Next, run the following command to create the **pracazconreg** Azure Container Registry and return its **provisioningState**.
 
 ```bash
 CHECK_ACR=$(az acr create \
