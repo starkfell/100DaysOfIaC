@@ -362,3 +362,5 @@ The template uses the **copyIndex** function to enable predictable creation of t
 ```
 
 ## Conclusion
+
+If you haven't dug into ARM template functions in depth, I hope this post gives you some food for thought and a running start in leveraging functions in your own Infrastructure-as-Code scenarios.
