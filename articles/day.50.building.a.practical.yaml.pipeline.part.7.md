@@ -220,12 +220,75 @@ latest: digest: sha256:b3603d5b84ff8089039527dd7a6aaac166e91a590755e5e0258a19de0
 Run ID: cb6 was successful after 40s
 ```
 
-While the process was successful, we need to minimize the output we are going to have to parse later.
+While the build and push to the Azure Container Registry was successful, we need to minimize the output we are going to have to parse later. Run the command again with the **--no-logs** switch as shown below.
+
+```bash
+az acr build --no-logs \
+-t practical/nginx:$(date +%F-%H%M%S) \
+-t practical/nginx:latest \
+-r pracazconreg .
+```
+
+Again, the build and push process will take a few minutes to run. When it's finished, the output from it should look similar to what is shown below.
+
+```console
+Packing source code into tar to upload...
+Uploading archived source code from '/tmp/build_archive_f03f40e4f0994cf4904c2b0e6fd31c2d.tar.gz'...
+Sending context (105.956 MiB) to registry: pracazconreg...
+Queued a build with ID: cb7
+Waiting for an agent...
+{
+  "agentConfiguration": {
+    "cpu": 2
+  },
+  "createTime": "2019-11-10T22:59:37.650751+00:00",
+  "customRegistries": null,
+  "finishTime": "2019-11-10T23:00:14.330273+00:00",
+  "id": "/subscriptions/84f065f5-e37a-4127-9c82-0b1ecd57a652/resourceGroups/practical-yaml/providers/Microsoft.ContainerRegistry/registries/pracazconreg/runs/cb7",
+  "imageUpdateTrigger": null,
+  "isArchiveEnabled": false,
+  "lastUpdatedTime": "2019-11-10T23:00:14+00:00",
+  "name": "cb7",
+  "outputImages": [
+    {
+      "digest": "sha256:8306a2a85e3bdb8f0452f339f1f4356724aa9c928542ac8cc6537eeb14c91dad",
+      "registry": "pracazconreg.azurecr.io",
+      "repository": "practical/nginx",
+      "tag": "2019-11-10-225805"
+    },
+    {
+      "digest": "sha256:8306a2a85e3bdb8f0452f339f1f4356724aa9c928542ac8cc6537eeb14c91dad",
+      "registry": "pracazconreg.azurecr.io",
+      "repository": "practical/nginx",
+      "tag": "latest"
+    }
+  ],
+  "platform": {
+    "architecture": "amd64",
+    "os": "linux",
+    "variant": null
+  },
+  "provisioningState": "Succeeded",
+  "resourceGroup": "practical-yaml",
+  "runErrorMessage": null,
+  "runId": "cb7",
+  "runType": "QuickRun",
+  "sourceRegistryAuth": null,
+  "sourceTrigger": null,
+  "startTime": "2019-11-10T22:59:37.847301+00:00",
+  "status": "Succeeded",
+  "task": null,
+  "timerTrigger": null,
+  "type": "Microsoft.ContainerRegistry/registries/runs",
+  "updateTriggerToken": null
+}
+```
 
 </br>
 
+As you can see from the output this time, the returned JSON structure is much more managable.
 
-* 
+</br>
 
 ## Adding Error Handling for ACR Creation and Login
 
