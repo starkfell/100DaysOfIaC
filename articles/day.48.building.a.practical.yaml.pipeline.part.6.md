@@ -24,7 +24,7 @@ Today, we are going to add error handling to the **az acr create** command and t
 
 In Part 5, we added Error Handling to the Resource Group creation from the **az group create** command. We are going to add the same type of error handling now to **az acr create**.
 
-At the end of Part 5, our **base-infra.sh** script was the same as what is shown below.
+At the end of [Part 5](./day.41.building.a.practical.yaml.pipeline.part.5.md), our **base-infra.sh** script looks as follows.
 
 ```bash
 #!/bin/bash
