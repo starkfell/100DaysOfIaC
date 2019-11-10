@@ -22,6 +22,7 @@ Today, we are going to add error handling to the **az acr create** command and t
 [Adding Error Handling for ACR Creation](#adding-error-handling-for-acr-creation)</br>
 [Update the Bash Script](#update-the-bash-script)</br>
 [Check on the Build Pipeline Job](#check-on-the-build-pipeline-job)</br>
+[Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
 ## Adding Error Handling for ACR Creation
@@ -187,6 +188,12 @@ Review the logs of the most current job in the **practical-yaml-build-pipe** Bui
 </br>
 
 > **NOTE:** Still wondering what happened to that ACR Login command right? Fear not, we'll be addressing it very soon in this series.
+
+</br>
+
+## Things to Consider
+
+When you are querying Resources in Azure, make sure to test the JSON Output from your queries thoroughly when creating error handling!
 
 </br>
 
