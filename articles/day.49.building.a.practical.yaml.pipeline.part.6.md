@@ -1,4 +1,4 @@
-# Day 48 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 6
+# Day 49 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 6
 
 *The other posts in this Series can be found below.*
 
@@ -7,7 +7,7 @@
 ***[Day 39 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 3](./day.39.building.a.practical.yaml.pipeline.part.3.md)***</br>
 ***[Day 40 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 4](./day.40.building.a.practical.yaml.pipeline.part.4.md)***</br>
 ***[Day 41 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 5](./day.41.building.a.practical.yaml.pipeline.part.5.md)***</br>
-***[Day 48 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 6](./day.48.building.a.practical.yaml.pipeline.part.6.md)***</br>
+***[Day 49 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 6](./day.49.building.a.practical.yaml.pipeline.part.6.md)***</br>
 
 </br>
 
