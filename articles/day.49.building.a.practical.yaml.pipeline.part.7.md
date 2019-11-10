@@ -1,4 +1,4 @@
-# Day 48 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 6
+# Day 49 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 7
 
 *The other posts in this Series can be found below.*
 
@@ -8,23 +8,28 @@
 ***[Day 40 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 4](./day.40.building.a.practical.yaml.pipeline.part.4.md)***</br>
 ***[Day 41 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 5](./day.41.building.a.practical.yaml.pipeline.part.5.md)***</br>
 ***[Day 48 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 6](./day.48.building.a.practical.yaml.pipeline.part.6.md)***</br>
+***[Day 49 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 7](./day.49.building.a.practical.yaml.pipeline.part.7.md)***</br>
 
 </br>
 
-Today, we are going to add error handling to the **az acr create** command and then add it back to the **base-infra.sh** bash script.
+Today, we are going to add the **acr login** command back into the YAML Build Pipeline.
+
+Keep in mind that when you separate certain scripts into different pipeline tasks, that you need to ensure that any data you are using/passing between scripts it's accidentally cut off from the next task. At the end of each task, the credentials for the task are cleared, but the data from the previous command CAN be passed on to the next task. What is actually easiest is to finish up the logic that you were working on in the task first before moving on.
 
 **In this article:**
 
-[Adding Error Handling for ACR Creation](#adding-error-handling-for-acr-creation)</br>
-[Update the Bash Script](#update-the-bash-script)</br>
-[Check on the Build Pipeline Job](#check-on-the-build-pipeline-job)</br>
+[Adding Error Handling for ACR Creation and Login]
+[Separating the Login command in a Separate Script]
+
+
+[Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
-## Adding Error Handling for ACR Creation
+## Adding Error Handling for ACR Creation and Login
 
-In Part 5, we added Error Handling to the Resource Group creation from the **az group create** command. We are going to add the same type of error handling now to **az acr create**.
+In Part 5, we added Error Handling to the Resource Group creation from the **az group create** command. We are going to add the same type of error handling now to **az acr create** and **az acr login**.
 
-At the end of Part 5, our **base-infra.sh** script was the same as what is shown below.
+At the end of Part 5, our **bas-infra.sh** script was the same as what is shown below.
 
 ```bash
 #!/bin/bash
