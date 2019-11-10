@@ -286,7 +286,7 @@ Waiting for an agent...
 
 </br>
 
-As you can see from the output this time, the returned JSON structure is much more managable.
+As you can see from the output this time, the returned JSON structure is much more manageable.
 
 </br>
 
