@@ -120,7 +120,7 @@ CHECK_ACR=$(az acr create \
 
 </br>
 
-Run the following command to get see the results in the **$CHECK_ACR** variable.
+Run the following command to get see the results returned to the **$CHECK_ACR** variable.
 
 ```bash
 echo $CHECK_ACR
@@ -192,4 +192,4 @@ Review the logs of the most current job in the **practical-yaml-build-pipe** Bui
 
 ## Conclusion
 
-In today's article we further refined the **base-infra.sh** bash script and demonstrated the process of adding in your own error handling. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article we added error handling to the **az acr create** command and then added it back to the **base-infra.sh** bash script. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
