@@ -300,15 +300,45 @@ PUSH_AND_BUILD=$(az acr build \
 
 </br>
 
-**practical-yaml-build-pipe** repository in VS Code
-
 ## Add new directories to the Repository
+
+Next, in VS Code, create the following folders in the root of the repository.
+
+```bash
+apps/nginx
+```
+
+</br>
 
 ## Add the Dockerfile to the Repository
 
+Next, in VS Code, add a file called **Dockerfile** in the **apps/nginx** directory. Copy the content below into the **Dockerfile** and then save and commit it to the repository.
+
+```dockerfile
+# Pulling Ubuntu Image from Docker Hub
+FROM alpine:latest
+
+# Updating packages list and installing the prerequisite packages
+RUN apk update && apk add \
+net-tools \
+vim \
+jq \
+wget \
+curl \
+nginx
+
+WORKDIR /opt
+EXPOSE 80
+EXPOSE 443
+
+ENTRYPOINT ["tail", "-f", "/dev/null"]
+```
+
+</br>
+
 ## Create the new Bash Script in the Repository
 
-Next, in VS Code, create a new file called the **build-and-push-nginx-docker-image.sh** in the **practical-yaml-build-pipe** repository. Copy and paste the contents below into it and save and commit it to the repository.
+Next, in VS Code, create a new file called the **build-and-push-nginx-docker-image.sh** in the **apps/nginx** directory. Copy and paste the contents below into it and save and commit it to the repository.
 
 ```bash
 #!/bin/bash
@@ -348,196 +378,49 @@ fi
 
 ```
 
+The folder structure of your Repository should look like what is shown below.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Adding Error Handling for ACR Creation and Login
-
-In Part 5, we added Error Handling to the Resource Group creation from the **az group create** command. We are going to add the same type of error handling now to **az acr create** and **az acr login**.
-
-At the end of Part 5, our **bas-infra.sh** script was the same as what is shown below.
-
-```bash
-#!/bin/bash
-
-# Author:      Ryan Irujo
-# Name:        base-infra.sh
-# Description: Deploys Infrastructure to a target Azure Sub from an Azure CLI Task in Azure DevOps.
-
-# Deploying the 'practical-yaml' Resource Group.
-CHECK_RG=$(az group create \
---name practical-yaml \
---location westeurope \
---query properties.provisioningState \
---output tsv)
-
-if [ "$CHECK_RG" == "Succeeded" ]; then
-    echo "[---success---] Resource Group 'practical-yaml' was deployed successfully. Provisioning State: $CHECK_RG."
-else
-    echo "[---fail------] Resource Group 'practical-yaml' was not deployed successfully. Provisioning State: $CHECK_RG."
-    exit 2
-fi
-```
+![001](../images/day50/day.50.building.a.practical.yaml.pipeline.part.7.001.png)
 
 </br>
 
-Next, we are going to walk through creating error handling for the **az acr create** command. On your Linux Host (with Azure CLI installed), open up a bash prompt and run the following command.
+## Update the YAML File for the Build Pipeline
 
-```bash
-az acr create \
---name pracazconreg \
---resource-group practical-yaml \
---sku Basic
+Next, in VS Code, replace the current contents of the **idempotent-pipe.yaml** file with what is shown below. Afterwards, save and commit your changes to the repository.
+
+```yaml
+# Builds are automatically triggered from the master branch in the 'practical-yaml-build-pipe' Repo.
+trigger:
+- master
+
+pool:
+  # Using a Microsoft Hosted Agent - https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops
+  vmImage: ubuntu-18.04
+
+steps:
+
+# Azure CLI Task - Deploying Base Infrastructure.
+- task: AzureCLI@2
+  displayName: 'Deploying Base Infrastructure'
+  inputs:
+    # Using Service Principal, 'sp-az-build-pipeline', to authenticate to the Azure Subscription.
+    azureSubscription: 'sp-az-build-pipeline'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: './base-infra.sh'
+
+# Azure CLI Task - Build and Push NGINX Docker Image to Azure Container Registry.
+- task: AzureCLI@2
+  displayName: 'Build and Push NGINX Docker Image to ACR'
+  inputs:
+    # Using Service Principal, 'sp-az-build-pipeline', to authenticate to the Azure Subscription.
+    azureSubscription: 'sp-az-build-pipeline'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: './apps/nginx/build-and-push-nginx-docker-image.sh'
 ```
 
-You should get the following output since the **pracazconreg** Azure Container Registry is already in place.
-
-```json
-{
-  "adminUserEnabled": false,
-  "creationDate": "2019-11-09T13:38:45.459627+00:00",
-  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/practical-yaml/providers/Microsoft.ContainerRegistry/registries/pracazconreg",
-  "location": "westeurope",
-  "loginServer": "pracazconreg.azurecr.io",
-  "name": "pracazconreg",
-  "networkRuleSet": null,
-  "policies": {
-    "quarantinePolicy": {
-      "status": "disabled"
-    },
-    "retentionPolicy": {
-      "days": 7,
-      "lastUpdatedTime": "2019-11-09T13:40:46.896754+00:00",
-      "status": "disabled"
-    },
-    "trustPolicy": {
-      "status": "disabled",
-      "type": "Notary"
-    }
-  },
-  "provisioningState": "Succeeded",
-  "resourceGroup": "practical-yaml",
-  "sku": {
-    "name": "Basic",
-    "tier": "Basic"
-  },
-  "status": null,
-  "storageAccount": null,
-  "tags": {},
-  "type": "Microsoft.ContainerRegistry/registries"
-}
-```
-
-</br>
-
-Unlike the output from the **az group create** command used to create the **practical-yaml** Resource Group where the **provisioningState** is under the **properties** section; the **provisioningState**  for the Azure Container Registry command is under the root structure of the JSON output; this is why it's query needs to be formatted differently than the query created for **az group create** command. This brings me to the main point of this post.
-
-> *When querying Resources in Azure, make sure to test the JSON Output from your queries thoroughly when creating error handling!*</br>
-
-</br>
-
-Next, run the following command below to create and query the state of the **pracazconreg** Azure Container Registry.
-
-```bash
-CHECK_ACR=$(az acr create \
---name pracazconreg \
---resource-group practical-yaml \
---sku Basic \
---query provisioningState \
---output tsv)
-```
-
-</br>
-
-Run the following command to get see the results in the **$CHECK_ACR** variable.
-
-```bash
-echo $CHECK_ACR
-```
-
-You should get back the following response.
-
-```console
-Succeeded
-```
-
-</br>
-
-## Update the Bash Script
-
-Next, in VS Code, open the **base-infra.sh** file. Replace it's current contents with the code below and save and commit it to the repository.
-
-```bash
-#!/bin/bash
-
-# Author:      Ryan Irujo
-# Name:        base-infra.sh
-# Description: Deploys Infrastructure to a target Azure Sub from an Azure CLI Task in Azure DevOps.
-
-# Deploying the 'practical-yaml' Resource Group.
-CHECK_RG=$(az group create \
---name practical-yaml \
---location westeurope \
---query properties.provisioningState \
---output tsv)
-
-if [ "$CHECK_RG" == "Succeeded" ]; then
-    echo "[---success---] Resource Group 'practical-yaml' was deployed successfully. Provisioning State: $CHECK_RG."
-else
-    echo "[---fail------] Resource Group 'practical-yaml' was not deployed successfully. Provisioning State: $CHECK_RG."
-    exit 2
-fi
-
-# Deploying the 'pracazconreg' Azure Container Registry.
-CHECK_ACR=$(az acr create \
---name pracazconreg \
---resource-group practical-yaml \
---sku Basic \
---query provisioningState \
---output tsv)
-
-if [ "$CHECK_ACR" == "Succeeded" ]; then
-    echo "[---success---] Azure Container Registry 'pracazconreg' was deployed successfully. Provisioning State: $CHECK_ACR."
-else
-    echo "[---fail------] Azure Container Registry 'pracazconreg' was not deployed successfully. Provisioning State: $CHECK_ACR."
-    exit 2
-fi
-
-```
+As you can see above, we've added the **build-and-push-nginx-docker-image.sh** script to it's own Azure CLI Task.
 
 </br>
 
@@ -545,13 +428,15 @@ fi
 
 Review the logs of the most current job in the **practical-yaml-build-pipe** Build Pipeline and you should see the following output from the **Deploying Base Infrastructure** Azure CLI Task.
 
-![001](../images/day48/day.48.building.a.practical.yaml.pipeline.part.6.001.png)
+![002](../images/day50/day.50.building.a.practical.yaml.pipeline.part.7.002.png)
 
 </br>
 
-> **NOTE:** Still wondering what happened to that ACR Login command right? Fear not, we'll be addressing it very soon in this series.
+## Things to Consider
 
-</br>
+The **build-and-push-nginx-docker-image.sh** script and it's associated Azure CLI Task can be used as a template for other applications that either exist in this pipeline or different pipelines with minimal code refactoring. The directory structure presented in here provides the same type of benefit by ensuring that application specific files and resources aren't all crammed into a directory.
+
+<br/>
 
 ## Conclusion
 
