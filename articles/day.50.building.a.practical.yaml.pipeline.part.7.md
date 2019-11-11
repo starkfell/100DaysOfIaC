@@ -300,9 +300,15 @@ PUSH_AND_BUILD=$(az acr build \
 
 </br>
 
-## Create the build-and-push-nginx-docker-image.sh script
+**practical-yaml-build-pipe** repository in VS Code
 
-Next, in VS Code, create a new file called the **build-and-push-nginx-docker-image.sh**. Copy and paste the contents below into it and save and commit it to the repository.
+## Add new directories to the Repository
+
+## Add the Dockerfile to the Repository
+
+## Create the new Bash Script in the Repository
+
+Next, in VS Code, create a new file called the **build-and-push-nginx-docker-image.sh** in the **practical-yaml-build-pipe** repository. Copy and paste the contents below into it and save and commit it to the repository.
 
 ```bash
 #!/bin/bash
@@ -329,6 +335,7 @@ BUILD_AND_PUSH_NGINX=$(az acr build \
 -t practical/nginx:$(date +%F-%H%M%S) \
 -t practical/nginx:latest \
 -r pracazconreg . \
+-f apps/nginx/Dockerfile \
 --query status \
 --output tsv 2> /dev/null)
 
