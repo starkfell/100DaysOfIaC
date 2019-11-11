@@ -43,7 +43,7 @@ az acr login \
 You should get a similar response back.
 
 ```console
-\Login Succeeded
+Login Succeeded
 WARNING! Your password will be stored unencrypted in /home/{USERNAME}/.docker/config.json.
 Configure a credential helper to remove this warning. See
 https://docs.docker.com/engine/reference/commandline/login/#credentials-store
@@ -286,9 +286,97 @@ Waiting for an agent...
 
 </br>
 
-As you can see from the output this time, the returned JSON structure is much more manageable.
+As you can see, we are now getting down to something that's easier to parse. However, we still need to get rid of the top 5 lines of output which are not in JSON format. Since those first 5 lines are returned as *WARNINGS* we are going to redirect them to **/dev/null**. Under normal circumstances, this wouldn't be advisable, but we are going to check whether the command succeeded based on the content of the **status** field and not based on any Warnings or Errors that may have occurred. The final format of the command that will be used in our bash script is below.
+
+```bash
+PUSH_AND_BUILD=$(az acr build \
+--no-logs \
+-t practical/nginx:$(date +%F-%H%M%S) \
+-t practical/nginx:latest \
+-r pracazconreg . \
+--query status \
+--output tsv 2> /dev/null)
+```
 
 </br>
+
+## Create the build-and-push-nginx-docker-image.sh script
+
+Next, in VS Code, create a new file called the **build-and-push-nginx-docker-image.sh**. Copy and paste the contents below into it and save and commit it to the repository.
+
+```bash
+#!/bin/bash
+
+# Author:      Ryan Irujo
+# Name:        build-and-push-nginx-docker-image.sh
+# Description: Builds and Pushes an NGINX Docker Image to an Azure Container Registry from an Azure CLI Task in Azure DevOps.
+
+# Logging into the 'pracazconreg' Azure Container Registry.
+ACR_LOGIN=$(az acr login \
+--name pracazconreg \
+--output tsv 2> /dev/null)
+
+if [[ "$ACR_LOGIN" =~ "Succeeded" ]]; then
+    echo "[---success---] Logged into Azure Container Registry 'pracazconreg'. Result: $ACR_LOGIN."
+else
+    echo "[---fail------] Failed to login to Azure Container Registry 'pracazconreg'. Result: $ACR_LOGIN."
+    exit 2
+fi
+
+# Building and Pushing the NGINX Docker Image to the Azure Container Registry.
+BUILD_AND_PUSH_NGINX=$(az acr build \
+--no-logs \
+-t practical/nginx:$(date +%F-%H%M%S) \
+-t practical/nginx:latest \
+-r pracazconreg . \
+--query status \
+--output tsv 2> /dev/null)
+
+if [ "$BUILD_AND_PUSH_NGINX" == "Succeeded" ]; then
+    echo "[---success---] Built and Pushed NGINX Docker Image to ACR 'pracazconreg'. Status: $BUILD_AND_PUSH_NGINX."
+else
+    echo "[---fail------] Failed to build and Pushed NGINX Docker Image to ACR 'pracazconreg'. Status: $BUILD_AND_PUSH_NGINX."
+    exit 2
+fi
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Adding Error Handling for ACR Creation and Login
 
