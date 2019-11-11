@@ -1,5 +1,7 @@
 # 100 Days of IaC in Azure
 
+Below are the articles, with the latest listed at the top. Hit the :star: button on the official [GitHub repo](https://github.com/starkfell/100DaysOfIaC/) to keep up with latest updates.
+
 | Subject | Article Link  |
 |---------|---------------|
 | Azure Policy Evaluations in Pipelines | [Day 48 - Integrating Azure Policy Evaluations in Your Pipelines](/articles/day.48.int.azure.policy.eval.in.pipelines.md) |
