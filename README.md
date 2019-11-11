@@ -1,6 +1,6 @@
 # 100 Days of IaC in Azure
 
-Below are the articles, with the latest listed at the top. Hit the :star: button on the official [GitHub repo](https://github.com/starkfell/100DaysOfIaC/) to keep up with latest updates.
+Below are the articles, with the latest listed at the top. Hit the :watch: and :star: buttons on the official [GitHub repo](https://github.com/starkfell/100DaysOfIaC/) to keep up with latest updates.
 
 | Subject | Article Link  |
 |---------|---------------|
