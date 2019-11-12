@@ -12,9 +12,7 @@
 
 </br>
 
-Today, we are going to add the **acr login** command back into the YAML Build Pipeline.
-
-Keep in mind that when you separate certain scripts into different pipeline tasks, that you need to ensure that any data you are using/passing between scripts it's accidentally cut off from the next task. At the end of each task, the credentials for the task are cleared, but the data from the previous command CAN be passed on to the next task. What is actually easiest is to finish up the logic that you were working on in the task first before moving on.
+Today, we are going to add the **acr login** command to a bash script for building and pushing a container into an Azure Container Registry as part of a task in our YAML Build Pipeline.
 
 > **NOTE:** Replace all instances of **pracazconreg** in this article with the name you provided for the Azure Container Registry in **[Part 2](./day.38.building.a.practical.yaml.pipeline.part.2.md)**!
 
@@ -22,12 +20,16 @@ Keep in mind that when you separate certain scripts into different pipeline task
 
 **In this article:**
 
-[Building and Pushing a Container](#building-and-pushing-a-container)</br>
-[Adding the commands into a new Task[]()</br>
+[Creating the Build and Push Container Script with Error Handling](#creating-the-build-and-push-container-script-with-error-handling)</br>
+[Add new directories to the Repository](#add-new-directories-to-the-repository)</br>
+[Add the Dockerfile to the Repository](#add-the-dockerfile-to-the-repository)</br>
+[Create the new Bash Script in the Repository](#create-the-new-bash-script-in-the-repository)</br>
+[Update the YAML File for the Build Pipeline](#update-the-yaml-file-for-the-build-pipeline)</br>
+[Check on the Build Pipeline Job](#check-on-the-build-pipeline-job)</br>
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
-## Building and Pushing a Container
+## Creating the Build and Push Container Script with Error Handling
 
 You may be asking, Why are we taking out the **az acr login** command from the script and putting in its own task? The other two commands in our pipeline are responsible for actually deploying infrastructure into Azure: A Resource Group and an Azure Container Registry. The **az acr login** command is used to *interact* with an existing Azure Container Registry and then is followed by additional actions acting upon the resource. For our purposes, we are going to be logging into the Azure Container Registry so we can push, pull, and build docker container images.
 
@@ -435,6 +437,8 @@ Review the logs of the most current job in the **practical-yaml-build-pipe** Bui
 ## Things to Consider
 
 The **build-and-push-nginx-docker-image.sh** script and it's associated Azure CLI Task can be used as a template for other applications that either exist in this pipeline or different pipelines with minimal code refactoring. The directory structure presented in here provides the same type of benefit by ensuring that application specific files and resources aren't all crammed into a directory.
+
+Keep in mind that when you separate certain scripts into different pipeline tasks, that you need to ensure that any data you are using/passing between scripts it's accidentally cut off from the next task. At the end of each task, the credentials for the task are cleared, but the data from the previous command CAN be passed on to the next task. What is actually easiest is to finish up the logic that you were working on in the task first before moving on.
 
 <br/>
 
