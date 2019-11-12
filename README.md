@@ -4,7 +4,7 @@ Below are the articles, with the latest listed at the top. Hit the :watch: and :
 
 | Subject | Article Link  |
 |---------|---------------|
-| Practical YAML in Build Pipelines - Part 6 | [Day 49 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 6](/articles/day.49.building.a.practical.yaml.pipeline.part.5.md) |
+| Practical YAML in Build Pipelines - Part 6 | [Day 49 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 6](/articles/day.49.building.a.practical.yaml.pipeline.part.6.md) |
 | Azure Policy Evaluations in Pipelines | [Day 48 - Integrating Azure Policy Evaluations in Your Pipelines](/articles/day.48.int.azure.policy.eval.in.pipelines.md) |
 | Exploring ARM Template Functions | [Day 47 - Deploying resources in Azure with help from ARM Template Functions](/articles/day.47.deploy.mult.res.arm.md) |
 | Pipeline-friendly CosmosDB deployment | [Day 46 -  A Pipeline-friendly Script for CosmosDB with Mongo API](/articles/day.46.cosmosdb.mongo.api.cli.md) |
