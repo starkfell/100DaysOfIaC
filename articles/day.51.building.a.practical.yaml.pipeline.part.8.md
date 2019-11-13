@@ -12,7 +12,7 @@
 
 </br>
 
-Today, we are going to walk through building and pushing containers to the Azure Container Registry. In the following post, we'll add the content from here into a separate bash script that will be added to the YAML Build Pipeline.
+Today, we are going to add the **acr login** command to a bash script for building and pushing a container into an Azure Container Registry as part of a task in our YAML Build Pipeline.
 
 > **NOTE:** Replace all instances of **pracazconreg** in this article with the name you provided for the Azure Container Registry in **[Part 2](./day.38.building.a.practical.yaml.pipeline.part.2.md)**!
 
@@ -20,10 +20,16 @@ Today, we are going to walk through building and pushing containers to the Azure
 
 **In this article:**
 
-[Creating a process for Building and Pushing Containers to an Azure Container Registry](#creating-a-process-fir-building-and-pushing-containers-to-an-azure-container-registry)</br>
+[Creating the Build and Push Container Script with Error Handling](#creating-the-build-and-push-container-script-with-error-handling)</br>
+[Add new directories to the Repository](#add-new-directories-to-the-repository)</br>
+[Add the Dockerfile to the Repository](#add-the-dockerfile-to-the-repository)</br>
+[Create the new Bash Script in the Repository](#create-the-new-bash-script-in-the-repository)</br>
+[Update the YAML File for the Build Pipeline](#update-the-yaml-file-for-the-build-pipeline)</br>
+[Check on the Build Pipeline Job](#check-on-the-build-pipeline-job)</br>
+[Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
-## Creating a process for Building and Pushing Containers to an Azure Container Registry
+## Creating the Build and Push Container Script with Error Handling
 
 You may be asking, Why are we taking out the **az acr login** command from the script and putting in its own task? The other two commands in our pipeline are responsible for actually deploying infrastructure into Azure: A Resource Group and an Azure Container Registry. The **az acr login** command is used to *interact* with an existing Azure Container Registry and then is followed by additional actions acting upon the resource. For our purposes, we are going to be logging into the Azure Container Registry so we can push, pull, and build docker container images.
 
@@ -282,7 +288,7 @@ Waiting for an agent...
 
 </br>
 
-As you can see, we are now getting down to something that's easier to parse. However, we still need to get rid of the top 5 lines of output which are not in JSON format. Since those first 5 lines are returned as *WARNINGS* we are going to redirect them to **/dev/null**. Under normal circumstances, this wouldn't be advisable, but we are going to check whether the command succeeded based on the content of the **status** field and not based on any Warnings or Errors that may have occurred. The basic format of the command that will be used in our bash script is below.
+As you can see, we are now getting down to something that's easier to parse. However, we still need to get rid of the top 5 lines of output which are not in JSON format. Since those first 5 lines are returned as *WARNINGS* we are going to redirect them to **/dev/null**. Under normal circumstances, this wouldn't be advisable, but we are going to check whether the command succeeded based on the content of the **status** field and not based on any Warnings or Errors that may have occurred. The final format of the command that will be used in our bash script is below.
 
 ```bash
 PUSH_AND_BUILD=$(az acr build \
@@ -294,20 +300,148 @@ PUSH_AND_BUILD=$(az acr build \
 --output tsv 2> /dev/null)
 ```
 
-Run the following command below to **echo** out the results of the command.
+</br>
+
+## Add new directories to the Repository
+
+Next, in VS Code, create the following folders in the root of the repository.
 
 ```bash
-echo $PUSH_AND_BUILD
-```
-
-You should get back the following response.
-
-```console
-Succeeded
+apps/nginx
 ```
 
 </br>
 
+## Add the Dockerfile to the Repository
+
+Next, in VS Code, add a file called **Dockerfile** in the **apps/nginx** directory. Copy the content below into the **Dockerfile** and then save and commit it to the repository.
+
+```dockerfile
+# Pulling Ubuntu Image from Docker Hub
+FROM alpine:latest
+
+# Updating packages list and installing the prerequisite packages
+RUN apk update && apk add \
+net-tools \
+vim \
+jq \
+wget \
+curl \
+nginx
+
+WORKDIR /opt
+EXPOSE 80
+EXPOSE 443
+
+ENTRYPOINT ["tail", "-f", "/dev/null"]
+```
+
+</br>
+
+## Create the new Bash Script in the Repository
+
+Next, in VS Code, create a new file called the **build-and-push-nginx-docker-image.sh** in the **apps/nginx** directory. Copy and paste the contents below into it and save and commit it to the repository.
+
+```bash
+#!/bin/bash
+
+# Author:      Ryan Irujo
+# Name:        build-and-push-nginx-docker-image.sh
+# Description: Builds and Pushes an NGINX Docker Image to an Azure Container Registry from an Azure CLI Task in Azure DevOps.
+
+# Logging into the 'pracazconreg' Azure Container Registry.
+ACR_LOGIN=$(az acr login \
+--name pracazconreg \
+--output tsv 2> /dev/null)
+
+if [[ "$ACR_LOGIN" =~ "Succeeded" ]]; then
+    echo "[---success---] Logged into Azure Container Registry 'pracazconreg'. Result: $ACR_LOGIN."
+else
+    echo "[---fail------] Failed to login to Azure Container Registry 'pracazconreg'. Result: $ACR_LOGIN."
+    exit 2
+fi
+
+# Building and Pushing the NGINX Docker Image to the Azure Container Registry.
+BUILD_AND_PUSH_NGINX=$(az acr build \
+--no-logs \
+-t practical/nginx:$(date +%F-%H%M%S) \
+-t practical/nginx:latest \
+-r pracazconreg . \
+-f apps/nginx/Dockerfile \
+--query status \
+--output tsv 2> /dev/null)
+
+if [ "$BUILD_AND_PUSH_NGINX" == "Succeeded" ]; then
+    echo "[---success---] Built and Pushed NGINX Docker Image to ACR 'pracazconreg'. Status: $BUILD_AND_PUSH_NGINX."
+else
+    echo "[---fail------] Failed to build and Pushed NGINX Docker Image to ACR 'pracazconreg'. Status: $BUILD_AND_PUSH_NGINX."
+    exit 2
+fi
+
+```
+
+The folder structure of your Repository should look like what is shown below.
+
+![001](../images/day50/day.50.building.a.practical.yaml.pipeline.part.7.001.png)
+
+</br>
+
+## Update the YAML File for the Build Pipeline
+
+Next, in VS Code, replace the current contents of the **idempotent-pipe.yaml** file with what is shown below. Afterwards, save and commit your changes to the repository.
+
+```yaml
+# Builds are automatically triggered from the master branch in the 'practical-yaml-build-pipe' Repo.
+trigger:
+- master
+
+pool:
+  # Using a Microsoft Hosted Agent - https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops
+  vmImage: ubuntu-18.04
+
+steps:
+
+# Azure CLI Task - Deploying Base Infrastructure.
+- task: AzureCLI@2
+  displayName: 'Deploying Base Infrastructure'
+  inputs:
+    # Using Service Principal, 'sp-az-build-pipeline', to authenticate to the Azure Subscription.
+    azureSubscription: 'sp-az-build-pipeline'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: './base-infra.sh'
+
+# Azure CLI Task - Build and Push NGINX Docker Image to Azure Container Registry.
+- task: AzureCLI@2
+  displayName: 'Build and Push NGINX Docker Image to ACR'
+  inputs:
+    # Using Service Principal, 'sp-az-build-pipeline', to authenticate to the Azure Subscription.
+    azureSubscription: 'sp-az-build-pipeline'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: './apps/nginx/build-and-push-nginx-docker-image.sh'
+```
+
+As you can see above, we've added the **build-and-push-nginx-docker-image.sh** script to it's own Azure CLI Task.
+
+</br>
+
+## Check on the Build Pipeline Job
+
+Review the logs of the most current job in the **practical-yaml-build-pipe** Build Pipeline and you should see the following output from the **Deploying Base Infrastructure** Azure CLI Task.
+
+![002](../images/day50/day.50.building.a.practical.yaml.pipeline.part.7.002.png)
+
+</br>
+
+## Things to Consider
+
+The **build-and-push-nginx-docker-image.sh** script and it's associated Azure CLI Task can be used as a template for other applications that either exist in this pipeline or different pipelines with minimal code refactoring. The directory structure presented in here provides the same type of benefit by ensuring that application specific files and resources aren't all crammed into a directory.
+
+Keep in mind that when you separate certain scripts into different pipeline tasks, that you need to ensure that any data you are using/passing between scripts it's accidentally cut off from the next task. At the end of each task, the credentials for the task are cleared, but the data from the previous command CAN be passed on to the next task. What is actually easiest is to finish up the logic that you were working on in the task first before moving on.
+
+<br/>
+
 ## Conclusion
 
-In today's article we covered building and pushing containers to the Azure Container Registry. In the following post, we'll add the content from here into a separate bash script that will be added to the YAML Build Pipeline. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article we further refined the **base-infra.sh** bash script and demonstrated the process of adding in your own error handling. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
