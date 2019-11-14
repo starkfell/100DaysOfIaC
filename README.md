@@ -4,6 +4,7 @@ Below are the articles, with the latest listed at the top. Hit the :watch: and :
 
 | Subject | Article Link  |
 |---------|---------------|
+| Practical YAML in Build Pipelines - Part 8 | [Day 51 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 8](/articles/day.51.building.a.practical.yaml.pipeline.part.8.md) |
 | Practical YAML in Build Pipelines - Part 7 | [Day 50 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 7](/articles/day.50.building.a.practical.yaml.pipeline.part.7.md) |
 | Practical YAML in Build Pipelines - Part 6 | [Day 49 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 6](/articles/day.49.building.a.practical.yaml.pipeline.part.6.md) |
 | Azure Policy Evaluations in Pipelines | [Day 48 - Integrating Azure Policy Evaluations in Your Pipelines](/articles/day.48.int.azure.policy.eval.in.pipelines.md) |
