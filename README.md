@@ -4,7 +4,7 @@ Below are the articles, with the latest listed at the top. Hit the :watch: and :
 
 | Subject | Article Link  |
 |---------|---------------|
-| Intro to DevSecOps tooling for Azure DevOps | [Day 52 - DevSecOps tooling and practices for Azure DevOps (part 1)](/articles/day.51.building.a.practical.yaml.pipeline.part.8.md) |
+| Intro to DevSecOps tooling for Azure DevOps | [Day 52 - DevSecOps tooling and practices for Azure DevOps (part 1)](/articles/day.52.devsecops.tools.practices.md) |
 | Practical YAML in Build Pipelines - Part 8 | [Day 51 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 8](/articles/day.51.building.a.practical.yaml.pipeline.part.8.md) |
 | Practical YAML in Build Pipelines - Part 7 | [Day 50 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 7](/articles/day.50.building.a.practical.yaml.pipeline.part.7.md) |
 | Practical YAML in Build Pipelines - Part 6 | [Day 49 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 6](/articles/day.49.building.a.practical.yaml.pipeline.part.6.md) |
