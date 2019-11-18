@@ -1,6 +1,6 @@
 # Getting to know ARM and JSON (Part 2)
 
-In [Day 5 - Getting to Know ARM and JSON](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.5.getting.to.know.arm.and.json.md), which was basically an "Intro to ARM 101" post, we covered the basics of JSON, and Azure Resource Manager (ARM) templates structure, like parameters and variables. If you haven't read that installment already, or want to refresh your memory, give that installment a quick read.
+In [Day 5 - Getting to Know ARM and JSON](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.5.getting.to.know.arm.and.json.md), which was basically an "Intro to ARM 101" post, we covered the basics of JSON, and Azure Resource Manager (ARM) templates structure, like parameters and variables. If you haven't read that installment already, or want to refresh your memory, give Day 5 a quick read.
 
 In this article:
 
