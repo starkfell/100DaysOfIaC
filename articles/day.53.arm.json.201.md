@@ -25,15 +25,15 @@ If you want to dig into ARM hands-on when you're done with today's post, here ar
 
 This is the real meat of your ARM template. The **resources** section represents the resource types that are deployed or updated in a resource group or subscription. For example, when deploying a virtual machine in Azure, you will see resources including virtual machine, availability set, storage account, disk, network adapter, and network security group.
 
-Each resource in Resources can have a number of elements, including:
+Each resource in resources can have a number of elements, including:
 
-- apiVersion (required)
-- type (required)
-- name (required)
-- location (required). You'll typically specify location once in a parameter and reference that value throughout your template.
-- tags (optional). While options, tags are used frequently, often on the resource group, to specify project, ownership, environment, and cost center to name a few.
-- dependsOn (optional). Used to specify dependent resources that must be deployed before the resource being described is deployed. See **Figure 1** for an example of dependencies in an ARM resource.
-- properties (required). Describes the properties of the resource being deployed. Open the ARM template HERE in your browser and search on "properties".
+- **apiVersion** (required)
+- **type** (required)
+- **name** (required)
+- **location** (required). You'll typically specify location once in a parameter and reference that value throughout your template.
+- **tags** (optional). While options, tags are used frequently, often on the resource group, to specify project, ownership, environment, and cost center to name a few.
+- **dependsOn** (optional). Used to specify dependent resources that must be deployed before the resource being described is deployed. See **Figure 1** for an example of dependencies in an ARM resource.
+- **properties** (required). Describes the properties of the resource being deployed. Open the ARM template HERE in your browser and search on "properties".
 
 ![001](../images/day53/fig1.arm.vm.ex.png)
 
