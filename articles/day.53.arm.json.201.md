@@ -11,6 +11,8 @@ In this article:
 [Protected Settings](#) </br>
 [Outputs](#) </br>
 
+Now, we'll cover a few additional ARM template concepts before exploring additional ARM scenarios in the remaining 47 days.
+
 ## Related Articles
 
 If you want to dig into ARM hands-on when you're done with today's post, here are a few other related articles featuring ARM in the series:
