@@ -29,7 +29,7 @@ Each resource in Resources can have a number of elements, including:
 - type (required)
 - name (required)
 - location (required). You'll typically specify location once in a parameter and reference that value throughout your template.
-- tags (optional). While options, tags are used frequently, often on the resource group, to specify project, ownership, environment, function
+- tags (optional). While options, tags are used frequently, often on the resource group, to specify project, ownership, environment, and cost center to name a few.
 - dependsOn (optional). Used to specify dependent resources that must be deployed before the resource being described is deployed. See **Figure 1** for an example of dependencies in an ARM resource.
 - properties (required). Describes the properties of the resource being deployed. Open the ARM template HERE in your browser and search on "properties".
 
