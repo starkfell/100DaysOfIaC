@@ -81,7 +81,7 @@ To ensure that data is stored in an encrypted format and is only decrypted on a 
 
 ## Outputs
 
-We want to be able to print certain properties at the end of the ARM deployment using **outputs** section of the deployment. This enables us to confirm that the ARM deployment did indeed do what we wanted it to do, and as well as to perhaps pipe the output onto a subsequent command and as input for further operations. I've  used to pass connection info (URLs and FQDNs) for resources created in an ARM template.
+If we want to be able to print certain properties at the end of the ARM deployment, this is where **outputs** section of the template comes into play. This enables us to confirm that the ARM deployment did indeed do what we wanted it to do, and as well as to perhaps pipe the output onto a subsequent command and as input for further operations. I've  used to pass connection info (URLs and FQDNs) for resources created in an ARM template.
 
 You can also pass outputs between tasks and even stages in Azure Pipelines, but that's a topic for another dedicated post.
 
