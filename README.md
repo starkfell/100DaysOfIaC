@@ -4,6 +4,7 @@ Below are the articles, with the latest listed at the top. Hit the :watch: and :
 
 | Subject | Article Link  |
 |---------|---------------|
+| ARM template concepts (part 2) | [Day 53 - Getting to know ARM and JSON (Part 2)](/articles/day.53.arm.json.201.md) |
 | Intro to DevSecOps tooling for Azure DevOps | [Day 52 - DevSecOps tooling and practices for Azure DevOps (part 1)](/articles/day.52.devsecops.tools.practices.md) |
 | Practical YAML in Build Pipelines - Part 8 | [Day 51 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 8](/articles/day.51.building.a.practical.yaml.pipeline.part.8.md) |
 | Practical YAML in Build Pipelines - Part 7 | [Day 50 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 7](/articles/day.50.building.a.practical.yaml.pipeline.part.7.md) |
