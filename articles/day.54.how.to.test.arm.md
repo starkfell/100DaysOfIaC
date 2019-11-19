@@ -90,8 +90,8 @@ Get the details and sign up for the Preview at ["Resource Manager template deplo
 
 ## Avoid This
 
-The Azure-Arm-Validator, described by the Microsoft author as "A tiny server which will validate Azure Resource Manager scripts". It requires some configuration, uses a MongoDB backend, and has been succeeded by the native validation now available in native options like [Test-AzResourceGroupDeployment](https://docs.microsoft.com/en-us/powershell/module/az.resources/test-azresourcegroupdeployment?view=azps-3.0.0) and `Test-AzManagementGroupDeployment`. Bottom line is probably nobody should be using it anymore.
+The Azure-Arm-Validator, described by the Microsoft author as "A tiny server which will validate Azure Resource Manager scripts". It requires some configuration, uses a MongoDB backend, and has been succeeded by the native validation now available in native options like [Test-AzResourceGroupDeployment](https://docs.microsoft.com/en-us/powershell/module/az.resources/test-azresourcegroupdeployment?view=azps-3.0.0) and the pipeline-integrated PowerShell described above. Bottom line is probably nobody should be using it anymore.
 
-## Conclusion 
+## Conclusion
 
 ARM template validation is a topic with many facets, and a number of options to meet a variety of deployment scenarios. We hope this post jump starts your efforts in implementing a validation strategy for your ARM deployments. We have 46 days left, so don't hesitate to reach out if you have topics you'd like us to cover.
