@@ -6,7 +6,7 @@ In this article:
 
 [Native Solutions](#native-solutions) </br>
 [Community Solutions](#community-solutions) </br>
-[## Coming Soon: what-if for ARM](#coming-soon-what-if-for-arm) </br>
+[Coming Soon: what-if for ARM](#coming-soon-what-if-for-arm) </br>
 [Avoid This](#avoid-this) </br>
 
 ## Native Options
@@ -18,7 +18,7 @@ There are a couple of native options for validating, but some go deeper than oth
 The **Azure Resource Group Deployment** is a native task in Azure DevOps designed to deploy an ARM template to a new or existing resource group we specify, in the Azure subscription we choose. However, as you can see in Figure 1 we have specified "Deployment mode: Validation only", which means a resource group will be created and the ARM template syntax will be validated, but not actually deployed. It's important to note that this simple approach confirms your ARM template is syntactically correct, *but does not verify it is actually deployable in your Azure subscription*. This is demonstrated in [Day 12](https://raw.githubusercontent.com/starkfell/100DaysOfIaC/master/articles/day.12.contin.integration.md) of the 100 Days of IaC series.
 
 ![001](https://github.com/starkfell/100DaysOfIaC/blob/master/images/day54/figure1.png)
-Figure 1. Azure Resource Group Deployment task settings in Azure Pipelines
+**Figure 1.** Azure Resource Group Deployment task settings in Azure Pipelines
 
 ### PowerShell in Azure DevOps pipelines
 
@@ -53,7 +53,7 @@ Test-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" `
 
 **EXAMPLE: Test-AzDeployment**
 
- This command tests a deployment at **the current subscription scope** using the given template file and parameters file. We can also specify the location, to test viability in the subscription based on the region targeted.
+ This command tests a deployment at **the current subscription scope** using the given template file and parameters file. We can also specify the location to test viability in the subscription based on the region targeted.
 
 ``` PowerShell
 Test-AzDeployment -Location "West US" -TemplateFile "D:\Azure\Templates\EngineeringSite.json" `
@@ -82,9 +82,9 @@ This one wraps the native `Test-AzResourceGroupDeployment` and parses the HTTP o
 
 ## Coming Soon: what-if for ARM
 
-The long-awaited solution for ARM validation is the what-if functionality now in Preview, provides the what-if operation to let you see how resources will change if you deploy the template. The what-if operation doesn't make any changes to existing resources. Instead, it predicts the changes if the specified template is deployed. It will test for 
+The long-awaited solution for ARM validation is the what-if functionality now in Preview, provides the what-if operation to let you see how resources will change if you deploy the template. The what-if operation doesn't make any changes to existing resources. Instead, it predicts the changes if the specified template is deployed. It will test for six(6) different kinds of changes: **Create**, **Delete**, **Ignore**, **NoChange**, **Modify**, and **Deploy**.
 
-This works both for resource group based deployments and REST-based deployments, which means you can test your management group deployments executed via REST API.
+This works both for resource group based deployments and REST-based deployments, which means you should be able test your management group deployments executed via REST API. We will unpack the what-if preview in a later post here in the **100 Days of IaC in Azure** series.
 
 Get the details and sign up for the Preview at ["Resource Manager template deployment what-if operation (Preview)"](https://docs.microsoft.com/en-us/azure/azure-resource-manager/template-deploy-what-if)
 
