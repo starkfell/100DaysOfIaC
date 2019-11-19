@@ -4,7 +4,7 @@ There are few things more irritating than a carefully crafted ARM deployment tha
 
 In this article:
 
-[Native Solutions](#native-solutions) </br>
+[Native Options](#native-options) </br>
 [Community Solutions](#community-solutions) </br>
 [Coming Soon: what-if for ARM](#coming-soon-what-if-for-arm) </br>
 [Avoid This](#avoid-this) </br>
