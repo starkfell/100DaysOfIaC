@@ -17,11 +17,9 @@ In this article:
 
 A couple of general utility add-ins that make coding faster and easier for me.
 
-- **Visual file type indicator**. The [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) gives you a clear, visual indicator of the file type you are working with? With 2.8 millions downloads and a user rating close to 5 stars, it's a must-have. As someone who works with many different file types in VS Code, I find this so helpful.
+- **Visual file type indicator**. The [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) gives you a clear, visual indicator of the file type you are working with? With 2.8 millions downloads and a user rating close to 5 stars, it's a must-have. As someone who works with many different file types in VS Code, I find this so helpful. You can see the massive list of supported icons and languages [HERE](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme).
 
-You can see the massive list of supported icons and languages [HERE](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme).
-
-- **Beatify**. I use this to prettify the formatting of Javascript, JSON, CSS, Sass, and HTML in VS Code with a simple press of F1 thanks to [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify). I am constantly formatting JSON, HTML, and CSS with this one.
+- **Beatify**. I use this to prettify the formatting of Javascript, JSON, CSS, Sass, and HTML in VS Code with a simple press of F1, thanks to [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify). I am constantly formatting JSON, HTML, and CSS with this one.
 
 ## Azure CLI
 
@@ -34,8 +32,8 @@ The [Azure CLI Tools](https://marketplace.visualstudio.com/items?itemName=ms-vsc
 
 I have two must have JSON extensions to deal with my JSON scenarios.
 
--**ARM JSON**. For ARM templates, Microsoft's [Azure Resource Manager Tools](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools) is the only way. Loads of features specific to aid your ARM authoring
--**JSON Tools**. For all the JSON files not ARM-related, [JSTON Tools](https://marketplace.visualstudio.com/items?itemName=eriklynd.json-tools) is a simple prettify/minify tool is good enough for most of what I need.
+- **ARM JSON**. For ARM templates, Microsoft's [Azure Resource Manager Tools](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools) is the only way. Loads of features specific to aid your ARM authoring
+- **JSON Tools**. For all the JSON files not ARM-related, [JSTON Tools](https://marketplace.visualstudio.com/items?itemName=eriklynd.json-tools) is a simple prettify/minify tool is good enough for most of what I need.
 
 
 ## KUSTO
