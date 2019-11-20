@@ -41,7 +41,7 @@ I have two must have JSON extensions to deal with my JSON scenarios.
 When you're writing Kusto queries for Log Analytics, Defender ATP, or Azure Sentinel, if you save a file with a **.kql** or **.kusto** extension, the [Kusto Syntax Highlighting](https://marketplace.visualstudio.com/items?itemName=rosshamish.kuskus-kusto-syntax-highlighting) add-in gives you a visual assist with your formatting to easy spot missing quotes, etc.
 
 ![002](../images/day55/fig2.kusto.jpg)
-**Figure 2**. Sample of Kusto Syntax Highlighting
+**Figure 2**. Sample of Kusto Syntax Highlighting (Defender ATP)
 
 ## Python
 
