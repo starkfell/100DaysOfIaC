@@ -19,7 +19,7 @@ A couple of general utility add-ins that make coding faster and easier for me.
 
 - **Visual file type indicator**. The [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) gives you a clear, visual indicator of the file type you are working with? With 2.8 millions downloads and a user rating close to 5 stars, it's a must-have. As someone who works with many different file types in VS Code, I find this so helpful. You can see the massive list of supported icons and languages [HERE](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme).
 
-- **Beatify**. I use this to prettify the formatting of Javascript, JSON, CSS, Sass, and HTML in VS Code with a simple press of F1, thanks to [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify). I am constantly formatting JSON, HTML, and CSS with this one.
+- **Beatify**. I use this to prettify the formatting of JavaScript, JSON, CSS, Sass, and HTML in VS Code with a simple press of F1, thanks to [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify). I am constantly formatting JSON, HTML, and CSS with this one.
 
 ## Azure CLI
 
@@ -45,7 +45,7 @@ When you're writing Kusto queries for Log Analytics, Defender ATP, or Azure Sent
 
 ## Python
 
-Microsoft's own [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension is the best game in town, and it supports Jupyter Notebook authoring for Azure Sentinel, as well as intelliSense, linting, debugging, code navigation, code formatting, Jupyter notebook support, refactoring, variable explorer, test explorer, and code snippets 
+Microsoft's own [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) extension is the best game in town, and it supports Jupyter Notebook authoring for Azure Sentinel, as well as intelliSense, linting, debugging, code navigation, code formatting, Jupyter notebook support, refactoring, variable explorer, test explorer, and code snippets.
 
 With a million+ downloads, and 4.5 star rating, and frequent updates (updated yesterday!), it's the only way to roll when you're coding in Python.
 
@@ -59,4 +59,4 @@ This YAML extension from Red Hat includes Kubernetes support, one of the primary
 
 ## Conclusion
 
-I hope you found an extension in my list you haven't tried before. Have a language-specific or other coding-related extension you'd like to share? Leave a comment! 
+I hope you found an extension in my list you haven't tried before. Have a language-specific or other coding-related extension you'd like to share? Leave a comment!
