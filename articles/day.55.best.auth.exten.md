@@ -1,6 +1,6 @@
 # Day 55 - Write better PowerShell, Azure CLI, JSON, KUSTO, Python, and YAML in VS Code
 
-Someone asked me to share the VS Code extensions that do the most to make coding faster, easier, and less aggravating, so here they are. Whether I am writing for Infrastructure-as-Code, or a supporting function related to monitoring and security, these extensions make life better INSTANTLY. As someone who works with 5+ file types in VS Code every day, these help me my velocity significantly.
+A reader asked me to share the VS Code extensions that do the most to make coding by reader request, here they are. Whether I am writing for Infrastructure-as-Code, or a supporting function related to monitoring and security, these extensions make life better INSTANTLY. As someone who works with 5+ file types in VS Code every day, these help my velocity significantly.
 
 If you work with Microsoft security and monitoring tools, there is something in this post for you too!
 
@@ -25,7 +25,7 @@ A couple of general utility add-ins that make coding faster and easier for me.
 
 The [Azure CLI Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli) add-in makes writing Azure CLI a pleasure (seriously). HUGE time saver! Save your file with an **.azcli** extension and you get intellisense, inline help, snippets for command and required arguments *automatically*. If you're writing Bash scripts containing Azure CLI, this is a must-have.
 
-[001](../images/day55/fig1.azcli.jpg)
+![001](../images/day55/fig1.azcli.jpg)
 **Figure 1**. Azure CLI Tools intellisense for parameters
 
 ## JSON
@@ -40,7 +40,7 @@ I have two must have JSON extensions to deal with my JSON scenarios.
 
 When you're writing Kusto queries for Log Analytics, Defender ATP, or Azure Sentinel, if you save a file with a **.kql** or **.kusto** extension, the [Kusto Syntax Highlighting](https://marketplace.visualstudio.com/items?itemName=rosshamish.kuskus-kusto-syntax-highlighting) add-in gives you a visual assist with your formatting to easy spot missing quotes, etc.
 
-[002](../images/day55/fig2.kusto.jpg)
+![002](../images/day55/fig2.kusto.jpg)
 **Figure 2**. Sample of Kusto Syntax Highlighting
 
 ## Python
