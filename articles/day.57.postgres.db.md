@@ -1,6 +1,6 @@
 ## Day 57 -  The Ultimate Pipeline-friendly Azure DB for PostgreSQL Script
 
-With Azure DB for PostgreSQL, you can deploy the Postgres version of your choice, with the compute . We've talked repeatedly about the flexibility of using Azure CLI (bash) in your day-to-day, non-prod releases. Today, we offer a script, designed to run in a release pipeline in Azure Pipelines, and by request, we've left in Azure KeyVault integration for storing secrets related to the Postgres instance.
+With Azure DB for PostgreSQL, you can deploy the Postgres version of your choice, with the compute . We've talked repeatedly about the flexibility of using Azure CLI (bash) in your day-to-day, non-prod releases. Today, we offer a script, designed to run in a release pipeline in Azure Pipelines, and by request, we've left in Azure KeyVault integration for storing secrets related to the Postgres instance. I've used this in a release pipeline with great results.
 
 This performs the following configuration of your Azure PostgreSQL instance, including:
 
