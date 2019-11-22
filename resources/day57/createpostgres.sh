@@ -6,7 +6,7 @@
 #
 # Author:           Pete Zerger  
 # 
-# Description:      This script is responsible for deploying an Azure Cosmos DB instance.
+# Description:      This script is responsible for deploying an Azure DB for Postgres instance.
 #
 # Sample:           see parameter documentation and example at the head of the script below.
 #
