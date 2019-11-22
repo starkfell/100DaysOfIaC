@@ -15,12 +15,13 @@ In this article:
 
 There are important differences between **template validation error**, and a **template deployment error**. A template validation error means there is a problem with the syntax or layout of your deployment template, which prevents the deployment from starting. A template deployment error means that your template syntax has been approved, but an error has occurred while provisioning the resources.
 
- Both types of errors return an error code you can use to troubleshoot the deployment. Both error types appear in the activity log. However, validation errors don't appear in your deployment history because the deployment never started. If you use the template deployment in the Azure portal and your template is invalid, you'll see an error like that shown in Figure 1 when you click the purchase button:
+ Both types of errors return an error code you can use to troubleshoot the deployment. Both error types appear in the Azure Activity Log. However, validation errors don't appear in your deployment history because the deployment never started. If you use the template deployment in the Azure portal and your template is invalid, you'll see an error like that shown in Figure 1 when you click the purchase button:
 
 ![001](../images/day56/fig1.valid.error.jpg)
  **Figure 1**. ARM Template Validation Error
 
 ## Finding error details in the Azure Portal
+
  If you have a conflict not caught in the pre-flight check, you can find the error in the properties of the failed deployment or the **Azure Activity Log**. To get to the Activity Logs 
 
 1. Sign in to the Azure portal.
@@ -52,12 +53,12 @@ If you load the Preview version of [Azure Resource Manager (ARM) Tools](#https:/
 
 Here are the key additional resources you should review to master troubleshooting ARM template deployment, including a step-by-step tutorial simulating an ARM deployment error.
 
-Common error messages are available in [Troubleshoot common Azure deployment errors with Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-common-deployment-errors)
+- Common error messages are available in [Troubleshoot common Azure deployment errors with Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-common-deployment-errors)
 
-Details on how to review ARM template deployment history in the[View deployment history with Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-deployment-operations)
+- Details on how to review ARM template deployment history in the[View deployment history with Azure Resource Manager](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-deployment-operations)
 
-If you are interested, this is a great step-by-step tutorial from Microsoft that shows you how to create and troubleshoot an ARM deployment error: [Tutorial: Troubleshoot Resource Manager template deployments](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-tutorial-troubleshoot)
+- If you are interested, this is a great step-by-step tutorial from Microsoft that shows you how to create and troubleshoot an ARM deployment error: [Tutorial: Troubleshoot Resource Manager template deployments](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-tutorial-troubleshoot)
 
 ## Conclusion
 
-Hopefully this gives you the resources you need to get comfortable with ARM deployment troubleshooting in a shortest possible time. Have a tip that's helped you troubleshoot ARM deployments? Leave a comment below. 
+Hopefully this gives you the resources you need to get comfortable with ARM deployment troubleshooting in a shortest possible time. Have a tip that's helped you troubleshoot ARM deployments? Leave a comment below.
