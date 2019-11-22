@@ -14,8 +14,6 @@ This performs the following configuration of your Azure PostgreSQL instance, inc
 - Stores the connection endpoint in Azure KeyVault
 - Retrieves and stores the Postgres user and password in Azure KeyVault
 
-You'll see a a couple of properties that remain hard-coded, as that was fine in my environment. Now, you have a rich sample that gives you a running start, and you can parameterize even further.
-
 ## SAMPLE SCRIPT
 
 The script, and command line syntax are shown here, well-commented so you know what's happening at every stage. The full script is shown below, as well as in the [day57](../resources/day57) folder in the resources in this Git repository.
