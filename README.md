@@ -4,6 +4,7 @@ Below are the articles, with the latest listed at the top. Hit the :watch: and :
 
 | Subject | Article Link  |
 |---------|---------------|
+| Troubleshooting ARM Deployments| [Day 56 - Troubleshooting Azure Resource Manager (ARM) Template Deployment](/articles/day.56.tshoot.arm.md) |
 | VS Code extensions for better coding | [Day 55 - Write better PowerShell, Azure CLI, JSON, KUSTO, Python, and YAML in VS Code](/articles/day.55.best.auth.exten.md) |
 | ARM template validation | [Day 54 - What are all the ways to validate an ARM template?](/articles/day.54.how.to.test.arm.md) |
 | ARM template concepts (part 2) | [Day 53 - Getting to know ARM and JSON (Part 2)](/articles/day.53.arm.json.201.md) |
