@@ -1,5 +1,5 @@
 
-# Who Is
+# Whois
 
 Who is behind the "100 Days of Infrastructure-as-Code in Azure" series?
 
