@@ -167,7 +167,7 @@ The **build-and-push-nginx-docker-image.sh** script and it's associated Azure CL
 
 Keep in mind that when you separate certain scripts into different pipeline tasks, that you need to ensure that any data you are using/passing between scripts isn't accidentally cut off from the next task. At the end of each task, the credentials for the task are cleared; however, the data from the previous command CAN be passed on to the next task, but must be done so, *explicitly*.
 
-<br/>
+</br>
 
 ## Conclusion
 

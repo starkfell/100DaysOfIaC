@@ -167,7 +167,7 @@ else
 fi
 ```
 
-<br/>
+</br>
 
 ### deploy-nginx-aci.sh Script Breakdown
 
