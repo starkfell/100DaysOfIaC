@@ -22,9 +22,9 @@ Today, we are going to continue where we left off in **[Part 7](./day.51.buildin
 
 **In this article:**
 
-[Add new directories to the Repository](#add-new-directories-to-the-repository)</br>
-[Add the Dockerfile to the Repository](#add-the-dockerfile-to-the-repository)</br>
-[Create the new Bash Script in the Repository](#create-the-new-bash-script-in-the-repository)</br>
+[Update the permissions of the Service Principal used for the Build Pipeline](#update-the-permissions-of-the-service-principal-used-for-the-build-pipeline)</br>
+[Add in a new Bash Script for Deploying an Azure Container Instance](#add-in-a-new-bash-script-for-deploying-an-azure-container-instance)</br>
+[deploy-nginx-aci.sh Script Breakdown](#deploy-nginx-acish-script-breakdown)</br>
 [Update the YAML File for the Build Pipeline](#update-the-yaml-file-for-the-build-pipeline)</br>
 [Check on the Build Pipeline Job](#check-on-the-build-pipeline-job)</br>
 [Things to Consider](#things-to-consider)</br>
