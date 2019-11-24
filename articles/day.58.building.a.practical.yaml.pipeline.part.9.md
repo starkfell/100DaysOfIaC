@@ -38,6 +38,8 @@ The primary reason we are updating the permissions of the **sp-az-build-pipeline
 ERROR: The image 'pracazconreg.azurecr.io/practical/nginx:latest' in container group 'nginx-iac-001' is not accessible. Please check the image and registry credential.
 ```
 
+> **NOTE:** The section in **[Part 1](./day.35.building.a.practical.yaml.pipeline.part.1.md)** where the Service Principal **sp-az-build-pipeline-creds** is initially created has been updated to use the **Owner** Role instead of **Contributor**.
+
 </br>
 
 You can use one of the two options below to update the **sp-az-build-pipeline-creds** Service Principal.

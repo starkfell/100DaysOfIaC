@@ -37,13 +37,13 @@ On your Linux Host (with Azure CLI installed), open up a bash prompt and run the
 
 ```bash
 AZURE_BUILD_PIPE_SP=$(az ad sp create-for-rbac \
---role "contributor" \
+--role "Owner" \
 --name "sp-az-build-pipeline-creds" \
 --scope "/subscriptions/$AZURE_SUB_ID" \
 --years 1)
 ```
 
-You should get back a result similar to what is shown below. You'll notice that the **contributor** right assignment is scoped to the Azure Subscription.
+You should get back a result similar to what is shown below. You'll notice that the **Owner** right assignment is scoped to the Azure Subscription.
 
 ```console
 Changing "sp-az-build-pipeline-creds" to a valid URI of "http://sp-az-build-pipeline-creds", which is the required format used for service principal names
