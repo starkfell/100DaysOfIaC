@@ -1,9 +1,10 @@
 # 100 Days of IaC in Azure
 
-Below are the articles, with the latest listed at the top. Hit the :watch: and :star: buttons on this [Github repo](https://github.com/starkfell/100DaysOfIaC/) to keep up with latest updates. Meet the people behind the seris on our [whois page](https://github.com/starkfell/100DaysOfIaC/blob/master/whois.md).
+Below are the articles, with the latest available at the top. Hit the :watch: and :star: buttons on this [GitHub repo](https://github.com/starkfell/100DaysOfIaC/) to keep up with latest updates. Meet the people behind this series on our [whois page](https://github.com/starkfell/100DaysOfIaC/blob/master/whois.md).
 
 | Subject | Article Link  |
 |---------|---------------|
+| Practical YAML in Build Pipelines - Part 9 | [Day 58 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 9](/articles/day.58.building.a.practical.yaml.pipeline.part.9.md) |
 | Troubleshooting ARM Deployments| [Day 57 -  The Ultimate Pipeline-friendly Azure DB for PostgreSQL Script](/articles/day.57.postgres.db.md) |
 | Troubleshooting ARM Deployments| [Day 56 - Troubleshooting Azure Resource Manager (ARM) Template Deployment](/articles/day.56.tshoot.arm.md) |
 | VS Code extensions for better coding | [Day 55 - Write better PowerShell, Azure CLI, JSON, KUSTO, Python, and YAML in VS Code](/articles/day.55.best.auth.exten.md) |
