@@ -1,6 +1,6 @@
 # Day 59 - One Service Principal to Rule Them All
 
-In [Day 4]() we discussed how you may end up using Service Principals in Azure for things like Kubernetes, Ansible, and Custom Applications. While creating a single Service Principal is easy enough, trying to manage multiple Service Principals manually in an Azure Subscription can end up being quite cumbersome. Today we are going to discuss how you could use a single Azure Service Principal to manage all of your resources in Azure, including any additional Service Principals you may need.
+In **[Day 4](./day.4.creating.a.service.principal.linux.in.plain.english.md)** we discussed how you may end up using Service Principals in Azure for things like Kubernetes, Ansible, and Custom Applications. While creating a single Service Principal is easy enough, trying to manage multiple Service Principals manually in an Azure Subscription can end up being quite cumbersome. Today we are going to discuss how you could use a single Azure Service Principal to manage all of your resources in Azure, including any additional Service Principals you may need.
 
 In this article:
 
