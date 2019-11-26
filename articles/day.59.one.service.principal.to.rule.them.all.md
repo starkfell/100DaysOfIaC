@@ -4,18 +4,16 @@ In **[Day 4](./day.4.creating.a.service.principal.linux.in.plain.english.md)** w
 
 In this article:
 
-[Utility Extensions](#utility-extensions) </br>
-[Azure CLI](#) </br>
-[JSON](#json) </br>
-[KUSTO](#kusto) </br>
-[Python](#python) </br>
-[PowerShell](#powershell) </br>
+[The Omnipotent Service Principal](#the-omnipotent-service-principal) </br>
+[Azure Active Directory Permission Requirements](#azure-active-directory-permission-requirements) </br>
+[Security Considerations](#security-considerations) </br>
+[Conclusion](#conclusion) </br>
 
 ## The Omnipotent Service Principal
 
 So you've tested out Kubernetes, Terraform, and Ansible in Azure. You're currently using three Separate Service Principals to manage them, but you don't have a programmatic way in place yet of deploying the Service Principals and their respective environments they are responsible for. This is something that can be put into place by using the paradigm shown in the diagram below.
 
-![Subscription Management using Service Principals](https://www.plantuml.com/plantuml/png/0/fLHTRnen47pthzYGIctL72T0bL8UggJGf5MI5d4ax-Qy75PyjkkFKFBhk_S1ZHf8aFh47JipE-iTtvaFt8LOAfQ-PREbz20aBnmlJs1X78pv6Zv-Ee4Lzv0xv045S2qWB553WHfT_PVKmG07gmjOI8KGlQH70i54SHrkRwxXw--0sakZQzsx34P6O9UDPjDh-03Pj-yNC_gTG99ytfA6SDcsW5k2LSHHT0vrW77ZiakU4Mo5fnd0etj01ta3KckOOsKaUl983ekj6Xbgv_HWT49EamN1QVnb2DOFqtIrMdKtkjtSbEdsXRrDsP70XTG8vu_HuQHglU4vlkeMCYpZdBgwt6WQEzG2Kvbp9ymFYHPLMZEJpQHfoNr0bmhf0pkIEbTHO7J_BUjG8VUOzfDUhTtKHwOiZUxQQkrFcssdEHH621i3Dl2BgFCWNoFemEdWd4-vKYyXnppmELdt6o--D7uyVubompKliAI3UKqyGug83Ej6-mhNTpogq32OlvVQSee6VE7vVU5Cr69a58MlHZCMPA2CPt7kSoTjDJByRTrcFwCaofpoxyY0j5nvndWUIAIJyUYCxW1TgUOHZgSe6F69tIcBCYI-OITsmwxHDrHgTRUoS3oBxbSqqkD6mHL9Ru-2Atg72VJt2lGF4nZi5HWS850VD8pnuQVrDUtySMoUubYDcA8tqULuIJko_jtqidS2dVjJdw1wGD-XbwjJ3oCLgxjLoNNUxo7sMw9OSRTunin2iPSvQ9cq-tzf4sS4yLYxvUhBjdE5Gsg05df3icYLMTUevmbYEycLQdqwhKf_2ET2RDbquJJMrx8wCu9L-1qnU5hilrHyjZx6TgMg0jC-sAx0DBK-svM5fZPWx0oreEluvWy0 "Subscription Management using Service Principals")
+![Subscription Management using Service Principals](https://www.plantuml.com/plantuml/png/0/fPHlRzem4CRV-rDSwQHkMaC4rQID5rCPjDtKibM4zhsJ7C6gOtl-KqO__IuEi4g55cclukH-p-CxtpddpdFhGorPUi9c2-6W5Bool3w5kROmvYluzEKKbjn1OP5xB86h4lm25LIeqCPFGdaD78ogO2uaGd22bWJ1hUJAtqrkuEAFH-M4Lj7tFeEHBh7BHhFf3No4xFkFonazRo59lcv50xXQRm5tX3N2KR0MbOTncsMNSaOm3KyrW4FxY1QA5f8hoB5993ZAaJAijcwKqBfE1rebb6ao9vpANtXlt21DbyjbT-FRBNITRb_OISgEIfmBXJ1y2XPlcwqtEikNtKhuHSXfLrjeHMNxQ30L1RUb_YdGe4oZCjbKcjRSURHfAPndHq8LCfGOx7_RMfJ87QRzf1Uzs_X8rxLMNTEq_VbcsseEnOWmmMEBNmPLUF6MG7bE1sTTogLyZHnpptDAtMroSRLsu_mroOGhNc5D1_EMUOOq8iAlMkzhNDtp87shOEv1ACDfDE0RBnugguCgHrhIy4MQCIyypNWMSbTOOPgIuT_MwzdFQ195GVDlAG5Xk7ICySAJIIVZmMhL0RfIxHAEfrWoqfEwKrUrJrohJin67Ua9XTQ-MriudWNxEsZXSEFmyDdjCR1Lxm0zpQ7bUntw1pXmkkYvnBqUPmTunBE6CJx-CYxAXazZ_PnZaPYYqy4MU4LjCkxzzAft2fqB-OYkGulhaADLwEdjmnw-JzXuoUqy2cPDxVIVgVVoPqHDK3Nmi2sJKBPkPFFpsjcb0MGU3VG6L96HUXMfbqF2TeeRrrZzsgK_W65PRjLqfnJ6czUS2M4DlwFLpuFzru8lsiFOhibfO3fljcicsbYVxUfr6pjZx1nLIJVktLy0 "Subscription Management using Service Principals")
 
 </br>
 
@@ -23,7 +21,7 @@ Starting from the top of the diagram, we have a single Service Principal in plac
 
 </br>
 
-## Permission Considerations
+## Azure Active Directory Permission Requirements
 
 In order for a Service Principal to have the ability to create additional Service Principals in an Azure Subscription, it requires the following API permissions in Azure Active Directory Graph.
 

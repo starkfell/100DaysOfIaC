@@ -19,14 +19,14 @@ title Subscription Management using Service Principals
 
 actor "Sauron" as Sauron #Red
 agent "mgmt-service-principal" as MgmtServicePrincipal #Turquoise
-agent "rg-1-service-principal" as rg1ServicePrincipal #Turquoise
-agent "rg-2-service-principal" as rg2ServicePrincipal #Turquoise
-agent "rg-3-service-principal" as rg3ServicePrincipal #Turquoise
+agent "k8s-service-principal" as rg1ServicePrincipal #Turquoise
+agent "terra-service-principal" as rg2ServicePrincipal #Turquoise
+agent "ansible-service-principal" as rg3ServicePrincipal #Turquoise
 agent "Azure DevOps" as AzDo #Turquoise
 
-AzureResourceGroups(RG1, "k8s-elves", "K8s Cluster Dev")
-AzureResourceGroups(RG2, "k8s-dwarfs", "K8s Cluster Stg")
-AzureResourceGroups(RG3, "k8s-men", "K8s Cluster Prod")
+AzureResourceGroups(RG1, "Elves", "Kubernetes")
+AzureResourceGroups(RG2, "Dwarfs", "Terraform")
+AzureResourceGroups(RG3, "Men", "Ansible")
 
 Sauron --> MgmtServicePrincipal : Step 1: Deploy Mgmt Service Principal
 MgmtServicePrincipal --> AzDo : Step 2: Add Service Connection
