@@ -10,23 +10,28 @@
 
 skinparam BackgroundColor Azure
 
-title Service Principal
+title Subscription Management using Service Principals
 
-actor "You" as You #Peru
+actor "Sauron" as Sauron #Red
 agent "mgmt-service-principal" as MgmtServicePrincipal #Turquoise
 agent "rg-1-service-principal" as rg1ServicePrincipal #Turquoise
 agent "rg-2-service-principal" as rg2ServicePrincipal #Turquoise
 agent "rg-3-service-principal" as rg3ServicePrincipal #Turquoise
 agent "Azure DevOps" as AzDo #Turquoise
-AzureResourceGroups(RG1, "k8s-dev", "K8s Cluster Dev")
-AzureResourceGroups(RG2, "k8s-prod", "K8s Cluster Stg")
-AzureResourceGroups(RG3, "k8s-prod", "K8s Cluster Prod")
-You --> MgmtServicePrincipal : Step 1: Deploy Mgmt Service Principal
+
+AzureResourceGroups(RG1, "k8s-elves", "K8s Cluster Dev")
+AzureResourceGroups(RG2, "k8s-dwarfs", "K8s Cluster Stg")
+AzureResourceGroups(RG3, "k8s-men", "K8s Cluster Prod")
+
+Sauron --> MgmtServicePrincipal : Step 1: Deploy Mgmt Service Principal
 MgmtServicePrincipal --> AzDo : Step 2: Add Service Connection
+
 AzDo --> rg1ServicePrincipal
 AzDo --> rg2ServicePrincipal
 AzDo --> rg3ServicePrincipal
+
 rg1ServicePrincipal --> RG1
 rg2ServicePrincipal --> RG2
-rg2ServicePrincipal --> RG3
+rg3ServicePrincipal --> RG3
+
 @enduml$
