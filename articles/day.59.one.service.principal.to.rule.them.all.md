@@ -91,12 +91,12 @@ When you are finished, the API permissions blade in your Service Principal shoul
 
 When creating your Management Service Principal, store the initial password that is generated at runtime in a variable and store it in a new or existing Azure Key Vault. Using this method will ensure the password will never appear anywhere in your code in clear text and can only be accessed from individuals or services with access to the Key Vault it's stored in.
 
-If, for whatever reason, the Management Service Principal is compromised, there are two primary options to consider
+If, for whatever reason, the Management Service Principal is compromised, there are two primary options to consider:
 
 * Delete the Management Service Principal and re-create it.
 * Reset the Password on the Management Service Principal.
 
-If you have scripted the creation of the Management Service Principal, deleting it and it's associated Key Vault/Secret would be the quickest solution.
+If you have scripted the creation of the Management Service Principal, deleting it and it's associated Key Vault/Secret would be the quickest solution. Also, if you've made the time and effort to script the creation process, it could be beneficial to have a decommissioning script as well.
 
 > **NOTE:** If you do have to re-create your Management Service Principal, don't forget to update any related Service Connections in Azure DevOps.
 
