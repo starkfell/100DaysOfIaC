@@ -1,4 +1,9 @@
 @startuml
+/'
+This diagram, for Day 59, was created and then generated into a png file using the PlantUML Extension for VS Code.
+CTRL + SHIFT + P --> PlantUML: Generate URL for Current Diagram.
+The plantuml server currently being used to generate UML diagrams on-the-fly is https://www.plantuml.com/plantuml.
+'/
 !define AzurePuml https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/master/dist
 !includeurl https://raw.githubusercontent.com/RicardoNiepel/Azure-PlantUML/release/2-1/dist/AzureCommon.puml
 !includeurl AzurePuml/AzureCommon.puml
