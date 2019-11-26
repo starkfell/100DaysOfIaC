@@ -4,6 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| CI/CD | [Day 59 - One Service Principal to Rule Them All](/articles/day.59.one.service.principal.to.rule.them.all.md) |
 | Practical YAML in Build Pipelines - Part 9 | [Day 58 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 9](/articles/day.58.building.a.practical.yaml.pipeline.part.9.md) |
 | Troubleshooting ARM Deployments| [Day 57 -  The Ultimate Pipeline-friendly Azure DB for PostgreSQL Script](/articles/day.57.postgres.db.md) |
 | Troubleshooting ARM Deployments| [Day 56 - Troubleshooting Azure Resource Manager (ARM) Template Deployment](/articles/day.56.tshoot.arm.md) |
