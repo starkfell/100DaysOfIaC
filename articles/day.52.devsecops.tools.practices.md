@@ -41,7 +41,7 @@ You can read more on the Security Code Analysis Extension offering at https://se
 
 ## Scanning your Docker container images
 
-Because your Docker container images will often be based on other base container images from external sources, it's important to ensure they are free of any malicious code. There are several options that will scan the container images directly in your Azure Container Registry, though most will scan other container registries as well. In the free tools category, **OWASP ZAP** (mentioned earlier) is an option. Third parties that offer container image scanning (at an additional cost) include **Twistlock**, **Aqua**, **Sysdig**, and **Rapid7**. Microsoft has mentioned publicly they something in the works in this area as well.
+Because your Docker container images will often be based on other base container images from external sources, it's important to ensure they are free of any malicious code. There are several options that will scan the container images directly in your Azure Container Registry, though most will scan other container registries as well. In the free tools category, **OWASP ZAP** (mentioned earlier) is an option. Third parties that offer container image scanning (at an additional cost) include **Twistlock**, **Aqua**, **Sysdig**, and **Rapid7**. Microsoft has mentioned publicly that they have something in the works in this area as well.
 
 
 ## Strategy Recap

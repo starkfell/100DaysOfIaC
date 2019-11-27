@@ -11,11 +11,11 @@
 ***[Day 50 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 7](./day.50.building.a.practical.yaml.pipeline.part.7.md)***</br>
 ***[Day 51 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 8](./day.51.building.a.practical.yaml.pipeline.part.8.md)***</br>
 ***[Day 58 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 9](./day.58.building.a.practical.yaml.pipeline.part.9.md)***</br>
-***[Day 59 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 10](./day.59.building.a.practical.yaml.pipeline.part.10.md)***</br>
+***[Day 60 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 10](./day.60.building.a.practical.yaml.pipeline.part.10.md)***</br>
 
 </br>
 
-Today, we are going to continue where we left off in **[Part 9](./day.58.building.a.practical.yaml.pipeline.part.9.md)** we are going to update our Dockerfile configuration and add in an NGINX Configuration File so we have something to view online.
+Today, we are going to continue where we left off in **[Part 9](./day.58.building.a.practical.yaml.pipeline.part.9.md)** we are going to update our Dockerfile configuration and add in an NGINX Configuration File so NGINX is accessible on port 80 from its FQDN.
 
 > **NOTE:** Replace all instances of **pracazconreg** in this article with the name you provided for the Azure Container Registry in **[Part 2](./day.38.building.a.practical.yaml.pipeline.part.2.md)**!
 
@@ -27,7 +27,6 @@ Today, we are going to continue where we left off in **[Part 9](./day.58.buildin
 [Create the NGINX Configuration File](#add-in-a-new-bash-script-for-deploying-an-azure-container-instance)</br>
 [Update the deploy-nginx-aci.sh Script](#deploy-nginx-acish-script-breakdown)</br>
 [Check on the Build Pipeline Job](#check-on-the-build-pipeline-job)</br>
-[Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
 ## Update the Dockerfile
@@ -230,4 +229,4 @@ Lastly, you should now be able to visit the FQDN of your Azure Container Instanc
 
 ## Conclusion
 
-In today's article in we continued where we left off in **[Part 7](./day.50.building.a.practical.yaml.pipeline.part.7.md)** and added the content we were working on to a separate bash script and then created a new task in the YAML Build Pipeline. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article in we continued where we left off in **[Part 9](./day.58.building.a.practical.yaml.pipeline.part.9.md)** and updated our Dockerfile configuration and add in an NGINX Configuration File so that NGINX was available on port 80 from its FQDN. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
