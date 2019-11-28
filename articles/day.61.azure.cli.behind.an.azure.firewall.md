@@ -20,7 +20,7 @@ Max retries exceeded with url: /subscriptions?api-version=2016-06-01
 After some quick Googling, I came across an outstanding blog post from 2017 written by Stefan Johner on **[using the Azure CLI behind a corporate proxy server](blog.jhnr.ch/2017/09/24/use-azure-cli-with-corporate-proxy-server/).** Per Stefan's Blog post and Microsoft's Official documentation on [using Azure CLI behind a proxy](https://github.com/Azure/azure-cli/blob/dev/doc/use_cli_effectively.md#working-behind-a-proxy), you have two options that usually work:
 
 * **OPTION 1:** Append your proxy server's certificate to the location of your CA bundle certificate file on your host and then set the environment variable REQUESTS_CA_BUNDLE to point to it.
-* **OPTION 2:** Disable certificate checks by setting the environment variable AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1
+* **OPTION 2:** Disable certificate checks by setting environment variable AZURE_CLI_DISABLE_CONNECTION_VERIFICATION=1
 
 </br>
 
