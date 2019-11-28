@@ -6,7 +6,7 @@ Today's post will be terse and to the point as I have glorious hoppy fermented b
 
 Recently I can across the following error message when attempting to login to Azure using the Azure CLI behind an Azure Firewall.
 
-```console
+```text
 request failed: Certificate verification failed. This typically happens when using Azure CLI behind a proxy that intercepts traffic with a self-signed certificate. Please add this certificate to the trusted CA bundle: https://github.com/Azure/azure-cli/blob/dev/doc/use_cli_effectively.md#working-behind-a-proxy. Error detail: Error occurred in request., SSLError: HTTPSConnectionPool(host='management.azure.com', port=443): Max retries exceeded with url: /subscriptions?api-version=2016-06-01 (Caused by SSLError(SSLError("bad handshake: SysCallError(-1, 'Unexpected EOF')",),))
 ```
 
