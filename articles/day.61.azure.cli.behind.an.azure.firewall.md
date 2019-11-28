@@ -34,16 +34,16 @@ msrest.universal_http : Configuring request: timeout=100, verify=True, cert=None
 msrest.universal_http : Configuring proxies: ''
 msrest.universal_http : Evaluate proxies against ENV settings: True
 urllib3.connectionpool : Starting new HTTPS connection (1): management.azure.com:443
-urllib3.util.retry : Incremented Retry for (url='/subscriptions?api-version=2016-06-01'): Retry(total=3, connect=4, read=4, redirect=None, status=None)[0m
+urllib3.util.retry : Incremented Retry for (url='/subscriptions?api-version=2016-06-01'): Retry(total=3, connect=4, read=4, redirect=None, status=None)
 urllib3.connectionpool : Retrying (Retry(total=3, connect=4, read=4, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("bad handshake: SysCallError(-1, 'Unexpected EOF')",),)': /subscriptions?api-version=2016-06-01
 urllib3.connectionpool : Starting new HTTPS connection (2): management.azure.com:443
-urllib3.util.retry : Incremented Retry for (url='/subscriptions?api-version=2016-06-01'): Retry(total=2, connect=4, read=4, redirect=None, status=None)[0m
+urllib3.util.retry : Incremented Retry for (url='/subscriptions?api-version=2016-06-01'): Retry(total=2, connect=4, read=4, redirect=None, status=None)
 urllib3.connectionpool : Retrying (Retry(total=2, connect=4, read=4, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("bad handshake: SysCallError(-1, 'Unexpected EOF')",),)': /subscriptions?api-version=2016-06-01
 urllib3.connectionpool : Starting new HTTPS connection (3): management.azure.com:443
-urllib3.util.retry : Incremented Retry for (url='/subscriptions?api-version=2016-06-01'): Retry(total=1, connect=4, read=4, redirect=None, status=None)[0m
+urllib3.util.retry : Incremented Retry for (url='/subscriptions?api-version=2016-06-01'): Retry(total=1, connect=4, read=4, redirect=None, status=None)
 urllib3.connectionpool : Retrying (Retry(total=1, connect=4, read=4, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("bad handshake: SysCallError(-1, 'Unexpected EOF')",),)': /subscriptions?api-version=2016-06-01
 urllib3.connectionpool : Starting new HTTPS connection (4): management.azure.com:443
-urllib3.util.retry : Incremented Retry for (url='/subscriptions?api-version=2016-06-01'): Retry(total=0, connect=4, read=4, redirect=None, status=None)[0m
+urllib3.util.retry : Incremented Retry for (url='/subscriptions?api-version=2016-06-01'): Retry(total=0, connect=4, read=4, redirect=None, status=None)
 urllib3.connectionpool : Retrying (Retry(total=0, connect=4, read=4, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("bad handshake: SysCallError(-1, 'Unexpected EOF')",),)': /subscriptions?api-version=2016-06-01
 ```
 
