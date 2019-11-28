@@ -4,7 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
-| Azure CLI Troubleshooting | [Day 61 - Using the Azure CLI behind an Azure Firewall](/articles/day.1.azure.cli.behind.an.azure.firewall.md) |
+| Azure CLI Troubleshooting | [Day 61 - Using the Azure CLI behind an Azure Firewall](/articles/day.61.azure.cli.behind.an.azure.firewall.md) |
 | Practical YAML in Build Pipelines - Part 10 | [Day 60 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 10](/articles/day.60.building.a.practical.yaml.pipeline.part.10.md) |
 | CI/CD | [Day 59 - One Service Principal to Rule Them All](/articles/day.59.one.service.principal.to.rule.them.all.md) |
 | Practical YAML in Build Pipelines - Part 9 | [Day 58 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 9](/articles/day.58.building.a.practical.yaml.pipeline.part.9.md) |
