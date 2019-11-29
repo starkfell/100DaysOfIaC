@@ -39,7 +39,7 @@ If there is a necessity to adopt a custom tool or solution that many individuals
 
 ## Document Everything
 
-Finally, irrespective of how large or small something is that you are implementing; how pointless you may feel a small change you made to your existing environment is, *document it!* For example, firewall rules are often put in place for an environment that you are setting up for the first time and require a lot of back and forth between your team and members of a large corporate Network Team. If you are having to deploy another environment, using IaC, and you've documented all of the firewall requirements that you had in the first place, there's no need to sift through several e-mail and chat threads to figure out what you had to do in the first place to get everything working as intended.
+Finally, irrespective of how large or small something is that you are implementing; how pointless you may feel a small change you made to your existing environment is, *document it!* For example, firewall rules are often put in place for an environment that you are setting up for the first time and require a lot of back and forth between your team and members of a large corporate Network Team. If you are having to deploy another similar environment, using IaC, and you've documented all of the firewall requirements that you had in the first place, there's no need to sift through several e-mail and chat threads to figure out what you had to do in the first place to get everything working as intended.
 
 >**NOTE:** By keeping your documentation in Markdown format and in a Repository, your documentation becomes easily searchable from either Azure DevOps or Visual Studio Code.
 
