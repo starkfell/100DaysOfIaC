@@ -1,10 +1,10 @@
-# Day 62 - Suggestions for implementing Infrastructure-as-Code
+# Day 62 - More considerations for implementing Infrastructure-as-Code
 
 Today's post will cover some considerations to take into account when implementing Infrastructure as Code.
 
 </br>
 
-While we covered Infrastructure-as-Code Strategies and Best Practices on **[Day 16](./day.16.org.your.iac.md)**, this is a general list of considerations to take into account while implementing Infrastructure as Code.
+While we covered Infrastructure-as-Code Strategies and Best Practices on **[Day 16](./day.16.org.your.iac.md)**, below are some more considerations to take into account while implementing Infrastructure as Code.
 
 In this article:
 
@@ -47,4 +47,4 @@ Finally, irrespective of how large or small something is that you are implementi
 
 ## Conclusion
 
-In today's article we discussed some general considerations to take into account while implementing Infrastructure as Code. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article we discussed some additional considerations to take into account while implementing Infrastructure as Code. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
