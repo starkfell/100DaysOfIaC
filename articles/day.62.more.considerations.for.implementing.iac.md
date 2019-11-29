@@ -33,7 +33,7 @@ It is imperative, when possible, to use tools that take advantage of the strengt
 
 ## Custom Tools
 
-If there is a necessity to adopt a custom tool or solution that many individuals are not familiar with, document it! Create a process around it so that even if individuals are uncomfortable with it can still use it for deployment and troubleshooting. Markdown cheat sheets are a great example of how you can get a seasoned Windows Administrator (that is a novice in Linux) comfortable with logging into a Kubernetes Cluster and checking the logs of an application that isn't behaving as intended.
+If there is a necessity to adopt a custom tool or solution that many individuals are not familiar with, document it! Create a process around it so that even if individuals are uncomfortable with it they can still use it for deployment and troubleshooting. Markdown cheat sheets are a great example of how you can get a seasoned Windows Administrator (that is a novice in Linux) comfortable with logging into a Kubernetes Cluster and checking the logs of an application that isn't behaving as intended.
 
 </br>
 
