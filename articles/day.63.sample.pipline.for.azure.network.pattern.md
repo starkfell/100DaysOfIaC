@@ -4,7 +4,7 @@
 
 It is time to get practical. Today I am going to show you a pattern I have developed for my lab environment.
 
->**DOWNLOAD:** The entire pattern can be found at my GitHub repository https://github.com/tyconsulting/azure.network. Feel free to download / fork it.
+>**DOWNLOAD:** The entire pattern can be found in azure-pipelines.yml in the Day63 folder [HERE](../resources/day63). Feel free to download / fork it.
 
 When setting up a new Azure environment, Networking is probably the first pattern you need to design and implement. The pattern and pipeline I'm showing you today deploys the following resources to multiple subscriptions within a same Azure AD tenant:
 
