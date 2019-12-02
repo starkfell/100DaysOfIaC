@@ -10,18 +10,18 @@ When setting up a new Azure environment, Networking is probably the first patter
 
 * AHub VNet in the management sub
 * Multiple Spoke VNets across multiple workload subs
-* VNet peering between the hub and all spoke vnets
+* VNet peering between the hub and all spoke VNets
 * (Optional) Site-to-Site VPN to on-prem network, which consists of VPN gateway, local network gateway and VPN connection.
 * (Optional) A subnet dedicated for Azure AD DS in the Hub VNet. - AADDS itself is not part of this pattern.
 * Various Bastion Hosts for several VNets
 * A NSG for each VNet
 * A Private DNS Zone that is linked to all the Hub and Spoke VNets
 
->**IMPORTANT NOTE:** This pattern does not include any advanced network resource such as firewall, User-Defined Route (UDR), Application Security Groups (ASR). Althought this is sufficient for my **lab** environment, it may not be production ready.
+>**IMPORTANT NOTE:** This pattern does not include any advanced network resource such as firewall, User-Defined Route (UDR), Application Security Groups (ASR). Although this is sufficient for my **lab** environment, it may not be production ready.
 
 ## Pattern Overview
 
-This network pattern consists of a hub Vnet and multiple spoke Vnets spanned across multiple subscriptions within a same Azure AD tenant (as shown below)
+This network pattern consists of a hub VNet and multiple spoke VNets spanned across multiple subscriptions within a same Azure AD tenant (as shown below)
 ![001](../images/day63/lab_vnet_diagram.png)
 
 ### Hub Networks
@@ -42,7 +42,7 @@ This network pattern consists of a hub Vnet and multiple spoke Vnets spanned acr
 
 ## Pipeline Configuration
 
-A YAML pipline ([***azure-pipelines.yml***](https://github.com/tyconsulting/azure.network/blob/master/azure-pipelines.yml)) is included in the repo. The Pipeline requires the following objects need to be created in Azure DevOps project:
+A YAML pipeline ([***azure-pipelines.yml***](https://github.com/tyconsulting/azure.network/blob/master/azure-pipelines.yml)) is included in the repo. The Pipeline requires the following objects need to be created in Azure DevOps project:
 
 ### Marketplace Extensions
 
@@ -88,7 +88,7 @@ This pipeline uses tasks from the following extensions that can be installed via
 
 | Variable Name | Sample Value | Comment |
 |:--------------|:-------------|:--------|
-| **deployAaddsSubnet** | No | *Specify if you want to deploy a subnet in the Hub VNet for Azure AD Domain Services (created seperately)* |
+| **deployAaddsSubnet** | No | *Specify if you want to deploy a subnet in the Hub VNet for Azure AD Domain Services (created separately)* |
 | **deployVpnGateway** | No | *Specify if you want to deploy a VPN gateway (for site-to-site VPN) |
 | **hubLocation** | Australia East | *Specify the location of Hub VNet. if This location does not support Azure Bastion Host, change the **'deployBastion'** parameter value to **false** in the [hub.network.azuredeploy.parameters.json](./templates/hub/hub.network.azuredeploy.parameters.json) file.
 | **hubResourceGroup** | rg-network-hub-01 | *specify the resource group for the Hub VNet* |
@@ -130,9 +130,9 @@ The pipeline contains 2 stages:
 This stage consists of the following steps:
 
 * Pester-test all three (3) ARM templates in the solution
-    * Hub vnet template
-    * Spoke vnet template
-    * Vnet peering template
+    * Hub VNet template
+    * Spoke VNet template
+    * VNet peering template
 * ARM deployment validation
 * Publish build artifacts
 
@@ -140,9 +140,9 @@ This stage consists of the following steps:
 
 This stage consists of the following ARM deployment tasks
 
-* Deploy Hub Vnet in the Management subscription
-* Deploy all spoke vnets in multiple Workload subscriptions
-* Create VNet peerings between Hub VNet and each Spoke VNet
+* Deploy Hub VNet in the Management subscription
+* Deploy all spoke VNet in multiple Workload subscriptions
+* Create VNet peerings between the Hub VNet and each Spoke VNet
 * Create an Azure Private DNS zone and linked it to all the hub and spoke VNet that were deployed in this pattern.
 
 >**IMPORTANT NOTE:** The deployment for VPN gateways and Bastion hosts can take very long time to finish. In my lab, this pipeline takes more than one (1) hour to execute. When using free Microsoft hosted agents, the maximum pipeline execution time is 60 minutes. Depending on your pipeline, if you are using Microsoft hosted agents, you may need to purchase an additional parallel job in order to increase the maximum execution time to 6 hours.
