@@ -6,18 +6,18 @@ It is time to get practical. Today I am going to show you a pattern I have devel
 
 >**DOWNLOAD:** The entire pattern can be found in azure-pipelines.yml in the Day63 folder [HERE](../resources/day63). Feel free to download / fork it.
 
-When setting up a new Azure environment, Networking is probably the first pattern you need to design and implement. The pattern and pipeline I'm showing you today deploys the following resources to multiple subscriptions within a same Azure AD tenant:
+When setting up a new Azure environment, networking is probably the first pattern you need to design and implement. The pattern and pipeline I'm showing you today deploys the following resources to multiple subscriptions within a same Azure AD tenant:
 
-* AHub VNet in the management sub
-* Multiple Spoke VNets across multiple workload subs
+* A hub VNet in the management sub
+* Multiple spoke VNets across multiple workload subs
 * VNet peering between the hub and all spoke VNets
 * (Optional) Site-to-Site VPN to on-prem network, which consists of VPN gateway, local network gateway and VPN connection.
 * (Optional) A subnet dedicated for Azure AD DS in the Hub VNet. - AADDS itself is not part of this pattern.
 * Various Bastion Hosts for several VNets
-* A NSG for each VNet
+* An NSG for each VNet
 * A Private DNS Zone that is linked to all the Hub and Spoke VNets
 
->**IMPORTANT NOTE:** This pattern does not include any advanced network resource such as firewall, User-Defined Route (UDR), Application Security Groups (ASR). Although this is sufficient for my **lab** environment, it may not be production ready.
+>**IMPORTANT NOTE:** This pattern does not include any advanced network resource such as firewall, User-Defined Route (UDR), or Application Security Groups (ASR). Although this is sufficient for my **lab** environment, it may not be production ready.
 
 ## Pattern Overview
 
@@ -42,7 +42,7 @@ This network pattern consists of a hub VNet and multiple spoke VNets spanned acr
 
 ## Pipeline Configuration
 
-A YAML pipeline ([***azure-pipelines.yml***](https://github.com/tyconsulting/azure.network/blob/master/azure-pipelines.yml)) is included in the repo. The Pipeline requires the following objects need to be created in Azure DevOps project:
+A YAML pipeline ([***azure-pipelines.yml***](../resources/day63/azure.network/blob/master/azure-pipelines.yml)) is included in the repo. The Pipeline requires the following objects need to be created in Azure DevOps project:
 
 ### Marketplace Extensions
 
@@ -61,7 +61,7 @@ This pipeline uses tasks from the following extensions that can be installed via
 
 ### Variable Groups
 
-#### test- network
+#### test - network
 
 ![002](../images/day63/variable_group_test_network.png)
 
