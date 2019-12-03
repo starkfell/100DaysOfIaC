@@ -22,7 +22,7 @@ When setting up a new Azure environment, networking is probably the first patter
 ## Pattern Overview
 
 This network pattern consists of a hub VNet and multiple spoke VNets spanned across multiple subscriptions within a same Azure AD tenant (as shown below)
-![001](../images/day63/lab_vnet_diagram.png)
+![001](https://raw.githubusercontent.com/tyconsulting/azure.network/master/images/lab_vnet_diagram.png))
 
 ### Hub Networks
 
@@ -63,7 +63,7 @@ This pipeline uses tasks from the following extensions that can be installed via
 
 #### test - network
 
-![002](../images/day63/variable_group_test_network.png)
+![002](https://raw.githubusercontent.com/tyconsulting/azure.network/master/images/variable_group_test_network.png)
 
 >**NOTE:** The following variables in variable group **test - network** are used by the Pester test. Do not modify the values unless you have updated the ARM templates for hub VNet, Spoke VNet and VNet Peering.
 
@@ -82,7 +82,7 @@ This pipeline uses tasks from the following extensions that can be installed via
 
 #### variables - network
 
-![003](../images/day63/variable_group_variables_network.png)
+![003](https://raw.githubusercontent.com/tyconsulting/azure.network/master/images/variable_group_variables_network.png)
 
 >**NOTE:** Modify the following variables in variable group **variables - network** to suit your requirements. The values provided are samples only.
 
@@ -123,7 +123,7 @@ The pipeline contains 2 stages:
 
 >**NOTE:** The lab_deploy stage includes steps to deploy all required resources across multiple subscriptions (management sub and workload subs), because my lab environment consists multiple subscriptions within a single Azure AD tenant.
 
-![004](../images/day63/pipeline_stages.png)
+![004](https://raw.githubusercontent.com/tyconsulting/azure.network/master/images/pipeline_stages.png)
 
 ### **test_and_build** stage
 
