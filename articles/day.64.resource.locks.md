@@ -11,6 +11,7 @@ In this article:
 [Resource Lock Syntax for ARM](#resource-lock-syntax-for-arm) </br>
 [Sample Resource Lock in ARM](#sample-resource-lock-in-arm) </br>
 [How are resource locks applied?](#how-are-resource-locks-applied) </br>
+[Permissions for creating and deleting locks](#permissions-for-creating-and-deleting-locks) </br>
 
 ## Resource Lock Types
 
@@ -43,7 +44,7 @@ When applying a lock to a **resource group or subscription**, use the following 
 
 ## Sample Resource Lock in ARM
 
-Below is the sample of a resource group lock. I have added this to the tail end of the resources section of the arm template that deploys an Azure VNET, three subnet, and network security groups for each.
+Below is the sample of a resource group lock. I have added this to the tail end of the resources section of the arm template that deploys an Azure VNET, three subnets, and network security groups for each.
 
 ``` JSON
 {
@@ -366,6 +367,10 @@ And resource locks apply even to resources you add later. So if we add another s
 Unlike role-based access control, you use management locks to apply a restriction to all users and roles.
 
 Resource Manager locks apply only to operations that happen in the management plane, which consists of operations sent to https://management.azure.com. The locks do NOT restrict how resources perform their own functions. Resource changes are restricted, but resource operations aren't restricted. For example, a ReadOnly lock on a VM disk prevents changing the definition of the disk resource, but doesn't prevent you from creating, updating, or deleting data on the disk. Those data transactions are allowed because those operations aren't sent to https://management.azure.com.
+
+# Permissions for creating and deleting locks
+
+To create or delete management locks, you need to have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. There are only two built-in roles with this level of access: **Owner** and **User Access Administrator**.
 
 ## Conclusion
 
