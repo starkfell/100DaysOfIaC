@@ -42,7 +42,7 @@ This network pattern consists of a hub VNet and multiple spoke VNets spanned acr
 
 ## Pipeline Configuration
 
-A YAML pipeline ([***azure-pipelines.yml***](../resources/day63/azure.network/blob/master/azure-pipelines.yml)) is included in the repo. The Pipeline requires the following objects need to be created in Azure DevOps project:
+A YAML pipeline ([***azure-pipelines.yml***](https://github.com/tyconsulting/azure.network/blob/master/azure-pipelines.yml)) is included in the repo. The Pipeline requires the following objects need to be created in Azure DevOps project:
 
 ### Marketplace Extensions
 
