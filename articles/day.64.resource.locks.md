@@ -2,6 +2,8 @@
 
 As an admin, you might want to lock a subscription, resource group, or resource to prevent other users in your organization from accidentally deleting or modifying critical resources. You do this with **resource locks**. You can set the lock level to **CanNotDelete** or **ReadOnly** in ARM, PowerShell, or Azure CLI. In the Azure portal, the locks are called *Delete* and *Read-only*.
 
+Understanding how to implement resource locks, lock inheritance, and ARM syntax are details you should have in hand for your Infrastructure-as-Code journey.
+
 In this article:
 
 [Resource Lock Types](#resource-lock-types) </br>
@@ -367,3 +369,4 @@ Resource Manager locks apply only to operations that happen in the management pl
 
 ## Conclusion
 
+I hope you feel you have a handle on resource locks in Azure and ARM templates.  Take the lock snippet and try adding to your existing ARM templates to quickly incorporate resource locks into your Infrastructure-as-Code.
