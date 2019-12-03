@@ -26,7 +26,7 @@ There are two levels of lock restrictions
 
 **I set resource locks at the resource group level whenever possible**. If I am locking a resource, I generally want all the parts that share the same lifecycle, as defined by the fact that they are hosted in the same Azure resource group.
 
-The end result is that your locking strategy maps to the resource management boundary, is easier to remember that resource-specific locks across various resource types. An additional benefit is the syntax for apply a resource lock to a resource group is simpler, and the same every time, as you'll see in the next section.
+The end result is that your locking strategy maps to the resource management boundary, is easier to remember than resource-specific locks across various resource types. An additional benefit is the syntax for apply a resource lock to a resource group is simpler, and the same every time, as you'll see in the next section.
 
 ## Resource Lock Syntax for ARM
 
