@@ -4,6 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| Integrating Azure DevOps with GHE | [Day 65 - Integrating GitHub Enterprise with Azure Pipeline](/articles/day.65.integrating.ghe.with.azure.pipelines.md) |
 | Implementing Resource Locks in ARM Templates | [Day 64 - Implementing Resource Locks in ARM Templates for Infrastructure-as-Code](/articles/day.64.resource.locks.md) |
 | Network patterns in YAML pipelines | [Day 63 - Sample Pipeline For Azure Network Pattern](/articles/day.63.sample.pipline.for.azure.network.pattern.md) |
 | IaC Practices | [Day 62 - More considerations for implementing Infrastructure-as-Code](/articles/day.62.more.considerations.for.implementing.iac.md) |

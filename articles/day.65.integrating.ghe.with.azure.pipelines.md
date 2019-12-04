@@ -1,4 +1,4 @@
-# Day 65 Integrating GitHub Enterprise with Azure Pipeline
+# Day 65 - Integrating GitHub Enterprise with Azure Pipeline
 
 *Today's post comes from guest contributor Tao Yang [@MrTaoYang](https://twitter.com/mrtaoyang). Tao is a Microsoft MVP who from 9-to-5 focuses on DevOps and governance in Azure for enterprise customers. You can find Tao blogging at [Managing Cloud and Datacenter by Tao Yang](https://blog.tyang.org/).*
 
@@ -23,7 +23,7 @@ It is possible to use Azure Pipeline even when your source code is not stored in
 
 ## Instruction
 
-The GitHub Enterprise connection (for Azure Repo) is configured per Azure DevOps project. The following steps detailed how I setup a YAML pipeline stored in the GHE instance in a lab environment:
+The GitHub Enterprise connection (for Azure Repo) is configured per Azure DevOps project. The following steps detail how I setup a YAML pipeline stored in the GHE instance in a lab environment:
 
 1. In an Azure DevOps project, create a new pipeline and select **"GitHub Enterprise Server"**
 ![002](../images/day65/0.png)
