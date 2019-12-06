@@ -20,10 +20,10 @@ The script, and command line syntax are shown here, well-commented so you know w
 
 **SYNTAX:**
 
-./deploy_azure_file_share.sh -i {AZURE_SUBSCRIPTION_ID} -t {AZURE_SUBSCRIPTION_TENANT_ID} -u {MGMT_SP_USERNAME} -p {MGMT_SP_PASSWORD} -d {ENVIRONMENT} -l {AZURE_LOCATION} -x {AZURE_FILE_SHARE} -y {SHARE_QUOTA} -s {STORAGE_SKU}
+./deploy_azure_file_share.sh -i {AZURE_SUBSCRIPTION_ID} -t {AZURE_SUBSCRIPTION_TENANT_ID} -a {AKS_ENGINE_VERSION} -u {MGMT_SP_USERNAME} -p {MGMT_SP_PASSWORD}  -s {STORAGE_SKU} -d {ENVIRONMENT} -f {FILE_SHARE_FUNCTION} -l {AZURE_LOCATION} -x {AZURE_FILE_SHARE} -y {SHARE_QUOTA}
 
 ``` Bash
-./deploy_azure_file_share.sh -i 5345deaa-0037-4785-8ce9-7c6a3c4e5e7b -t e7453b1c-6356-4cc1-a495-d74eccd5e205 -u mysvcprnpl -p 'MyPassword!' -d 'demo' -l 'eastus' -x 'myshare' -y 5120  -s Standard_GRS"
+./deploy_azure_file_share.sh -i 5345deaa-0037-4785-8ce9-7c6a3c4e5e7b -t e7453b1c-6356-4cc1-a495-d74eccd5e205 -u mysvcprin -p 'MyPassword!' -s Standard_GRS -d 'swdemo' -f pkgs -l 'eastus' -x 'swpgdemo' -y 5120
 ```
 
 ``` Bash
