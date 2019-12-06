@@ -1,6 +1,6 @@
 ## Day 66 - Pipeline-friendly Azure Files Script
 
-Azure Files offers shares of up to 100,000 IOPS, accessible via SMB or REST, providing high throughput storage in a familiar f  ormat from the Windows world (SMB). We've talked repeatedly about the flexibility of using Azure CLI (bash) in your day-to-day, non-prod releases. Today, we offer a script, designed to run in a release pipeline in Azure Pipelines, and by request, we've left in Azure KeyVault integration for storing secrets related to the Azure Files instance. I've used this in a release pipeline with great results.
+Azure Files offers shares of up to 100,000 IOPS, accessible via SMB or REST, providing high throughput storage in a familiar format from the Windows world (SMB). We've talked repeatedly about the flexibility of using Azure CLI (bash) in your day-to-day, non-prod releases. Today, we offer a script, designed to run in a release pipeline in Azure Pipelines, and by request, we've left in Azure KeyVault integration for storing secrets related to the Azure Files instance. I've used this in a release pipeline with great results.
 
 This performs the following configuration of an Azure File Share, including:
 
@@ -32,8 +32,8 @@ The script, and command line syntax are shown here, well-commented so you know w
 #
 # Name:             Deploy Azure File Share
 #
-# Author:           Pete Zerger
-#
+# Author:           Pete Zerger 
+# 
 # Description:      This script is responsible for deploying an Azure File Share 
 #
 ###################################################################################################
@@ -53,6 +53,9 @@ while getopts ":i:t:u:p:s:d:f:l:x:y:" opt; do
         p) # Management Service Principal Password.
              MGMT_SP_PASSWORD=${OPTARG}
              ;;
+#        s) # Storage Account Name.
+#             STORAGE_ACCT=${OPTARG}
+#             ;;
         s) # Azure Storage SKU
              STORAGE_SKU=${OPTARG}
              ;;
@@ -77,15 +80,16 @@ while getopts ":i:t:u:p:s:d:f:l:x:y:" opt; do
             echo -e "-t AZURE_SUBSCRIPTION_TENANT_ID             - The Azure Subscription Tenant ID."
             echo -e "-u MGMT_SP_USERNAME                         - Management Service Principal Username."
             echo -e "-p MGMT_SP_PASSWORD                         - Management Service Principal Password."
+            echo -e "-s STORAGE_SKU                              - Azure Storage SKU : Standard_GRS or Premium_LRS"
             echo -e "-d ENVIRONMENT                              - The naming prefix for associated environment."
+            echo -e "-f FILE_SHARE_FUNCTION                      - The purpose of the Azure File Share. Just a short user-defined code"
             echo -e "-l AZURE_LOCATION                           - The Azure Location where the File Share will be deployed."
             echo -e "-x AZURE_FILE_SHARE                         - Azure File Share name."
             echo -e "-y SHARE_QUOTA                              - Azure File Share Quota."
-            echo -e "-s STORAGE_SKU                              - Azure Storage SKU : Standard_GRS or Premium_LRS"
             echo -e "Script Syntax is shown below:"
-            echo -e "./deploy_azure_file_share.sh -i {AZURE_SUBSCRIPTION_ID} -t {AZURE_SUBSCRIPTION_TENANT_ID} -u {MGMT_SP_USERNAME} -p {MGMT_SP_PASSWORD} -d {ENVIRONMENT} -l {AZURE_LOCATION} -x {AZURE_FILE_SHARE} -y {SHARE_QUOTA} -s {STORAGE_SKU}\\n"
+            echo -e "./deploy_azure_file_share.sh -i {AZURE_SUBSCRIPTION_ID} -t {AZURE_SUBSCRIPTION_TENANT_ID} -a {AKS_ENGINE_VERSION} -u {MGMT_SP_USERNAME} -p {MGMT_SP_PASSWORD}  -s {STORAGE_SKU} -d {ENVIRONMENT} -f {FILE_SHARE_FUNCTION} -l {AZURE_LOCATION} -x {AZURE_FILE_SHARE} -y {SHARE_QUOTA}\\n"
             echo -e "An Example of how to use this script is shown below:"
-            echo -e "./deploy_azure_file_share.sh -i 5345deaa-0037-4785-8ce9-7c6a3c4e5e7b -t e7453b1c-6356-4cc1-a495-d74eccd5e205 -u mysvcprnpl -p 'MyPassword!' -d 'demo' -l 'eastus' -x 'myshare' -y 5120  -s Standard_GRS\\n"
+            echo -e "./deploy_azure_file_share.sh -i 5345deaa-0037-4785-8ce9-7c6a3c4e5e7b -t e7453b1c-6356-4cc1-a495-d74eccd5e205 -u mysvcprin -p 'MyPassword!' -s Standard_GRS -d 'swdemo' -f pkgs -l 'eastus' -x 'swpgdemo' -y 5120 \\n"
             exit 2
             ;;
     esac
@@ -112,13 +116,13 @@ if [ -z "${MGMT_SP_PASSWORD}" ]; then
     echo "[$(date -u)][---fail---] Management Service Principal Password must be provided."
     exit 2
 
-if [ -z "${STORAGE_SKU}" ]; then
-    echo "[$(date -u)][---fail---] Th Azure Storage Account SKU must be provided."
+if [ -z "${STORAGE_ACCOUNT}" ]; then
+    echo "[$(date -u)][---fail---] The Postgres Azure Storage Account Name being created must be provided."
     exit 2
 fi
 
 if [ -z "${ENVIRONMENT}" ]; then
-    echo "[$(date -u)][---fail---] The environment naming prefix must be included."
+    echo "[$(date -u)][---fail---] The K8s naming prefix must be included."
     exit 2
 fi
 
@@ -128,7 +132,7 @@ fi
 # fi
 
 if [ -z "${AZURE_LOCATION}" ]; then
-    echo "[$(date -u)][---fail---] The Azure Location where to deploy the Cluster must be provided."
+    echo "[$(date -u)][---fail---] The Azure Location where to deploy the share must be provided."
     exit 2
 fi
 
@@ -167,7 +171,7 @@ fi
 # Step 1: Create the Resource Group
 ###################################
 
-# Checking to see if the Resource Group for the Cluster already exists.
+# Checking to see if the Resource Group already exists.
 # /usr/bin/az group show --resource-group $AZURE_FILE_RG --subscription $AZURE_SUBSCRIPTION_IDc
 
 AZURE_FILE_RG="azure-${ENVIRONMENT}-${FILE_SHARE_FUNCTION}-rg"
@@ -189,9 +193,9 @@ AZURE_FILE_RG="azure-${ENVIRONMENT}-${FILE_SHARE_FUNCTION}-rg"
         --location $AZURE_LOCATION > /dev/null 2>&0
 
         if [ $? -eq 0 ]; then
-        echo "[$(date -u)][---success---] Created the Resource Group [$AZURE_FILE_RG] for the Cluster."
+        echo "[$(date -u)][---success---] Created the Resource Group [$AZURE_FILE_RG] for the storage acct."
     else
-        echo "[$(date -u)][---fail---] Failed to create the Resource Group [$AZURE_FILE_RG] for the Cluster."
+        echo "[$(date -u)][---fail---] Failed to create the Resource Group [$AZURE_FILE_RG] for the storage acct."
         exit 2
     fi
 fi
@@ -205,10 +209,13 @@ STORAGE_ACCT="aimshare$FILE_SHARE_FUNCTION$ENVIRONMENT"
 
 # Checking to see if the Storage Account already exists in the Azure Subscription.
 
-STORAGE_ACCOUNT_CHECK=$(/usr/bin/az storage account list | jq --arg STORAGE_ACCOUNT "$STORAGE_ACCT" '.[] | select(.name == $STORAGE_ACCOUNT).name' | tr -d '"')
+POSTGRES_STORAGE_ACCOUNT_CHECK=$(/usr/bin/az storage account list | jq --arg POSTGRES_STORAGE_ACCOUNT "$STORAGE_ACCT" '.[] | select(.name == $POSTGRES_STORAGE_ACCOUNT).name' | tr -d '"')
 
-if [ -z "${STORAGE_ACCOUNT_CHECK}" ]; then
+if [ -z "${POSTGRES_STORAGE_ACCOUNT_CHECK}" ]; then
     echo "[$(date -u)][---info---] The Storage Account [$STORAGE_ACCT] was not found in the Azure Subscription."
+
+    # Creating the Storage Account in the Resource Group.
+    # /usr/bin/az storage account create --name $STORAGE_ACCT --resource-group $AZURE_FILE_RG --sku Standard_LRS --encryption-services blob --https-only true > /dev/null 2>&0
 
     # 9/5/2019 - STORAGE_SKU is either Standard_GRS or Premium_LRS for now
     KIND_ARG=""
@@ -235,6 +242,9 @@ if [ -z "${STORAGE_ACCOUNT_CHECK}" ]; then
     fi
 
     # Retrieving the Storage Account Primary Key.
+    # https://docs.microsoft.com/en-us/azure/virtual-machines/linux/mount-azure-file-storage-on-linux-using-smb#get-the-storage-key
+    # STORAGE_ACCOUNT_PRIMARY_KEY=$(az storage account keys list --resource-group $AZURE_FILE_RG --account-name $STORAGE_ACCT | jq '.[0] |select(.value).value')
+
     STORAGE_ACCOUNT_PRIMARY_KEY=$(az storage account keys list \
     --resource-group $AZURE_FILE_RG --account-name $STORAGE_ACCT \
     | jq '.[0] | select(.value).value')
@@ -283,9 +293,9 @@ AZURE_FILE_SHARE_CHECK=$(/usr/bin/az storage share exists \
         --quota 5120 > /dev/null 2>&0
 
         if [ $? -eq 0 ]; then
-                 echo "[$(date -u)][---success---] Created the File Share [$AZURE_FILE_SHARE] for the Cluster."
+                 echo "[$(date -u)][---success---] Created the File Share [$AZURE_FILE_SHARE] successfully."
              else
-                 echo "[$(date -u)][---fail---] Failed to create the Resource Group [$AZURE_FILE_SHARE] for the Cluster."
+                 echo "[$(date -u)][---fail---] Failed to create the Resource Group [$AZURE_FILE_SHARE]."
                  exit 2
         fi
      fi
