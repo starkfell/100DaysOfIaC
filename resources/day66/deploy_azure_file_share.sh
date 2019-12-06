@@ -30,7 +30,7 @@ while getopts ":i:t:u:p:s:d:f:l:x:y:" opt; do
         s) # Azure Storage SKU
              STORAGE_SKU=${OPTARG}
              ;;
-        d) # The naming prefix for associated K8s environment.
+        d) # The naming prefix for associated environment.
              ENVIRONMENT=${OPTARG}
              ;;
         f) # The purpose of the Azure File Share.
@@ -93,7 +93,7 @@ if [ -z "${STORAGE_ACCOUNT}" ]; then
 fi
 
 if [ -z "${ENVIRONMENT}" ]; then
-    echo "[$(date -u)][---fail---] The K8s naming prefix must be included."
+    echo "[$(date -u)][---fail---] The environment naming prefix must be included."
     exit 2
 fi
 
