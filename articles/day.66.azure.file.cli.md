@@ -117,7 +117,7 @@ if [ -z "${MGMT_SP_PASSWORD}" ]; then
     exit 2
 
 if [ -z "${STORAGE_ACCOUNT}" ]; then
-    echo "[$(date -u)][---fail---] The Postgres Azure Storage Account Name being created must be provided."
+    echo "[$(date -u)][---fail---] The Azure Storage Account Name being created must be provided."
     exit 2
 fi
 
@@ -209,9 +209,9 @@ STORAGE_ACCT="aimshare$FILE_SHARE_FUNCTION$ENVIRONMENT"
 
 # Checking to see if the Storage Account already exists in the Azure Subscription.
 
-POSTGRES_STORAGE_ACCOUNT_CHECK=$(/usr/bin/az storage account list | jq --arg POSTGRES_STORAGE_ACCOUNT "$STORAGE_ACCT" '.[] | select(.name == $POSTGRES_STORAGE_ACCOUNT).name' | tr -d '"')
+STORAGE_ACCOUNT_CHECK=$(/usr/bin/az storage account list | jq --arg STORAGE_ACCOUNT "$STORAGE_ACCT" '.[] | select(.name == $STORAGE_ACCOUNT).name' | tr -d '"')
 
-if [ -z "${POSTGRES_STORAGE_ACCOUNT_CHECK}" ]; then
+if [ -z "${STORAGE_ACCOUNT_CHECK}" ]; then
     echo "[$(date -u)][---info---] The Storage Account [$STORAGE_ACCT] was not found in the Azure Subscription."
 
     # Creating the Storage Account in the Resource Group.
