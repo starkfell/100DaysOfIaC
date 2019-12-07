@@ -4,6 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| Outputs in ARM templates | [Day 67 - Azure Resource Manager Outputs](/articles/day.67.outputs.md) |
 | Pipeline-friendly Azure Files script | [Day 66 - Pipeline-friendly Azure Files Script](/articles/day.66.azure.file.cli.md) |
 | Integrating Azure DevOps with GHE | [Day 65 - Integrating GitHub Enterprise with Azure Pipeline](/articles/day.65.integrating.ghe.with.azure.pipelines.md) |
 | Implementing Resource Locks in ARM Templates | [Day 64 - Implementing Resource Locks in ARM Templates for Infrastructure-as-Code](/articles/day.64.resource.locks.md) |
