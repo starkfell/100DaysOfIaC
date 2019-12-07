@@ -1,0 +1,36 @@
+# Deploy Resourcegroup against subscription
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Subscription'
+    azureResourceManagerConnection: 'DEV'
+    subscriptionId: 'xxxxxx-xxxxx'
+    location: 'Australia East'
+    templateLocation: 'Linked artifact'
+    csmFile: '000-ResourceGroup/azuredeploy.json'
+    overrideParameters: '-rgPrefix "rg-output" -rgLocation "AustraliaEast"'
+    deploymentMode: 'Incremental'
+    deploymentOutputs: 'RGName'
+- task: PowerShell@2
+  inputs:
+    filePath: 'GetOutputs.ps1'
+    arguments: '-armOutputString ''$(RGName)'''
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'DEV'
+    subscriptionId: 'xxxxxx-xxxxx'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: '$(Output_RGName)'
+    location: 'Australia East'
+    templateLocation: 'Linked artifact'
+    csmFile: '101-Webapp-Basic-Windows/azuredeploy.json'
+    overrideParameters: '-webAppName "webalex"'
+    deploymentMode: 'Incremental'

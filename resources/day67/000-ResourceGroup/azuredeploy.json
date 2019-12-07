@@ -1,0 +1,35 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "guidValue": {
+            "type": "string",
+            "defaultValue": "[newGuid()]"
+        },
+        "rgPrefix": {
+            "type": "string"
+        },
+        "rgLocation": {
+            "type": "string"
+        }
+    },
+    "variables": {
+        "ResourceGroupName": "[take(concat(parameters('rgPrefix'), uniqueString(parameters('guidValue'))),24)]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2019-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "[variables('ResourceGroupName')]",
+            "properties": {
+            }
+        }
+    ],
+    "outputs": {
+        "rgname": {
+            "type": "string",
+            "value": "[variables('ResourceGroupName')]"
+        }
+    }
+}
