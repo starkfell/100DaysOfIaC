@@ -67,3 +67,18 @@ az role assignment delete \
 ```
 
 </br>
+
+Next, run the following command to login to the Linux VM via SSH
+
+```bash
+echo "${SSH_PRIVATE_KEY}" \
+| grep -wq "less" \
+| sshpass -p $SSH_PRIVATE_KEY_PASSWORD \
+echo "$SSH_PRIVATE_KEY" | tr -d '\n' | \
+ssh \
+-o "StrictHostKeyChecking=no" \
+-o "UserKnownHostsFile=/dev/null" \
+-i /dev/stdin \
+lxvmadmin@iac-100-linux-vm.westeurope.cloudapp.azure.com
+sshpass -P "pass" -p "$SSH_PRIVATE_KEY_PASSWORD" | echo "${SSH_PRIVATE_KEY}" | ssh -i /dev/stdin lxvmadmin@iac-100-linux-vm.westeurope.cloudapp.azure.com
+```
