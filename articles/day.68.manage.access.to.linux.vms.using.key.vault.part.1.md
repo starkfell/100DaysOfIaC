@@ -30,13 +30,12 @@ SSH_KEY_PASSWORD=$(openssl rand -base64 20)
 
 ## Generate new SSH Keys
 
-We are going to generate a new set of SSH Keys ([using ed25519 cryptography](unixtutorial.org/how-to-generate-ed25519-ssh-key)) for accessing the Linux VM we are deploying. The SSH Private Key will be password protected using the password generated in the previous step.
-
 Next, run the following command to generate SSH Keys for the Linux VM.
 
 ```bash
 ssh-keygen \
--t Ed25519 \
+-t rsa \
+-b 4096 \
 -C "100-days-linux-vm" \
 -f ~/.ssh/100-days-linux-vm \
 -N $SSH_KEY_PASSWORD
@@ -49,18 +48,18 @@ Generating public/private rsa key pair.
 Your identification has been saved in /home/serveradmin/.ssh/100-days-linux-vm.
 Your public key has been saved in /home/serveradmin/.ssh/100-days-linux-vm.pub.
 The key fingerprint is:
-SHA256:IWxv/IE4XNDnlVyB7DG4dhM9hbjK8a/C7x0IxCHfUso 100-days-linux-vm
+SHA256:OP8KNpdZjEJMRUTNDNeS91Iu/BvYIRa1HPKTbkedlmg 100-days-linux-vm
 The key's randomart image is:
 +---[RSA 4096]----+
-|      ... .+.*o+.|
-|     . ..=o=@ +  |
-|      + ooE+.= . |
-|     o * +=.=    |
-|      + Soo= .   |
-|       o .oo..   |
-|         .. ...  |
-|          o  ... |
-|           ++..  |
+|      .=*=.o..o  |
+|     o   .* ++o++|
+|      o    + E*+o|
+|     . . o  B.=o |
+|      + S o. Bo..|
+|       + +  ..+. |
+|      + =      o |
+|     . + .    .  |
+|        ...      |
 +----[SHA256]-----+
 ```
 
@@ -150,6 +149,8 @@ az keyvault secret set \
 
 Run the following command to deploy a new Linux VM using the SSH Keys we just generated.
 
+>**NOTE:** Make sure to use a unique name for the FQDN that is set by the *public-ip-address-dns-name* parameter.
+
 ```bash
 az vm create \
 --resource-group "100-days-linux-vm" \
@@ -178,9 +179,7 @@ ResourceGroup      PowerState    PublicIpAddress    Fqdns                       
 
 Password or not to Password protect your keys. Most large enterprises don't and instead opt to change their SSH Keys on a regular basis and to restrict access to Linux VM's purely using SSH Key authentication and disabling all username/password access.
 
-Notice that we've switched over to using Ed25519 encryption for our SSH Keys in this article as it's considered the safest option available to use at this point and time. More on that [here]().
-
-
+Microsoft currently only supports RSA public-private key pairs in Azure. Formats such as ED25519 and ECDSA are currently not supported. More information on this can found [here](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys).
 
 </br>
 
