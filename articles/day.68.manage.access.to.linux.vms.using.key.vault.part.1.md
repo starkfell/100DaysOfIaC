@@ -149,7 +149,7 @@ az keyvault secret set \
 
 Run the following command to deploy a new Linux VM using the SSH Keys we just generated.
 
->**NOTE:** Make sure to use a unique name for the FQDN that is set by the *public-ip-address-dns-name* parameter.
+> **NOTE:** Make sure to replace the value **iac-100-linux-vm** in the *public-ip-address-dns-name* parameter with a unique value.
 
 ```bash
 az vm create \
@@ -185,4 +185,4 @@ Microsoft currently only supports RSA public-private key pairs in Azure. Formats
 
 ## Conclusion
 
-In today's article in we continued where we left off in **[Part 8](./day.51.building.a.practical.yaml.pipeline.part.8.md)** and added in the deployment of an Azure Container Instance using the NGINX Image from our Azure Container Registry **pracazconreg**. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article in we generated a new set of SSH Keys, deployed a new Resource Group and Key Vault and stored the SSH Keys and the Private Key Password in the Key Vault as secrets and then deployed a new Linux VM using the new SSH Public Key. Tomorrow, we'll show how you can login to the Linux VM with the SSH Keys without ever having them permanently stored on the host you are working from. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
