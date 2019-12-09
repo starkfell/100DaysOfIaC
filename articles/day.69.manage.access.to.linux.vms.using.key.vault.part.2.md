@@ -75,7 +75,7 @@ chmod 0600 "/tmp/100-days-linux-vm"
 
 ## Retrieve the SSH Private Key Password from Key Vault
 
-Run the following command to retrieve the SSH Private Key from the Key Vault and store it into a variable.
+Run the following command to retrieve the SSH Private Key from the Key Vault and store it into the environment variable, **SSHPASS**.
 
 ```bash
 export SSHPASS=$(/usr/bin/az keyvault secret show \
@@ -142,15 +142,25 @@ When you are finished, logout of the Linux VM and then run the command below to 
 rm -f "/tmp/100-days-linux-vm"
 ```
 
+Next, set the SSHPASS Environment Variable to a value of null.
+
+```bash
+export SSHPASS=""
+```
+
+</br>
+
 ## Things to Consider
 
 When using **sshpass**, you have the option to use **-p** option to directly pass in the password you want to use; however, the password will then appear in cleartext in **ps** output. This is why we used the **-e** option instead to store the SSH Private Key Password in the environment variable **SSHPASS**. Be aware, that this has its own security risks as well if the Linux Host you are working from is ever compromised.
+
+While you are busy automating your processes for using the Private SSH Key to deploy and manage a Linux Host, make sure you are removing the Private Key from Host that you are using it from and setting the **SSHPASS** environment variable to null before you finish your automation process.
 
 </br>
 
 ## Conclusion
 
-In today's article in we continued where we left off in **[Part 8](./day.51.building.a.practical.yaml.pipeline.part.8.md)** and added in the deployment of an Azure Container Instance using the NGINX Image from our Azure Container Registry **pracazconreg**. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article in we deployed a Linux VM using the SSH Keys and Password from Azure Key Vault. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
 
 On the 69th Day of our 100 Days of Infrastructure-as-Code in Azure, we would like to leave you with a quote from Bill & Ted that will hopefully make your day a little more cheerful.
 
