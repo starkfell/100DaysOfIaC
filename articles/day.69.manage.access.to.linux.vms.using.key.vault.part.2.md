@@ -22,6 +22,8 @@ In today's article we will cover the following topics.
 
 ## Install sshpass
 
+**[sshpass](https://linux.die.net/man/1/sshpass)** is a command line tool that allows you to provide a password for non-interactive-password authentication inside a bash prompt.
+
 Run the following command to install **sshpass**.
 
 ```bash
@@ -76,12 +78,14 @@ chmod 0600 "/tmp/100-days-linux-vm"
 Run the following command to retrieve the SSH Private Key from the Key Vault and store it into a variable.
 
 ```bash
-SSH_PRIVATE_KEY_PASSWORD=$(/usr/bin/az keyvault secret show \
+export SSHPASS=$(/usr/bin/az keyvault secret show \
 --name "100-days-linux-vm-password" \
 --vault-name "iac100dayslinuxkv" \
 --query value \
 --output tsv 2>&1)
 ```
+
+
 
 </br>
 
@@ -91,7 +95,7 @@ Next, run the following command to login to the Linux VM via SSH
 
 ```bash
 sshpass -P "pass" \
--p $SSH_PRIVATE_KEY_PASSWORD \
+-e \
 ssh \
 -o "StrictHostKeyChecking=no" \
 -o "UserKnownHostsFile=/dev/null" \
