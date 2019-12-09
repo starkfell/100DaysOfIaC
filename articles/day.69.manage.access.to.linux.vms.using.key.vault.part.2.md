@@ -154,7 +154,7 @@ export SSHPASS=""
 
 When using **sshpass**, you have the option to use **-p** option to directly pass in the password you want to use; however, the password will then appear in cleartext in **ps** output. This is why we used the **-e** option instead to store the SSH Private Key Password in the environment variable **SSHPASS**. Be aware, that this has its own security risks as well if the Linux Host you are working from is ever compromised.
 
-While you are busy automating your processes for using the Private SSH Key to deploy and manage a Linux Host, make sure you are removing the Private Key from Host that you are using it from and setting the **SSHPASS** environment variable to null before you finish your automation process.
+While you are busy automating your processes for using the Private SSH Key to deploy and manage a Linux Host, make sure you are removing the Private Key from your automation Host and setting the **SSHPASS** environment variable to null before you finish your automation process.
 
 </br>
 
