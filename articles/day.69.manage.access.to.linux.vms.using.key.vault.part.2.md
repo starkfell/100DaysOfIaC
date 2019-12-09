@@ -144,13 +144,14 @@ rm -f "/tmp/100-days-linux-vm"
 
 ## Things to Consider
 
-We would to take a minute to thank you, dear reader, for continuing to read our content here. On this particular auspicious day, we would like to leave you with a quote from Bill & Ted.
-
-![Alt Text](https://media1.tenor.com/images/6d2770c0b678d085385f886011b4462b/tenor.gif?itemid=14399218)
-
+When using **sshpass**, you have the option to use **-p** option to directly pass in the password you want to use; however, the password will then appear in cleartext in **ps** output. This is why we used the **-e** option instead to store the SSH Private Key Password in the environment variable **SSHPASS**. Be aware, that this has its own security risks as well if the Linux Host you are working from is ever compromised.
 
 </br>
 
 ## Conclusion
 
 In today's article in we continued where we left off in **[Part 8](./day.51.building.a.practical.yaml.pipeline.part.8.md)** and added in the deployment of an Azure Container Instance using the NGINX Image from our Azure Container Registry **pracazconreg**. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+
+On the 69th Day of our 100 Days of Infrastructure-as-Code in Azure, we would like to leave you with a quote from Bill & Ted that will hopefully make your day a little more cheerful.
+
+![Alt Text](https://media1.tenor.com/images/6d2770c0b678d085385f886011b4462b/tenor.gif?itemid=14399218)
