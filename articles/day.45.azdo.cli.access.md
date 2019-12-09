@@ -45,7 +45,7 @@ If PowerShell is more your speed when it comes to automation, you can try the Az
 
 **Where to find the docs**
 
-The new Azure PowerShell module uses the prefix ‘Az’. The complete list of cmdlets is available in the documentation [(]Microsoft Docs link](https://docs.microsoft.com/en-us/powershell/azure/new-azureps-module-az?view=azps-1.1.0) for the cmdlets - the cmdlets for Azure DevOps use 
+The new Azure PowerShell module uses the prefix ‘Az’. The complete list of cmdlets is available in the documentation [Microsoft Docs link](https://docs.microsoft.com/en-us/powershell/azure/new-azureps-module-az?view=azps-1.1.0) for the cmdlets - the cmdlets for Azure DevOps use 
 
 Alternatively, you can just search for cmdlets containing 'AzDo':
 
