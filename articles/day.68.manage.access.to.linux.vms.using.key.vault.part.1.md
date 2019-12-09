@@ -42,7 +42,7 @@ ssh-keygen \
 -b 4096 \
 -C "100-days-linux-vm" \
 -f ~/.ssh/100-days-linux-vm \
--N $SSH_KEY_PASSWORD
+-N "$SSH_KEY_PASSWORD"
 ```
 
 You should get back a similar response.
@@ -163,7 +163,7 @@ az vm create \
 --public-ip-address-allocation dynamic \
 --public-ip-address-dns-name "iac-100-linux-vm" \
 --admin-username "lxvmadmin" \
---ssh-key-values "$(echo $SSH_PUBLIC_KEY)" \
+--ssh-key-values "$SSH_PUBLIC_KEY" \
 --output table
 ```
 

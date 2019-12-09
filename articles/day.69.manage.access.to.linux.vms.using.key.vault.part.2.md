@@ -85,8 +85,6 @@ export SSHPASS=$(/usr/bin/az keyvault secret show \
 --output tsv 2>&1)
 ```
 
-
-
 </br>
 
 ## Login to the Linux VM using your SSH Key and Password
@@ -94,7 +92,8 @@ export SSHPASS=$(/usr/bin/az keyvault secret show \
 Next, run the following command to login to the Linux VM via SSH
 
 ```bash
-sshpass -P "pass" \
+sshpass \
+-P "pass" \
 -e \
 ssh \
 -o "StrictHostKeyChecking=no" \
@@ -135,9 +134,20 @@ See "man sudo_root" for details.
 lxvmadmin@100dayslinuxvm:~$
 ```
 
+</br>
+
+When you are finished, logout of the Linux VM and then run the command below to delete the Private Key from your Host.
+
+```bash
+rm -f "/tmp/100-days-linux-vm"
+```
+
 ## Things to Consider
 
-The **nginx-iac-001** Azure Container Instance will be accessible and viewable from within the Azure Portal; however, nothing is coming up on the publicly accessible IP Address or DNS Name we set for the container in Azure. We are going to over how we can resolve this and other modifications we can make to to the container in the next article of this series.
+In the immortal words of Bill and Ted, we would just like to thank you, dear reader, for continuing to read our content here.
+
+![Alt Text](https://tenor.com/view/bill-and-ted-69-dudes-gif-14399218)
+
 
 </br>
 
