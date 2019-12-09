@@ -144,9 +144,9 @@ rm -f "/tmp/100-days-linux-vm"
 
 ## Things to Consider
 
-In the immortal words of Bill and Ted, we would just like to thank you, dear reader, for continuing to read our content here.
+We would to take a minute to thank you, dear reader, for continuing to read our content here. On this particular auspicious day, we would like to leave you with a quote from Bill & Ted.
 
-![Alt Text](https://tenor.com/view/bill-and-ted-69-dudes-gif-14399218)
+![Alt Text](https://media1.tenor.com/images/6d2770c0b678d085385f886011b4462b/tenor.gif?itemid=14399218)
 
 
 </br>
