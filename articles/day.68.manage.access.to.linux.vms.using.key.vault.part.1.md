@@ -181,7 +181,9 @@ ResourceGroup      PowerState    PublicIpAddress    Fqdns                       
 
 ## Things to Consider
 
-Password or not to Password protect your keys. Most large enterprises don't and instead opt to change their SSH Keys on a regular basis and to restrict access to Linux VM's purely using SSH Key authentication and disabling all username/password access.
+You'll notice that when we are generating our SSH Keys, as soon as the values are stored in variables (SSH_PUBLIC_KEY and SSH_PRIVATE_KEY respectively), we immediately remove them from the host we are working on. You could take this one step further and provide a null value for the variables as soon as they've been added as secrets to the Azure Key Vault.
+
+The effectiveness of password protecting your SSH Keys is severely dependent on your method of rotating and monitoring your SSH Keys in your environment. Check out these articles from [Seravo](https://seravo.fi/2019/how-to-create-good-ssh-keys) and [BeyondTrust](beyondtrust.com/blog/entry/ssh-key-management-overview-6-best-practices) for additional recommendations.
 
 Microsoft currently only supports RSA public-private key pairs in Azure. Formats such as ED25519 and ECDSA are currently not supported. More information on this can found [here](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/mac-create-ssh-keys).
 
