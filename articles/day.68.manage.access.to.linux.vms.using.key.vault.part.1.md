@@ -6,6 +6,10 @@
 
 </br>
 
+> **NOTE:** This article was tested and written for a Linux Host running Ubuntu 18.04 with Azure CLI installed.
+
+</br>
+
 In today's article we will cover the following topics.
 
 [Generate a random Password](#generate-a-random-password)</br>

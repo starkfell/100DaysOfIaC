@@ -1,5 +1,25 @@
 # Day 69 - Managing Access to Linux VMs using Azure Key Vault - Part 2
 
+*This is the second in a series of posts about the options available to you to manage your Linux VMs in Azure using Azure Key Vault and how you can adapt this process in a YAML Pipeline. The other posts in this Series can be found below.*
+
+***[Day 68 - Managing Access to Linux VMs using Azure Key Vault - Part 1](./day.68.manage.access.to.linux.vms.using.key.vault.part.1.md)***</br>
+***[Day 69 - Managing Access to Linux VMs using Azure Key Vault - Part 2](./day.69.manage.access.to.linux.vms.using.key.vault.part.2.md)***</br>
+
+</br>
+
+> **NOTE:** This article was tested and written for a Linux Host running Ubuntu 18.04 with Azure CLI installed.
+
+</br>
+
+In today's article we will cover the following topics.
+
+[Install sshpass](#install-sshpass)</br>
+[Retrieve the SSH Private Key from Key Vault](#retrieve-the-ssh-private-key-from-key-vault)</br>
+[Retrieve the SSH Private Key Password from Key Vault](#retrieve-the-ssh-private-key-password-from-key-vault)</br>
+[Login to the Linux VM using your SSH Key and Password](#login-to-the-linux-vm-using-your-ssh-key-and-password)</br>
+[Things to Consider](#things-to-consider)</br>
+[Conclusion](#conclusion)</br>
+
 ## Install sshpass
 
 Run the following command to install **sshpass**.
