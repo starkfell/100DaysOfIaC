@@ -4,6 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| Linux and Azure Key Vault | [Day 69 - Managing Access to Linux VMs using Azure Key Vault - Part 2](/articles/day.69.manage.access.to.linux.vms.using.key.vault.part.2.md) |
 | Linux and Azure Key Vault | [Day 68 - Managing Access to Linux VMs using Azure Key Vault - Part 1](/articles/day.68.manage.access.to.linux.vms.using.key.vault.part.1.md) |
 | Outputs in ARM templates | [Day 67 - Azure Resource Manager Outputs](/articles/day.67.outputs.md) |
 | Pipeline-friendly Azure Files script | [Day 66 - Pipeline-friendly Azure Files Script](/articles/day.66.azure.file.cli.md) |
