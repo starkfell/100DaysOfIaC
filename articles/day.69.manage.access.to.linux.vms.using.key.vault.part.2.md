@@ -161,7 +161,3 @@ While you are busy automating your processes for using the Private SSH Key to de
 ## Conclusion
 
 In today's article in we deployed a Linux VM using the SSH Keys and Password from Azure Key Vault. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
-
-On the 69th Day of our 100 Days of Infrastructure-as-Code in Azure, we would like to leave you with a quote from Bill & Ted that will hopefully make your day a little more cheerful.
-
-![Alt Text](https://media1.tenor.com/images/6d2770c0b678d085385f886011b4462b/tenor.gif?itemid=14399218)
