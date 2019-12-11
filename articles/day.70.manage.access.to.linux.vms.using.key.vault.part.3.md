@@ -17,7 +17,9 @@ In today's article we will cover the following topics.
 [Add new directory to the Repository](#add-new-directory-to-the-repository)</br>
 [deploy-managed-linux-vm.sh Script](#deploy-managed-linux-vmsh-script)</br>
 [check-managed-linux-vm-access.sh Script](#check-managed-linux-vm-accesssh-script)</br>
-[YAML File for the Build Pipeline](#yaml-file-for-the-build-pipeline)</br>
+[managed-linux-vm-pipe.yaml file](#managed-linux-vm-pipeyaml-file)</br>
+[Create a new Build Pipeline in Azure DevOps](#create-a-new-build-pipeline-in-azure-devops)</br>
+[Check Build Pipeline Job Output](#check-build-pipeline-job-output)</br>
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
@@ -98,11 +100,10 @@ CHECK_AZURE_KV=$(az keyvault show \
 --query properties.provisioningState \
 --output tsv 2>&1)
 
-if [ "$CHECK_AZURE_KV" == "Succeeded" ]; then
+if [[ "$CHECK_AZURE_KV" == "Succeeded" ]]; then
     echo "[---success---] Key Vault [iac100dayslinuxkv] found in Resource Group [100-days-linux-vm]."
-elif [ "$CHECK_AZURE_KV" == "not found" ]; then
+elif [[ "$CHECK_AZURE_KV" == *"not found"* ]]; then
     echo "[---info------] Key Vault [iac100dayslinuxkv] was not found in Resource Group [100-days-linux-vm]."
-    echo $CHECK_AZURE_KV
 
     # Creating a new Resource Group.
     CREATE_RESOURCE_GROUP=$(az group create \
@@ -371,7 +372,7 @@ Finally, click on **Run**.
 
 </br>
 
-## Build Pipeline Job Output
+## Check Build Pipeline Job Output
 
 > **NOTE:** If you already have a Build Pipeline called **practical-yaml-build-pipe**, the new Pipe line you created will be called **practical-yaml-build-pipe (1)**. You can rename the Build Pipeline if you so desire.
 
@@ -389,7 +390,7 @@ Next, Review the logs of the **Check Managed Linux VM Access** job in the **prac
 
 ## Things to Consider
 
-You'll notice that the **deploy-managed-linux-vm.sh Script** script is relatively idempotent; however, there are definitely improvements that you can make to experiment with it.
+You'll notice that the scripts here are relatively idempotent; however, there are definitely improvements that can be made.
 
 </br>
 
