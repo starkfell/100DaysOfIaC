@@ -390,10 +390,10 @@ Next, Review the logs of the **Check Managed Linux VM Access** job in the **prac
 
 ## Things to Consider
 
-You'll notice that the scripts here are relatively idempotent; however, there are definitely improvements that can be made.
+You'll notice that the scripts here are relatively idempotent; however, there are definitely improvements that can be made. If you to experiment with what type of actions you can perform while remoting to a Linux Host using the **check-managed-linux-vm-access.sh** script, use a different command besides **echo** in the **ssh** command or replace the **ssh** command with something like **scp** to test file transfers to the Linux host.
 
 </br>
 
 ## Conclusion
 
-In today's article in we built a YAML Pipeline out of the contents from [Day 68](./day.68.manage.access.to.linux.vms.using.key.vault.part.1.md) and [ Day 69](./day.69.manage.access.to.linux.vms.using.key.vault.part.2.md) and then deployed a managed Linux VM. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article in we built a YAML based Build Pipeline out of the contents from **[Day 68](./day.68.manage.access.to.linux.vms.using.key.vault.part.1.md)** and **[Day 69](./day.69.manage.access.to.linux.vms.using.key.vault.part.2.md)** and then deployed a managed Linux VM. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
