@@ -26,7 +26,7 @@ The first thing you should probably ask before deciding between AKS and AKS-Engi
 * On-premise and Cloud Storage Requirements
 * Accessibility and Security Requirements
 
-Depending on what you are trying to accomplish, you may find that certain capabilities may be available in AKS-Engine but may not be available in AKS or only in Preview. One example that we are going to go over later in this series is deploying a Private Kubernetes Cluster in Azure. This option just because available in AKS as Public Preview in December of 2019, but has been available via AKS-Engine much longer.
+Depending on what you are trying to accomplish, you may find that certain capabilities may be available in AKS-Engine but may not be available in AKS or only in Preview. One example that we are going to go over later in this series is deploying a Private Kubernetes Cluster in Azure. This option just became available in AKS as Public Preview in December of 2019, but has been available via AKS-Engine much longer.
 
 </br>
 
@@ -84,6 +84,7 @@ Below are some of the tools we recommend you check out to use with Kubernetes th
 | Minikube | tool for running a single-node virtualized Kubernetes Cluster for development | [Getting Started](https://kubernetes.io/docs/setup/learning-environment/minikube/) |
 | Kubernetes Dashboard | Web-based Kubernetes UI | [GitHub](https://github.com/kubernetes/dashboard) |
 | Istio | service mesh providing traffic management, policy enforcement, and telemetry collection | [Setup](https://istio.io/docs/setup/) |
+| Azure Monitor for Containers | Monitoring performance of container workloads | [Docs](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/container-insights-overview) |
 | Prometheus | Monitoring and Alerting Toolkit | [Docs](https://prometheus.io/docs/introduction/overview/) |
 | Grafana | Analytics and Monitoring Solution | [Docs](https://grafana.com/docs/grafana/latest/) |
 
@@ -98,6 +99,8 @@ If you have certain applications (such as NGINX Ingress Controllers) that have b
 The **Kubernetes Dashboard** is the standard Web UI for Kubernetes. A default deployment of the Kubernetes Dashboard should only provide you minimal access to view resources that are running in your Cluster.
 
 Because of all of the features that are a part of **Istio**, We recommend that you first install **istioctl** locally on your Host machine and then deploy the manifest *demo* profile to your Cluster. Make sure you are only doing this on a development Cluster as there are over 15 Pods that will be spun up! Once you are finished determining what you want to use; teardown your previous deployment and deploy the manifest *minimal* profile and then build up from there. Be aware that although you can install Istio with helm, that method is being [deprecated](https://istio.io/docs/setup/install/helm/).
+
+The Microsoft recommended solution of monitoring your containers in Kubernetes is to use Azure Monitor for containers. Enabling this feature is thoroughly documented [here](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/container-insights-onboard).
 
 Finally, **Prometheus** is typically used for ingesting and storing metrics and alerting while **Grafana** is used for visualization. There are numerous ways you can go about deploying them to work together in your Kubernetes Cluster which you can see for yourself by searching the web.
 
