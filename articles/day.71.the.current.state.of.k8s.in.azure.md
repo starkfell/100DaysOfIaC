@@ -99,7 +99,7 @@ The **Kubernetes Dashboard** is the standard Web UI for Kubernetes. A default de
 
 Because of all of the features that are a part of **Istio**, We recommend that you first install **istioctl** locally on your Host machine and then deploy the manifest *demo* profile to your Cluster. Make sure you are only doing this on a development Cluster as there are over 15 Pods that will be spun up! Once you are finished determining what you want to use; teardown your previous deployment and deploy the manifest *minimal* profile and then build up from there. Be aware that although you can install Istio with helm, that method is being [deprecated](https://istio.io/docs/setup/install/helm/).
 
-Finally, Prometheus is typically used for ingesting and storing metrics and alerting while Grafana is used for visualization. There are numerous ways you can go about deploying them to work together in your Kubernetes Cluster which you can see for yourself by searching the web.
+Finally, **Prometheus** is typically used for ingesting and storing metrics and alerting while **Grafana** is used for visualization. There are numerous ways you can go about deploying them to work together in your Kubernetes Cluster which you can see for yourself by searching the web.
 
 </br>
 
@@ -111,4 +111,4 @@ We highly recommend that you don't make your decision on whether to use AKS or A
 
 ## Conclusion
 
-In today's article we covered the current state of Kubernetes in Azure and discussed the differences between AKS and AKS-Engine to take into account when deciding which to use. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article we covered the current state of Kubernetes in Azure and discussed the differences between AKS and AKS-Engine to take into account when deciding which to use and some of the tooling available you can use to manage your cluster. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
