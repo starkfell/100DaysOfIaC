@@ -58,7 +58,7 @@ You may notice that the features available in AKS-Engine have three distinct sta
 
 The Official documentation on Support policies for Azure Kubernetes Service can be found **[here](https://docs.microsoft.com/en-us/azure/aks/support-policies)**.
 
-One of the big take-aways of using AKS is the following:
+One of the big take-aways of support for AKS is stated below:
 
 > AKS isn't a completely managed cluster solution. Some components, such as worker nodes, have shared responsibility, where users must help maintain the AKS cluster. User input is required, for example, to apply a worker node operating system (OS) security patch.
 > The services are managed in the sense that Microsoft and the AKS team deploys, operates, and is responsible for service availability and functionality. Customers can't alter these managed components. Microsoft limits customization to ensure a consistent and scalable user experience. For a fully customizable solution, see AKS Engine.
@@ -67,9 +67,7 @@ One of the big take-aways of using AKS is the following:
 
 ## AKS-Engine Support
 
-> As a free service, AKS does not offer a financially-backed service level agreement. We will strive to attain at least 99.5% availability for the Kubernetes API server. The availability of the agent nodes in your cluster is covered by the Virtual Machines SLA. Please see the Virtual Machines SLA for more details.
-
-In other words, you are on your own in regards to any of your applications that are running on the Kubernetes Cluster, along with any features in AKS or AKS-Engine that you decide to implement. Instead of worrying about obtaining official Microsoft Support for a Kubernetes Cluster in Azure, you are better off determining how you and your team can best manage and support the Kubernetes Cluster, and the applications running in it, by yourselves.
+AKS-Engine is an Azure open-source project used for creating Kubernetes clusters with custom requirements and does not have any official support. At the same time, you should be aware that AKS uses the AKS-Engine internally.
 
 </br>
 
@@ -106,7 +104,7 @@ Finally, Prometheus is typically used for ingesting and storing metrics and aler
 
 ## Things to Consider
 
-We highly recommend that you don't make your decision on whether to use AKS or AKS-Engine based on the level of support provided, but instead on the requirements of what you are running in the Kubernetes Cluster. What we will be covering in the next few blogs posts about deploying a Private Kubernetes Cluster in Azure will hopefully alleviate any concerns you have about relying solely on support as a deciding factor when using Kubernetes in Azure.
+We highly recommend that you don't make your decision on whether to use AKS or AKS-Engine based on the level of support provided, but instead on the requirements of what you are running in the Kubernetes Cluster.
 
 </br>
 
