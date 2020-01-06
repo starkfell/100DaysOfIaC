@@ -100,7 +100,7 @@ The **Kubernetes Dashboard** is the standard Web UI for Kubernetes. A default de
 
 Because of all of the features that are a part of **Istio**, We recommend that you first install **istioctl** locally on your Host machine and then deploy the manifest *demo* profile to your Cluster. Make sure you are only doing this on a development Cluster as there are over 15 Pods that will be spun up! Once you are finished determining what you want to use; teardown your previous deployment and deploy the manifest *minimal* profile and then build up from there. Be aware that although you can install Istio with helm, that method is being [deprecated](https://istio.io/docs/setup/install/helm/).
 
-The Microsoft recommended solution of monitoring your containers in Kubernetes is to use Azure Monitor for containers. Enabling this feature is thoroughly documented [here](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/container-insights-onboard).
+The Microsoft recommended solution of monitoring your containers in Kubernetes is to use **Azure Monitor for containers**. Enabling this feature is thoroughly documented [here](https://docs.microsoft.com/en-us/azure/azure-monitor/insights/container-insights-onboard).
 
 Finally, **Prometheus** is typically used for ingesting and storing metrics and alerting while **Grafana** is used for visualization. There are numerous ways you can go about deploying them to work together in your Kubernetes Cluster which you can see for yourself by searching the web.
 
