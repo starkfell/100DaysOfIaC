@@ -13,6 +13,7 @@ In today's article we will cover the following topics.
 [AKS-Engine Features](#aks-engine-features)</br>
 [AKS Support](#aks-support)</br>
 [AKS-Engine Support](#aks-engine-support)</br>
+[Tooling](#tooling)</br>
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
