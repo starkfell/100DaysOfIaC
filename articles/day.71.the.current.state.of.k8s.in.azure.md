@@ -108,7 +108,7 @@ Finally, **Prometheus** is typically used for ingesting and storing metrics and 
 
 ## Things to Consider
 
-We highly recommend that you don't make your decision on whether to use AKS or AKS-Engine based on the level of support provided, but instead on the requirements of what you are running in the Kubernetes Cluster.
+We highly recommend that you don't make your decision on whether to use AKS or AKS-Engine based on the level of support provided, but instead on the requirements of what you are running in the Kubernetes Cluster. AKS-Engine gives additionally flexibility to customize your deployment, but at the cost of cluster management which is done for you with AKS.
 
 </br>
 
