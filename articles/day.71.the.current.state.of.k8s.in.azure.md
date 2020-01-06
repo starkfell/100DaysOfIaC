@@ -80,7 +80,7 @@ Below are some of the tools we recommend you check out to use with Kubernetes th
 |------|-------------|---------------|
 | kubectl | Used to control the Kubernetes Cluster Manager | [Documentation](https://kubernetes.io/docs/reference/kubectl/overview) |
 | Helm | Package manager for Kubernetes | [Documentation](https://helm.sh/docs) |
-| Helmsman | tool for automated deployment and management of Helm Charts | [GitHub Repo](https://github.com/Praqma/helmsman) |
+| Helmsman | tool for automated deployment and management of Helm Charts | [GitHub](https://github.com/Praqma/helmsman) |
 | Minikube | tool for running a single-node virtualized Kubernetes Cluster for development | [Getting Started](https://kubernetes.io/docs/setup/learning-environment/minikube/) |
 | Kubernetes Dashboard | Web-based Kubernetes UI | [GitHub](https://github.com/kubernetes/dashboard) |
 | Istio | service mesh providing traffic management, policy enforcement, and telemetry collection | [Setup](https://istio.io/docs/setup/) |
