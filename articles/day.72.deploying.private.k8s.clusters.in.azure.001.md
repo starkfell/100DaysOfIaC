@@ -1,6 +1,6 @@
 # Day 72 - Deploying a Private Kubernetes Cluster in Azure - Part 1
 
-*This is the first in a series of posts about the current options available to you for deploying a Private Kubernetes Cluster in Azure.*
+*This is the first in a series of posts on deploying and managing a Private Kubernetes Cluster in Azure.*
 
 ***[Day 72 - Deploying a Private Kubernetes Cluster in Azure - Part 1](./day.72.deploying.private.k8s.clusters.in.azure.001.md)***</br>
 
@@ -62,7 +62,7 @@ GitTreeState: clean
 
 ```bash
 /usr/bin/az group create \
---name "100daysk8s" \
+--name "k8s-100days-iac" \
 --location "westeurope"
 ```
 
@@ -72,10 +72,10 @@ You should get back the following output.
 
 ```json
 {
-  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/100daysk8s",
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/k8s-100days-iac",
   "location": "westeurope",
   "managedBy": null,
-  "name": "100daysk8s",
+  "name": "k8s-100days-iac",
   "properties": {
     "provisioningState": "Succeeded"
   },
@@ -115,15 +115,15 @@ Next, run the following command to create a new Service Principal for the Kubern
 ```bash
 NEW_K8S_SP=$(/usr/bin/az ad sp create-for-rbac \
 --role="Contributor" \
---name="http://100daysk8s-${RANDOM_ALPHA}" \
+--name="http://k8s-100days-iac-${RANDOM_ALPHA}" \
 --years 50 \
---scopes="/subscriptions/$AZURE_SUB_ID/resourceGroups/100daysk8s")
+--scopes="/subscriptions/$AZURE_SUB_ID/resourceGroups/k8s-100days-iac")
 ```
 
 You should get back a similar response.
 
 ```console
-Creating a role assignment under the scope of "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/100daysk8s"
+Creating a role assignment under the scope of "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/k8s-100days-iac"
   Retrying role assignment creation: 1/36
   Retrying role assignment creation: 2/36
   Retrying role assignment creation: 3/36
@@ -149,6 +149,52 @@ K8S_SP_PASSWORD=$(echo $NEW_K8S_SP | jq .password | tr -d '"')
 ## Generate Service Principals for AAD Authentication
 
 ```bash
+CREATE_AAD_SRV_APP=$(/usr/bin/az ad app create \
+--display-name $K8S_CLUSTER_SP_USERNAME-aad-apisrv \
+--identifier-uris http://$K8S_CLUSTER_SP_USERNAME-aad-apisrv \
+--homepage http://$K8S_CLUSTER_SP_USERNAME-aad-apisrv \
+--native-app false 2>&1 1>/dev/null)
+
+CREATE_AAD_SRV_SP=$(/usr/bin/az ad sp create \
+--id http://$K8S_CLUSTER_SP_USERNAME-aad-apisrv 2>&1 1>/dev/null)
+
+UPDATE_AAD_SRV_APP=$(/usr/bin/az ad app update \
+--id http://$K8S_CLUSTER_SP_USERNAME-aad-apisrv \
+--set groupMembershipClaims=All 2>&1 1>/dev/null)
+
+UPDATE_AAD_SRV_APP_MANIFEST=$(/usr/bin/az ad app update \
+--id http://$K8S_CLUSTER_SP_USERNAME-aad-apisrv \
+--required-resource-accesses "aks-engine-aad-manifests/k8s-apisrv-manifest.json" 2>&1 1>/dev/null)
+
+K8S_APISRV_APP_ID=$(/usr/bin/az ad app show \
+--id http://$K8S_CLUSTER_SP_USERNAME-aad-apisrv \
+--query appId \
+--output tsv 2>&1)
+
+K8S_APISRV_OAUTH2_PERMISSIONS_ID=$(/usr/bin/az ad app show \
+--id http://$K8S_CLUSTER_SP_USERNAME-aad-apisrv \
+--query oauth2Permissions[].id \
+--output tsv 2>&1)
+
+DEPLOY_K8S_APICLI_APP=$(/usr/bin/az ad app create \
+        --display-name $K8S_CLUSTER_SP_USERNAME-aad-apicli \
+        --reply-urls http://$K8S_CLUSTER_SP_USERNAME-aad-apicli \
+        --homepage http://$K8S_CLUSTER_SP_USERNAME-aad-apicli --native-app true)
+
+K8S_APICLI_APP_ID=$(/usr/bin/az ad app list --all 2>&1 \
+        | jq --arg DISPLAY_NAME "$K8S_CLUSTER_SP_USERNAME-aad-apicli" '.[] | select(.displayName == $DISPLAY_NAME).appId' \
+        | tr -d '"')
+
+CREATE_AAD_CLI_SP=$(/usr/bin/az ad sp create \
+        --id $K8S_APICLI_APP_ID 2>&1 1>/dev/null)
+
+ADD_APP_ID=$(sed -i -e "s/{K8S_APISRV_APP_ID}/$K8S_APISRV_APP_ID/g" aks-engine-aad-manifests/k8s-apicli-manifest.json 2>&1)
+
+ADD_OAUTH2=$(sed -i -e "s/{K8S_APISRV_OAUTH2_PERMISSIONS_ID}/$K8S_APISRV_OAUTH2_PERMISSIONS_ID/" aks-engine-aad-manifests/k8s-apicli-manifest.json 2>&1)
+
+UPDATE_AAD_CLI_APP_MANIFEST=$(/usr/bin/az ad app update \
+        --id $K8S_APICLI_APP_ID \
+        --required-resource-accesses "aks-engine-aad-manifests/k8s-apicli-manifest.json" 2>&1 1>/dev/null)
 
 ```
 
@@ -168,8 +214,8 @@ Next, run the following command to generate SSH Keys for the Kubernetes Cluster.
 ssh-keygen \
 -t rsa \
 -b 4096 \
--C "100daysk8s-${RANDOM_ALPHA}" \
--f ~/.ssh/100daysk8s-${RANDOM_ALPHA} \
+-C "k8s-100days-iac-${RANDOM_ALPHA}" \
+-f ~/.ssh/k8s-100days-iac-${RANDOM_ALPHA} \
 -N "$SSH_KEY_PASSWORD"
 ```
 
@@ -177,10 +223,10 @@ You should get back a similar response.
 
 ```console
 Generating public/private rsa key pair.
-Your identification has been saved in /home/serveradmin/.ssh/100daysk8s-hl6h.
-Your public key has been saved in /home/serveradmin/.ssh/100daysk8s-hl6h.pub.
+Your identification has been saved in /home/serveradmin/.ssh/k8s-100days-iac-hl6h.
+Your public key has been saved in /home/serveradmin/.ssh/k8s-100days-iac-hl6h.pub.
 The key fingerprint is:
-SHA256:CULODrFFBn76PESEORIveRNhSbRP616KfNCFjxn1cXU 100daysk8s-hl6h
+SHA256:CULODrFFBn76PESEORIveRNhSbRP616KfNCFjxn1cXU k8s-100days-iac-hl6h
 The key's randomart image is:
 +---[RSA 4096]----+
 |.+OB*      .. E  |
@@ -198,9 +244,9 @@ The key's randomart image is:
 Next, run the following command to store the SSH Public and Private Key values in Variables and simultaneously delete the Keys locally.
 
 ```bash
-SSH_PUBLIC_KEY=$(cat ~/.ssh/100daysk8s-${RANDOM_ALPHA}.pub) && \
-SSH_PRIVATE_KEY=$(cat ~/.ssh/100daysk8s-${RANDOM_ALPHA}) && \
-rm -rf ~/.ssh/100daysk8s-${RANDOM_ALPHA}*
+SSH_PUBLIC_KEY=$(cat ~/.ssh/k8s-100days-iac-${RANDOM_ALPHA}.pub) && \
+SSH_PRIVATE_KEY=$(cat ~/.ssh/k8s-100days-iac-${RANDOM_ALPHA}) && \
+rm -rf ~/.ssh/k8s-100days-iac-${RANDOM_ALPHA}*
 ```
 
 If you want to verify that all of the variables you've created up to this point are correctly populated, run the following command below.
@@ -214,6 +260,6 @@ echo "SSH Private Key Password:       $SSH_KEY_PASSWORD" && \
 echo -e "K8s Service Principal Raw JSON: \n$NEW_K8S_SP"
 ```
 
-> **NOTE:** You will need the values from these variables in **[Part 2]()**.
+> **NOTE:** You will need the values from these variables in **[Part 2](./day.73.deploying.private.k8s.clusters.in.azure.002.md)**.
 
 </br>

@@ -73,6 +73,37 @@ In other words, you are on your own in regards to any of your applications that 
 
 </br>
 
+## Tooling
+
+Below are some of the tools we recommend you check out to use with Kubernetes that will work with AKS and AKS-Engine.
+
+| Name | Description | Official Docs |
+|------|-------------|---------------|
+| kubectl | Used to control the Kubernetes Cluster Manager | [Documentation](https://kubernetes.io/docs/reference/kubectl/overview) |
+| Helm | Package manager for Kubernetes | [Documentation](https://helm.sh/docs) |
+| Helmsman | tool for automated deployment and management of Helm Charts | [GitHub Repo](https://github.com/Praqma/helmsman) |
+| Minikube | tool for running a single-node virtualized Kubernetes Cluster for development | [Getting Started](https://kubernetes.io/docs/setup/learning-environment/minikube/) |
+| Kubernetes Dashboard | Web-based Kubernetes UI | [GitHub]([https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/](https://github.com/kubernetes/dashboard)) |
+| Istio | service mesh providing traffic management, policy enforcement, and telemetry collection | [Setup](https://istio.io/docs/setup/) |
+| Prometheus | Monitoring and Alerting Toolkit | [Docs](https://prometheus.io/docs/introduction/overview/) |
+| Grafana | Analytics and Monitoring Solution | [Docs](https://grafana.com/docs/grafana/latest/) |
+
+</br>
+
+**kubectl** is the standard tool you will end up using if you want to manually query, manage, or deploy resources that are running in your Kubernetes Cluster. 
+
+If you have certain applications (such as NGINX Ingress Controllers) that have become standard to run in Kubernetes, but you want to customize how they are deployed without a lot of hassle, **helm** will help make this easier by setting these customizations using helm's *--set* option. Examples for NGINX Ingress controllers can be found [here](https://github.com/helm/charts/tree/master/stable/nginx-ingress).
+
+**Helmsman** adds onto features of **helm** by allowing you to managing your different Helm releases like you would Azure Resources using Terraform or ARM.
+
+The **Kubernetes Dashboard** is the standard Web UI for Kubernetes. A default deployment of the Kubernetes Dashboard should only provide you minimal access to view resources that are running in your Cluster.
+
+Because of all of the features that are a part of **Istio**, We recommend that you first install **istioctl** locally on your Host machine and then deploy the manifest *demo* profile to your Cluster. Make sure you are only doing this on a development Cluster as there are over 15 Pods that will be spun up! Once you are finished determining what you want to use; teardown your previous deployment and deploy the manifest *minimal* profile and then build up from there. Be aware that although you can install Istio with helm, that method is being [deprecated](https://istio.io/docs/setup/install/helm/).
+
+Finally, Prometheus is typically used for ingesting and storing metrics and alerting while Grafana is used for visualization. There are numerous ways you can go about deploying them to work together in your Kubernetes Cluster which you can see for yourself by searching the web.
+
+</br>
+
 ## Things to Consider
 
 We highly recommend that you don't make your decision on whether to use AKS or AKS-Engine based on the level of support provided, but instead on the requirements of what you are running in the Kubernetes Cluster. What we will be covering in the next few blogs posts about deploying a Private Kubernetes Cluster in Azure will hopefully alleviate any concerns you have about relying solely on support as a deciding factor when using Kubernetes in Azure.

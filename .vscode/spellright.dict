@@ -17,3 +17,9 @@ vms
 scp
 Quickstart
 json
+Jumpbox
+kubectl
+Minikube
+Istio
+Grafana
+istioctl
