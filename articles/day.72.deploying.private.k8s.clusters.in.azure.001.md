@@ -224,7 +224,7 @@ echo -e "K8s Service Principal Raw JSON: \n$NEW_K8S_SP"
 
 For security purposes, storing the Variable values for later use in an Azure Key Vault is highly recommend for sensitive environments.
 
-The ability to create a Private Kubernetes Cluster in Azure is in Public Preview, if this is the direction you intend to go in, more documentation on it can be found [here](docs.microsoft.com/en-us/azure/aks/private-clusters).
+The ability to create a Private Kubernetes Cluster in Azure is in Public Preview, if this is the direction you intend to go in, more documentation on it can be found **[here](https://docs.microsoft.com/en-us/azure/aks/private-clusters)**.
 
 </br>
 
