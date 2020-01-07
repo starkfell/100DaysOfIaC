@@ -7,7 +7,9 @@
 
 </br>
 
-[AKS Engine Quickstart](https://github.com/Azure/aks-engine/blob/master/docs/tutorials/quickstart.md)
+> Running a Private Kubernetes Cluster in Azure is a customized scenario which is why decided to cover it using AKS-Engine. That being said, deploying a Private Kubernetes Cluster using AKS is in Public Preview. If this is the direction you intend to go in, more documentation on it can be found **[here](https://docs.microsoft.com/en-us/azure/aks/private-clusters)**.
+
+</br>
 
 In today's article we will cover the prerequisites you should have in place before deploying a Private Kubernetes Cluster using AKS-Engine.
 
@@ -229,8 +231,6 @@ echo -e "K8s Service Principal Raw JSON: \n$NEW_K8S_SP"
 ## Things to Consider
 
 For security purposes, storing the Variable values for later use in an Azure Key Vault is highly recommend for sensitive environments.
-
-The ability to create a Private Kubernetes Cluster in Azure is in Public Preview, if this is the direction you intend to go in, more documentation on it can be found **[here](https://docs.microsoft.com/en-us/azure/aks/private-clusters)**.
 
 </br>
 
