@@ -2,15 +2,19 @@
 
 *This is the first in a series of posts on deploying and managing a Private Kubernetes Cluster in Azure.*
 
+***[Day 71 - The Current State of Kubernetes in Azure](./day.71.the.current.state.of.k8s.in.azure.md)***</br>
 ***[Day 72 - Deploying a Private Kubernetes Cluster in Azure - Part 1](./day.72.deploying.private.k8s.clusters.in.azure.001.md)***</br>
 
 </br>
 
 [AKS Engine Quickstart](https://github.com/Azure/aks-engine/blob/master/docs/tutorials/quickstart.md)
 
-In today's article we will cover the prerequisites you should have in place before deploying a Kubernetes Cluster using AKS-Engine.
+In today's article we will cover the prerequisites you should have in place before deploying a Private Kubernetes Cluster using AKS-Engine.
 
 [Installing AKS-Engine on Ubuntu](#installing-aks-engine-on-ubuntu)</br>
+[Create a new Resource Group for the Kubernetes Cluster](#create-a-new-resource-group-for-the-kubernetes-cluster)</br>
+[Generate a new Service Principal for the Kubernetes Cluster](#generate-a-new-service-principal-for-the-kubernetes-cluster)</br>
+[Generate a new pair of SSH Keys for the Kubernetes Cluster](#generate-a-new-pair-of-ssh-keys-for-the-kubernetes-cluster)</br>
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
@@ -146,60 +150,6 @@ K8S_SP_PASSWORD=$(echo $NEW_K8S_SP | jq .password | tr -d '"')
 
 </br>
 
-## Generate Service Principals for AAD Authentication
-
-```bash
-CREATE_AAD_SRV_APP=$(/usr/bin/az ad app create \
---display-name $K8S_CLUSTER_SP_USERNAME-aad-apisrv \
---identifier-uris http://$K8S_CLUSTER_SP_USERNAME-aad-apisrv \
---homepage http://$K8S_CLUSTER_SP_USERNAME-aad-apisrv \
---native-app false 2>&1 1>/dev/null)
-
-CREATE_AAD_SRV_SP=$(/usr/bin/az ad sp create \
---id http://$K8S_CLUSTER_SP_USERNAME-aad-apisrv 2>&1 1>/dev/null)
-
-UPDATE_AAD_SRV_APP=$(/usr/bin/az ad app update \
---id http://$K8S_CLUSTER_SP_USERNAME-aad-apisrv \
---set groupMembershipClaims=All 2>&1 1>/dev/null)
-
-UPDATE_AAD_SRV_APP_MANIFEST=$(/usr/bin/az ad app update \
---id http://$K8S_CLUSTER_SP_USERNAME-aad-apisrv \
---required-resource-accesses "aks-engine-aad-manifests/k8s-apisrv-manifest.json" 2>&1 1>/dev/null)
-
-K8S_APISRV_APP_ID=$(/usr/bin/az ad app show \
---id http://$K8S_CLUSTER_SP_USERNAME-aad-apisrv \
---query appId \
---output tsv 2>&1)
-
-K8S_APISRV_OAUTH2_PERMISSIONS_ID=$(/usr/bin/az ad app show \
---id http://$K8S_CLUSTER_SP_USERNAME-aad-apisrv \
---query oauth2Permissions[].id \
---output tsv 2>&1)
-
-DEPLOY_K8S_APICLI_APP=$(/usr/bin/az ad app create \
-        --display-name $K8S_CLUSTER_SP_USERNAME-aad-apicli \
-        --reply-urls http://$K8S_CLUSTER_SP_USERNAME-aad-apicli \
-        --homepage http://$K8S_CLUSTER_SP_USERNAME-aad-apicli --native-app true)
-
-K8S_APICLI_APP_ID=$(/usr/bin/az ad app list --all 2>&1 \
-        | jq --arg DISPLAY_NAME "$K8S_CLUSTER_SP_USERNAME-aad-apicli" '.[] | select(.displayName == $DISPLAY_NAME).appId' \
-        | tr -d '"')
-
-CREATE_AAD_CLI_SP=$(/usr/bin/az ad sp create \
-        --id $K8S_APICLI_APP_ID 2>&1 1>/dev/null)
-
-ADD_APP_ID=$(sed -i -e "s/{K8S_APISRV_APP_ID}/$K8S_APISRV_APP_ID/g" aks-engine-aad-manifests/k8s-apicli-manifest.json 2>&1)
-
-ADD_OAUTH2=$(sed -i -e "s/{K8S_APISRV_OAUTH2_PERMISSIONS_ID}/$K8S_APISRV_OAUTH2_PERMISSIONS_ID/" aks-engine-aad-manifests/k8s-apicli-manifest.json 2>&1)
-
-UPDATE_AAD_CLI_APP_MANIFEST=$(/usr/bin/az ad app update \
-        --id $K8S_APICLI_APP_ID \
-        --required-resource-accesses "aks-engine-aad-manifests/k8s-apicli-manifest.json" 2>&1 1>/dev/null)
-
-```
-
-</br>
-
 ## Generate a new pair of SSH Keys for the Kubernetes Cluster
 
 Run the following command to generate a password to use with the SSH Keys.
@@ -207,6 +157,8 @@ Run the following command to generate a password to use with the SSH Keys.
 ```bash
 SSH_KEY_PASSWORD=$(openssl rand -base64 20)
 ```
+
+</br>
 
 Next, run the following command to generate SSH Keys for the Kubernetes Cluster.
 
@@ -218,6 +170,8 @@ ssh-keygen \
 -f ~/.ssh/k8s-100days-iac-${RANDOM_ALPHA} \
 -N "$SSH_KEY_PASSWORD"
 ```
+
+</br>
 
 You should get back a similar response.
 
@@ -244,10 +198,12 @@ The key's randomart image is:
 Next, run the following command to store the SSH Public and Private Key values in Variables and simultaneously delete the Keys locally.
 
 ```bash
-SSH_PUBLIC_KEY=$(cat ~/.ssh/k8s-100days-iac-${RANDOM_ALPHA}.pub) && \
-SSH_PRIVATE_KEY=$(cat ~/.ssh/k8s-100days-iac-${RANDOM_ALPHA}) && \
+SSH_PUBLIC_KEY="$(cat ~/.ssh/k8s-100days-iac-${RANDOM_ALPHA}.pub)" && \
+SSH_PRIVATE_KEY="$(cat ~/.ssh/k8s-100days-iac-${RANDOM_ALPHA})" && \
 rm -rf ~/.ssh/k8s-100days-iac-${RANDOM_ALPHA}*
 ```
+
+</br>
 
 If you want to verify that all of the variables you've created up to this point are correctly populated, run the following command below.
 
@@ -263,3 +219,15 @@ echo -e "K8s Service Principal Raw JSON: \n$NEW_K8S_SP"
 > **NOTE:** You will need the values from these variables in **[Part 2](./day.73.deploying.private.k8s.clusters.in.azure.002.md)**.
 
 </br>
+
+## Things to Consider
+
+For security purposes, storing the Variable values for later use in an Azure Key Vault is highly recommend for sensitive environments.
+
+The ability to create a Private Kubernetes Cluster in Azure is in Public Preview, if this is the direction you intend to go in, more documentation on it can be found [here](docs.microsoft.com/en-us/azure/aks/private-clusters).
+
+</br>
+
+## Conclusion
+
+In today's article we covered the minimum prerequisites you should have in place before deploying a Private Kubernetes Cluster using AKS-Engine. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
