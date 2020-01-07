@@ -44,6 +44,8 @@ aks-engine installed into /usr/local/bin/aks-engine
 Run 'aks-engine version' to test.
 ```
 
+</br>
+
 Next, run the following command below to verify AKS-Engine is working
 
 ```bash
@@ -124,6 +126,8 @@ NEW_K8S_SP=$(/usr/bin/az ad sp create-for-rbac \
 --scopes="/subscriptions/$AZURE_SUB_ID/resourceGroups/k8s-100days-iac")
 ```
 
+</br>
+
 You should get back a similar response.
 
 ```console
@@ -194,6 +198,8 @@ The key's randomart image is:
 |  o.o            |
 +----[SHA256]-----+
 ```
+
+</br>
 
 Next, run the following command to store the SSH Public and Private Key values in Variables and simultaneously delete the Keys locally.
 
