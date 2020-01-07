@@ -90,7 +90,7 @@ Below are some of the tools we recommend you check out to use with Kubernetes th
 
 </br>
 
-**kubectl** is the standard tool you will end up using if you want to manually query, manage, or deploy resources that are running in your Kubernetes Cluster. 
+**kubectl** is the standard tool you will end up using if you want to manually query, manage, or deploy resources that are running in your Kubernetes Cluster.
 
 If you have certain applications (such as NGINX Ingress Controllers) that have become standard to run in Kubernetes, but you want to customize how they are deployed without a lot of hassle, **helm** will help make this easier by setting these customizations using helm's *--set* option. Examples for NGINX Ingress controllers can be found [here](https://github.com/helm/charts/tree/master/stable/nginx-ingress).
 

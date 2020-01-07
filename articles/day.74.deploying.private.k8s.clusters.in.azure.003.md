@@ -2,6 +2,7 @@
 
 *This is the third in a series of posts on deploying and managing a Private Kubernetes Cluster in Azure.*
 
+***[Day 71 - The Current State of Kubernetes in Azure](./day.71.the.current.state.of.k8s.in.azure.md)***</br>
 ***[Day 72 - Deploying a Private Kubernetes Cluster in Azure - Part 1](./day.72.deploying.private.k8s.clusters.in.azure.001.md)***</br>
 ***[Day 73 - Deploying a Private Kubernetes Cluster in Azure - Part 2](./day.73.deploying.private.k8s.clusters.in.azure.002.md)***</br>
 ***[Day 74 - Deploying a Private Kubernetes Cluster in Azure - Part 3](./day.74.deploying.private.k8s.clusters.in.azure.003.md)***</br>
