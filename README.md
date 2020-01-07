@@ -4,6 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| Kubernetes in Azure | [Day 72 - Deploying a Private Kubernetes Cluster in Azure - Part 1](/articles/day.72.deploying.private.k8s.clusters.in.azure.001.md) |
 | Kubernetes in Azure | [Day 71 - The Current State of Kubernetes in Azure](/articles/day.71.the.current.state.of.k8s.in.azure.md) |
 | Linux and Azure Key Vault - YAML Build Pipeline | [Day 70 - Managing Access to Linux VMs using Azure Key Vault - Part 3](/articles/day.70.manage.access.to.linux.vms.using.key.vault.part.3.md) |
 | Linux and Azure Key Vault | [Day 69 - Managing Access to Linux VMs using Azure Key Vault - Part 2](/articles/day.69.manage.access.to.linux.vms.using.key.vault.part.2.md) |
