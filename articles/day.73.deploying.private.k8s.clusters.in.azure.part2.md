@@ -3,8 +3,8 @@
 *This is the second in a series of posts on deploying and managing a Private Kubernetes Cluster in Azure.*
 
 ***[Day 71 - The Current State of Kubernetes in Azure](./day.71.the.current.state.of.k8s.in.azure.md)***</br>
-***[Day 72 - Deploying a Private Kubernetes Cluster in Azure - Part 1](./day.72.deploying.private.k8s.clusters.in.azure.001.md)***</br>
-***[Day 73 - Deploying a Private Kubernetes Cluster in Azure - Part 2](./day.73.deploying.private.k8s.clusters.in.azure.002.md)***</br>
+***[Day 72 - Deploying a Private Kubernetes Cluster in Azure - Part 1](./day.72.deploying.private.k8s.clusters.in.azure.part1.md)***</br>
+***[Day 73 - Deploying a Private Kubernetes Cluster in Azure - Part 2](./day.73.deploying.private.k8s.clusters.in.azure.part2.md)***</br>
 
 </br>
 
@@ -150,13 +150,13 @@ The deployment of the Kubernetes Cluster will start and run for roughly 10 minut
 }
 ```
 
-> **NOTE:** You will need the values from the variables in **[Part 1](./day.72.deploying.private.k8s.clusters.in.azure.001.md)** that you used in this article for **[Part 3](./day.74.deploying.private.k8s.clusters.in.azure.003.md)**.
+> **NOTE:** You will need the values from the variables in **[Part 1](./day.72.deploying.private.k8s.clusters.in.azure.part1.md)** that you used in this article for **[Part 3](./day.74.deploying.private.k8s.clusters.in.azure.part3.md)**.
 
 </br>
 
 ## Things to Consider
 
-As you may have noticed, the Private Kubernetes Cluster isn't deployed with a Public IP Address so you won't be able to interact with the Kubernetes API externally. This is why Microsoft [recommends](https://docs.microsoft.com/en-us/azure/aks/private-clusters#steps-to-connect-to-the-private-cluster) that you either deploy a VM in the same VNet as the Cluster or create a VM in a different VNet that is peered with the Cluster. In **[Part 3](./day.74.deploying.private.k8s.clusters.in.azure.003.md)**, we are going to show you another option to connect to the Private Kubernetes Cluster from an Azure Container Instance.
+As you may have noticed, the Private Kubernetes Cluster isn't deployed with a Public IP Address so you won't be able to interact with the Kubernetes API externally. This is why Microsoft [recommends](https://docs.microsoft.com/en-us/azure/aks/private-clusters#steps-to-connect-to-the-private-cluster) that you either deploy a VM in the same VNet as the Cluster or create a VM in a different VNet that is peered with the Cluster. In **[Part 3](./day.74.deploying.private.k8s.clusters.in.azure.part3.md)**, we are going to show you another option to connect to the Private Kubernetes Cluster from an Azure Container Instance.
 
 </br>
 

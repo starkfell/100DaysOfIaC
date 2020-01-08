@@ -3,7 +3,7 @@
 *This is the first in a series of posts on deploying and managing a Private Kubernetes Cluster in Azure.*
 
 ***[Day 71 - The Current State of Kubernetes in Azure](./day.71.the.current.state.of.k8s.in.azure.md)***</br>
-***[Day 72 - Deploying a Private Kubernetes Cluster in Azure - Part 1](./day.72.deploying.private.k8s.clusters.in.azure.001.md)***</br>
+***[Day 72 - Deploying a Private Kubernetes Cluster in Azure - Part 1](./day.72.deploying.private.k8s.clusters.in.azure.part1.md)***</br>
 
 </br>
 
@@ -226,7 +226,7 @@ echo "SSH Private Key Password:       $SSH_KEY_PASSWORD" && \
 echo -e "K8s Service Principal Raw JSON: \n$NEW_K8S_SP"
 ```
 
-> **NOTE:** You will need the values from these variables in **[Part 2](./day.73.deploying.private.k8s.clusters.in.azure.002.md)**.
+> **NOTE:** You will need the values from these variables in **[Part 2](./day.73.deploying.private.k8s.clusters.in.azure.part2.md)**.
 
 </br>
 
