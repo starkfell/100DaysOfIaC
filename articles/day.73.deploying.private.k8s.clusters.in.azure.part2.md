@@ -138,7 +138,7 @@ az group deployment create \
 The deployment of the Kubernetes Cluster will start and run for roughly 10 minutes. When the deployment has finished, you should see the following response near the bottom of the output.
 
 ```json
-{...
+...
     "provisioningState": "Succeeded",
     "template": null,
     "templateHash": "4119629975786823298",
