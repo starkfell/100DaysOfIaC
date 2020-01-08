@@ -68,6 +68,8 @@ GitTreeState: clean
 
 ## Create a new Resource Group for the Kubernetes Cluster
 
+Run the following command to deploy a new Resource Group for the Kubernetes Cluster.
+
 ```bash
 /usr/bin/az group create \
 --name "k8s-100days-iac" \
