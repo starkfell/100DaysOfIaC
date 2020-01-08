@@ -215,8 +215,6 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 If you are deploying a Private Kubernetes Cluster into an existing VNet, the Kubernetes API Endpoint IP Address will be something other than 10.255.255.5.
 
-
-
 </br>
 
 ## Conclusion
