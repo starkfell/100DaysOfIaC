@@ -148,7 +148,7 @@ The Container will take a few minutes to deploy as there are **[other networking
 
 ## Connect to the Kubernetes Jumpbox Container in the Azure Portal
 
-Next, open up a web browser and login to the **Azure Portal(https://portal.azure.com)**. In the Subscription where you deployed your resources, browse to **Resource Group** --> **k8s-100days-iac-jumpbox** and then click on the Azure Container Instance, **k8s-jumpbox**. Next, under **Settings**, click on **Containers** and then click on the **Connect** Tab. You will be prompted to **Choose Start Up Command**, select **/bin/bash** and then click on the **Connect** button. Your view should be similar to what is shown below.
+Next, open up a web browser and login to the **[Azure Portal](https://portal.azure.com)**. In the Subscription where you deployed your resources, browse to **Resource Group** --> **k8s-100days-iac-jumpbox** and then click on the Azure Container Instance, **k8s-jumpbox**. Next, under **Settings**, click on **Containers** and then click on the **Connect** Tab. You will be prompted to **Choose Start Up Command**, select **/bin/bash** and then click on the **Connect** button. Your view should be similar to what is shown below.
 
 ![001](../images/day74/day.74.deploying.private.k8s.clusters.in.azure.part3.001.png)
 
