@@ -9,7 +9,7 @@
 
 </br>
 
-In today's article we will cover how to access the Private Kubernetes Cluster using an Azure Container Instance.
+In today's article we will cover how to access the Private Kubernetes Cluster from an Azure Container Instance.
 
 [Creating the AKS-Engine Cluster Definition](#creating-the-aks-engine-cluster-definition)</br>
 [Options for connecting to a Private Kubernetes Cluster](#options-for-connecting-to-a-private-kubernetes-cluster)</br>
@@ -21,7 +21,7 @@ In today's article we will cover how to access the Private Kubernetes Cluster us
 
 The Microsoft recommended way of accessing Private Kubernetes Cluster, is to deploy a VM that is either on the same VNet as the Cluster or in a different VNet that is peered with the VNet that the Cluster is in.
 
-Instead of using a VM, we are going to add a new Subnet in the existing Kubernetes Cluster VNet and then deploy an Azure Container Instance running a container image with **kubectl** already installed. Additionally, the variable values from **[Part 1](./day.72.deploying.private.k8s.clusters.in.azure.part1.md)** will be populated to the secured environment variables of the container at runtime which we will use to connect to the K8s Master Node and copy its kubeconfig file to the container, and then use it to connect to the Kubernetes Cluster.
+Instead of using a VM, we are going to add a new Subnet in the existing Kubernetes Cluster VNet and then deploy an Azure Container Instance running a container image with **kubectl** already installed. Additionally, the variable values from **[Part 1](./day.72.deploying.private.k8s.clusters.in.azure.part1.md)** will be populated to the secured environment variables of the container at runtime which we will use to connect to the K8s Master Node and copy its kubeconfig file to the container, and then use it to manage the Kubernetes Cluster.
 
 </br>
 
@@ -129,7 +129,7 @@ az container create \
 
 </br>
 
-The Container will take a couple of minutes to deploy and should showing a state of **- Running ..**. Once it's finished deploying, you should the following at the bottom of the output.
+The Container will take a few minutes to deploy as there are **[other networking resources](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-vnet)** involved when deploying to a virtual network as compared to deploying a standard container instance. and should showing a state of **- Running ..**. Once it's finished deploying, you should see the following at the bottom of the output.
 
 ```json
   "osType": "Linux",
@@ -146,11 +146,13 @@ The Container will take a couple of minutes to deploy and should showing a state
 
 ## Connect to the Kubernetes Jumpbox Container in the Azure Portal
 
-Next, open up a web browser and login to the Azure Portal(). Browse to **Resource Group** --> **k8s-100days-iac-jumpbox** and then click on the Azure Container Instance, **k8s-jumpbox**. Next, under **Settings**, click on **Containers** and then click on the **Connect** Tab. You will be prompted to **Choose Start Up Command**, select **/bin/bash** and then click on the **Connect** button. Your view should be similar to what is shown below.
+Next, open up a web browser and login to the **Azure Portal(https://portal.azure.com)**. In the Subscription where you deployed your resources, browse to **Resource Group** --> **k8s-100days-iac-jumpbox** and then click on the Azure Container Instance, **k8s-jumpbox**. Next, under **Settings**, click on **Containers** and then click on the **Connect** Tab. You will be prompted to **Choose Start Up Command**, select **/bin/bash** and then click on the **Connect** button. Your view should be similar to what is shown below.
 
 ![001](../images/day74/day.74.deploying.private.k8s.clusters.in.azure.part3.001.png)
 
-Run the rest of the instructions that follow in the Console of the Jumpbox Container which can be copy and pasted into it.
+</br>
+
+> Copy and Paste the rest of the instructions that follow in the Console of the Jumpbox Container.
 
 </br>
 
@@ -213,10 +215,12 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 ## Things to Consider
 
+By using an Azure Container Instance, instead of a VM, you can more efficiently control what type of tools you want available on your Container Image through a **Dockerfile** and to customize how the container will be deployed in Azure using the Azure CLI, Azure PowerShell or ARM.
+
 If you are deploying a Private Kubernetes Cluster into an existing VNet, the Kubernetes API Endpoint IP Address will be something other than 10.255.255.5.
 
 </br>
 
 ## Conclusion
 
-In today's article we deployed a new Private Kubernetes Cluster in Azure using AKS-Engine. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article we covered how to access the Private Kubernetes Cluster from an Azure Container Instance. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
