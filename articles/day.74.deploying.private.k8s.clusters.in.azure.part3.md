@@ -142,6 +142,8 @@ The Container will take a few minutes to deploy as there are **[other networking
 }
 ```
 
+> **NOTE:** If for some reason, your Azure Container Instance is assigned a Private IP Address that isn't in the **jumpbox-subnet**, delete the Azure Container Instance and redeploy it. This only happened once during the writing of this article, but I wanted to provide a response in case it happened to you.
+
 </br>
 
 ## Connect to the Kubernetes Jumpbox Container in the Azure Portal
