@@ -11,9 +11,13 @@
 
 In today's article we will cover how to access the Private Kubernetes Cluster from an Azure Container Instance.
 
-[Creating the AKS-Engine Cluster Definition](#creating-the-aks-engine-cluster-definition)</br>
 [Options for connecting to a Private Kubernetes Cluster](#options-for-connecting-to-a-private-kubernetes-cluster)</br>
 [Deploy a new Subnet in the Kubernetes VNet](#deploy-a-new-subnet-in-the-kubernetes-vnet)</br>
+[Retrieve the IDs of the Private Kubernetes Cluster VNet and the new Subnet](#retrieve-the-ids-of-the-private-kubernetes-cluster-vnet-and-the-new-subnet)</br>
+[Deploy a new Resource Group for the Kubernetes Jumpbox Container](#deploy-a-new-resource-group-for-the-kubernetes-jumpbox-container)</br>
+[Deploy the Kubernetes Jumpbox Container](#deploy-the-kubernetes-jumpbox-container)</br>
+[Connect to the Kubernetes Jumpbox Container in the Azure Portal](#connect-to-the-kubernetes-jumpbox-container-in-the-azure-portal)</br>
+[Connect to the Private Kubernetes Cluster](#connect-to-the-private-kubernetes-cluster)</br>
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
@@ -109,7 +113,7 @@ You should get back the following output.
 
 </br>
 
-## Deploying the Kubernetes Jumpbox Container
+## Deploy the Kubernetes Jumpbox Container
 
 Next, run the following command to deploy an Azure Container Instance to connecting to the Kubernetes Cluster.
 
@@ -166,6 +170,8 @@ chmod 0600 $K8S_SSH_PRIVATE_KEY_NAME
 ```
 
 </br>
+
+## Connect to the Private Kubernetes Cluster
 
 Next, run the following command to retrieve the Master kubeconfig File from the Kubernetes Master Host.
 
