@@ -4,6 +4,8 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| Connecting GHE to Azure DevOps | [Day 75 - Securing GitHub Enterprise Connection in Azure DevOps3](/articles/day.75.securing.ghe.azure.devops.connections.md) |
+| Kubernetes in Azure | [Day 74 - Deploying a Private Kubernetes Cluster in Azure - Part 3](/articles/day.74.deploying.private.k8s.clusters.in.azure.part3.md) |
 | Kubernetes in Azure | [Day 74 - Deploying a Private Kubernetes Cluster in Azure - Part 3](/articles/day.74.deploying.private.k8s.clusters.in.azure.part3.md) |
 | Kubernetes in Azure | [Day 73 - Deploying a Private Kubernetes Cluster in Azure - Part 2](/articles/day.73.deploying.private.k8s.clusters.in.azure.part2.md) |
 | Kubernetes in Azure | [Day 72 - Deploying a Private Kubernetes Cluster in Azure - Part 1](/articles/day.72.deploying.private.k8s.clusters.in.azure.part1.md) |
