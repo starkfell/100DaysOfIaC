@@ -4,7 +4,7 @@
 
 One of the first things that often gets neglected when implementing Infrastructure as Code (IaC) is not having a way to reinstall all of your tools on your workstation in an automated fashion. At first this may not sound like something to even bother with; however, if the tools you are using are updated frequently or you are using a specific version of your tool due functionality issues, then having an automated way to redeploy all your tools becomes very important.
 
-For this series, the following tools will be installed and configured on a fresh installation of **[Ubuntu 18.04.3 LTS](https://ubuntu.com/download/server/thank-you?country=AT&version=18.04.3&architecture=amd64)** with openSSH Server enabled.
+For this series, the following tools will be installed and configured on a fresh installation of **[Ubuntu 18.04.3 LTS](https://ubuntu.com/download/server/thank-you?country=AT&version=18.04.3&architecture=amd64)** with openSSH Server enabled. Note: If you are using Windows 10 OS - you can enable Windows Subsystem for Linux (https://docs.microsoft.com/en-us/windows/wsl/install-win10), download Ubuntu, and follow along with the same steps.
 
 Below are a list of tools that will be used throughout this series.
 
