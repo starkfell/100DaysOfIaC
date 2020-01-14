@@ -4,6 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| DevSecOps in Azure DevOps | [Day 77 - Azure DevOps Security Code Analysis Extension](/articles/day.77.azdo.security.code.analysis.extension.md) |
 | DevOps Self-Hosted Agents in Azure DevOps | [Day 76 - Azure DevOps Self-Hosted Agents](/articles/day.76.azdo.self-hosted.agents.md) |
 | Connecting GHE to Azure DevOps | [Day 75 - Securing GitHub Enterprise Connection in Azure DevOps](/articles/day.75.securing.ghe.azure.devops.connections.md) |
 | Kubernetes in Azure | [Day 74 - Deploying a Private Kubernetes Cluster in Azure - Part 3](/articles/day.74.deploying.private.k8s.clusters.in.azure.part3.md) |
