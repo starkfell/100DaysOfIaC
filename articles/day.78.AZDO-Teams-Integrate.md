@@ -1,6 +1,6 @@
 # Day 78 - Azure DevOps Integration with Microsoft Teams - Part 1
 
-Working in a company that is 100% cloud-focused, it's easy to wind up with too many portals to deal with, sucking time away from actual work. This is one reason I love Microsoft Teams, because it offers so many opportunities to integrate your tools and services into the Teams client where I am already spending time.
+Working in a company that is 100% cloud-focused, it's easy to wind up with too many portals to deal with, sucking time away from actual work. This is one reason I love Microsoft Teams, because it offers so many opportunities to integrate our tools and services into the Teams client where I am already spending time.
 
 Teams allows us to add tabs to a channel, private chat, or group chat to integrate our cloud services. This way, we can keep the services we work with most close at hand in the client where we're already collaborating. 
 
@@ -41,8 +41,8 @@ Now, we'll configure how we want our board to appear.
 
 6. Select 'Add a Kanban board' radio button, shown in Figure 5.
 7. Then, configure the dropdowns in Figure 5 as follows:
-   - **Project** - <your project name> - SIMON, in my case
-   - **Team** - <name of Team to associate> - In my case, the 'SIMON Team' is the one where SIMON developers will chat.
+   - **Project** - \<your project name> - SIMON, in my case
+   - **Team** - \<name of Team to associate> - In my case, the 'SIMON Team' is the one where SIMON developers will chat.
    - **Backlog level** - Stories (the primary items we're working with every day) is what I choose. You could also pick *Features* here if you wanted to surface your backup in Teams from that perspective.
 
 ![005](../images/day78/005.png)
