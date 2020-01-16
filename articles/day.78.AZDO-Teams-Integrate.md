@@ -53,7 +53,7 @@ At this point, you should see your board (backlog) in the tab you added in the T
 
 ![006](../images/day78/006.png)
 
-**Figure 5**. Dashboard settings
+**Figure 6**. Dashboard settings
 
 ## Conclusion and Next Steps
 
