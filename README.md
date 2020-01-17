@@ -4,7 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
-| Azure DevOps integrations | [Day 79 - Azure DevOps Integration with Microsoft Teams - Part 2](/articles/day.78.AZDO-Teams-Integrate-Pt2.md) |
+| Azure DevOps integrations | [Day 79 - Azure DevOps Integration with Microsoft Teams - Part 2](/articles/day.79.AZDO-Teams-Integrate-Pt2.md) |
 | Azure DevOps integrations | [Day 78 - Azure DevOps Integration with Microsoft Teams - Part 1](/articles/day.78.AZDO-Teams-Integrate.md) |
 | DevSecOps in Azure DevOps | [Day 77 - Azure DevOps Security Code Analysis Extension](/articles/day.77.azdo.security.code.analysis.extension.md) |
 | DevOps Self-Hosted Agents in Azure DevOps | [Day 76 - Azure DevOps Self-Hosted Agents](/articles/day.76.azdo.self-hosted.agents.md) |
