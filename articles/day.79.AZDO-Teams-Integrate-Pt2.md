@@ -67,10 +67,10 @@ If I type @Azure, Teams shows me the full list of bot integrations I can use to 
 
 And when I add Azure Pipelines to the channel, Teams returns the following message...
 
-👋  Hi! Let's start monitoring your pipelines
+👋  "Hi! Let's start monitoring your pipelines
 Subscribe to one or more pipelines or all pipelines in a project with: @Azure Pipelines subscribe [pipeline url/ project url]
 To see what else you can do, type @Azure Pipelines help
-To know more see [documentation](https://aka.ms/AzurePipelinesTeamsIntegration).
+To know more see [documentation](https://aka.ms/AzurePipelinesTeamsIntegration)."
 
 AND the guidance on how to use chat to subscribe to pipeline notifications, and add or remove subscriptions for this channel. It's great to bring targeted notifications to the interface where the team collaborates, rather than adding to the flood of email overwhelming my inbox.
 
