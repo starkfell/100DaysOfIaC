@@ -17,7 +17,7 @@ By clicking the ellipsis (...) by the team, shown in Figure 1...
 
 **Figure 2**. Azure DevOps Project Dashboard (Teams tab)
 
-I'll then select Azure DevOps from the list of apps added to Teams, which includes App DevOps, I added yesterday in Day 78.
+I'll then select Azure DevOps from the list of apps added to Teams, which includes App DevOps that I added yesterday in Day 78.
 
 ![002](../images/day79/002.png)
 
