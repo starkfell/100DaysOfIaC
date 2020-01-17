@@ -11,25 +11,25 @@ By clicking the ellipsis (...) by the team, shown in Figure 1...
 
 **Figure 1**. Manage Apps link in Teams
 
-and then selecting apps, I added another Tab with a view of this dashboard of my work in a particular project within Azure Devops.
+ I added another Tab with a view of this dashboard of my work in a particular project within Azure Devops.
 
 ![009](../images/day79/009.png)
 
 **Figure 2**. Azure DevOps Project Dashboard (Teams tab)
 
-I'll select Azure DevOps from the list of apps added to Teams, which includes App DevOps, I added yesterday in Day 78.
+I'll then select Azure DevOps from the list of apps added to Teams, which includes App DevOps, I added yesterday in Day 78.
 
 ![002](../images/day79/002.png)
 
 **Figure 3**. Select organization in Azure DevOps
 
-Using the ellipsis again, I'll add a new Azure DevOps component - Azure Pipelines! 
+Clicking on the app, I'll add a new Azure DevOps component - Azure Pipelines!
 
 ![003](../images/day79/003.png)
 
 **Figure 4**. App selection dialog
 
-You'll get a splash screen with a description of some of Azure Pipelines features available in Teams. I'll show you how to get the detailed info from the Teams chat interface near the end of this installment.
+You'll get a splash screen with a description of some of Azure Pipelines features available in Teams. (I'll show you how to get the detailed info from the Teams chat interface near the end of this installment)
 
 ![004](../images/day79/004.png)
 
@@ -47,13 +47,14 @@ Then, we'll pick the Organization and Project we want to target in Azure Pipelin
 
 **Figure 7**. Select organization for Azure Pipelines integration
 
-Clicking the Azure Pipelines icon below the chat interface.
+Clicking the Azure Pipelines icon below the chat interface reveals a search feature for pipelines and releases.
 
 ![007](../images/day79/007.png)
 
 **Figure 8**. Search releases in Azure Pipelines from Teams
 
 From the search box at the top of the Teams client, you'll see I can also query release info from Azure Pipelines.
+
 ![010](../images/day79/010.png)
 
 **Figure 9**. Release search from Teams
@@ -71,7 +72,7 @@ Subscribe to one or more pipelines or all pipelines in a project with: @Azure Pi
 To see what else you can do, type @Azure Pipelines help
 To know more see [documentation](https://aka.ms/AzurePipelinesTeamsIntegration).
 
-...and the guidance on how to use chat to subscribe to pipeline notifications, and add or remove subscriptions for this channel. It's great to bring targeted notifications to the interface where the team collaborates, rather than adding to the flood of email overwhelming my inbox.
+AND the guidance on how to use chat to subscribe to pipeline notifications, and add or remove subscriptions for this channel. It's great to bring targeted notifications to the interface where the team collaborates, rather than adding to the flood of email overwhelming my inbox.
 
 ![012](../images/day79/012.png)
 
