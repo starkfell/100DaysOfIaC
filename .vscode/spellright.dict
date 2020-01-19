@@ -25,3 +25,6 @@ Grafana
 istioctl
 kubeconfig
 Antrea
+kube
+apiserver
+sh
