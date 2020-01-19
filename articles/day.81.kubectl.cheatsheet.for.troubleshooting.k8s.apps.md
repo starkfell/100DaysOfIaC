@@ -155,7 +155,7 @@ In order to disconnect from the Pod, type **exit**
 
 ## Things to Consider
 
-As you may have noticed, the Private Kubernetes Cluster isn't deployed with a Public IP Address so you won't be able to interact with the Kubernetes API externally. This is why Microsoft [recommends](https://docs.microsoft.com/en-us/azure/aks/private-clusters#steps-to-connect-to-the-private-cluster) that you either deploy a VM in the same VNet as the Cluster or create a VM in a different VNet that is peered with the Cluster. In **[Part 3](./day.74.deploying.private.k8s.clusters.in.azure.part3.md)**, we are going to show you another option to connect to the Private Kubernetes Cluster from an Azure Container Instance.
+Leeroy Jenkins
 
 </br>
 
