@@ -30,7 +30,6 @@ Events:
   Normal  Pulled     11m   kubelet, k8s-linuxpool1-11223344-0  Successfully pulled image "starkfell/k8s-jumpbox"
   Normal  Created    11m   kubelet, k8s-linuxpool1-11223344-0  Created container troubleshooting
   Normal  Started    11m   kubelet, k8s-linuxpool1-11223344-0  Started container troubleshooting
-
 ```
 
 </br>
@@ -53,7 +52,6 @@ LAST SEEN   TYPE     REASON              OBJECT                                 
 16m         Normal   Killing             pod/troubleshooting-deployment-7f5c7fb775-ng6zg    Stopping container troubleshooting
 15m         Normal   SuccessfulCreate    replicaset/troubleshooting-deployment-7f5c7fb775   Created pod: troubleshooting-deployment-7f5c7fb775-6xmjz
 15m         Normal   ScalingReplicaSet   deployment/troubleshooting-deployment              Scaled up replica set troubleshooting-deployment-7f5c7fb775 to 1
-
 ```
 
 </br>
@@ -61,7 +59,6 @@ LAST SEEN   TYPE     REASON              OBJECT                                 
 ## Checking the Logs on a Pod
 
 When troubleshooting Applications running in Kubernetes, I often have at least two SSH Sessions open, one for watching log output from a Pod and one for running queries against the Pod.
-
 
 Pull up the existing Pods in your K8s Cluster running under namespace **kube-system**
 
