@@ -8,8 +8,7 @@ In today's article we will cover the following scenarios when troubleshooting yo
 
 [Deploy a new Resource Group](#deploy-a-new-resource-group)</br>
 [Create the ARM Template File](#create-the-arm-template-file)</br>
-[Retrieving the IP Address of a Pod](#retrieving-the-ip-address-of-a-pod)</br>
-[Connecting to a Pod](#connecting-to-a-pod)</br>
+[Deploy the ARM Template](#deploy-the-arm-template)</br>
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
@@ -256,6 +255,19 @@ Copy the contents below into a file called **azuredeploy.json**.
 
 </br>
 
+In order to automatically connect the Web Application being deployed to the PostgreSQL Server, the **connectionString** is automatically populated with the **databaseName**, **administratorLogin**, and **administratorLoginPassword** Parameters of the PostgreSQL Server at runtime.
+
+```json
+"properties": {
+    "defaultConnection": {
+        "value": "[concat('Database=', variables('databaseName'), ';Server=', reference(resourceId('Microsoft.DBforPostgreSQLvariables('serverName'))).fullyQualifiedDomainName, ';User Id=', parameters('administratorLogin'),'@', variables('servePassword=', parameters('administratorLoginPassword'))]",
+        "type": "PostgreSQL"
+    }
+}
+```
+
+</br>
+
 Below is a table of the Parameter Values that will be passed to the ARM Template at runtime.
 
 |Name|Type|Default Value|Description|
@@ -333,4 +345,4 @@ If you need to use virtual network rules for your PostgreSQL Server, you need to
 
 ## Conclusion
 
-In today's article we we covered several scenarios for using **kubectl** to assist in troubleshooting your Kubernetes Applications. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article we covered how to deploy a PostgreSQL Server in Azure using ARM and how to make it automatically connect to a newly deployed Web Application. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
