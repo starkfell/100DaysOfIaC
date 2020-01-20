@@ -1,10 +1,10 @@
 # Day 81 - Cheat sheet for Troubleshooting Your Applications in Kubernetes
 
-While there are many Cheat sheets already available online, I wanted to provide the most common **kubectl** commands that I use on a regular basis to troubleshoot applications running in a Kubernetes Environment. These examples are also documented elsewhere on various sites and blogs.
+While there are many guides and cheat sheets for using **kubectl** already available online, I wanted to provide the most common **kubectl** commands that I use on a regular basis to troubleshoot applications running in a Kubernetes Environment.
 
 </br>
 
-In today's article we will cover the following.
+In today's article we will cover the following scenarios when troubleshooting your Kubernetes Applications using **kubectl**.
 
 [Checking the Events on a Pod](#checking-the-events-on-a-pod)</br>
 [Checking the Logs on a Pod](#checking-the-logs-on-a-pod)</br>
@@ -155,10 +155,12 @@ In order to disconnect from the Pod, type **exit**
 
 ## Things to Consider
 
-Leeroy Jenkins
+Below are some additional links that you may find useful when using **kubectl**.
 
-</br>
+[kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)</br>
+[Kubectl cheatsheet (Unofficial)](https://unofficial-kubernetes.readthedocs.io/en/latest/user-guide/kubectl-cheatsheet/)</br>
+[cheatsheet-kubernetes-A4](https://github.com/dennyzhang/cheatsheet-kubernetes-A4)</br>
 
 ## Conclusion
 
-In today's article we deployed a new Private Kubernetes Cluster in Azure using AKS-Engine. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article we we covered several scenarios for using **kubectl** to assist in troubleshooting your Kubernetes Applications. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
