@@ -29,3 +29,6 @@ kube
 apiserver
 sh
 cheatsheet
+azuredeploy
+Sku
+postgresql
