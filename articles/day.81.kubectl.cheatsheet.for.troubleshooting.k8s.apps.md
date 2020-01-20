@@ -1,4 +1,4 @@
-# Day 81 - Cheat sheet for Troubleshooting Your Applications in Kubernetes
+# Day 81 - Troubleshooting Your Applications in Kubernetes using kubectl
 
 While there are many guides and cheat sheets for using **kubectl** already available online, I wanted to provide the most common **kubectl** commands that I use on a regular basis to troubleshoot applications running in a Kubernetes Environment.
 
@@ -10,6 +10,8 @@ In today's article we will cover the following scenarios when troubleshooting yo
 [Checking the Logs on a Pod](#checking-the-logs-on-a-pod)</br>
 [Retrieving the IP Address of a Pod](#retrieving-the-ip-address-of-a-pod)</br>
 [Connecting to a Pod](#connecting-to-a-pod)</br>
+[Things to Consider](#things-to-consider)</br>
+[Conclusion](#conclusion)</br>
 
 ## Checking the Events on a Pod
 
