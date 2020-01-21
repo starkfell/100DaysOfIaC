@@ -1,6 +1,6 @@
 # Day 82 - Deploying PostgreSQL in Azure using ARM
 
-Today we will cover how to deploy a PostgreSQL Server in Azure using ARM and how to connect it to a newly deployed Web Application.
+Today we will cover how to deploy a PostgreSQL Server and a Web Application in Azure using ARM and how to automatically connect the two.
 
 </br>
 
