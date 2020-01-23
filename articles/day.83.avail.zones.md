@@ -36,7 +36,7 @@ Get-AzComputeResourceSku | where {$_.Locations.Contains("eastus") `
 
 The output is shown in Figure 1 below.
 
-![001](../images/day83/001.png)
+![001](../images/day83/001.jpg)
 
 **Figure 1**. Output of PowerShell to enumerate VM SKUs that support availability zones
 
