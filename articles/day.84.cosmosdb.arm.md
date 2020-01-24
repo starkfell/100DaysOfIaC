@@ -23,7 +23,7 @@ Below is a sample ARM template to deploy Cosmos DB with MongoDB API. As you look
 
 > **NOTES:** My template includes default values for **primary and secondary regions** for the new Cosmos account, so be sure to adjust the defaults for what suits you, or remove them from the template. It also includes a couple of parameters for collection names. If you're new to Cosmos DB, create a couple of default **collections** just so you can see the result through one of the MongoDB admin tools mentioned later in this article. Naturally, you can cut these from the template pretty easily if you prefer.
 
-``` JSON
+```json
 {
 	"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
