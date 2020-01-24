@@ -4,6 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| ARM Template Deployments | [Day 84 - Deploying Cosmos DB (with Mongo API) in Azure using ARM](/articles/day.84.cosmosdb.arm.md)|
 | Availability Zones | [Day 83 - HA for VMs with Availability Zones in ARM](/articles/day.83.avail.zones.md)|
 | ARM Template Deployments | [Day 82 - Deploying PostgreSQL in Azure using ARM](/articles/day.82.deploying.postgres.in.azure.using.arm.md)|
 | Azure DevOps integrations | [Day 81 - Troubleshooting Your Applications in Kubernetes using kubectl](/articles/day.81.kubectl.cheatsheet.for.troubleshooting.k8s.apps.md) |
