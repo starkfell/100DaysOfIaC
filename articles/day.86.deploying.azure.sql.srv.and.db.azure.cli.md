@@ -76,5 +76,21 @@ az sql server create \
 --resource-group "100days-azuredb" \
 --location "westeurope" \
 --admin-user "sqladmdays" \
---admin-password $SQL_SRV_ADMIN_PASSWORD
+--admin-password $SQL_SRV_ADMIN_PASSWORD \
+--query '[name,state]' \
+--output tsv
 ```
+
+You should get back something similar to the response below.
+
+```console
+100days-azuresqlsrv-st4c
+Ready
+```
+
+# Upload a test Database to the SQL Server
+
+Download stuff
+
+https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2017.bak
+
