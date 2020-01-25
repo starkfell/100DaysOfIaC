@@ -241,6 +241,9 @@ All things considered, it's a great way to get a look at Azure Database for MySQ
     ]
 }
 ```
+# MySQL Admin Tools
+
+The go-to admin tool for MySQL is MySQL Workbench, which you can download from the MySQL website at https://www.mysql.com/products/workbench/.
 
 ## Conclusion
 
