@@ -271,6 +271,37 @@ az sql db import \
 
 ```
 
+The Import process will take a few minutes to run. When it's completed you should get output similar to what is shown below.
+
 ```console
-Operation failed with status: 'Bad Request'. Details: There was an error that occurred during this operation : '<string xmlns="http://schemas.microsoft.com/2003/10/Serialization/">Error encountered during the service operation. ; Exception Microsoft.SqlServer.Management.Dac.Services.ServiceException:Unable to authenticate request; Inner exception System.Data.SqlClient.SqlException:Cannot open server &amp;#39;100days-azuresqlsrv-st4c&amp;#39; requested by the login. Client with IP address &amp;#39;65.52.129.125&amp;#39; is not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.; </string>'
+{
+  "blobUri": "https://100daysqlimportst4c.blob.core.windows.net/bacpac-files/WideWorldImporters-Standard.bacpac",
+  "databaseName": "wide-world-imports-std",
+  "errorMessage": null,
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/100days-azuredb/providers/Microsoft.Sql/servers/100days-azuresqlsrv-st4c/databases/wide-world-imports-std/extensions/import",
+  "lastModifiedTime": "1/26/2020 9:50:51 PM",
+  "name": "import",
+  "queuedTime": "1/26/2020 9:36:48 PM",
+  "requestId": "0f30e0e9-fcd9-4e02-b6fb-ad964e334050",
+  "requestType": "Import",
+  "resourceGroup": "100days-azuredb",
+  "serverName": "100days-azuresqlsrv-st4c",
+  "status": "Completed",
+  "type": "Microsoft.Sql/servers/databases/extensions"
+}
 ```
+
+</br>
+
+## Things to Consider
+
+The PostgreSQL Database name must be 63 or fewer characters and must start with a letter or an underscore. The rest of the string can contain letters, digits, and underscores.
+
+If you need to use virtual network rules for your PostgreSQL Server, you need to use General Purpose or Memory Optimized servers. Virtual network rules are not available to Basic servers.
+
+</br>
+
+## Conclusion
+
+In today's article we covered how to deploy a PostgreSQL Server in Azure using ARM and how to make it automatically connect to a newly deployed Web Application. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+
