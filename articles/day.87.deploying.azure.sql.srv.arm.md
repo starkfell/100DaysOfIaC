@@ -1,6 +1,10 @@
-# Day 86 - Deploying Azure SQL Server using the Azure CLI
+# Day 86 - Deploying Azure SQL Server using ARM
 
-Today we will cover how to deploy an Azure SQL Server in Azure and how to and how to import a Database using a BACPAC file using the Azure CLI.
+Today we will cover how to deploy an Azure SQL Server in Azure and how to and how to import a Database using a BACPAC file.
+
+</br>
+
+> **NOTE:** This article was tested and written for a Linux Host running Ubuntu 18.04 with Azure CLI installed.
 
 </br>
 
