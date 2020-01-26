@@ -1,14 +1,18 @@
-# Day 86 - Deploying an Azure SQL Server and Database using the Azure CLI
+# Day 86 - Deploying an Azure SQL Server using the Azure CLI
 
-Today we will cover how to deploy an Azure  and a Web Application in Azure using ARM and how to automatically connect the two.
+Today we will cover how to deploy an Azure SQL Server in Azure and how to and how to import a Database using a BACPAC file.
 
 </br>
 
-In today's article we will cover the following scenarios when troubleshooting your Kubernetes Applications using **kubectl**.
+The steps for today's article are below.
 
 [Deploy a new Resource Group](#deploy-a-new-resource-group)</br>
-[Create the ARM Template File](#create-the-arm-template-file)</br>
-[Deploy the ARM Template](#deploy-the-arm-template)</br>
+[Generate a Password for the Azure SQL Server](#generate-a-password-for-the-azure-sql-server)</br>
+[Generate a 4-character Alphanumeric Surname for the SQL Server](#generate-a-4-character-alphanumeric-surname-for-the-sql-server)</br>
+[Deploy the Azure SQL Server and Blank Database](#deploy-the-azure-sql-server-and-blank-database)</br>
+[Create a Storage Account to use to Import SQL Databases](#create-a-storage-account-to-use-to-import-sql-databases)</br>
+[Upload a Database BACPAC File](#upload-a-database-bacpac-file)</br>
+[Import the Database into the Azure SQL Server](#import-the-database-into-the-azure-sql-server)</br>
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
@@ -37,6 +41,8 @@ You should get back the following output:
   "type": "Microsoft.Resources/resourceGroups"
 }
 ```
+
+</br>
 
 ## Generate a Password for the Azure SQL Server
 
@@ -87,6 +93,8 @@ You should get back something similar to the response below.
 100days-azuresqlsrv-st4c
 Ready
 ```
+
+</br>
 
 Next, run the following command to create a new Database on the SQL Server.
 
@@ -199,6 +207,8 @@ Succeeded
 available
 ```
 
+</br>
+
 Next, run the following command to create a container for the SQL BACPAC file(s).
 
 ```bash
@@ -214,6 +224,8 @@ You should get back the following response.
   "created": true
 }
 ```
+
+</br>
 
 Next, run the following command to retrieve the Storage Account Primary Key to use later.
 
@@ -255,6 +267,8 @@ Finished[#############################################################]  100.000
   "lastModified": "2020-01-26T17:50:51+00:00"
 }
 ```
+
+</br>
 
 ## Import the Database into the Azure SQL Server
 
@@ -303,5 +317,4 @@ If you need to use virtual network rules for your PostgreSQL Server, you need to
 
 ## Conclusion
 
-In today's article we covered how to deploy a PostgreSQL Server in Azure using ARM and how to make it automatically connect to a newly deployed Web Application. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
-
+In today's article we covered how to deploy an Azure SQL Server in Azure and how to and how to import a Database using a BACPAC file. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
