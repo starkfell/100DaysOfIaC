@@ -309,9 +309,7 @@ The Import process will take a few minutes to run. When it's completed you shoul
 
 ## Things to Consider
 
-The PostgreSQL Database name must be 63 or fewer characters and must start with a letter or an underscore. The rest of the string can contain letters, digits, and underscores.
-
-If you need to use virtual network rules for your PostgreSQL Server, you need to use General Purpose or Memory Optimized servers. Virtual network rules are not available to Basic servers.
+We recommend that you review how [Firewall Rules behave in Azure SQL Databases](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure) and what to keep in mind when [importing BACPAC files to a database in Azure SQL Databases](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-import?tabs=azure-powershell).
 
 </br>
 
