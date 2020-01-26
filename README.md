@@ -4,6 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| Azure CLI | [Day 86 - Deploying Azure SQL Server using the Azure CLI](/articles/day.86.deploying.azure.sql.srv.azure.cli.md)|
 | ARM Template Deployments | [Day 85 - Deploying Azure DB for MySQL in Azure using ARM](/articles/day.85.mysqldb.arm.md)|
 | ARM Template Deployments | [Day 84 - Deploying Cosmos DB (with Mongo API) in Azure using ARM](/articles/day.84.cosmosdb.arm.md)|
 | Availability Zones | [Day 83 - HA for VMs with Availability Zones in ARM](/articles/day.83.avail.zones.md)|

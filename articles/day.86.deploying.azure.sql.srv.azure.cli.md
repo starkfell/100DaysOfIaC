@@ -1,4 +1,4 @@
-# Day 86 - Deploying an Azure SQL Server using the Azure CLI
+# Day 86 - Deploying Azure SQL Server using the Azure CLI
 
 Today we will cover how to deploy an Azure SQL Server in Azure and how to and how to import a Database using a BACPAC file.
 
