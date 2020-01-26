@@ -33,3 +33,4 @@ azuredeploy
 Sku
 postgresql
 guid
+bacpac
