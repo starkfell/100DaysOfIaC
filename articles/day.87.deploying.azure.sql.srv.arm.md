@@ -274,6 +274,8 @@ You should get back the connection string currently in use for the Web App to co
 Data Source=tcp:100dayssqlsrv-dol.database.windows.net,1433;Initial Catalog=wide-world-imports-std;User Id=sqladmdays@100dayssqlsrv-dol.database.windows.net;Password=ff5b2522-ff34-5477-96d5-da2d182d46cb;
 ```
 
+</br>
+
 Set the Password shown above into the **SQL_SRV_ADMIN_PASSWORD** variable as shown below.
 
 ```bash
@@ -463,7 +465,7 @@ The Import process will take a few minutes to run. When it's completed you shoul
 
 ## Things to Consider
 
-You can also Import SQL BACPAC files in an ARM Template which you can read about [here](docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-deploy-sql-extensions-bacpac). Irrespective of what you decide to use (ARM Templates, Azure PowerShell, and Azure CLI), choose the one that best suits your needs.
+You can also Import SQL BACPAC files in an ARM Template which you can read about **[here](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-deploy-sql-extensions-bacpac)**. Irrespective of what you decide to use (ARM Templates, Azure PowerShell, and Azure CLI), choose the one that best suits your needs.
 
 </br>
 
