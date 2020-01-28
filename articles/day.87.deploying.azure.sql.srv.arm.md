@@ -221,6 +221,8 @@ Copy the contents below into a file called **azuredeploy.json**.
 }
 ```
 
+</br>
+
 Below is a table of the Parameter Values that will be passed to the ARM Template at runtime.
 
 |Name|Type|Default Value|Description|
@@ -272,6 +274,12 @@ You should get back the connection string currently in use for the Web App to co
 Data Source=tcp:100dayssqlsrv-dol.database.windows.net,1433;Initial Catalog=wide-world-imports-std;User Id=sqladmdays@100dayssqlsrv-dol.database.windows.net;Password=ff5b2522-ff34-5477-96d5-da2d182d46cb;
 ```
 
+Set the Password shown above into the **SQL_SRV_ADMIN_PASSWORD** variable as shown below.
+
+```bash
+SQL_SRV_ADMIN_PASSWORD="ff5b2522-ff34-5477-96d5-da2d182d46cb"
+```
+
 </br>
 
 ## Create a Firewall Rule for your Public IP
@@ -286,13 +294,13 @@ MY_PUB_IP=$(dig +short myip.opendns.com @resolver1.opendns.com)
 
 </br>
 
-Run the following command to create a new Firewall Rule on the Azure SQL Server to grant yourself access.
+Run the following command to create a new Firewall Rule on the Azure SQL Server to grant yourself access. Replace the three characters after **100dayssqlsrv-** in the *--name* switch below with whatever is currently in place for your SQL Server in the Azure Portal and then run the command.
 
 ```bash
 az sql server firewall-rule create \
 --name "my-public-ip" \
---resource-group "100days-azuredb" \
---server "100days-azuresqlsrv-$RANDOM_ALPHA" \
+--resource-group "100days-azsql" \
+--server "100dayssqlsrv-dol" \
 --start-ip-address $MY_PUB_IP \
 --end-ip-address $MY_PUB_IP
 ```
@@ -318,12 +326,28 @@ You should get back a response similar to the output below.
 
 ## Create a Storage Account to use to Import SQL Databases
 
+Next, run the following command to generate a random 4-character set of alphanumeric characters.
+
+```bash
+RANDOM_ALPHA=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
+```
+
+</br>
+
+If you are using a Mac, use the command below instead.
+
+```bash
+RANDOM_ALPHA=$(LC_CTYPE=C tr -dc 'a-z0-9' < /dev/urandom | fold -w 4 | head -n 1)
+```
+
+</br>
+
 Run the following command to create a new Storage Account
 
 ```bash
 az storage account create \
 --name "100daysqlimport$RANDOM_ALPHA" \
---resource-group "100days-azuredb" \
+--resource-group "100days-azsql" \
 --location "westeurope" \
 --query '[provisioningState,statusOfPrimary]' \
 --output tsv
@@ -401,17 +425,18 @@ Finished[#############################################################]  100.000
 
 ## Import the Database into the Azure SQL Server
 
+Run the following command to import the **WideWorldImporters-Standard.bacpac** file into the **wide-world-imports-std** Database. Replace the three characters after **100dayssqlsrv-** in the *--server* switch below with whatever is currently in place for your SQL Server in the Azure Portal and then run the command.
+
 ```bash
 az sql db import \
 --name "wide-world-imports-std" \
---server "100days-azuresqlsrv-$RANDOM_ALPHA" \
---resource-group "100days-azuredb" \
+--server "100dayssqlsrv-dol" \
+--resource-group "100days-azsql" \
 --admin-user "sqladmdays" \
 --admin-password $SQL_SRV_ADMIN_PASSWORD \
 --storage-key-type "StorageAccessKey" \
 --storage-key $AZ_STORAGE_PRIMARY_ACCOUNT_KEY \
 --storage-uri "https://100daysqlimport$RANDOM_ALPHA.blob.core.windows.net/bacpac-files/WideWorldImporters-Standard.bacpac"
-
 ```
 
 The Import process will take a few minutes to run. When it's completed you should get output similar to what is shown below.
@@ -438,7 +463,7 @@ The Import process will take a few minutes to run. When it's completed you shoul
 
 ## Things to Consider
 
-We recommend that you review how [Firewall Rules behave in Azure SQL Databases](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure) and what to keep in mind when [importing BACPAC files to a database in Azure SQL Databases](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-import?tabs=azure-powershell).
+You can also Import SQL BACPAC files in an ARM Template which you can read about [here](docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-deploy-sql-extensions-bacpac). Irrespective of what you decide to use (ARM Templates, Azure PowerShell, and Azure CLI), choose the one that best suits your needs.
 
 </br>
 
