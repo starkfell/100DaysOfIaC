@@ -1,6 +1,6 @@
 # Day 87 - Deploying Azure SQL Server using ARM
 
-Today we will cover how to deploy an Azure SQL Server in Azure and how to and how to import a Database using a BACPAC file.
+Today we will cover how to deploy an Azure SQL Server in Azure using ARM and how to and how to import a Database using a BACPAC file.
 
 </br>
 
@@ -471,4 +471,4 @@ You can also Import SQL BACPAC files in an ARM Template which you can read about
 
 ## Conclusion
 
-In today's article we covered how to deploy an Azure SQL Server in Azure and how to and how to import a Database using a BACPAC file. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article we covered how to deploy an Azure SQL Server in Azure using ARM and how to and how to import a Database using a BACPAC file. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
