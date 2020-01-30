@@ -4,6 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| SQL BACPAC in Azure | [Day 88 - SQL BACPAC Files and Azure CLI](/articles/day88.sql.bacpac.md)|
 | ARM Template Deployments | [Day 87 - Deploying Azure SQL Server using ARM](/articles/day.87.deploying.azure.sql.srv.arm.md)|
 | Azure CLI | [Day 86 - Deploying Azure SQL Server using the Azure CLI](/articles/day.86.deploying.azure.sql.srv.azure.cli.md)|
 | ARM Template Deployments | [Day 85 - Deploying Azure DB for MySQL in Azure using ARM](/articles/day.85.mysqldb.arm.md)|
