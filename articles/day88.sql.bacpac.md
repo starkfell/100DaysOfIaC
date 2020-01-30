@@ -24,7 +24,7 @@ In short, the BACPAC is super-handy in cloud migration scenarios, whether moving
 
 ## Operations, Tools, and Methods
 
-When working with a BACPAC file, you'll likely be performing one of two operations: IMPORT or an EXPORT. Both these capabilities are supported by the database management tools: SQL Server Management Studio, the Azure Portal, [DACFx API](https://blogs.msmvps.com/deborahk/deploying-a-dacpac-with-dacfx-api/), as well as the Azure CLI.
+When working with a BACPAC file, you'll likely be performing one of two operations: IMPORT or an EXPORT. Both these capabilities are supported by the database management tools: SQL Server Management Studio, the Azure Portal, [DACFx API](https://blogs.msmvps.com/deborahk/deploying-a-dacpac-with-dacfx-api/), as well as ARM and the Azure CLI.
 
 We'll be focused on import and export of BACPAC of your Azure SQL database with the [Azure portal](https://portal.azure.com).
 
