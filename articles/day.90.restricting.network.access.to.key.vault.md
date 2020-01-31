@@ -73,7 +73,7 @@ You should get back a similar response.
 
 ## Add the Service Endpoint for Microsoft.KeyVault to the VNet
 
-Next, Open up the Azure Portal and browse to **100days-lockdown-vnet** in the **100days-lockdown** Resource Group. Click into the VNet and then click on **Service endpoints** under **Settings**. Next, in the **Service** drop-down menu, choose *Microsoft.KeyVault* and in the **Subnets** drop-down menu choose *100days-lockdown-subnet*.
+Next, Open up the [Azure Portal](https://portal.azure.com) and browse to **100days-lockdown-vnet** in the **100days-lockdown** Resource Group. Click into the VNet and then click on **Service endpoints** under **Settings**. Next, in the **Service** drop-down menu, choose *Microsoft.KeyVault* and in the **Subnets** drop-down menu choose *100days-lockdown-subnet*.
 
 ![001](../images/day90/day.90.restricting.access.to.key.vault.001.png)
 
@@ -232,7 +232,7 @@ Caller: appid=00000000-0000-0000-0000-000000000000;oid=00000000-0000-0000-0000-0
 Vault: iac100dayslockdown;location=westeurope
 ```
 
-If you browse the Azure Key Vault in the Azure Portal, you'll notice that you get the message *You are unauthorized to view these contents.* when attempting to view **Secrets** or **Keys**.
+If you browse the Azure Key Vault in the [Azure Portal](https://portal.azure.com), you'll notice that you get the message *You are unauthorized to view these contents.* when attempting to view **Secrets** or **Keys**.
 
 </br>
 
