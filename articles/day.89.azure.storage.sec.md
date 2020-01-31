@@ -14,11 +14,11 @@ If you're looking back in the "100 Days" series, we touch on various aspects of 
 
 In this article:
 
-[Shared Keys](#shared-keys)
-[Shared Access Signatures (SAS)](#shared-access-signatures-sas)
-[Azure AD Authentication](#azure-ad-authentication)
-[Which is best?](#which-is-best)
-[Key Vault Integration](#key-vault-integration)
+- [Shared Keys](#shared-keys)
+- [Shared Access Signatures (SAS)](#shared-access-signatures-sas)
+- [Azure AD Authentication](#azure-ad-authentication)
+- [Which is best?](#which-is-best)
+- [Key Vault Integration](#key-vault-integration)
 
 ## Shared Keys
 [Shared Key](https://docs.microsoft.com/en-us/rest/api/storageservices/authorize-with-shared-key) is exactly what it sounds like: a key (in cryptographic terms, a string of bits used by an algorithm) you share with those to whom you would like to delegate access. This is equivalent to giving root access to a storage account. It grants all privileges to whomever has the key, from anywhere at anytime until the key is revoked or rolled over.
