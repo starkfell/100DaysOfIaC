@@ -14,7 +14,7 @@ In today's article we will cover the following scenarios when troubleshooting yo
 [Deploy a VNet](#deploy-a-vnet)</br>
 [Add the Service Endpoint for Microsoft.KeyVault to the VNet](#add-the-service-endpoint-for-microsoftkeyvault-to-the-vnet)</br>
 [Deploy Azure Key Vault](#deploy-azure-key-vault)</br>
-[Add a Secret to Key Vault](#add-a-secret-to-key-vault))</br>
+[Add a Secret to Key Vault](#add-a-secret-to-key-vault)</br>
 [Restrict access to the Azure Key Vault](#restrict-access-to-the-azure-key-vault)</br>
 [Verify Restricted Access to Key Vault](#verify-restricted-access-to-key-vault)</br>
 [Things to Consider](#things-to-consider)</br>
@@ -73,13 +73,13 @@ You should get back a similar response.
 
 ## Add the Service Endpoint for Microsoft.KeyVault to the VNet
 
-Next, Open up the [Azure Portal](https://portal.azure.com) and browse to **100days-lockdown-vnet** in the **100days-lockdown** Resource Group. Click into the VNet and then click on **Service endpoints** under **Settings**. Next, in the **Service** drop-down menu, choose *Microsoft.KeyVault* and in the **Subnets** drop-down menu choose *100days-lockdown-subnet*.
+Next, Open up the [Azure Portal](https://portal.azure.com) and browse to **100days-lockdown-vnet** in the **100days-lockdown** Resource Group. Browse to the **Service endpoints** under **Settings** and click on the **+ Add** at the top. Next, in the **Service** drop-down menu, choose *Microsoft.KeyVault* and in the **Subnets** drop-down menu choose *100days-lockdown-subnet*.
 
 ![001](../images/day90/day.90.restricting.access.to.key.vault.001.png)
 
 </br>
 
-When you are done, click on the **Add** button. The Service Endpoint will take only a few seconds to apply.
+When you are done, click on the **Add** button at the bottom. The Service Endpoint will take only a few seconds to apply.
 
 </br>
 
@@ -106,7 +106,7 @@ westeurope  iac100dayslockdown   100days-lockdown
 
 ## Add a Secret to Key Vault
 
-Next, the following command to generate a random value
+Next, run the following command to generate a random value.
 
 ```bash
 TRASH_PANDA=$(cat /proc/sys/kernel/random/uuid)
@@ -132,7 +132,7 @@ Value
 f5e99ebe-c8c0-4edd-875a-884b89c85c26
 ```
 
-Next, query the Key Vault to verify that we can still access the Secret
+Next, run the following command to verify Access to the Secret.
 
 ```bash
 az keyvault secret list \
@@ -162,17 +162,12 @@ az keyvault update \
 
 You should back a response similar to the one below.
 
-```console
+```json
 {
   "bypass": "AzureServices",
   "defaultAction": "Deny",
   "ipRules": [],
-  "virtualNetworkRules": [
-    {
-      "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/100days-lockdown/providers/microsoft.network/virtualnetworks/100days-lockdown-vnet/subnets/100days-lockdown-subnet",
-      "resourceGroup": "100days-lockdown"
-    }
-  ]
+  "virtualNetworkRules": []
 }
 ```
 
@@ -195,22 +190,24 @@ Next, run the following command to create a Network Rule in Azure Key Vault rest
 az keyvault network-rule add \
 --name "iac100dayslockdown" \
 --subnet "$SUBNET_ID" \
---output table
+--query properties.networkAcls
 ```
 
-```console
+```json
 {
   "bypass": "AzureServices",
   "defaultAction": "Deny",
   "ipRules": [],
   "virtualNetworkRules": [
     {
-      "id": "/subscriptions/84f065f5-e37a-4127-9c82-0b1ecd57a652/resourcegroups/100days-lockdown/providers/microsoft.network/virtualnetworks/100days-lockdown-vnet/subnets/100days-lockdown-subnet",
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/100days-lockdown/providers/microsoft.network/virtualnetworks/100days-lockdown-vnet/subnets/100days-lockdown-subnet",
       "resourceGroup": "100days-lockdown"
     }
   ]
 }
 ```
+
+</br>
 
 ## Verify Restricted Access to Key Vault
 
@@ -231,6 +228,8 @@ Client address: 000.000.000.000
 Caller: appid=00000000-0000-0000-0000-000000000000;oid=00000000-0000-0000-0000-000000000000;iss=https://sts.windows.net/00000000-0000-0000-0000-000000000000/
 Vault: iac100dayslockdown;location=westeurope
 ```
+
+<br/>
 
 If you browse the Azure Key Vault in the [Azure Portal](https://portal.azure.com), you'll notice that you get the message *You are unauthorized to view these contents.* when attempting to view **Secrets** or **Keys**.
 
