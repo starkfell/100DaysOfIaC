@@ -8,7 +8,11 @@ Today we will cover how to restrict access to Azure Key Vault using Network Rule
 
 </br>
 
-In today's article we will cover the following scenarios when troubleshooting your Kubernetes Applications using **kubectl**.
+In certain environments, you may be required to restrict access to Azure Resources based upon a Public IP Address, block all inbound traffic from the internet, restrict traffic from a specific set of VNets and Subnets, or a combination of them. The walkthrough below will demonstrate how to block all access to an Azure Key Vault except from a specific Subnet.
+
+</br>
+
+In today's article we will be performing the following steps.
 
 [Deploy a new Resource Group](#deploy-a-new-resource-group)</br>
 [Deploy a VNet](#deploy-a-vnet)</br>
