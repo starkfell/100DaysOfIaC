@@ -177,7 +177,7 @@ You should back a response similar to the one below.
 
 </br>
 
-Run the following command to retrieve the ID of the **100days-lockdown-subnet** subnet.
+Run the following command to retrieve the Subnet ID of the **100days-lockdown-subnet** subnet.
 
 ```bash
 SUBNET_ID=$(az network vnet subnet list \
@@ -215,7 +215,7 @@ az keyvault network-rule add \
 
 ## Verify Restricted Access to Key Vault
 
-Finally, run the following command to verify that you can no longer access the Key Vault from outside of the **100days-lockdown-vnet** VNet.
+Finally, run the following command to verify that you can no longer access the Key Vault from outside of the **100days-lockdown-subnet** Subnet.
 
 ```bash
 az keyvault secret list \
