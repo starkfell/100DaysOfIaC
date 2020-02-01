@@ -79,7 +79,7 @@ You should get back a similar response.
 
 Next, Open up the [Azure Portal](https://portal.azure.com) and browse to **100days-lockdown-vnet** in the **100days-lockdown** Resource Group. Browse to the **Service endpoints** under **Settings** and click on the **+ Add** at the top. Next, in the **Service** drop-down menu, choose *Microsoft.KeyVault* and in the **Subnets** drop-down menu choose *100days-lockdown-subnet*.
 
-![001](../images/day90/day.90.restricting.access.to.key.vault.001.png)
+![001](../images/day90/day.90.restricting.network.access.to.key.vault.001.png)
 
 </br>
 
