@@ -1,6 +1,6 @@
 # Day 91 - Restricting Network Access to Azure Container Registry
 
-Today we will cover how to restrict access to Azure Key Vault using Network Rules.
+Today we will cover how to restrict access to an Azure Container Registry using Network Rules.
 
 </br>
 
@@ -18,11 +18,10 @@ In today's article we will be performing the following steps.
 
 [Deploy a new Resource Group](#deploy-a-new-resource-group)</br>
 [Deploy a VNet](#deploy-a-vnet)</br>
-[Add the Service Endpoint for Microsoft.KeyVault to the VNet](#add-the-service-endpoint-for-microsoftkeyvault-to-the-vnet)</br>
-[Deploy Azure Key Vault](#deploy-azure-key-vault)</br>
-[Add a Secret to Key Vault](#add-a-secret-to-key-vault)</br>
-[Restrict access to the Azure Key Vault](#restrict-access-to-the-azure-key-vault)</br>
-[Verify Restricted Access to Key Vault](#verify-restricted-access-to-key-vault)</br>
+[Add the Service Endpoint for Microsoft.ContainerRegistry to the VNet](#add-the-service-endpoint-for-microsoftcontainerregistry-to-the-vnet)</br>
+[Deploy an Azure Container Registry](#deploy-an-azure-container-registry)</br>
+[Restrict access to the Azure Container Registry](#restrict-access-to-the-azure-container-registry)</br>
+[Verify Restricted Access to the Azure Container Registry](#verify-restricted-access-to-the-azure-container-registry)</br>
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
@@ -89,7 +88,7 @@ When you are done, click on the **Add** button at the bottom. The Service Endpoi
 
 </br>
 
-## Deploy Azure Container Registry
+## Deploy an Azure Container Registry
 
 Next, run the following command to create a new Azure Container Registry in the Resource Group.
 
@@ -198,6 +197,8 @@ If you browse the Azure Container Registry in the [Azure Portal](https://portal.
 Even though we have restricted access to the actual Repositories in the Azure Container Registry, if you click on **Access Keys** under Settings, you should see the Admin User **iac100daysacr** and the existing Passwords for that account. The reason is because we set the *--admin-enabled* option to *true* earlier when creating the Azure Container Registry.
 
 Just as when we were discussing locking down access to an Azure Key Vault, make sure to also restrict Access Control (IAM) as well for your Azure Container Registries. A User with enough rights could easily remove the network restrictions that were put in place for the Azure Container Registry.
+
+The JSON Output from creating Network Rules here for an Azure Container Registry is slightly different than for Azure Key Vault. Be aware of this when using the *--query* switch or **jq** to parse the results of your Azure CLI operations for both.
 
 </br>
 
