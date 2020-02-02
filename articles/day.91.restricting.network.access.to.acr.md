@@ -188,6 +188,18 @@ Looks like you don't have access to registry 'iac100daysacr.azurecr.io'. To see 
 
 </br>
 
+>**NOTE:** If you immediately check to see if you can list the Container Images in the Repository right after creating or updating a Network Rule, you might get the following error message:
+
+```console
+Unable to get AAD authorization tokens with message: An error occurred: CONNECTIVITY_ACCESS_TOKEN_ERROR
+Access to registry 'iac100daysacr.azurecr.io' was denied. Response code: 403. Please try running 'az login' again to refresh permissions.
+Could not get the requested data. Correlation ID: 2d2cb3ec-7779-41ce-8203-c546ced9e4d4.
+```
+
+Keep in mind that you need to allow a few seconds for the Network Rules to propagate if you are going to be creating or modifying them in any of your automation tasks.
+
+</br>
+
 If you browse the Azure Container Registry in the [Azure Portal](https://portal.azure.com), you'll notice that you get the message *Looks like you don't have access to this content. Are firewalls and virtual networks enabled?* when attempting to view **Repositories**.
 
 </br>
