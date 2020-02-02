@@ -233,7 +233,7 @@ Caller: appid=00000000-0000-0000-0000-000000000000;oid=00000000-0000-0000-0000-0
 Vault: iac100dayslockdown;location=westeurope
 ```
 
-<br/>
+</br>
 
 If you browse the Azure Key Vault in the [Azure Portal](https://portal.azure.com), you'll notice that you get the message *You are unauthorized to view these contents.* when attempting to view **Secrets** or **Keys**.
 
