@@ -19,10 +19,10 @@ In today's article we will be performing the following steps.
 [Install psql](#install-psql)</br>
 [Deploy a new Resource Group](#deploy-a-new-resource-group)</br>
 [Deploy a VNet](#deploy-a-vnet)</br>
-[Add the Service Endpoint for Microsoft.ContainerRegistry to the VNet](#add-the-service-endpoint-for-microsoftcontainerregistry-to-the-vnet)</br>
+[Add the Service Endpoint for Microsoft.SQL to the VNet](#add-the-service-endpoint-for-microsoftsql-to-the-vnet)</br>
 [Deploy an Azure Database for PostgreSQL](#deploy-an-azure-container-registry)</br>
-[Restrict access to the Azure Container Registry](#restrict-access-to-the-azure-container-registry)</br>
-[Verify Restricted Access to the Azure Container Registry](#verify-restricted-access-to-the-azure-container-registry)</br>
+[Restrict access to the Azure PostgreSQL Server](#restrict-access-to-the-azure-postgresql-server)</br>
+[Verify Restricted Access to the Azure PostgreSQL Server](#verify-restricted-access-to-the-azure-postgressql-server)</br>
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
