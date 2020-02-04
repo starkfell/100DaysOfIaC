@@ -4,6 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| Managing Postgres Access | [Day 92 - Restricting Network Access to Azure Database for PostgreSQL](/articles/day.92.restricting.network.access.to.az.postgres.md)|
 | Managing ACR Access | [Day 91 - Restricting Network Access to Azure Container Registry](/articles/day.91.restricting.network.access.to.acr.md)|
 | Managing Key Vault Access | [Day 90 - Restricting Network Access to Azure Key Vault](/articles/day.90.restricting.network.access.to.key.vault.md)|
 | Managing Storage Access | [Day 89 - Options for Managing Access Security to Azure Storage](/articles/day.89.azure.storage.sec.md)|
