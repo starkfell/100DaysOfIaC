@@ -16,6 +16,7 @@ This article covers the same network environment circumstances (restricting acce
 
 In today's article we will be performing the following steps.
 
+[Install psql](#install-psql)</br>
 [Deploy a new Resource Group](#deploy-a-new-resource-group)</br>
 [Deploy a VNet](#deploy-a-vnet)</br>
 [Add the Service Endpoint for Microsoft.ContainerRegistry to the VNet](#add-the-service-endpoint-for-microsoftcontainerregistry-to-the-vnet)</br>
@@ -24,6 +25,52 @@ In today's article we will be performing the following steps.
 [Verify Restricted Access to the Azure Container Registry](#verify-restricted-access-to-the-azure-container-registry)</br>
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
+
+## Install psql
+
+**psql** is a terminal-based front-end tool that allows you to login and interactively work with PostgreSQL. We need it to verify restricted connectivity to our PostgresSQL Databases later on in the article.
+
+Run the following command to install the **psql** client on your Ubuntu Host.
+
+```bash
+sudo apt-get install -y \
+postgresql-client-common \
+postgresql-client
+```
+
+You should get back a similar response as shown below.
+
+```console
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  postgresql-client-10
+Suggested packages:
+  postgresql-10 postgresql-doc-10
+The following NEW packages will be installed:
+  postgresql-client postgresql-client-10 postgresql-client-common
+0 upgraded, 3 newly installed, 0 to remove and 82 not upgraded.
+Need to get 0 B/971 kB of archives.
+After this operation, 3,444 kB of additional disk space will be used.
+Selecting previously unselected package postgresql-client-common.
+(Reading database ... 183718 files and directories currently installed.)
+Preparing to unpack .../postgresql-client-common_190ubuntu0.1_all.deb ...
+Unpacking postgresql-client-common (190ubuntu0.1) ...
+Selecting previously unselected package postgresql-client-10.
+Preparing to unpack .../postgresql-client-10_10.10-0ubuntu0.18.04.1_amd64.deb ...
+Unpacking postgresql-client-10 (10.10-0ubuntu0.18.04.1) ...
+Selecting previously unselected package postgresql-client.
+Preparing to unpack .../postgresql-client_10+190ubuntu0.1_all.deb ...
+Unpacking postgresql-client (10+190ubuntu0.1) ...
+Setting up postgresql-client-common (190ubuntu0.1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Setting up postgresql-client-10 (10.10-0ubuntu0.18.04.1) ...
+update-alternatives: using /usr/share/postgresql/10/man/man1/psql.1.gz to provide /usr/share/man/man1/psql.1.gz (psql.1.gz) in auto mode
+Setting up postgresql-client (10+190ubuntu0.1) ...
+```
+
+</br>
 
 ## Deploy a new Resource Group
 
@@ -134,7 +181,7 @@ SUBNET_ID=$(az network vnet subnet list \
 
 </br>
 
-Next, run the following command to create a Network Rule in the Azure Container Registry restricting access only from the **100days-lockdown-subnet** subnet.
+Next, run the following command to create a VNet Rule in the Azure PostgresSQL Server restricting access only from the **100days-lockdown-subnet** subnet.
 
 ```bash
 /usr/bin/az postgres server vnet-rule create \
@@ -154,49 +201,30 @@ Ready
 
 </br>
 
-## Verify Restricted Access to the Azure Container Registry
+## Verify Restricted Access to the Azure PostgresSQL Server
 
-Finally, run the following command to verify that you can no longer access the Azure Container Registry from outside of the **100days-lockdown-subnet** Subnet.
+Finally, run the following **psql** command to verify that you can no longer access the Azure PostgresSQL Server from outside of the **100days-lockdown-subnet** Subnet.
 
 ```bash
-az acr repository list \
---name "iac100daysacr"
+psql "host=100dayspostgres.postgres.database.azure.com port=5432 dbname=user_ user=pgadmin@100dayspostgres password=$POSTGRES_SERVER_ADMIN_PASSWORD sslmode=require"
 ```
 
 You should get back a response similar to what is shown below.
 
 ```console
-Looks like you don't have access to registry 'iac100daysacr.azurecr.io'. To see configured firewall rules, run 'az acr show --query networkRuleSet --name iac100daysacr'. Please refer to https://aka.ms/acr/errors#connectivity_forbidden_error for more information.
+psql: FATAL:  no pg_hba.conf entry for host "000.000.000.000", user "pgadmin", database "user_", SSL on
 ```
-
-</br>
-
->**NOTE:** If you immediately check to see if you can list the Container Images in the Repository right after creating or updating a Network Rule, you might get the following error message:
-
-```console
-Unable to get AAD authorization tokens with message: An error occurred: CONNECTIVITY_ACCESS_TOKEN_ERROR
-Access to registry 'iac100daysacr.azurecr.io' was denied. Response code: 403. Please try running 'az login' again to refresh permissions.
-Could not get the requested data. Correlation ID: 2d2cb3ec-7779-41ce-8203-c546ced9e4d4.
-```
-
-Keep in mind that you need to allow a few seconds for the Network Rules to propagate if you are going to be creating or modifying them in any of your automation tasks.
-
-</br>
-
-If you browse the Azure Container Registry in the [Azure Portal](https://portal.azure.com), you'll notice that you get the message *Looks like you don't have access to this content. Are firewalls and virtual networks enabled?* when attempting to view **Repositories**.
 
 </br>
 
 ## Things to Consider
 
-Even though we have restricted access to the actual Repositories in the Azure Container Registry, if you click on **Access Keys** under Settings, you should see the Admin User **iac100daysacr** and the existing Passwords for that account. The reason is because we set the *--admin-enabled* option to *true* earlier when creating the Azure Container Registry.
+Keep in mind that the VNet Rule(s) that we put in place *only* restrict access to the Databases in the Azure PostgreSQL Server. If you browse to the Azure PostgresSQL Server instance in the [Azure Portal](https://portal.azure.com), you'll notice that you'll still have access to the **Settings** of the PostgreSQL Server as this level of access is controlled using Azure Identity and Access Management (IAM).
 
-Just as when we were discussing locking down access to an Azure Key Vault, make sure to also restrict Access Control (IAM) as well for your Azure Container Registries. A User with enough rights could easily remove the network restrictions that were put in place for the Azure Container Registry.
-
-The JSON Output from creating Network Rules here for an Azure Container Registry is slightly different than for Azure Key Vault. Be aware of this when using the *--query* switch or **jq** to parse the results of your Azure CLI operations for both.
+If you want enable yourself to connect to the **postgres** database instance, you can browse to the Azure PostgresSQL Server instance in the [Azure Portal](https://portal.azure.com), go to **Settings** and then **Connection security** and add your Public IP Address by clicking on the **+ Add client IP** button.
 
 </br>
 
 ## Conclusion
 
-In today's article we covered how to restrict access to an Azure Container Registry using Network Rules. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article we covered how to restrict access to an Azure PostgresSQL Server using Network Rules. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
