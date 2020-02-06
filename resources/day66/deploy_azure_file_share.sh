@@ -176,7 +176,7 @@ fi
 #####################################
 
 # Set unique storage account 
-STORAGE_ACCT="aimshare$FILE_SHARE_FUNCTION$ENVIRONMENT"
+STORAGE_ACCT="testshare$FILE_SHARE_FUNCTION$ENVIRONMENT"
 
 # Checking to see if the Storage Account already exists in the Azure Subscription.
 
@@ -283,7 +283,7 @@ AZURE_FILE_SHARE_CHECK=$(/usr/bin/az storage share exists \
         # Adding the Azure File Share User to Azure Key Vault.
 
         /usr/bin/az keyvault secret set \
-        --name "aim-${ENVIRONMENT}-${FILE_SHARE_FUNCTION}-storage-acct" \
+        --name "test-${ENVIRONMENT}-${FILE_SHARE_FUNCTION}-storage-acct" \
         --vault-name "$KEYVAULTNAME" \
         --subscription "$AZURE_SUBSCRIPTION_ID" \
         --value "$STORAGE_ACCT" > /dev/null 2>&0
@@ -298,7 +298,7 @@ AZURE_FILE_SHARE_CHECK=$(/usr/bin/az storage share exists \
         # Adding the Azure File Share Access Key (password) to Azure Key Vault.
 
         /usr/bin/az keyvault secret set \
-        --name "aim-${ENVIRONMENT}-${FILE_SHARE_FUNCTION}-storage-access-key" \
+        --name "test-${ENVIRONMENT}-${FILE_SHARE_FUNCTION}-storage-access-key" \
         --vault-name "$KEYVAULTNAME" \
         --subscription "$AZURE_SUBSCRIPTION_ID" \
         --value "$STORAGE_ACCOUNT_PRIMARY_KEY" > /dev/null 2>&0
