@@ -63,7 +63,7 @@ To add or remove databases from the backup, browse to the "DB backup and upload"
 
 ## Full Script  
 
-The script is included below and in the Day 93 folder in the Resources directory
+The script is included below and in the [Day 93](../resources/day93) folder in the Resources directory
 
 ``` Bash
 #!/bin/sh    
