@@ -40,7 +40,7 @@ The current version of the script performs all of the following high-level funct
 
 The required parameters are:
 
- - **Customer code.** 5-digit code used to identify customer, determined when environment was provisioned.
+ - **Environment code.** 5-digit code used to identify the environment, determined when environment was provisioned.
  - **Service principal name.**  Service principal created for environment provisioning.
  - **Service principal password.** Password for the aforementioned service principal.
  - **Azure AD Tenant ID.** The guid of the Azure AD environment, which in this case is the shared management instance.
