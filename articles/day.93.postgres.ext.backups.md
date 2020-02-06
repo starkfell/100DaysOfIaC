@@ -449,7 +449,7 @@ uploadbackup "$filename" "$BCDR_STORAGE_ACCT" $BCDR_STORAGE_ACCESS_KEY
 ##########
 
 # Finally, upload the blobxfer log file for this run 
-blobxfer upload --storage-account $storage_acc_name --sas $saskey --remote-path pgbackups --local-path "/tmp/$BLOBXFER_LOG" --file-md5 --no-recursive 
+blobxfer upload --storage-account $storage_acc_name --sas $saskey --remote-path pgbackups --local-path "/tmp/$BLOBXFER_LOG" --file-md5 --no-recursive
 
 # delete the backups from the local drive
 rm -rf /tmp/$ENVIRONMENT*
@@ -460,3 +460,5 @@ rm -rf /tmp/$BLOBXFER_LOG
 ```
 
 ## Conclusion
+
+I hope this solution gives you a useful starting point for implementing extended data retention in your Azure Database for PostgreSQL use cases. Remember, if you have a question or an issue, you can open an issue here on the "100 Days" repo.
