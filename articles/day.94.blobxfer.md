@@ -5,10 +5,10 @@ Yesterday, we offered a solution for capturing and retaining Azure Database for 
 
 In this article:
 
-[What is blobxfer?](#what-is-blobxfer)
-[Flavors of blobxfer](#flavors-of-blobxfer)
-[Installing blobxfer](#installing-blobxfer)
-[Sample install script (CLI)](#sample-install-script-cli)
+[What is blobxfer?](#what-is-blobxfer) </br>
+[Flavors of blobxfer](#flavors-of-blobxfer) </br>
+[Installing blobxfer](#installing-blobxfer) </br>
+[Sample install script (CLI)](#sample-install-script-cli) </br>
 
 ## What is blobxfer?
 
