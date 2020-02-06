@@ -4,6 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| Blobxfer utility | [Day 94 - Blobxfer utility in long-term backup retention for PaaS DBs](/articles/day.94.blobxfer.md)|
 | Extended Postgres backup retention | [Day 93 - Long-term Backup Retention for Azure Database for PostgreSQL](/articles/day.93.postgres.ext.backups.md)|
 | Managing Postgres Access | [Day 92 - Restricting Network Access to Azure Database for PostgreSQL](/articles/day.92.restricting.network.access.to.az.postgres.md)|
 | Managing ACR Access | [Day 91 - Restricting Network Access to Azure Container Registry](/articles/day.91.restricting.network.access.to.acr.md)|
