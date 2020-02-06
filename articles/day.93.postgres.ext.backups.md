@@ -55,7 +55,7 @@ The required parameters are:
 
 `-p {MGMT_SP_PASSWORD} \`
 
-`-c {CUSTOMER}`
+`-c {ENVIRONMENT}`
 
 ## To add or remove database from backups
 
