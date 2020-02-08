@@ -1,37 +1,3 @@
-# Day 95 - Deploying Azure DB for MariaDB in Azure using ARM
-
-MariaDB is a community-developed, commercially supported fork of the MariaDB relational database management system (RDBMS), intended to remain free and open-source software under the GNU General Public License. Development is led by some of the original developers of MariaDB, who forked it due to concerns over its acquisition by Oracle. Microsoft some years ago hatched a new cloud-hosted model of MariaDB in Azure PaaS, with their **Azure Database for MariaDB** offering.
-
-In this article:
-
-[Service Features](#service-features) </br>
-[Sample ARM Template](#sample-arm-template) </br>
-[MariaDB Admin Tools](#mariadb-admin-tools) </br>
-
-You can use the resources in this article with info available in previous installments in this series to deploy Azure Database for MariaDB from a release pipeline in Azure Pipelines.
-
-## Service Features
-
-Azure DB for MariaDB shares a service model with Azure DB for MySQL and others, in that Microsoft manages the server instance, and much of the care and feeding for you. For example, OS and MariaDB patching are automatic. The service includes some monitoring capability, offering the ability to set alerts and act on the database thresholds. It includes a backup feature, allowing some control of retention (ranging from 7 - 35 days) and geo-redundancy of backup storage. Your newly deployed instance even includes a firewall for the service, blocking all connections by default.
-
-> **NOTE**: You can modify the script in [Day 93](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.93.postgres.ext.backups.md) to create a long-term retention strategy if 35 days is not enough.
-
-There is a JSON reference for the service at [Microsoft.DBforMariaDB resource types](https://docs.microsoft.com/en-us/azure/templates/microsoft.dbforMariaDB/allversions) which will help you track down properties, and explanation of their allowed values.
-
-## Sample ARM Template
-
-This is a sample template I use in the lab, and is an enhanced version of an old Azure QuickStart template, which will deploy:
-
-- Azure DB for MariaDB instance, with your choice of version 10.2 or 10.3.
-- An empty database (matching your web app name)
-- Firewall settings on the instance with a rule to allow all Azure IPs.
-- Database backups (with 7 day retention and no geo-redundancy to save costs)
-- An Azure app service instance with a connection string configured to the backend database
-
-All things considered, it's a great way to get a look at Azure Database for MariaDB in a broader configuration that resembles something your developers might put together.
-
-The full ARM template is shown below, as well as in the [day95](../resources/day95) folder in the resources in this Git repository.
-``` JSON
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
@@ -238,12 +204,3 @@ The full ARM template is shown below, as well as in the [day95](../resources/day
         }
     ]
 }
-```
-
-# MariaDB Admin Tools
-
-My go-to admin tool for MariaDB is MySQL Workbench (remember MariaDB is a fork of MySQL), which you can download from the MySQL website at https://www.myqsl.com/products/workbench/.
-
-## Conclusion
-
-As you can see by now, the "Azure Database for..." family of PaaS database services makes moving your relational database workloads to the cloud easier than ever. And with comprehensive configuration available through ARM, it's easy to integrate into your Infrastructure-as-Code strategy in Azure DevOps.
