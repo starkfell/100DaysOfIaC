@@ -124,7 +124,7 @@ You should get back a similar response.
 /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/100days-reslocks/providers/Microsoft.Storage/storageAccounts/iac100daysreslocksstr
 ```
 
-<br/>
+</br>
 
 Next, run the following command to create a **CanNotDelete** lock for each Resource.
 
