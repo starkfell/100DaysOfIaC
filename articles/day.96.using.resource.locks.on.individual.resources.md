@@ -10,7 +10,7 @@ In [Day 64](./articles.day.64.resource.locks.md), we covered how to implement Re
 
 In this article:
 
-[Deploy Resources into Azure](#deploy-resources-into-azure)) </br>
+[Deploy Resources into Azure](#deploy-resources-into-azure) </br>
 [Lock the Individual Resources](#lock-the-individual-resources) </br>
 [Unlock the Individual Resources](#unlock-the-individual-resources) </br>
 [Things to Consider](#things-to-consider)</br>
