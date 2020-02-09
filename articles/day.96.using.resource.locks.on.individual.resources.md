@@ -18,6 +18,8 @@ In this article:
 
 ## Deploy Resources into Azure
 
+Run the following command to deploy the **100days-reslocks** Resource Group.
+
 ```bash
 az group create \
 --name 100days-reslocks \
