@@ -2,13 +2,21 @@
 
 In [Day 64](./articles.day.64.resource.locks.md), we covered how to implement Resource Locks in ARM Templates to prevent resources being removed at the Resource Group level. Today we are going to cover how to create Resource Locks for individual resources.
 
+</br>
+
+> **NOTE:** This article was tested and written for a Linux Host running Ubuntu 18.04 with Azure CLI installed.
+
+</br>
+
 In this article:
 
-[Service Features](#service-features) </br>
-[Sample ARM Template](#sample-arm-template) </br>
-[MariaDB Admin Tools](#mariadb-admin-tools) </br>
+[Deploy Resources into Azure](#deploy-resources-into-azure)) </br>
+[Lock the Individual Resources](#lock-the-individual-resources) </br>
+[Unlock the Individual Resources](#unlock-the-individual-resources) </br>
+[Things to Consider](#things-to-consider)</br>
+[Conclusion](#conclusion) </br>
 
-## Deploy some Resources into Azure
+## Deploy Resources into Azure
 
 ```bash
 az group create \
