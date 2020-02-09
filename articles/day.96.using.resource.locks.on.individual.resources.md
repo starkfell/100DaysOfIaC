@@ -101,7 +101,7 @@ available
 
 ## Lock the Individual Resources
 
-Instead of individually querying the **id** of each resource that we just deployed, we are going to query for all of the resources in the Resource Group at once.
+Instead of individually querying the **id** of each resource that we just deployed, we are going to query for all of the resources in the Resource Group at once and then return back the results in an array so it's easier to process them.
 
 Run the following command to retrieve the **id** of all of the resources deployed in the **100days-reslocks** Resource Group.
 
