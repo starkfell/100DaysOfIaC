@@ -1,4 +1,4 @@
-# Day 97 - Using Resource Locks on Individual Resources in Azure
+# Day 97 - Automating Resource Locks on Individual Resources in Azure
 
 In [Day 96](./articles.day.96.resource.locks.md), we covered how to implement Resource Locks on individual resources in Azure. Today we are going to cover how this can be utilized in a YAML Pipeline to ensure your resources remain locked unless otherwise necessary.
 
@@ -99,9 +99,7 @@ available
 
 ## Lock the Azure Resources
 
-Instead of individually querying the **id** of each resource that we just deployed, we are going to query for all of the resources in the Resource Group at once and then return back the results in an array so it's easier to process them.
-
-Run the following command to retrieve the **id** of all of the resources deployed in the **100days-reslocks** Resource Group.
+Run the following command to retrieve the **ids** of all of the resources deployed in the **100days-reslocks** Resource Group.
 
 ```bash
 RESOURCE_IDS=$(az resource list \
@@ -154,6 +152,94 @@ You should get back a similar response.
 > **NOTE:** You will receive an error if you attempt to delete the Resource Group while the resource locks are in place.
 
 </br>
+
+## Tag the Resources
+
+Next, we are going to Tag all of the Resources in the Resource Group.
+
+```bash
+for ID in $RESOURCE_IDS;
+do
+    az resource tag \
+    --tags "Permanent=True" \
+    --ids $ID \
+    --query 'id' \
+    --output tsv
+done
+```
+
+You should get back a similar response.
+
+```console
+/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/100days-reslocks/providers/Microsoft.KeyVault/vaults/iac100daysreslockskv
+/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/100days-reslocks/providers/Microsoft.Network/virtualNetworks/100days-reslocks-vnet
+/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/100days-reslocks/providers/Microsoft.Storage/storageAccounts/iac100daysreslocksstr
+```
+
+</br>
+
+## Update the Tag on the Storage Account
+
+```bash
+STORAGE_ID=$(az resource list \
+--resource-group "100days-reslocks" \
+| jq '.[].id | select(.|test("iac100daysreslocksstr"))' | tr -d '"')
+```
+
+```bash
+az resource tag \
+--tags "Permanent=False" \
+--ids $STORAGE_ID \
+--query 'id' \
+--output tsv
+```
+
+```console
+/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/100days-reslocks/providers/Microsoft.Storage/storageAccounts/iac100daysreslocksstr
+```
+
+</br>
+
+## Delete a Locked Resource Based on a Tag
+
+```bash
+for ID in $RESOURCE_IDS;
+do
+    # Retrieving the Resource 'Permanent' Tag.
+    CHECK_TAG=$(az resource show \
+    --ids $ID \
+    --query "tags.Permanent" \
+    --output tsv)
+
+    if [[ "$CHECK_TAG" == "True" ]]; then
+        echo "[---info------] Not Marked for Removal, skipping."
+    else
+        echo "[---info------] [$ID] is marked for removal."
+
+        # Removing the Lock on the Resource.
+        REMOVE_LOCK=$(az lock delete \
+        --name "LockedResources" \
+        --resource $ID)
+
+        if [ $? -eq 0 ]; then
+            echo "[---success---] Removed Resource Lock on [$ID]."
+        else
+            echo "[---fail------] Failed to remove Resource Lock on [$ID]."
+            echo "[---fail------] $REMOVE_LOCK"
+        fi
+
+        # Deleting the Resource.
+        DELETE_RESOURCE=$(az resource delete --ids $ID)
+
+        if [ $? -eq 0 ]; then
+            echo "[---success---] Deleted Resource [$ID]."
+        else
+            echo "[---fail------] Failed to delete Resource[$ID]."
+            echo "[---fail------] $DELETE_RESOURCE"
+        fi
+    fi
+done
+```
 
 ## Azure Build Pipeline
 
