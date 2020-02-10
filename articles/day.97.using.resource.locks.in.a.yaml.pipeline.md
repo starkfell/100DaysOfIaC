@@ -1,6 +1,6 @@
 # Day 97 - Automating Resource Locks on Individual Resources in Azure
 
-In [Day 96](./articles.day.96.resource.locks.md), we covered how to implement Resource Locks on individual resources in Azure. Today we are going to cover how this can be utilized in a YAML Pipeline to ensure your resources remain locked unless otherwise necessary.
+In [Day 96](./articles.day.96.resource.locks.md), we covered how to implement Resource Locks on individual resources in Azure. Today we are going to show you how you can automate the process of managing Azure Resources that have Resource Locks.
 
 </br>
 
@@ -154,6 +154,8 @@ You should get back a similar response.
 </br>
 
 ## Tag the Resources
+
+Tagging your Azure Resources is probably one of the easiest ways to not only keep track of them in Azure, but also to keep track what type of state they should be in. This could be anything from always being on to retired to permanent removal. The range of states you want to track your resources by is entirely up to you.
 
 Next, we are going to Tag all of the Resources in the Resource Group.
 
