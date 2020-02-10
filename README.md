@@ -4,6 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| Resource Locks| [Day 96 - Using Resource Locks on Individual Resources in Azure](/articles/day.96.using.resource.locks.on.individual.resources.md)|
 | ARM Template Deployments | [Day 95 - Deploying Azure DB for MariaDB in Azure using ARM](/articles/day.95.mariadb.arm.md)|
 | Blobxfer utility | [Day 94 - Blobxfer utility in long-term backup retention for PaaS DBs](/articles/day.94.blobxfer.md)|
 | Extended Postgres backup retention | [Day 93 - Long-term Backup Retention for Azure Database for PostgreSQL](/articles/day.93.postgres.ext.backups.md)|
