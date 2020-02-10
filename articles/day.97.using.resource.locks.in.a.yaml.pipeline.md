@@ -241,6 +241,13 @@ do
 done
 ```
 
+
+## Things to Consider
+
+Ensuring that the script above will work for almost all resources in Azure will take some testing.
+
+</br>
+
 ## Azure Build Pipeline
 
 Follow the instructions in [Day 35](./day.35.building.a.practical.yaml.pipeline.part.1.md) for creating a Service Principal for the Build Pipeline and adding creating the Service Connection for it in Azure DevOps if you haven't already created the **sp-az-build-pipeline** Service Principal.
