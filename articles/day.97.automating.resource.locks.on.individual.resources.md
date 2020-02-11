@@ -277,6 +277,10 @@ You should get back a similar response to what is shown below.
 
 </br>
 
+You can check the [Azure Portal](https://portal.azure.com) to verify that the Storage Account has been deleted from the **100days-reslocks** Resource Group.
+
+</br>
+
 ## Things to Consider
 
 The methodology shown above should work for just about all Resources in Azure that are taggable. If you plan on implementing this type of solution, we recommend that you test this against your Azure Resources thoroughly before doing so.
