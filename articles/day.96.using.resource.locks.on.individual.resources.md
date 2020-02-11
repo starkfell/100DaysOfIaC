@@ -211,4 +211,4 @@ Even though the **az lock** commands are idempotent, be careful not to confuse u
 
 ## Conclusion
 
-In today's article we covered how to implement Resource Locks for Azure Resources individually. In the next article, we'll be demonstrating how you can use this for unlocking and relocking resources that are updated from a YAML Pipeline. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+In today's article we covered how to implement Resource Locks for Azure Resources individually. In the next article, we'll be demonstrating how you can automate the management of Resource Locks on Individual Resources in Azure. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.

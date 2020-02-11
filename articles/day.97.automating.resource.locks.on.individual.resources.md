@@ -170,7 +170,7 @@ do
 done
 ```
 
-You should get back a similar response.
+You should get back a similar response to what is shown below.
 
 ```console
 /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/100days-reslocks/providers/Microsoft.KeyVault/vaults/iac100daysreslockskv
@@ -182,11 +182,19 @@ You should get back a similar response.
 
 ## Update the Tag on the Storage Account
 
+Next, we are going to change the Storage Account's **Permanent** Tag from *True* to *False*.
+
+Run the following command to retrieve the **id** of the Storage Account.
+
 ```bash
 STORAGE_ID=$(az resource list \
 --resource-group "100days-reslocks" \
 | jq '.[].id | select(.|test("iac100daysreslocksstr"))' | tr -d '"')
 ```
+
+</br>
+
+Next, run the following command to change the Storage Account's **Permanent** Tag from *True* to *False*.
 
 ```bash
 az resource tag \
@@ -196,13 +204,21 @@ az resource tag \
 --output tsv
 ```
 
+You should get back a similar response to what is shown below.
+
 ```console
 /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/100days-reslocks/providers/Microsoft.Storage/storageAccounts/iac100daysreslocksstr
 ```
 
 </br>
 
-## Delete a Locked Resource Based on a Tag
+## Delete a Locked Resource Based on a Tag Value
+
+Finally, we are going to delete the Storage Account from the Resource Group based on it's **Permanent** Tag being changed from *True* to *False*.
+
+<br/>
+
+Run the following command below to delete the Storage Account in the Resource Group. If you prefer, you can also paste the content below into a **.sh** file, make the file executable, and then run it.
 
 ```bash
 for ID in $RESOURCE_IDS;
@@ -243,57 +259,20 @@ do
 done
 ```
 
+You should get back a similar response to what is shown below.
 
-## Things to Consider
+```console
 
-Ensuring that the script above will work for almost all resources in Azure will take some testing.
+```
 
 </br>
 
-## Azure Build Pipeline
+## Things to Consider
 
-Follow the instructions in [Day 35](./day.35.building.a.practical.yaml.pipeline.part.1.md) for creating a Service Principal for the Build Pipeline and adding creating the Service Connection for it in Azure DevOps if you haven't already created the **sp-az-build-pipeline** Service Principal.
+The methodology shown above should work for just about all Resources in Azure that are taggable. If you plan on implementing this type of solution, we recommend that you test this against your Azure Resources thoroughly before doing so.
 
-Next, in VS Code, replace the current contents of the **lock-pipe.yaml** file with what is shown below. Afterwards, save and commit your changes to the repository.
+</br>
 
-```yaml
-# Builds are automatically triggered from the master branch in the 'practical-yaml-build-pipe' Repo.
-trigger:
-- master
+## Conclusion
 
-pool:
-  # Using a Microsoft Hosted Agent - https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops
-  vmImage: ubuntu-18.04
-
-steps:
-
-# Azure CLI Task - Unlock Azure Resources.
-- task: AzureCLI@2
-  displayName: 'Unlock Azure Resources'
-  inputs:
-    # Using Service Principal, 'sp-az-build-pipeline', to authenticate to the Azure Subscription.
-    azureSubscription: 'sp-az-build-pipeline'
-    scriptType: 'bash'
-    scriptLocation: 'scriptPath'
-    scriptPath: './unlock-azure-resources.sh'
-
-# Azure CLI Task - Delete Azure Resources with Tag 'SetForRemoval'.
-- task: AzureCLI@2
-  displayName: 'Build and Push NGINX Docker Image to ACR'
-  inputs:
-    # Using Service Principal, 'sp-az-build-pipeline', to authenticate to the Azure Subscription.
-    azureSubscription: 'sp-az-build-pipeline'
-    scriptType: 'bash'
-    scriptLocation: 'scriptPath'
-    scriptPath: './delete-azure-resources.sh'
-
-# Azure CLI Task - Relock Azure Resources.
-- task: AzureCLI@2
-  displayName: 'Relock Azure Resources'
-  inputs:
-    # Using Service Principal, 'sp-az-build-pipeline', to authenticate to the Azure Subscription.
-    azureSubscription: 'sp-az-build-pipeline'
-    scriptType: 'bash'
-    scriptLocation: 'scriptPath'
-    scriptPath: './relock-azure-resourcese.sh'
-```
+In today's article we demonstrated how you can automate the management of Resource Locks on Individual Resources in Azure. In the next article, we'll be demonstrating how you can use this for unlocking and relocking resources that are updated from a YAML Pipeline. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
