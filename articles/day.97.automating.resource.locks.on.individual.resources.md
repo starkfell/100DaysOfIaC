@@ -11,6 +11,10 @@ In [Day 96](./articles.day.96.resource.locks.md), we covered how to implement Re
 In this article:
 
 [Deploy Resources into Azure](#deploy-resources-into-azure) </br>
+[Lock the Azure Resources](#lock-the-azure-resources)</br>
+[Tag the Azure Resources](#tag-the-azure-resources)</br>
+[Update the Tag on the Storage Account](#update-the-tag-on-the-storage-account)</br>
+[Delete a Locked Resource Based on a Tag Value](#delete-a-locked-resource-based-on-a-tag-value)</br>
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion) </br>
 
@@ -61,6 +65,8 @@ You should get back a similar response.
 "Succeeded"
 ```
 
+</br>
+
 Next, run the following command to create a new Azure Key Vault in the Resource Group.
 
 ```bash
@@ -77,6 +83,8 @@ Location    Name                   ResourceGroup
 ----------  --------------------   ----------------
 westeurope  iac100daysreslockskv   100days-reslocks
 ```
+
+</br>
 
 Next, run the following command to create a new Azure Storage Account in the Resource Group.
 
@@ -99,6 +107,8 @@ available
 
 ## Lock the Azure Resources
 
+Next, we are going to add a **CanNotDelete** Lock on all of the Azure Resources that we deployed to the **100days-reslocks** Resource Group.
+
 Run the following command to retrieve the **ids** of all of the resources deployed in the **100days-reslocks** Resource Group.
 
 ```bash
@@ -108,7 +118,7 @@ RESOURCE_IDS=$(az resource list \
 --output tsv)
 ```
 
-Run the following command to list the **ids** of the Resources.
+If you'd like to verify that you've collected all of the Resource IDs, run the following command to list them.
 
 ```bash
 echo "$RESOURCE_IDS"
@@ -139,7 +149,7 @@ do
 done
 ```
 
-You should get back a similar response.
+You should get back a response similar to what is shown below.
 
 ```console
 /subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/100days-reslocks/providers/Microsoft.KeyVault/vaults/iac100daysreslockskv/providers/Microsoft.Authorization/locks/LockedResource
@@ -149,11 +159,7 @@ You should get back a similar response.
 
 </br>
 
-> **NOTE:** You will receive an error if you attempt to delete the Resource Group while the resource locks are in place.
-
-</br>
-
-## Tag the Resources
+## Tag the Azure Resources
 
 Tagging your Azure Resources is probably one of the easiest ways to not only keep track of them in Azure, but also to keep track what type of state they should be in. This could be anything from always being on to retired to permanent removal. The range of states you want to track your resources by is entirely up to you.
 
@@ -262,7 +268,11 @@ done
 You should get back a similar response to what is shown below.
 
 ```console
-
+[---info------] Not Marked for Removal, skipping.
+[---info------] Not Marked for Removal, skipping.
+[---info------] [/subscriptions/84f065f5-e37a-4127-9c82-0b1ecd57a652/resourceGroups/100days-reslocks/providers/Microsoft.Storage/storageAccounts/iac100daysreslocksstr] is marked for removal.
+[---success---] Removed Resource Lock on [/subscriptions/84f065f5-e37a-4127-9c82-0b1ecd57a652/resourceGroups/100days-reslocks/providers/Microsoft.Storage/storageAccounts/iac100daysreslocksstr].
+[---success---] Deleted Resource [/subscriptions/84f065f5-e37a-4127-9c82-0b1ecd57a652/resourceGroups/100days-reslocks/providers/Microsoft.Storage/storageAccounts/iac100daysreslocksstr].
 ```
 
 </br>
@@ -270,6 +280,8 @@ You should get back a similar response to what is shown below.
 ## Things to Consider
 
 The methodology shown above should work for just about all Resources in Azure that are taggable. If you plan on implementing this type of solution, we recommend that you test this against your Azure Resources thoroughly before doing so.
+
+You'll notice that we didn't include the **id** of the Resource if it was being skipped for deletion. Depending on the type of logging in your environment, such as in Production, you'll probably want to include as much information as possible for tracking and troubleshooting purposes.
 
 </br>
 
