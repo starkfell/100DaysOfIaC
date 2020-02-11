@@ -238,7 +238,7 @@ do
     if [[ "$CHECK_TAG" == "True" ]]; then
         echo "[---info------] Not Marked for Removal, skipping."
     else
-        echo "[---info------] [$ID] is marked for removal."
+        echo "[---info------] Marked for Removal [$ID]."
 
         # Removing the Lock on the Resource.
         REMOVE_LOCK=$(az lock delete \
@@ -270,7 +270,7 @@ You should get back a similar response to what is shown below.
 ```console
 [---info------] Not Marked for Removal, skipping.
 [---info------] Not Marked for Removal, skipping.
-[---info------] [/subscriptions/84f065f5-e37a-4127-9c82-0b1ecd57a652/resourceGroups/100days-reslocks/providers/Microsoft.Storage/storageAccounts/iac100daysreslocksstr] is marked for removal.
+[---info------] Marked for Removal [/subscriptions/84f065f5-e37a-4127-9c82-0b1ecd57a652/resourceGroups/100days-reslocks/providers/Microsoft.Storage/storageAccounts/iac100daysreslocksstr].
 [---success---] Removed Resource Lock on [/subscriptions/84f065f5-e37a-4127-9c82-0b1ecd57a652/resourceGroups/100days-reslocks/providers/Microsoft.Storage/storageAccounts/iac100daysreslocksstr].
 [---success---] Deleted Resource [/subscriptions/84f065f5-e37a-4127-9c82-0b1ecd57a652/resourceGroups/100days-reslocks/providers/Microsoft.Storage/storageAccounts/iac100daysreslocksstr].
 ```
