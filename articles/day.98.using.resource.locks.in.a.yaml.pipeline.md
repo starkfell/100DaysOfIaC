@@ -10,11 +10,12 @@ Today we are going to show you how you can integrate Resource Locks into a YAML 
 
 In this article:
 
-[Deploy Resources into Azure](#deploy-resources-into-azure)</br>
-[Lock the Azure Resources](#lock-the-azure-resources)</br>
-[Tag the Azure Resources](#tag-the-azure-resources)</br>
+[Deploy your Resources to Azure](#deploy-your-resources-to-azure)</br>
+[Create a Script for Deleting Resources based on a Tag Value](#create-a-script-for-deleting-resources-based-on-a-tag-value)</br>
+[Create the YAML File for the Build Pipeline](#create-the-yaml-file-for-the-build-pipeline)</br>
+[Create a new Build Pipeline and then run it](#create-a-new-build-pipeline-and-then-run-it)</br>
 [Update the Tag on the Storage Account](#update-the-tag-on-the-storage-account)</br>
-[Delete a Locked Resource Based on a Tag Value](#delete-a-locked-resource-based-on-a-tag-value)</br>
+[Rerun the Build Pipeline Job](#rerun-the-build-pipeline-job)</br>
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion) </br>
 
@@ -249,6 +250,8 @@ steps:
     scriptPath: './remove-azure-resources.sh.sh'
 ```
 
+</br>
+
 ## Create a new Build Pipeline and then run it
 
 If you need additional information on how to create a new Build Pipeline, please refer to [Day 35](/articles/day.35.building.a.practical.yaml.pipeline.part.1.md) and the section called **Create a new Build Pipeline**.
@@ -313,7 +316,7 @@ You can check the [Azure Portal](https://portal.azure.com) to verify that the St
 
 ## Things to Consider
 
-Make sure to have your Resource Removal Jobs in a separate Build Pipeline from your Deployment Pipelines unless you want the resources to constantly be recreated.
+Make sure to have your Resource Removal Jobs in a separate Build Pipeline from your Deployment Jobs unless you want your resources to constantly be recreated.
 
 </br>
 
