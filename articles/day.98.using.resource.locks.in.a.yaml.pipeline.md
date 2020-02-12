@@ -1,7 +1,27 @@
 # Day 98 - Using Resource Locks in a YAML Pipeline
 
 
+```bash
+#!/bin/bash
 
+Pipe Script 1:
+Deploy Resources into Azure
+Lock the Azure Resources
+Tag the Azure Resources
+```
+
+```bash
+Manual Process by User - Update the Tag on the Storage Account
+```
+
+```bash
+Pipe Script 2:
+Delete a Locked Resource Based on a Tag Value
+```
+
+Discuss how this methodology could be modified to have the Locks done differently maybe???
+
+</br>
 
 ## Azure Build Pipeline
 

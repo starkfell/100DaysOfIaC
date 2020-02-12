@@ -10,7 +10,7 @@ In [Day 96](./articles.day.96.resource.locks.md), we covered how to implement Re
 
 In this article:
 
-[Deploy Resources into Azure](#deploy-resources-into-azure) </br>
+[Deploy Resources into Azure](#deploy-resources-into-azure)</br>
 [Lock the Azure Resources](#lock-the-azure-resources)</br>
 [Tag the Azure Resources](#tag-the-azure-resources)</br>
 [Update the Tag on the Storage Account](#update-the-tag-on-the-storage-account)</br>
