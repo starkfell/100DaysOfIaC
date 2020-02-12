@@ -247,7 +247,7 @@ steps:
     azureSubscription: 'sp-az-build-pipeline'
     scriptType: 'bash'
     scriptLocation: 'scriptPath'
-    scriptPath: './remove-azure-resources.sh.sh'
+    scriptPath: './remove-azure-resources.sh'
 ```
 
 </br>
