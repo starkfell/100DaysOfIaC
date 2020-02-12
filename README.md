@@ -4,6 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| Resource Locks | [Day 98 - Using Resource Locks in a YAML Pipeline](articles/day.98.using.resource.locks.in.a.yaml.pipeline.md)|
 | Resource Locks | [Day 97 - Automating Resource Locks on Individual Resources in Azure](/articles/day.97.automating.resource.locks.on.individual.resources.md)|
 | Resource Locks | [Day 96 - Using Resource Locks on Individual Resources in Azure](/articles/day.96.using.resource.locks.on.individual.resources.md)|
 | ARM Template Deployments | [Day 95 - Deploying Azure DB for MariaDB in Azure using ARM](/articles/day.95.mariadb.arm.md)|
