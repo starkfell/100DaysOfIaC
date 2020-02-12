@@ -4,6 +4,10 @@ Today we are going to show you how you can integrate Resource Locks into a YAML 
 
 </br>
 
+> **NOTE:** This article was tested and written for a Linux Host running Ubuntu 18.04 with Azure CLI installed.
+
+</br>
+
 In this article:
 
 [Deploy Resources into Azure](#deploy-resources-into-azure)</br>
@@ -14,9 +18,9 @@ In this article:
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion) </br>
 
-## Create a Script for Deploying your Resources in Azure
+## Deploy your Resources to Azure
 
-In VS Code, create a new file called the **deploy-azure-resources.sh**. Copy and paste the contents below into it and save and commit it to your Azure DevOps repository.
+In VS Code or your editor of choice, create a new file called the **deploy-azure-resources.sh**. Copy and paste the contents below into it and save it.
 
 ```bash
 #!/bin/bash
@@ -132,6 +136,27 @@ else
 fi
 ```
 
+</br>
+
+Make the **deploy-azure-resources.sh** executable and then run it. You should get back the following results.
+
+```console
+[---success---] Deployed Resource Group [100days-reslocks]
+[---success---] Deployed VNet [100days-reslocks-vnet]
+[---success---] Deployed Key Vault [iac100daysreslockskv]
+The default kind for created storage account will change to 'StorageV2' from 'Storage' in the future
+[---success---] Deployed Storage Account [iac100daysreslocksstr]
+[---success---] Retrieved all of the Resource IDs.
+/subscriptions/84f065f5-e37a-4127-9c82-0b1ecd57a652/resourcegroups/100days-reslocks/providers/Microsoft.KeyVault/vaults/iac100daysreslockskv/providers/Microsoft.Authorization/locks/LockedResources
+/subscriptions/84f065f5-e37a-4127-9c82-0b1ecd57a652/resourcegroups/100days-reslocks/providers/Microsoft.Network/virtualNetworks/100days-reslocks-vnet/providers/Microsoft.Authorization/locks/LockedResources
+[---success---] Added 'CanNotDelete' Locks to all of the Resources.
+/subscriptions/84f065f5-e37a-4127-9c82-0b1ecd57a652/resourceGroups/100days-reslocks/providers/Microsoft.KeyVault/vaults/iac100daysreslockskv
+/subscriptions/84f065f5-e37a-4127-9c82-0b1ecd57a652/resourceGroups/100days-reslocks/providers/Microsoft.Network/virtualNetworks/100days-reslocks-vnet
+[---success---] Tagged all of the Resources with Tag [Permanent=True]
+```
+
+</br>
+
 ## Create a Script for Deleting Resources based on a Tag Value
 
 In VS Code, create a new file called the **remove-azure-resources.sh**. Copy and paste the contents below into it and save and commit it to your Azure DevOps repository.
@@ -196,6 +221,8 @@ done
 echo "[---info---] Removal of Resources from Azure is Complete."
 ```
 
+</br>
+
 ## Create the YAML File for the Build Pipeline
 
 Next, in VS Code, create a file called **resource-mgmt-pipe.yaml** file. Copy and paste the contents below into the file and then save and commit your changes to the repository.
@@ -210,16 +237,6 @@ pool:
   vmImage: ubuntu-18.04
 
 steps:
-
-# Azure CLI Task - Deploying Azure Resources.
-- task: AzureCLI@2
-  displayName: 'Deploying Azure Resources'
-  inputs:
-    # Using Service Principal, 'sp-az-build-pipeline', to authenticate to the Azure Subscription.
-    azureSubscription: 'sp-az-build-pipeline'
-    scriptType: 'bash'
-    scriptLocation: 'scriptPath'
-    scriptPath: './deploy-azure-resources.sh'
 
 # Azure CLI Task - Remove Azure Resources.
 - task: AzureCLI@2
@@ -242,13 +259,9 @@ If you need additional information on how to create a new Build Pipeline, please
 
 Create a new Build Pipeline called **resource-mgmt-pipe**. At the end of the creation process, make sure you using the **resource-mgmt-pipe.yaml** file. Run the Build Pipeline once you are done configuring it.
 
-The **Deploy Azure Resources** Job should return the following results.
-
-![001](../images/day98/day.98.using.resource.locks.in.a.yaml.pipeline.001.png)
-
 The **Remove Azure Resources** Job should return the following results.
 
-![002](../images/day98/day.98.using.resource.locks.in.a.yaml.pipeline.002.png)
+![001](../images/day98/day.98.using.resource.locks.in.a.yaml.pipeline.001.png)
 
 </br>
 
@@ -290,7 +303,7 @@ Next, rerun the **resource-mgmt-pipe** Build Pipeline.
 
 The **Deploy Azure Resources** Job should return the exact same results after the original run. However, the results from the **Remove Azure Resources** Job should return the following results.
 
-![003](../images/day98/day.98.using.resource.locks.in.a.yaml.pipeline.003.png)
+![002](../images/day98/day.98.using.resource.locks.in.a.yaml.pipeline.002.png)
 
 </br>
 
@@ -300,9 +313,7 @@ You can check the [Azure Portal](https://portal.azure.com) to verify that the St
 
 ## Things to Consider
 
-The methodology shown above should work for just about all Resources in Azure that are taggable. If you plan on implementing this type of solution, we recommend that you test this against your Azure Resources thoroughly before doing so.
-
-You'll notice that we didn't include the **id** of the Resource if it was being skipped for deletion. Depending on the type of logging in your environment, such as in Production, you'll probably want to include as much information as possible for tracking and troubleshooting purposes.
+Make sure to have your Resource Removal Jobs in a separate Build Pipeline from your Deployment Pipelines unless you want the resources to constantly be recreated.
 
 </br>
 
