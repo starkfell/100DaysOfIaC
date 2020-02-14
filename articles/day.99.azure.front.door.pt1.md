@@ -18,7 +18,7 @@ In this article:
 ## Introducing Anycast
 Azure Front Door utilizes of the [**anycast**](https://en.wikipedia.org/wiki/Anycast) protocol,  a network addressing and routing methodology in which a single destination address has multiple routing paths to two or more endpoint destinations. Routers will select the desired path on the basis of number of hops, distance, lowest cost, latency measurements or based on the least congested route. Anycast networks are widely used for content delivery network (CDN) products to bring their content closer to the end user.
 
-In the context of Azure Front Door
+At a high level, in the context of Azure Front Door, anycast would route requests over the Azure network to the closest network based on your configured routing preferences, as shown in **Figure 1**:
 
 ![001](../images/day99/fig1.png)
 
