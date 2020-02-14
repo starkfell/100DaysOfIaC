@@ -8,11 +8,11 @@ There's a lot to Azure Front Door, so we'll open the door today, and continue to
 
 In this article:
 
-[Introducing Anycast](#introducing-anycast)
-[Core Capabilities](#core-capabilities)
-[Benefits of Front Door](#benefits-of-front-door)
-[How should I deploy Front Door?](#how-should-i-create-front-door-instances?)
-[Breaking it down (Azure CLI)](#Breaking-it-down-azure-cli)
+[Introducing Anycast](#introducing-anycast) </br>
+[Core Capabilities](#core-capabilities) </br>
+[Benefits of Front Door](#benefits-of-front-door) </br>
+[How should I deploy Front Door?](#how-should-i-create-front-door-instances?) </br>
+[Breaking it down (Azure CLI)](#Breaking-it-down-azure-cli) </br>
 
 ## Introducing Anycast
 Azure Front Door utilizes of the [**anycast**](https://en.wikipedia.org/wiki/Anycast) protocol,  a network addressing and routing methodology in which a single destination address has multiple routing paths to two or more endpoint destinations. Routers will select the desired path on the basis of number of hops, distance, lowest cost, latency measurements or based on the least congested route. Anycast networks are widely used for content delivery network (CDN) products to bring their content closer to the end user.
@@ -29,7 +29,7 @@ The core capabilities of Azure Front Door include:
 
 - **Application and API acceleration** through the use of anycast which will optimize the connectivity to Azure application services and reduce the latency for end users.
 - **Global HTTP load balancing** allows developers to build out geo-distributed services and lets Azure determine endpoint availability and intelligent routing to local, and available, endpoints.
-- **SSL offload **relieves endpoints of performing expensive decryption computation and moves the function higher-up in the stack.
+- **SSL offload** relieves endpoints of performing expensive decryption computation and moves the function higher-up in the stack.
 - **Edge web application filtering** provides protection against DDoS attacks or malicious users at the edge without impacting backend services.
 
 ## Benefits of Front Door
