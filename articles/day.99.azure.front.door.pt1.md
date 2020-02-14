@@ -13,6 +13,7 @@ In this article:
 [Benefits of Front Door](#benefits-of-front-door) </br>
 [How should I deploy Front Door?](#how-should-i-create-front-door-instances?) </br>
 [Breaking it down (Azure CLI)](#Breaking-it-down-azure-cli) </br>
+[Next Steps](#next-steps) </br>
 
 ## Introducing Anycast
 Azure Front Door utilizes of the [**anycast**](https://en.wikipedia.org/wiki/Anycast) protocol,  a network addressing and routing methodology in which a single destination address has multiple routing paths to two or more endpoint destinations. Routers will select the desired path on the basis of number of hops, distance, lowest cost, latency measurements or based on the least congested route. Anycast networks are widely used for content delivery network (CDN) products to bring their content closer to the end user.
@@ -43,26 +44,67 @@ One of the primary benefits of using Azure Front Door is taking advantage of Mic
 As with most services, you can deploy Azure Front Door with PowerShell, Azure CLI, or ARM templates. With the more complex Front Door scenarios, where multiple components and dependencies are involved, we would recommend sticking with ARM templates for the most complex scenarios, or Azure CLI in Azure Pipelines, if you are more comfortable. 
 
 ## Breaking it down
-For a first pass, let's break down the requirements by looking at the parameters of the Azure CLI:
+
+For a first look, let's break down the requirements by looking at the parameters of the Azure CLI command for creating a new Front Door instance.
 
 ``` Bash
 az network front-door create \
+
+# FQDN of the backend endpoint.
 --backend-address \
---name
---resource-group
---accepted-protocols]
---backend-host-header]
---disabled {false, true}]
---enforce-certificate-name-check {Disabled, Enabled}]
---forwarding-protocol]
---friendly-name]
---frontend-host-name]
---interval]
---no-wait]
---path]
---patterns]
---probeMethod {GET, HEAD}]
---protocol {Http, Https}]
---send-recv-timeout]
---tags]
+
+# Name of the Front Door instance 
+--name \
+
+# Name of resource group hosting the Front Door instance 
+--resource-group \
+
+# Accepted protocols (HTTP, HTTPS). Defaults to HTTP
+--accepted-protocols
+
+# Speci HTTP host headers
+--backend-host-header
+
+# Create the Front Door instance in a disabled state
+--disabled {false, true}
+
+# Whether to disable certificate name check on HTTPS requests to all backend pools.
+--enforce-certificate-name-check {Disabled, Enabled}
+
+# Protocol to use for forwarding traffic.
+--forwarding-protocol
+
+# Friendly name of the Front Door.
+--friendly-name
+
+# Domain name of the frontend endpoint.
+--frontend-host-name
+
+# Interval in seconds between probes (default 30 seconds)
+--interval
+
+# Do not wait for the long-running operation to finish.
+--no-wait
+
+# Path to probe.
+--path
+
+# Space-separated list of patterns to match. Default: '/*'.
+--patterns
+
+# Configures which HTTP method to use to probe the backends defined under backendPools. Defaults to HEAD
+--probeMethod {GET, HEAD}
+
+# Protocol to use for sending probes.
+--protocol {Http, Https}
+
+# Send and receive timeout in seconds on forwarding request to the backend. When timeout is reached, the request fails and returns.
+--send-recv-timeout
+
+# Space-separated tags: key[=value] [key[=value] ...]. Use "" to clear existing tags.
+--tags
 ```
+
+## Next Steps
+
+We'll close out here for today, and dig deeper into Azure Front Door tomorrow in Day 100.
