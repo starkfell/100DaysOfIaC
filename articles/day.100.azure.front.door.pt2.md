@@ -79,6 +79,12 @@ You'll find an exhaustive list of Azure Front Door ARM templates [HERE](https://
 
 A simple, 1-click, three-region AFD deployment, with a container instance resource type, is available for you by clicking the [HERE](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fplatformeng%2Fdemo-azure-front-door%2Fmaster%2Fazuredeploy.json).
 
+This will give you an AFD instance to explore in the Azure portal, as shown in **Figure 2**.
+
+![001](../images/day100/fig2.png)
+
+**Figure 1**. Sample AFD Deployment in Azure Portal
+
 ## Next Steps
 
 So, that's Day 100. We hope you have learned something new in the last 100 days of exploring Infrastructure-as-Code in Azure, Azure DevOps, and VS Code. If you have additional questions, you can open an issue here on the 100 Days repo anytime!
