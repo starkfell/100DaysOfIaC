@@ -10,7 +10,7 @@ In this article:
 [Enabling HTTPS in Front Door](#enabling-https-in-front-door) </br>
 [Backends and backend pools in in AFD](#backends-and-backend-pools-in-afd) </br>
 [Other important AFD settings (and sample ARM templates)](#other-important-afd-settings-and-sample-arm-templates) </br>
-[Quick AFD ARM Deployment](#quick-afd-arm-deployment)
+[Quick AFD ARM Deployment](#quick-afd-arm-deployment) </br>
 [Next Steps](#next-steps) </br>
 
 ## Azure Global vs Regional Services
