@@ -81,9 +81,9 @@ A simple, 1-click, three-region AFD deployment, with a container instance resour
 
 This will give you an AFD instance to explore in the Azure portal, as shown in **Figure 2**.
 
-![001](../images/day100/fig2.png)
+![002](../images/day100/fig2.png)
 
-**Figure 1**. Sample AFD Deployment in Azure Portal
+**Figure 2**. Sample AFD Deployment in Azure Portal
 
 ## Next Steps
 
