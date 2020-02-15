@@ -1,4 +1,4 @@
-Day 100 - Azure Front Door (Part 2)
+# Day 100 - Azure Front Door (Part 2)
 
 Today, the FINAL DAY of the "100 Days of Infrastructure-as-Code" series, we're going to talk through details of Azure Front Door (AFD) related to routing options, but also step back and talk about where AFD fits in your Azure load balancing options. We covered some AFD basics yesterday, so if you haven't read [Day 99](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.99.azure.front.door.pt1.md) yet, take five minutes and give it a quick read.
 
