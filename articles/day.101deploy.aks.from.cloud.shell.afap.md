@@ -11,7 +11,9 @@ Find the code and reference links below!
 
 ## Video Walkthrough (YouTube)
 
-Click **[HERE](https://youtu.be/T3GQ4FyTu-Y)** to view the walkthrough video on Youtube at https://youtu.be/T3GQ4FyTu-Y!
+**TO VIEW:** Click **[HERE](https://youtu.be/T3GQ4FyTu-Y)** to view the walkthrough video on Youtube at https://youtu.be/T3GQ4FyTu-Y!
+
+**TO SUBSCRIBE:** Click **[HERE](https://www.youtube.com/channel/UCAr0yk0um7lwLjmrKfzwyig?sub_confirmation=1)** to follow us on Youtube so you get a heads up on future videos!
 
 </br>
 
