@@ -4,6 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| AKS via CLI | [Day 101 - Deploying an AKS Cluster FAST from Azure Cloud Shell](articles/day.101deploy.aks.from.cloud.shell.afap.md)|
 | Azure Front Door | [Day 100 - Azure Front Door (Part 2)](articles/day.100.azure.front.door.pt2.md)|
 | Azure Front Door | [Day 99 - Azure Front Door (Part 1)](articles/day.99.azure.front.door.pt1.md)|
 | Resource Locks | [Day 98 - Using Resource Locks in a YAML Pipeline](articles/day.98.using.resource.locks.in.a.yaml.pipeline.md)|

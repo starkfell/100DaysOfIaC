@@ -1,10 +1,17 @@
-# Day 101 - Deploying an AKS Cluster from Azure Cloud Shell as fast as possible
+# Day 101 - Deploying an AKS Cluster FAST from Azure Cloud Shell
 
-In today's article we will be covering how to deploy an AKS Cluster from Azure Cloud Shell. While our demonstration is not recommended for a Production Environment, we hope it will push you in the right direction for learning how to use AKS! Additionally, we have opted to use a walkthrough video instead of an article. In order to make things as easy as possible, all commands in the video are able to be copy and pasted from the **[Video Walkthrough Commands](#video-walkthrough-commands)** section.
+Welcome to the first installment of "100 MORE Days of Infrastructure-as-Code in Azure"! In today's article we will be covering how to deploy an AKS Cluster from Azure Cloud Shell, but with a new facet - Youtube video! The code and related artifacts for each new installment will be here with a link to the video on our YouTube channel.
+
+Today, we're covering quick and effective AKS cluster deployment with Azure Cloud Shell. While our demonstration is not recommended for a Production Environment, we hope it will a way to quickly deploy and AKS cluster for study and exam prep! Additionally, we have opted to use a walkthrough video instead of an article. In order to make things as easy as possible, all commands in the video are able to be copy and pasted from the **[Video Walkthrough Commands](#video-walkthrough-commands)** section.
+
+Find the code and reference links below!
 
 </br>
 
-Click **[here](https://here.local.placeholder)** to view the walkthrough.
+
+## Video Walkthrough (YouTube)
+
+Click **[HERE](https://youtu.be/T3GQ4FyTu-Y)** to view the walkthrough video on Youtube at https://youtu.be/T3GQ4FyTu-Y!
 
 </br>
 
@@ -12,7 +19,7 @@ Click **[here](https://here.local.placeholder)** to view the walkthrough.
 
 </br>
 
-## Video Walkthrough Commands
+## Video Walkthrough Commands (aka "the code")
 
 All commands used in video are in the document below.
 
@@ -82,12 +89,19 @@ rm -rf .azure/aksServicePrincipal.json
 
 </br>
 
-## Things to Consider
+## Resource Links
 
-Plenty of Things to Consider...
+AKS-Engine on Github
+https://github.com/Azure/aks-engine
+
+Quickstart for Bash in Azure Cloud Shell
+https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart
+
+Enable Azure Monitor for Containers
+https://docs.microsoft.com/en-us/azure/azure-monitor/insights/container-insights-onboard
 
 </br>
 
 ## Conclusion
 
-In today's article we covered how to something something something darkside. If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
+We're REALLY excited to continue this series! If there's a specific scenario that you wish to be covered in future articles, please create a **[New Issue](https://github.com/starkfell/100DaysOfIaC/issues)** in the [starkfell/100DaysOfIaC](https://github.com/starkfell/100DaysOfIaC/) GitHub repository.
