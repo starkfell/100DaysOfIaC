@@ -36,7 +36,7 @@ AAD_TENENT_ID=$(az account show --query tenantId --output tsv)
 # Generating a Random Number to give our AKS Cluster a unique name. (At least good enough for this demo)
 RAND=$(shuf -i 1-9999 -n 1)
 
-# Creating the Auzre Resource Group for the AKS Service.
+# Creating the Azure Resource Group for the AKS Service.
 az group create \
 --name "aks-iam-${RAND}" \
 --location "westeurope"
@@ -71,7 +71,7 @@ az aks get-credentials \
 # Setting the [kubectl] command to point at our [kubeconfig] file.
 export KUBECONFIG=./aks-iam-${RAND}-admin-kubeconfig
 
-# Retrieving informatino about the AKS Cluster.
+# Retrieving information about the AKS Cluster.
 kubectl cluster-info
 
 # Listing the Worker Nodes on the AKS Cluster.
@@ -85,7 +85,7 @@ az aks cluster delete \
 # Removing the [kubeconfig] file from our Azure Cloud Shell session.
 rm -rf ./aks-iam-${RAND}-admin-kubeconfig
 
-# Removing the AKS Service Principal Inforamtion from our Azure Cloud Shell session.
+# Removing the AKS Service Principal Information from our Azure Cloud Shell session.
 rm -rf .azure/aksServicePrincipal.json
 ```
 
