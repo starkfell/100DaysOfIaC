@@ -2,7 +2,7 @@
 
 Welcome to the first installment of "100 MORE Days of Infrastructure-as-Code in Azure"! In today's article we will be covering how to deploy an AKS Cluster from Azure Cloud Shell, but with a new facet - Youtube video! The code and related artifacts for each new installment will be here with a link to the video on our YouTube channel.
 
-Today, we're covering quick and effective AKS cluster deployment with Azure Cloud Shell. While our demonstration is not recommended for a Production Environment, we hope it will a way to quickly deploy and AKS cluster for study and exam prep! Additionally, we have opted to use a walkthrough video instead of an article. In order to make things as easy as possible, all commands in the video are able to be copy and pasted from the **[Video Walkthrough Commands](#video-walkthrough-commands)** section.
+Today, we're covering quick and effective AKS cluster deployment with Azure Cloud Shell. While our demonstration is not recommended for a Production Environment, we hope it will provide a way to quickly deploy and AKS cluster for study and exam prep! Additionally, we have opted to use a walkthrough video instead of an article. In order to make things as easy as possible, all commands in the video are able to be copy and pasted from the **[Video Walkthrough Commands](#video-walkthrough-commands)** section.
 
 Find the code and reference links below!
 
