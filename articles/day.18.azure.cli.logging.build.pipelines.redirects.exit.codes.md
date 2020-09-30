@@ -69,7 +69,9 @@ If you run this script in the Azure Pipeline, you should get back the following 
 
 > **NOTE** If we were to change the *exit code* from **2** to **0**, the Build Pipeline Job would come back as successful.
 
-<br />
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
 
 ## Conclusion
 

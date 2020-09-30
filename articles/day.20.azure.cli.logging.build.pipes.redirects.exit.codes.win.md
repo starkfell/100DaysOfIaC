@@ -4,7 +4,9 @@ Today we are covering how redirecting STDERR to STDOUT and using exit codes can 
 
 > **NOTE:** This article covers essentially the same material as **[Day 18](../articles/day.18.azure.cli.logging.build.pipelines.redirects.exit.codes.md)**; however, the example used here is a PowerShell Script calling an Azure CLI command in an Azure PowerShell task. It may sound a bit wacky, but we wanted to make sure that you, dear reader, have a plethora of options at your disposal in Azure DevOps.
 
-<br />
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
 
 The script below is going to be the focus of today's topic and is designed to fail on purpose.
 

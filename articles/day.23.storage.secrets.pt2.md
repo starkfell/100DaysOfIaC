@@ -10,6 +10,10 @@ In the case of our API Management (APIM) scenario we last discussed in [Day 22](
 
 Let's get into some of the key capabilities of variables in Azure Pipelines.
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Pre-defined variables in Azure Pipelines
 
 First, there are [several pre-defined system variables](https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml) that may come in handy. In particular, variables related to the build agent (a Windows VM in the case of an ARM template), like **Agent.WorkFolder**, **Agent.OSArchitecture**, and **Agent.OS** can be useful when you want to use a particular system utility. The **System.Debug** variable is helpful when you want to debug pipeline problems. You can read more about Azure Pipeline agents in ["Azure Pipeline agents"](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops).

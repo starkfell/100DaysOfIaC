@@ -75,7 +75,9 @@ code --install-extension bencoleman.armview --force
 
 > **NOTE:** You may have noticed that you can't install multiple extensions at the same time just using the *--install-extension* switch. We agree with you, it is unfortunate.
 
-<br />
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
 
 ## Conclusion
 

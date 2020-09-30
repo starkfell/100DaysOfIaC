@@ -18,6 +18,10 @@ For readability, I am not going to embed the entire ARM template in the article,
 [Deployment Outputs](#deployment-outputs) </br>
 [Next Steps](#next-steps) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Setting Permissions
 
 If you look at the **"accountSasProperties"** section of the template in **Figure 1**, we are describing the SAS key we will create dynamically to enable access the storage. These values are explained immediately below the figure.

@@ -19,6 +19,10 @@ And over the next three installments, we will move from BAD to BETTER to BEST, i
 [Why is this better?](#why-is-this-better) <br/>
 [Next Steps](#next-steps) <br/>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 Those shared components that fall between the IaC and the app (API) itself may not be managed by an operations engineer, and not likely by the developer, but someone response for release management.
 
 To fully deploy this Azure API Management infrastructure, the deployment order would follow the repo structure in Figure 1:

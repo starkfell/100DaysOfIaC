@@ -10,6 +10,10 @@ In Infrastructure-as-Code (IaC), we use templates and scripts and other artifact
 [Branching Strategy](#branching-strategy)<br/>
 [Next Steps?](#next-steps)<br/>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Codify your IaC
 
 Use code to describe the infrastructure everywhere you can. In Azure, this means everything from VMs and containers, to firewalls and load balancers, and the myriad PaaS components in the cloud. However, it also means all the services and configurations around it, like DNS, antivirus, disk encryption, etc.
