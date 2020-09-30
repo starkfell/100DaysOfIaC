@@ -5,7 +5,7 @@ One of the first things that often gets neglected when implementing Infrastructu
 For this series, the following tools will be installed and configured on a fresh installation of **[Ubuntu 18.04.3 LTS](https://ubuntu.com/download/server/thank-you?country=AT&version=18.04.3&architecture=amd64)** with openSSH Server enabled. Note: If you are using Windows 10 OS - you can enable Windows Subsystem for Linux (https://docs.microsoft.com/en-us/windows/wsl/install-win10), download Ubuntu, and follow along with the same steps.
 
 ***
-SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://lumagate.us/azure)
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
 ***
 
 Below are a list of tools that will be used throughout this series.
