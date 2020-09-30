@@ -10,7 +10,9 @@ While [Microsoft's Official Documentation](https://docs.microsoft.com/en-us/azur
 
 > Note: This article was tested on Windows 10.
 
-<br />
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
 
 ## Create the Service Principal
 

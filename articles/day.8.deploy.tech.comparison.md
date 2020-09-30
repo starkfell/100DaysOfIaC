@@ -17,6 +17,10 @@ As with many technologies, user-friendliness is often a matter of opinion and ex
 
 > **NOTE:** While Azure DevOps supports 'any cloud, any language', we're going to focus on these core four options for purposes of this discussion. Other languages, such as Python, are supported, but are not idempotent and declarative, so we'll touch on those in later installments.
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 If you are unclear on what *declarative* and *idempotent* mean, quickly revisit [Day 7 - Using Azure CLI in Your Everyday IaC Strategy](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.7.using.azure.cli.in.your.everyday.iac.strategy.md)
 
 ## Advantages of Terraform

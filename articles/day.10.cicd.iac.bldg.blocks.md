@@ -15,6 +15,10 @@ In this article:
 
 Let's start by breaking down CI/CD, and how it's implemented in Azure DevOps. While we think of this as a foundational concept of DevOps, IaC strategy mirrors, ingrates with, and supports application development. IaC will implement these concepts as well.
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Continuous Integration
 
 Continuous Integration (CI) is a development practice that requires developers to integrate code into a shared repository, often multiple times a day. several times a day. Committing code to the git repo triggers an automated build system, allowing teams to detect problems early. In Azure DevOps, you implement CI in a **build pipeline** in Azure Pipelines.
