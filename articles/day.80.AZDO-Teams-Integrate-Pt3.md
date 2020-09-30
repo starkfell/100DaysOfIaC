@@ -8,6 +8,10 @@ Here are the previous installments in this series. If you haven't read them, tak
 
 Today, I'll start by selecting my Team in Microsoft Teams, click the ellipsis (...), and find the existing Azure DevOps app I added in Day 78. I'll find it on the Apps tab, as shown in Figure 1.
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ![001](../images/day80/001.png)
 
 **Figure 1**. The Azure DevOps app in Teams

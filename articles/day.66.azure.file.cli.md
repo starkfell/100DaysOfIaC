@@ -14,6 +14,10 @@ This performs the following configuration of an Azure File Share, including:
 - Sets the file share name and quota
 - Retrieves and stores the file share user and access key in Azure KeyVault
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## SAMPLE SCRIPT
 
 The script, and command line syntax are shown here, well-commented so you know what's happening at every stage. The full script is shown below, as well as in the [day66](../resources/day66) folder in the resources in this Git repository.

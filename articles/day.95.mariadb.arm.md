@@ -10,6 +10,10 @@ In this article:
 
 You can use the resources in this article with info available in previous installments in this series to deploy Azure Database for MariaDB from a release pipeline in Azure Pipelines.
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Service Features
 
 Azure DB for MariaDB shares a service model with Azure DB for MySQL and others, in that Microsoft manages the server instance, and much of the care and feeding for you. For example, OS and MariaDB patching are automatic. The service includes some monitoring capability, offering the ability to set alerts and act on the database thresholds. It includes a backup feature, allowing some control of retention (ranging from 7 - 35 days) and geo-redundancy of backup storage. Your newly deployed instance even includes a firewall for the service, blocking all connections by default.

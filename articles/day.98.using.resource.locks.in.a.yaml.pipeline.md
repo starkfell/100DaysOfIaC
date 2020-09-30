@@ -19,6 +19,10 @@ In this article:
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Deploy your Resources to Azure
 
 In VS Code or your editor of choice, create a new file called the **deploy-azure-resources.sh**. Copy and paste the contents below into it and save it.

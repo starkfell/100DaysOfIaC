@@ -15,6 +15,10 @@ Using outputs in your ARM template is optional. The deployment of your ARM templ
 
 In this installment we will deploy an ARM template that creates a new resource group, retrieve the output in our pipeline and use the resource group name to deploy a web application.
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ### Adding output to your ARM template
 
 To add an output to your ARM template simple add the following function at the end of your template (after the resource section):

@@ -72,7 +72,9 @@ urllib3.connectionpool : https://management.azure.com:443 "GET /subscriptions?ap
 
 After talking with the network Guru's that manage the Azure Firewall, we enabled access to **management.azure.com** on ports 443 and 80 and the login finally succeeded.
 
-</br>
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
 
 ## Conclusion
 

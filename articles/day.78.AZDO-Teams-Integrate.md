@@ -2,13 +2,17 @@
 
 Working in a company that is 100% cloud-focused, it's easy to wind up with too many portals to deal with, sucking time away from actual work. This is one reason I love Microsoft Teams, because it offers so many opportunities to integrate our tools and services into the Teams client where I am already spending time.
 
-Teams allows us to add tabs to a channel, private chat, or group chat to integrate our cloud services. This way, we can keep the services we work with most close at hand in the client where we're already collaborating. 
+Teams allows us to add tabs to a channel, private chat, or group chat to integrate our cloud services. This way, we can keep the services we work with most close at hand in the client where we're already collaborating.
 
 Teams gives us multiple integration options with Azure DevOps, but today I am going to show you one of those I use frequently - *development backlogs* from Azure Boards. In fact, I have multiple tabs with backlogs for different products and projects. In case you're not familiar, Azure DevOps includes a component called [Azure Boards](https://azure.microsoft.com/en-us/services/devops/boards/), where you can create Kanban style boards, with cards containing our features, and Agile stories.
 
 If you're an Agile development shop using Trello or other Kanban tool today, I strongly recommend you take a look at Azure Boards. Since it's purpose-built for software development activities and integrates with other Azure DevOps features (and Teams!), it's a net add for productivity.
 
 Let's take a look at the configuration, step-by-step.
+
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
 
 ## Adding your backlog to a Tab in Teams
 

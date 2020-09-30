@@ -338,6 +338,10 @@ Here is the ARM template from day 47, updated to use availability zones instead 
 
 ```
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Conclusion
 
 Availability zones may not be a feature you will use every day, but definitely worth having another option in your arsenal. Give it a try and ping us back with questions on the 100 Days repo.

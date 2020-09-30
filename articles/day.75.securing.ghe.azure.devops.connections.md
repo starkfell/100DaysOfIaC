@@ -4,6 +4,10 @@
 
 In [day 65](./day.65.integrating.ghe.with.azure.pipelines.md), we discussed how to connect GitHub Enterprise server (GHE) to Azure Pipelines. Although the connection is established via HTTPS and Azure DevOps must authenticate to GitHub Enterprise server, it in fact is an inbound connection to your on-prem network. You may find it would be hard to get this pattern approved by your network security team.
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Overview
 
 When connecting Azure DevOps to GitHub Enterprise server, it is possible to place the GHE server behind a Web Application Firewall (WAF), so any inbound connections to your GHE server will go through the WAF.

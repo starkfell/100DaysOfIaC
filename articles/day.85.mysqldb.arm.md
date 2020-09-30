@@ -241,9 +241,14 @@ All things considered, it's a great way to get a look at Azure Database for MySQ
     ]
 }
 ```
+
 # MySQL Admin Tools
 
 The go-to admin tool for MySQL is MySQL Workbench, which you can download from the MySQL website at https://www.mysql.com/products/workbench/.
+
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
 
 ## Conclusion
 

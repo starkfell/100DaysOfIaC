@@ -22,6 +22,10 @@ In today's article we will cover the following topics.
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Generate a random Password
 
 Run the following command to generate a password to use with the SSH Keys.

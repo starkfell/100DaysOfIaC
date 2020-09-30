@@ -19,6 +19,10 @@ When setting up a new Azure environment, networking is probably the first patter
 
 >**IMPORTANT NOTE:** This pattern does not include any advanced network resource such as firewall, User-Defined Route (UDR), or Application Security Groups (ASR). Although this is sufficient for my **lab** environment, it may not be production ready.
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Pattern Overview
 
 This network pattern consists of a hub VNet and multiple spoke VNets spanned across multiple subscriptions within a same Azure AD tenant (as shown below)

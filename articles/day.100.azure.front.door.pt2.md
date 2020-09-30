@@ -13,6 +13,10 @@ In this article:
 [Quick AFD ARM Deployment](#quick-afd-arm-deployment) </br>
 [Next Steps](#next-steps) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Azure Global vs Regional Services
 
 It's worth repeating that Azure Front Door (AFD) is a **global service**, which is a service that spans multiple Azure regions. A regional service is something that must be provisioned in each Azure region where you need the functionality

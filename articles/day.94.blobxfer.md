@@ -10,6 +10,10 @@ In this article:
 [Installing blobxfer](#installing-blobxfer) </br>
 [Sample install script (CLI)](#sample-install-script-cli) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## What is blobxfer?
 
 Blobxfer is an advanced data movement tool and library for Azure Storage Blob and Files. With blobxfer you can copy your files into or out of Azure Storage with the CLI or integrate the blobxfer data movement library into your own Python scripts.

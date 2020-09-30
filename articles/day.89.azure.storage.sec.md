@@ -22,6 +22,10 @@ In this article:
   - [Key Vault Integration](#key-vault-integration)
   - [Conclusion](#conclusion)
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Shared Keys
 [Shared Key](https://docs.microsoft.com/en-us/rest/api/storageservices/authorize-with-shared-key) is exactly what it sounds like: a key (in cryptographic terms, a string of bits used by an algorithm) you share with those to whom you would like to delegate access. This is equivalent to giving root access to a storage account. It grants all privileges to whomever has the key, from anywhere at anytime until the key is revoked or rolled over.
 

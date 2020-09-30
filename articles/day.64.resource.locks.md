@@ -13,6 +13,10 @@ In this article:
 [How are resource locks applied?](#how-are-resource-locks-applied) </br>
 [Permissions for creating and deleting locks](#permissions-for-creating-and-deleting-locks) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Resource Lock Types
 
 There are two levels of lock restrictions

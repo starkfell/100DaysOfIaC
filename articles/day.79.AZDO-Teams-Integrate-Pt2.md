@@ -5,6 +5,10 @@ In Day 78, we discussed Azure DevOps integration with Microsoft Teams, adding a 
 Previous installments:
 [Day 78 - Azure DevOps Integration with Microsoft Teams - Part 1](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.78.AZDO-Teams-Integrate.md)
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 By clicking the ellipsis (...) by the team, shown in Figure 1...
 
 ![001](../images/day79/001.png)

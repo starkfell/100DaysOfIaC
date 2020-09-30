@@ -18,6 +18,10 @@ In this article:
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Deploy Resources into Azure
 
 Run the following command to deploy the **100days-reslocks** Resource Group.

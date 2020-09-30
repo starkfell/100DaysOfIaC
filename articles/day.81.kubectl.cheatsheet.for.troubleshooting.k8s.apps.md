@@ -13,6 +13,10 @@ In today's article we will cover the following scenarios when troubleshooting yo
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Checking the Events on a Pod
 
 One of the most common issues I see on new Applications that are containerized is their inability to startup when running in a Kubernetes Cluster. The first thing I do is pull up the Events of the Pod.

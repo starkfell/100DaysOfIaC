@@ -6,20 +6,17 @@ Today, we're covering quick and effective AKS cluster deployment with Azure Clou
 
 Find the code and reference links below!
 
-</br>
-
-
 ## Video Walkthrough (YouTube)
 
 **TO VIEW:** Click **[HERE](https://youtu.be/T3GQ4FyTu-Y)** to view the walkthrough video on Youtube at https://youtu.be/T3GQ4FyTu-Y!
 
 **TO SUBSCRIBE:** Click **[HERE](https://www.youtube.com/channel/UCAr0yk0um7lwLjmrKfzwyig?sub_confirmation=1)** to follow us on Youtube so you get a heads up on future videos!
 
-</br>
-
 > **NOTE:** All content for this article was tested and written for use with Azure Cloud Shell.
 
-</br>
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
 
 ## Video Walkthrough Commands (aka "the code")
 

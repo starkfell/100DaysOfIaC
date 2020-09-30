@@ -8,6 +8,10 @@ When developing an Azure DevOps pipeline, you need to select the an agent pool f
 
 In addition to the Microsoft-hosted agents, you can also use self-hosted agents that are dedicated to your own Azure DevOps instance. Although Microsoft-hosted agents should satisfy most of your Azure IaC pipeline requirements, but in some cases self-hosted agents are required.
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Why Self-Hosted Agents?
 
 These are the common scenarios for self-hosted agents:

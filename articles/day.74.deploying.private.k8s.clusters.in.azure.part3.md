@@ -21,6 +21,10 @@ In today's article we will cover how to access the Private Kubernetes Cluster fr
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Options for connecting to a Private Kubernetes Cluster
 
 The Microsoft recommended way of accessing Private Kubernetes Cluster, is to deploy a VM that is either on the same VNet as the Cluster or in a different VNet that is peered with the VNet that the Cluster is in.

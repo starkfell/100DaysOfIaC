@@ -4,6 +4,10 @@
 
 Azure DevOps supports GitHub Enterprise (GHE) integration with Azure Board and Azure Pipelines. **This article only applies to Azure Pipeline integration.**
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Overview
 
 It is possible to use Azure Pipeline even when your source code is not stored in Azure Repo. Azure DevOps provides native support to integrating Azure Pipelines and GitHub (both SaaS version and GitHub Enterprise). The diagram below (FIGURE 1) shows a typical flow on how a pipeline is triggered via GHE:

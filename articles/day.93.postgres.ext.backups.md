@@ -11,6 +11,9 @@ In this article:
 [To add or remove database from backups](#to-add-or-remove-database-from-backups) </br>
 [Full Script](#full-script) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
 
 # Solution description
 

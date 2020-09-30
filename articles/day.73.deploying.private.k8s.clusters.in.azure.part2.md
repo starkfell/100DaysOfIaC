@@ -18,7 +18,9 @@ In today's article we will deploy a new Private Kubernetes Cluster in Azure usin
 
 > **NOTE:** This article was tested and written for a Linux Host running Ubuntu 18.04.
 
-</br>
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
 
 ## Creating the AKS-Engine Cluster Definition
 

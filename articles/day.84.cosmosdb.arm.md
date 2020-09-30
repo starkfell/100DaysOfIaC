@@ -13,6 +13,10 @@ In this article:
 [MongoDB Admin Tools](#mongodb-admin-tools)</br>
 [Conclusion](#conclusion)</br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Version Support
 
 Version support for new accounts created using Azure Cosmos DB's API for MongoDB are compatible with version 3.6 of the MongoDB wire protocol. MongoDBs latest release is 4.2, so if you're using features in MongoDB specific to 4.2, a switch to Cosmos DB with the Mongo API will not be possible.

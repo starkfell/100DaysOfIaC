@@ -13,6 +13,10 @@ In this article:
 [Custom Tools](#custom-tools) </br>
 [Document Everything](#document-everything) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Keep Everything in a Repository
 
 While you are busy putting together solutions for deploying your Infrastructure-as-Code, you might end up working in multiple sessions of Visual Studio Code and 20 plus tabs open in your browser of choice while testing out your solutions in PowerShell or Azure CLI. During this process, it is completely understandable that you may forget something that you had previously worked on and had forgotten to document it somewhere where someone on your team could read about it and not make the same mistakes as you.
