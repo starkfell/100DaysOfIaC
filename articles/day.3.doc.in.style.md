@@ -15,6 +15,10 @@ Even if you have NEVER written markdown, we have something special help you move
 
 > NOTE: We know many of you use Git already, but are interested to hear how many of you do not yet. We will definitely touch on Git soon for those in the "don't know Git" category.
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## VS Code extensions for easy markdown authoring
 
 If you use VS Code, you know extensions are a big part of what makes VS Code great. I like to pick extensions that are 

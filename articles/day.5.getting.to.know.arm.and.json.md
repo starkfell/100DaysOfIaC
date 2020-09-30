@@ -30,6 +30,10 @@ In this installment, we'll dig into foundational concepts in JSON and ARM, inclu
 
 <br />
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Objects
 
 In JSON, an **object** is an instance of a real-life object

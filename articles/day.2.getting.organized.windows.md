@@ -14,6 +14,10 @@ Below are a list of tools that will be used throughout this series on Windows.
 
 <br />
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Chocolatey
 
 In the setup of the Linux Host (Ubuntu 18.04) we used a combination of source installations and package management. For Windows 10, we are going to use Chocolatey for installing our starting packages.
