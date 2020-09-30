@@ -17,6 +17,10 @@ Today, we are going to add in tasks to our Build Pipeline to Deploy an Azure Con
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Grant the Service Principal Ownership of the Resource Group
 
 Because we are going to use the **sp-az-build-pipeline-creds** Service Principal to manage *everything* in the **practical-yaml** Resource Group, we are going to grand it **Owner** access to the Resource Group.

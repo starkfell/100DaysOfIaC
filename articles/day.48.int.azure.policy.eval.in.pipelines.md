@@ -11,6 +11,10 @@ Azure policy plays an important role in Azure cloud governance. You can configur
 [Release Gate - Check Azure Policy compliance](#release-gate---check-azure-policy-compliance) </br>
 [Conclusion](#conclusion) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 # Azure Policy Effects
 
 The [***effect***](https://docs.microsoft.com/en-us/azure/governance/policy/concepts/effects?WT.mc_id=DOP-MVP-5000997) in an Azure Policy definition defines what actions to be taken when a non-compliant resource is detected. Although Azure Policy is equipped with many types of effects, we will focus on the following because they would have direct impact to your pipelines:

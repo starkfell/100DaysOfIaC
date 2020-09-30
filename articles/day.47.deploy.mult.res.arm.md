@@ -12,6 +12,10 @@ In this article:
 [Sample ARM deployment scenario](#sample-arm-deployment-scenario) </br>
 [Multi-VM sample template](#multi-vm-sample-template) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## ARM Template Functions
 
 There are well over 50 helper functions you can use in your ARM templates, that fall into the following high-level categories.

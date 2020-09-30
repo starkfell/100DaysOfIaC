@@ -15,6 +15,10 @@ Other advantages worth exploring include:
 [Global policies for all repos](#global-policies-for-all-repos) </br>
 [Simple Migration](#simple-migration) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Tight Azure AD Integration
 
 Azure Repos includes native integration with Azure Active Directory (AD), which simplifies the process of managing code repo access. You can assign permissions and policies with Azure AD groups, just as you would resources in Azure. This means you can tie assignments, like who is a required code reviewer on a protected branch, to the Azure AD login they use every day.

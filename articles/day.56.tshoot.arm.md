@@ -11,6 +11,10 @@ In this article:
 [Finding error details in the Azure Portal](#finding-error-details-in-the-azure-portal) </br>
 [ARM Error References and Tutorial](#arm-error-references-and-tutorial) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## ARM Deployment Error Types
 
 There are important differences between **template validation error**, and a **template deployment error**. A template validation error means there is a problem with the syntax or layout of your deployment template, which prevents the deployment from starting. A template deployment error means that your template syntax has been approved, but an error has occurred while provisioning the resources.

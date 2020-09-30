@@ -6,6 +6,10 @@ In Day 36, we deconstructed an existing script we had that would 1) deploy and f
 
 YAML pipelines are great for a number of reasons, but my favorites are 1) that they are easily imported into other environments 2) saved as code in a repo (and thus can be versioned) and 3) give us a cut-and-paste way to jump start new pipelines. This two-step transition gives us a way to ease into YAML pipelines without writing one from scratch our first time out.
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 As a first step, I've essentially taken my existing script from [Day 36](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.36.paas.db.postgres.md) and broken it into two scripts in just a few minutes time, which are:
 
 - **createpginst.sh**. Deploys the Azure DB for PostgreSQL instance and performs all the configuration, including backup retention and firewall.

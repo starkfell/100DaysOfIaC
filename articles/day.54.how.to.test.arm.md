@@ -9,6 +9,10 @@ In this article:
 [Coming Soon: what-if for ARM](#coming-soon-what-if-for-arm) </br>
 [Avoid This](#avoid-this) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Native Options
 
 There are a couple of native options for validating, but some go deeper than others.

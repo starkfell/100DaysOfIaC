@@ -13,6 +13,10 @@ In this article:
 [Python](#python) </br>
 [PowerShell](#powershell) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Utility Extensions
 
 A couple of general utility add-ins that make coding faster and easier for me.

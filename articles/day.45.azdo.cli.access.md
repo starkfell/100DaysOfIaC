@@ -5,6 +5,10 @@ Did you know you can access your Azure DevOps subscription from the command line
 [Azure DevOps extension for the Azure CLI](#azure-devops-extension-for-the-azure-cli) </br>
 [Azure DevOps PowerShell Module](#azure-devops-powershell-module) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Azure DevOps extension for the Azure CLI
 
 The  Azure DevOps extension for the Azure CLI extension allows you to interact with Azure DevOps from the command line, potentially saving trips to the portal, navigating the UI, and opening up some opportunity for automation. Basically, you can just focus on the tasks at hand.

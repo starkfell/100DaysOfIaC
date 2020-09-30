@@ -13,6 +13,10 @@ We've talked repeatedly about the flexibility of using Azure CLI (bash) in your 
 
 You'll see a a couple of properties that remain hard-coded, as that was fine in my environment. Now, you have a rich sample that gives you a running start, and you can parameterize even further.
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## What's missing from this sample?
 
 What's left out is all the Azure Key Vault integration, which I have removed to simplify your consumption. I leverage key vault heavily to store secrets, such the Azure service principal used deploy, and the Mongo API endpoint my apps will use to talk to the DB. We have many Azure Key Vault script samples in this series that will help you add what you need.

@@ -13,7 +13,9 @@
 ***[Day 58 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 9](./day.58.building.a.practical.yaml.pipeline.part.9.md)***</br>
 ***[Day 60 - Practical Guide for YAML Build Pipelines in Azure DevOps - Part 10](./day.60.building.a.practical.yaml.pipeline.part.10.md)***</br>
 
-</br>
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
 
 Today, we are going to continue where we left off in **[Part 9](./day.58.building.a.practical.yaml.pipeline.part.9.md)** we are going to update our Dockerfile configuration and add in an NGINX Configuration File so NGINX is accessible on port 80 from its FQDN.
 

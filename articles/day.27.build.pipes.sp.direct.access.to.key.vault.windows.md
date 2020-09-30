@@ -14,7 +14,9 @@ In the previous two articles, we demonstrated how to use the Azure Key Vault tas
 [Configure the Build Pipeline](#configure-the-build-pipeline) </br>
 [Conclusion](#conclusion) </br>
 
-<br />
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
 
 ## Create a new Resource Group and an Azure Key Vault
 

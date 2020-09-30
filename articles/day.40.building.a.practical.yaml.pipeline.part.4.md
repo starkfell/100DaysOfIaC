@@ -19,6 +19,10 @@ Today, we are going to refactor our Azure Build Pipeline into a single bash scri
 [Things to Consider](#things-to-consider)</br>
 [Conclusion](#conclusion)</br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Clone the Azure DevOps Repo in VS Code
 
 Clone the **practical-yaml-build-pipe** repository in VS Code. If you need a refresher of how to do this, please go back and review **[Day 13](./day.13.git.started.in.vs.code.windows.edition.md)**.

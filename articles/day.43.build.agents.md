@@ -10,6 +10,10 @@ In this article:
 [Why build agents on Docker?](#why-build-agents-on-docker) </br>
 [Custom Self-Hosted Build Agent Script (Linux VM)](#custom-self-hosted-build-agent-script-linux-vm) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Hosting options
 
 There are two hosting options for build agents:

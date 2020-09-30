@@ -11,7 +11,9 @@ In today's article we are going to cover how to use a Storage Account Key in an 
 [Using the Storage Account Key as an Environment Variable](#using-the-storage-account-key-as-an-environment-variable)<br />
 [Conclusion](#conclusion)
 
-<br />
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
 
 ## Create a Resource Group and Storage Account
 

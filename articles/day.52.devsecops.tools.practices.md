@@ -11,6 +11,10 @@ In this article:
 [Scanning your Docker container images](#scanning-your-docker-container-images) </br>
 [Strategy Recap](#strategy-recap) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Static Code Analysis in CI Build Pipeline
 CI builds should run static code analysis tests to ensure that the code is following all rules for both maintenance and security. Several tools can be used for this:
 

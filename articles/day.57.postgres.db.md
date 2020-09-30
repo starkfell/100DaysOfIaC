@@ -14,6 +14,10 @@ This performs the following configuration of your Azure PostgreSQL instance, inc
 - Stores the connection endpoint in Azure KeyVault
 - Retrieves and stores the Postgres user and password in Azure KeyVault
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## SAMPLE SCRIPT
 
 The script, and command line syntax are shown here, well-commented so you know what's happening at every stage. The full script is shown below, as well as in the [day57](../resources/day57) folder in the resources in this Git repository.

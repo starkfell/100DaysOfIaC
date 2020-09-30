@@ -13,6 +13,10 @@ You will also find a sample multi-stage YAML pipeline in the appendix. this pipe
 [Conclusion](#conclusion) </br>
 [Appendix - Multi-stage YAML Pipeline Example](#appendix---multi-stage-yaml-pipeline-example) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Getting Started with YAML Pipelines
 
 At the time of writing, Multi-stage YAML pipelines is still in preview. Although you can still create YAML pipelines without enabling this preview, but you will most definitely utilize it. You may enable it for either your account, or for the entire organization in the Azure DevOps portal.

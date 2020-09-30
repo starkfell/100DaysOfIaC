@@ -19,6 +19,10 @@ Today, we are going to take you through the process of setting up a Build Pipeli
 [Create a new Build Pipeline](#create-a-new-build-pipeline)</br>
 [Conclusion](#conclusion)</br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Create a Service Principal for the Build Pipeline
 
 On your Linux Host (with Azure CLI installed), open up a bash prompt and run the following command to retrieve your Azure Subscription ID.

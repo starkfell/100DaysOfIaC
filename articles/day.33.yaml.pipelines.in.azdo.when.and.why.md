@@ -11,6 +11,10 @@ Today, we will start our discussion on [Azure DevOps YAML pipelines](https://doc
 [When to use YAML pipelines](#when-to-use-yaml-pipelines) </br>
 [Conclusion](#conclusion) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Pipeline as Code
 
 When using CI/CD pipelines to deploy your infrastructure as code projects, the infrastructure you are deploying is defined in the form of source code, generally stored in a git repository. In addition to the IaC code and artifacts, you would also develop CI/CD pipelines to build, test and deploy the solution. Traditionally, you would use a GUI interface provided by your CI/CD tool to develop the pipelines.

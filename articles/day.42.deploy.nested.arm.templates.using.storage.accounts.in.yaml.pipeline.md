@@ -13,6 +13,10 @@ Today, we are continuing our discussion on [Azure DevOps YAML pipelines](https:/
 
 > **NOTE:** The sample solution we used in this article (templates, pipeline) can be found [HERE](../resources/day42/).
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Challenges When Deploying Linked Templates
 
 If the solution you are deploying contains linked templates, the linked templates must be accessible by the Azure Resource Manager via an public URI. This works great when your templates are stored in a SaaS-based public repository (such as [Azure Quickstart Template GitHub repo](https://github.com/Azure/azure-quickstart-templates)). If your code is stored in a private or on-prem repo that is not accessible via a simple HTTP GET request without any custom headers, you will not be able to deploy these linked templates directly from the repo. This is because most of the Git providers require some kind of authentication token in the HTTP request headers and you cannot specify such header for ARM.

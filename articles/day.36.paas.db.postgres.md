@@ -18,6 +18,10 @@ In this installment:
 [Script Resource Downloads](#script-resource-downloads) </br>
 [Connecting to the Azure DB for PostgreSQL instance](#Connecting-to-the-azure-db-for-postgresql-instance) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Installing the PostgreSQL client utilities (psql)
 
 We’ll need the PostgreSQL 10 client utilities, which includes the psql command line utility we’ll use in our script to populate the database with data. The instructions below only install the PostgreSQL client utilities, not a full database instance!

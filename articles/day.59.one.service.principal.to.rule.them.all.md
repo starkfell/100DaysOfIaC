@@ -9,6 +9,10 @@ In this article:
 [Security Considerations](#security-considerations) </br>
 [Conclusion](#conclusion) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## The Omnipotent Service Principal
 
 So you've tested out Kubernetes, Terraform, and Ansible in Azure. You're currently using three Separate Service Principals to manage them, but you don't have a programmatic way in place yet of deploying the Service Principals and their respective environments they are responsible for. This is something that can be put into place by using the paradigm shown in the diagram below.
