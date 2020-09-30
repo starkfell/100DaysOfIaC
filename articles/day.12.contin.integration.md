@@ -21,6 +21,10 @@ We can leave the **Run on agent** task, shown in Figure 1, with its default valu
 
 We'll create the build pipeline using the classic editor, rather than YAML, because it is a more complete and user-friendly experience than YAML today. There is a time and place for using the YAML pipeline authoring experience, which we will discuss later in the series.
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## Step 1: Create Build Pipeline and Select Git repo
 
 To launch the classic editor, click on Azure Pipelines, Builds, and at the bottom of the Builds screen click "**Use the classic editor to create a pipeline without YAML**".

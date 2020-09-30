@@ -26,6 +26,10 @@ Now, we are going to connect our CI to CD with a **release pipeline** in Azure P
 
 **Figure 1**. CICD Current State
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## The Release Pipeline
 
 This release pipeline is attached to the repository described in Day 12, which creates an ARM template to deploy an Azure API Management (APIM) instance. We're working off the **Master** code branch here. This assumes you have developed your template in a Develop code branch and deployed to a DEV instance before you promote your code to TEST, where proper testing will take place before deployment to PROD.
