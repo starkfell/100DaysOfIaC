@@ -14,7 +14,7 @@ JSON has replaced XML as a de facto standard in deployment scenarios for several
 - XML is much more difficult to parse than JSON.
 - JSON is parsed into a ready-to-use JavaScript object
 
-And ARM templates are written in JSON, so if you learn the basics of JSON syntax, ARM templates will be MUCH easier to interpret and author. 
+And ARM templates are written in JSON, so if you learn the basics of JSON syntax, ARM templates will be MUCH easier to interpret and author.
 
 > NOTE: ARM templates are key to Infrastructure-as-Code (IaC) because they are both *idempotent* and *declarative*, two highly desirable qualities in IaC and CI/CD. We'll unpack these important terms soon in future article.
 
@@ -27,8 +27,6 @@ In this installment, we'll dig into foundational concepts in JSON and ARM, inclu
 [Variables](#variables)<br />
 [ARM Template Basics](#arm-template-basics)<br />
 [Homework](#homework)<br />
-
-<br />
 
 ***
 SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
