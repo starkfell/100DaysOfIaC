@@ -12,10 +12,10 @@ In this article:
 
 You will find some of the code samples shown in this session in the articles below:
 
-[Day 86 - Deploying Azure SQL Server using the Azure CLI](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.86.deploying.azure.sql.srv.azure.cli.md)
-[Day 87 - Deploying Azure SQL Server using ARM](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.87.deploying.azure.sql.srv.arm.md)
+[Day 86 - Deploying Azure SQL Server using the Azure CLI](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.86.deploying.azure.sql.srv.azure.cli.md) </br>
+[Day 87 - Deploying Azure SQL Server using ARM](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.87.deploying.azure.sql.srv.arm.md)</br>
 
-[ARTICLE: 5 ways to secure your SQL data in Microsoft Azure](https://www.linkedin.com/pulse/5-ways-secure-your-sql-data-microsoft-azure-pete-zerger/)
+[ARTICLE: 5 ways to secure your SQL data in Microsoft Azure](https://www.linkedin.com/pulse/5-ways-secure-your-sql-data-microsoft-azure-pete-zerger/) </br>
 
 ## YouTube Video
 
