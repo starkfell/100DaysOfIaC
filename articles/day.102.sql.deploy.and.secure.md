@@ -19,7 +19,7 @@ You will find some of the code samples shown in this session in the articles bel
 
 ## YouTube Video
 
-Watch the video on YouTube at [https://](https://youtu.be/hzXs3zvGR7M)
+Watch the video on YouTube at [https://youtu.be/hzXs3zvGR7M](https://youtu.be/hzXs3zvGR7M)
 
 A few areas we covered in this video include: 
 
