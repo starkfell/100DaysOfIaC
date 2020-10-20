@@ -3,8 +3,9 @@
 In the first of a 2-part video session, we begin a look at deployment options and security features of Azure SQL. Resources from this session are detailed below, along with the link to the video on YouTube.
 
 In this article:
+
 - Related installments
-- YouTube video 
+- YouTube video
 - Video resources
 - Azure Cloud Shell transcript (from live session)
 
@@ -17,11 +18,17 @@ You will find some of the code samples shown in this session in the articles bel
 
 [ARTICLE: 5 ways to secure your SQL data in Microsoft Azure](https://www.linkedin.com/pulse/5-ways-secure-your-sql-data-microsoft-azure-pete-zerger/) </br>
 
+***
+SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Resource Scheduler let's you schedule up to 10 Azure VMs for FREE! Learn more [HERE](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/lumagatena.resourcescheduler?tab=Overview)
+***
+
 ## YouTube Video
 
 Watch the video on YouTube at [https://youtu.be/hzXs3zvGR7M](https://youtu.be/hzXs3zvGR7M)
 
-A few areas we covered in this video include: 
+**TO SUBSCRIBE:** Click **[HERE](https://www.youtube.com/channel/UCAr0yk0um7lwLjmrKfzwyig?sub_confirmation=1)** to follow us on Youtube so you get a heads up on future videos!
+
+A few areas we covered in this video include:
 
 Deployment Automation
 - ARM
