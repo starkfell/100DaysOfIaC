@@ -4,6 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 
 | Subject | Article Link  |
 |---------|---------------|
+| Inside Azure SQL | [Day 103 - Azure SQL Deployment and Security (Part 2)](articles/day.103.sql.deploy.and.secure.pt2.md)|
 | Inside Azure SQL | [Day 102 - Azure SQL Deployment and Security (Part 1)](articles/day.102.sql.deploy.and.secure.md)|
 | AKS via CLI | [Day 101 - Deploying an AKS Cluster FAST from Azure Cloud Shell](articles/day.101deploy.aks.from.cloud.shell.afap.md)|
 | Azure Front Door | [Day 100 - Azure Front Door (Part 2)](articles/day.100.azure.front.door.pt2.md)|
