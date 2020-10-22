@@ -2,7 +2,7 @@
 
 In this session, we'll break down security for Azure Key Vault end-to-end in a variety of scenarios. Resources from this session are detailed below, along with the link to the video on YouTube.
 
-In this article:
+## In this article:
 
 - [YouTube Video](#youtube-video)</br>
 - [Related Installments](#related-installments)</br>
