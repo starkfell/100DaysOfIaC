@@ -21,6 +21,15 @@ Watch the video on YouTube at [PENDING](https://youtu.be/)
 
 A few areas we covered in this video include:
 
+- Management plane security (RBAC)
+- Data plane security (access policies)
+- Deployment and management automation
+- Azure Pipelines integration
+- Certificate integration and lifecycle management
+- Backing up and recovering AKV contents
+
+([back to top](#in-this-article))
+
 ## Related Installments
 
 You will find some of the code samples shown in this session in the articles below:
@@ -41,21 +50,32 @@ You will find some of the code samples shown in this session in the articles bel
 
 [Day 25 - Build Pipelines, Key Vault Integration (Linux Edition)](https://github.com/starkfell/100DaysOfIaC/blob/master/articles/day.25.build.pipes.key.vault.linux.md)</br>
 
+([back to top](#in-this-article))
+
 ## Related Articles and Tutorials
 
 Managed Identity in Azure DevOps Service Connections
+
 https://stefanstranger.github.io/2019/03/02/ManageIdentityInServiceConnections/
 
 Service connections (in Azure Pipelines)
+
 https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml
 
 Quickstart: Set and retrieve a secret from Azure Key Vault using the Azure portal (Azure CLI)
+
 https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-cli
 
 Quickstart: Set and retrieve a secret from Azure Key Vault using the Azure portal (PowerShell)
+
 https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-powershell
 
+Quickstart: Set and retrieve a secret from Azure Key Vault using an ARM template
+
+https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-template?tabs=CLI
+
 Use Key Vault from App Service with Managed Service Identity
+
 https://docs.microsoft.com/en-us/samples/azure-samples/app-service-msi-keyvault-dotnet/keyvault-msi-appservice-sample/
 
 ## Azure Cloud Shell Transcript
@@ -72,6 +92,8 @@ The following are the highlights from the demos in Azure Cloud Shell
 - Set and retrieve a secret:
   - Set and retrieve from portal
   - Set and retrieve a secret from Cloud Shell (Azure CLI)
+
+([back to top](#in-this-article))
 
 ### Create a new Resource Group and an Azure Key Vault
 
@@ -240,7 +262,10 @@ To view the value contained in the secret as plain text:
 ```bash
 az keyvault secret show --name "ExamplePassword" --vault-name "Contoso-Vault2"
 ```
+([back to top](#in-this-article))
 
 ## Conclusion
 
 This has been a deep drive into Azure Key Vault. If you've never tried it, try the many code samples we have provided here to get some hands-on practice.
+
+([back to top](#in-this-article))
