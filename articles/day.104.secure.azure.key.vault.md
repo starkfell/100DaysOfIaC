@@ -15,7 +15,7 @@ SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Re
 
 ## YouTube Video
 
-Watch the video on YouTube at [PENDING](https://youtu.be/)
+Watch the video on YouTube at [https://youtu.be/QdPG-lCJKEc](https://youtu.be/QdPG-lCJKEc)]
 
 **TO SUBSCRIBE:** Click **[HERE](https://www.youtube.com/channel/UCAr0yk0um7lwLjmrKfzwyig?sub_confirmation=1)** to follow us on Youtube so you get a heads up on future videos!
 
