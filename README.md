@@ -4,7 +4,7 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 day.104.secure.azure.key.vault.md
 | Subject | Article Link  |
 |---------|---------------|
-| Key Vault Security | [Day 104 - Azure Key Vault Security and Automation (in plain English)](articles/day.103.sql.deploy.and.secure.pt2.md)|
+| Key Vault Security | [Day 104 - Azure Key Vault Security and Automation (in plain English)](articles/day.104.secure.azure.key.vault.md)|
 | Inside Azure SQL | [Day 103 - Azure SQL Deployment and Security (Part 2)](articles/day.103.sql.deploy.and.secure.pt2.md)|
 | Inside Azure SQL | [Day 102 - Azure SQL Deployment and Security (Part 1)](articles/day.102.sql.deploy.and.secure.md)|
 | AKS via CLI | [Day 101 - Deploying an AKS Cluster FAST from Azure Cloud Shell](articles/day.101deploy.aks.from.cloud.shell.afap.md)|
