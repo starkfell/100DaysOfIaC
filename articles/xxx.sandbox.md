@@ -31,7 +31,7 @@ Select Azure Resource Manager
 
 Service Principal (automatic)
 
-Service connection name is **yaml-piplines-demo**. Leave **Grant access permission to all pipelines** under **Secuirty** checked. Lastly, click **Save**.
+Service connection name is **yaml-pipelines-demo**. Leave **Grant access permission to all pipelines** under **Secuirty** checked. Lastly, click **Save**.
 
 > **Note:** When removing this automated Service Principal later for your Azure Subscription, it's going to have a name similar to what is shown below:
 
@@ -147,7 +147,7 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     'inlineScript': |
-       az storage account create --name yamlpipeldemostr --resource-group yaml-pipeline-demo-rg --location westeurope --output table
+       az storage account create --name yamlpipedemostr --resource-group yaml-pipeline-demo-rg --location westeurope --output table
 ```
 
 <br/>
@@ -211,12 +211,12 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     'inlineScript': |
-       az storage account create --name yamlpipeldemostr --resource-group yaml-pipeline-demo-rg --location westeurope --output table
+       az storage account create --name yamlpipedemostr --resource-group yaml-pipeline-demo-rg --location westeurope --output table
 ```
 
 <br/>
 
-Additional Documentation: [Azure DevOps - Runtime Parameters](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/runtime-parameters?view=azure-devops&tabs=script)
+Check in Azure DevOps and the Azure Portal to verify the resources were deployed successfully.
 
 <br/>
 
@@ -266,6 +266,10 @@ steps:
     'inlineScript': |
        az storage account create --name "${{ parameters.strName }}" --resource-group "${{ parameters.rgName }}" --location "${{ parameters.azLoc }}" --output table
 ```
+
+<br/>
+
+Check in Azure DevOps and the Azure Portal to verify the resources were deployed successfully.
 
 <br/>
 
@@ -332,6 +336,12 @@ stages:
 
 <br/>
 
+Check in Azure DevOps and the Azure Portal to verify that the four Resource Groups and four Storage Accounts were deployed successfully.
+
+<br/>
+
 ## Additional Notes
+
+[Azure DevOps - Runtime Parameters](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/runtime-parameters?view=azure-devops&tabs=script)
 
 <br/>
