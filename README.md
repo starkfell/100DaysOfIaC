@@ -4,6 +4,8 @@ Below are the articles, with the latest available at the top. Hit the :watch: an
 day.104.secure.azure.key.vault.md
 | Subject | Article Link  |
 |---------|---------------|
+| Petri DevOps Day | [YAML Pipelines: Up and running in an hour](articles/petri/yaml.in.one.hour.md)|
+| Petri DevOps Day | [Kubernetes: Up and running in an hour](articles/petri/k8s.in.one.hour.md)|
 | Azure Storage Security | [Day 105 - Azure Storage Security End-to-End](articles/day.105.secure.azure.storage.md)|
 | Key Vault Security | [Day 104 - Azure Key Vault Security and Automation (in plain English)](articles/day.104.secure.azure.key.vault.md)|
 | Inside Azure SQL | [Day 103 - Azure SQL Deployment and Security (Part 2)](articles/day.103.sql.deploy.and.secure.pt2.md)|

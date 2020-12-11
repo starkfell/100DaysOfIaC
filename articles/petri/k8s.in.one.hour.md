@@ -1,52 +1,58 @@
 
 # KUBERNETES: UP AND RUNNING IN AN HOUR
 
+These are the steps for deploying the Azure Kubernetes Service resources as shown in "Kubernetes: Up and running in an hour"
+
 ## STEP 1: CLONE THE GIT REPOSITORY FROM GITHUB
 
-List subscriptions you have access to.
+To clone the Github repo shown in the demonstration (https://github.com/starkfell/100DaysOfIaC), you can run this command to clone with the Github command line.
+
+```bash
+gh repo clone starkfell/100DaysOfIaC
+```
+
+## STEP 2: CREATE A RESOURCE GROUP IN AZURE
+
+If you have multiple Azure subscriptions, in the Azure CLI in Azure Cloud Shell, you can list subscriptions you have access to.
 
 ```bash
 az account list
 ```
-
-Set your preferred subscription:
+And then set your preferred subscription:
 
 ```bash
 az account set --subscription 'Windows Azure MSDN - Visual Studio Ultimate'
 ```
 
-Azure Cloud Shell - Bash
-https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart
-
-Azure Cloud Shell - PowerShell
-https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart-powershell
-
-## STEP 2: CREATE A RESOURCE GROUP IN AZURE
+And then, create your resource group using this command:
 
 ```bash
 az group create --name myk8srg --location eastus
 ```
 
+NOTE: Running on a local computer and don't have Azure CLI installed? Get step-by-step instructions [HERE](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
 
-NOTE: Don't have Azure CLI installed? Get step-by-step instructions [HERE](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
+## STEP 3: CREATE AN AKS CLUSTER
 
-## DISCUSSION: DO I NEED A PRIVATE AKS CLUSTER?
-
-## STEP 3: CREATE AN AKS CLUSTER 
+With this command, you can deploy your AKS Cluster, as well as automatically enable Azure Monitor for Containers to monitor the cluster:
 
 ```bash
 az aks create --resource-group myk8srg --name myAKSCluster --node-count 1 --enable-addons monitoring --generate-ssh-keys
 ```
-IMPORTANT: Backup
-
 
 ## STEP 4: CONNECT TO THE AKS CLUSTER
 
-Use kubectl to manage your cluster. It's pre-installed in Azure Cloud Shell.
-az aks install-cli
+This command downloads credentials and configures the Kubernetes CLI to use them.
 
-# This command downloads credentials and configures the Kubernetes CLI to use them.
+```bash
 az aks get-credentials --resource-group myk8srg --name myAKSCluster
+```
+
+Use kubectl to manage your cluster. It's pre-installed in Azure Cloud Shell. If you are running Azure CLI on your local computer, you can install it with this command:
+
+```bash
+az aks install-cli
+```
 
 Verify connection by pulling list of nodes
 
@@ -56,7 +62,7 @@ kubectl get nodes
 
 ## STEP 5: RUN THE APPLICATION
 
-The Azure Voting App yaml definition file. Paste into 
+The contents of the Azure Voting App yaml definition file are shown here. You can copy-and-paste if you don't want to sync the Github repo from Step 1.
 
 ```YAML
 apiVersion: apps/v1
@@ -145,6 +151,7 @@ spec:
   selector:
     app: azure-vote-front
 ```
+
 Now, run the app using this command
 
 ```bash
@@ -154,18 +161,18 @@ kubectl apply -f votingapp.yml
 ## STEP 6: TEST THE APPLICATION
 
 ```bash
-kubectl get service azure-vote-front --watch
+kubectl get service azure-vote-front
 ```
 
-To see the Azure Vote app in action, open a web browser to the external IP address of your service.
+To see the Azure Vote app in action, open a web browser and type or paste the external IP address of your service.
 
-Cleanup - delete the cluster
+To clean up after testing, delete the cluster using this command:
 
 ```bash
 az group delete --name myk8srg --yes --no-wait
 ```
 
-# ADDITIONAL READING 
+# ADDITIONAL READING
 
 Tutorial: Deploy and use Azure Container Registry
 https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-prepare-acr
@@ -178,6 +185,3 @@ https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-app-update
 
 Tutorial: Upgrade Kubernetes in Azure Kubernetes Service (AKS)
 https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-upgrade-cluster
-
-
-
