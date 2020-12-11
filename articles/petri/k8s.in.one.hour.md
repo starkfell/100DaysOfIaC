@@ -1,7 +1,7 @@
 
 # KUBERNETES: UP AND RUNNING IN AN HOUR
 
-## STEP 1: PULL THE CODE FROM THE GIT REPO
+## STEP 1: CLONE THE GIT REPOSITORY FROM GITHUB
 
 List subscriptions you have access to.
 
@@ -56,7 +56,7 @@ kubectl get nodes
 
 ## STEP 5: RUN THE APPLICATION
 
-kubectl apply -f votingapp.yml
+The Azure Voting App yaml definition file. Paste into 
 
 ```YAML
 apiVersion: apps/v1
@@ -145,6 +145,11 @@ spec:
   selector:
     app: azure-vote-front
 ```
+Now, run the app using this command
+
+```bash
+kubectl apply -f votingapp.yml
+```
 
 ## STEP 6: TEST THE APPLICATION
 
@@ -157,7 +162,7 @@ To see the Azure Vote app in action, open a web browser to the external IP addre
 Cleanup - delete the cluster
 
 ```bash
-az group delete --name myResourceGroup --yes --no-wait
+az group delete --name myk8srg --yes --no-wait
 ```
 
 # ADDITIONAL READING 
