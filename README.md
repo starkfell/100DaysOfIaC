@@ -1,7 +1,6 @@
 # 100 Days of IaC in Azure
 
 Below are the articles, with the latest available at the top. Hit the :watch: and :star: buttons on this [GitHub repo](https://github.com/starkfell/100DaysOfIaC/) to keep up with latest updates. Meet the people behind this series on our [whois page](https://github.com/starkfell/100DaysOfIaC/blob/master/whois.md).
-day.104.secure.azure.key.vault.md
 | Subject | Article Link  |
 |---------|---------------|
 | Petri DevOps Day | [YAML Pipelines: Up and running in an hour](articles/petri/yaml.in.one.hour.md)|
