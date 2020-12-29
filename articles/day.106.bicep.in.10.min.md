@@ -9,7 +9,7 @@ In this installment
 [Video](#video) </br>
 [Scripts](#scripts) </br>
 [Bicep Templates](#bicep-templates) </br>
-[Documentation Links](documentation-links) </br>
+[Documentation Links](#documentation-links) </br>
 [Conclusion](#conclusion) </br>
 
 ***
@@ -113,7 +113,7 @@ resource resourcGroup 'Microsoft.Resources/resourceGroups@2020-06-01' = {
 
 ### storageAccount.bicep
 
-This bicep file drives an Azure resource group deployment.
+This bicep file drives an Azure storage account deployment.
 
 ```c#
 /*
