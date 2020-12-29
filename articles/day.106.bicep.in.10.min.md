@@ -160,11 +160,9 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2019-06-01' = {
 ## Documentation Links
 
 Azure Bicep documentation on Github
-
 https://github.com/azure/bicep
 
 Bicep resources from Build5nines.com.
-
 https://build5nines.com/get-started-with-azure-bicep/
 
 ## Conclusion
