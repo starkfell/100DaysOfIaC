@@ -4,7 +4,7 @@ Today, we're going to get you up and running on a new technology some at Microso
 
 All the resources mentioned in the video are included in this article.
 
-In this installment
+In this installment:
 
 [Video](#video) </br>
 [Scripts](#scripts) </br>
@@ -18,7 +18,7 @@ SPONSOR: Need to stop and start your development VMs on a schedule? The Azure Re
 
 # Video
 
-You can find the video tutorial for today's installment on Youtube at <upload in-progres>
+You can find the video tutorial for today's installment on Youtube at https://youtu.be/B1YIA3bs5u8
 
 ## Scripts
 
