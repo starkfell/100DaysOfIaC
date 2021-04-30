@@ -28,7 +28,7 @@ Use the 'Table of Contents' and 'back to top' links to navigate this document qu
 - [Tables](#tables)
 - [Images](#images)
 - [Code](#code)
-- [Line Breaks](#line-breaks)
+- [Line Breaks (Press 'Enter')](#line-breaks-press-enter)
 - [Horizontal Rule](#horizontal-rule)
 - [Inline HTML](#inline-html)
 
@@ -110,21 +110,32 @@ which renders like this:
 
 There are several types of links:
 
++ \[inline-style link](https://www.msdn.com)
+which renders like this: 
 [inline-style link](https://www.msdn.com)
 
++ \[I'm an inline-style link with title](https://www.msdn.com "MSDN homepage")
+which renders like this:
 [I'm an inline-style link with title](https://www.msdn.com "MSDN homepage")
 
-[I'm a reference-style link][arbitrary case-insensitive reference text]
-
-\[I'm a relative reference to a repository file](azure.png)
-
++ \[I'm a relative reference to a repository file](azure.png)
 which renders like this:
-
 [I'm a relative reference to a repository file](azure.png)
 
++ \[I'm a reference-style link]\[arbitrary case-insensitive reference text]
+which renders like this:
+[I'm a reference-style link][arbitrary case-insensitive reference text]
+
+[arbitrary case-insensitive reference text]: https://www.mozilla.org
+
++ \[You can use numbers for reference-style link definitions]\[1]
+which renders like this:
 [You can use numbers for reference-style link definitions][1]
 
-leave it empty and use the [link text itself].
+[1]: https://google.com
+
+
+You can define URL for [arbitrary case-insensitive] and \[1] as seen above.
 
 Finally, URLs and URLs in angle brackets will automatically be converted to links. 
 https://www.msdn.com or <https://www.mdsn.com>. Some tools and platforms support dropping the https://, like msdn.com, but some dont (like Github), so add the https:// to ensure consistent behavior.
@@ -230,8 +241,8 @@ print js;
 ```
 
 [back to top](#markdown-cheat-sheet)
-# Line Breaks
---
+# Line Breaks (Press 'Enter')
+
 [back to top](#markdown-cheat-sheet)
 # Horizontal Rule 
 A horizontal rule is a grey line. You can add a horizontal rule using three asterisks or three dashes.
