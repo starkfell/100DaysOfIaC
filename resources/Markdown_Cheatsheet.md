@@ -231,7 +231,7 @@ print js;
 
 [back to top](#markdown-cheat-sheet)
 # Line Breaks
-
+--
 [back to top](#markdown-cheat-sheet)
 # Horizontal Rule 
 A horizontal rule is a grey line. You can add a horizontal rule using three asterisks or three dashes.
