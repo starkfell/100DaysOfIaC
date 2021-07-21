@@ -48,7 +48,7 @@ You should get back the following output:
 Next, run the following command randomly generate 4 alphanumeric characters.
 
 ```bash
-RANDOM_ALPHA=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
+RANDOM_ALPHA=$(LC_CTYPE=C tr -dc 'a-z0-9' < /dev/urandom | fold -w 4 | head -n 1)
 ```
 
 > **NOTE:** We are appending this to the name of our Storage Account to ensure we create a unique Storage Account name.
