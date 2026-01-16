@@ -1,5 +1,7 @@
 # 100 Days of IaC in Azure
 
+Hello everyone!
+
 ## Testing 
 
 Below are the articles, with the latest available at the top. Hit the :watch: and :star: buttons on this [GitHub repo](https://github.com/starkfell/100DaysOfIaC/) to keep up with latest updates. Meet the people behind this series on our [whois page](https://github.com/starkfell/100DaysOfIaC/blob/master/whois.md).
