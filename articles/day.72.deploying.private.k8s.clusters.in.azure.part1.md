@@ -117,7 +117,7 @@ AZURE_SUB_ID="00000000-0000-0000-0000-000000000000"
 Next, run the following command randomly generate 4 alphanumeric characters. This will be appended to the name of the Kubernetes Cluster for uniqueness.
 
 ```bash
-RANDOM_ALPHA=$(cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 4 | head -n 1)
+RANDOM_ALPHA=$(LC_CTYPE=C tr -dc 'a-z0-9' < /dev/urandom | fold -w 4 | head -n 1)
 ```
 
 </br>
